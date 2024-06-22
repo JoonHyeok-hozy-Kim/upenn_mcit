@@ -1,0 +1,107 @@
+# 1. Sets
+### Concept) Set
+- Def.)
+  - A collection of things
+    - where
+      - the order of elements does not matter.
+      - repetition does not matter.
+- Notation)
+  - $`x\in S`$
+  - $`T = \{1,2,3,\cdots,10\}`$
+- Props.)
+  - $`\{0\} \ne 0`$
+  - $`\{1, \{1,2\}\}`$ has two elements.
+- Special Sets)
+  - $`\emptyset`$ : the empty set
+  - $`\mathbb{N}`$ : natural numbers
+  - $`\mathbb{Z}`$ : integers
+    - $`\mathbb{Z}^+ / \mathbb{Z}^-`$ : positive/negative integers
+  - $`\mathbb{R}`$ : real numbers
+  - $`\mathbb{Q}`$ : rational numbers.
+    - i.e.) $`\displaystyle \frac{p}{q}, q\ne 0, p,z\in\mathbb{Z}`$
+    - cf.) $`\sqrt{2}, \pi, e \notin \mathbb{Q}`$
+
+
+<br>
+
+### Concept) Set-Builder
+- Desc.)
+  - A way of specifying a set is to start with one of the special sets and then pick elements that only satisfy certain properties.
+- e.g.)
+  - $`\{x\in\mathbb{Z} | -2 \lt x \lt 5\} = \{-1,\cdots,4\}`$
+
+
+<br>
+
+### Concept) Subset
+- Def.)
+  - For sets $`A, B`$
+  - $`A`$ is a subset of $`B`$ iff. $`\forall a\in A, a\in B`$.
+    - $`A \subseteq B`$
+- e.g.)
+  - Let $`S = \{a, b, \{c, d\}\}`$.
+  - Then the subsets of $`S`$ are
+    - $`\underbrace{\emptyset, \{a\}, \{b\}, \{\{c, d\}\}, \cdots, \{a, b, \{c, d\}\}}_{2^3=8}`$
+- Prop.)
+  - $`A \subseteq B`$ does not imply $`B \subseteq A`$.
+    - Counter example)
+      - $`\mathbb{Q} \subset \mathbb{R}`$.
+      - But $`\sqrt{2} \in \mathbb{R}, \sqrt{2} \notin \mathbb{Q}`$
+
+
+
+<br>
+
+### Concept) Set Operations
+- For $`U`$ such that $`A,B \subseteq U`$
+  - Union
+    - $`A\cup B = \{x\in U | x\in A \vee x\in B\}`$
+  - Intersection
+    - $`A\cap B = \{x\in U | x\in A \wedge x\in B\}`$
+  - Difference
+    - $`B-A = \{x\in B | x \notin A\}`$
+  - Complement
+    - $`\bar{A} = \{x\in U | x \notin A\}`$
+- Props.)
+  - Commutative Laws
+    - $`A\cup B = B\cup A`$
+    - $`A\cap B = B\cap A`$
+  - Associative Laws
+    - $`A\cup (B\cup C) = (A\cup B)\cup C`$
+    - $`A\cap (B\cap C) = (A\cap B)\cap C`$
+  - Distributive Laws
+    - $`A\cup(B\cap C) = (A\cup B)\cap(A\cup C)`$
+    - $`A\cap(B\cup C) = (A\cap B)\cup(A\cap C)`$
+  - $`A\cup\emptyset = A`$
+  - $`A\cup U = U`$
+  - $`A\cap\emptyset = \emptyset`$
+  - $`A\cap U = A`$
+
+<br>
+
+### Concept) De-Morgan's Laws
+- Props.)
+  - $`\overline{(A\cup B)} = \bar{A} \cap \bar{B}`$
+  - $`\overline{(A\cap B)} = \bar{A} \cup \bar{B}`$
+- e.g.)
+  - $`\overline{\bar{A}\cap U} = A\cup\bar{U} = A\cup\emptyset = A`$
+  - $`(A\cap B)\cup \overline{(A\cup \bar{B})} = (A\cap B)\cup (\bar{A} \cap B) = (A\cup\bar{A})\cap B = U\cap B = B`$
+
+<br>
+
+### Concept) Cardinality
+- Def.)
+  - The number of elements in a finite set
+- Notation)
+  - $`|A|`$
+- e.g.)
+  - For $`S = \left\{ \{1\}, \{1,2\}  \right\}`$, $`|S|=2`$.
+
+<br>
+
+### Concept) Power Set
+- Def.)
+  - The power set of a set $`A`$ is the set of all subsets of $`A`$ and is denoted $`P(A)`$.
+- Prop.)
+  - $`\emptyset, A \in P(A)`$
+  - $`|P(A)| = 2^{|A|}`$
