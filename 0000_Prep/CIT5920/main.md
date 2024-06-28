@@ -8,6 +8,7 @@
 |2|[Set Operations](Notes/02.md)|- Element of $`(\in)`$ vs Subset of $`(\subset)`$ <br> - Cartesian Product <br> - Partition|
 |3|[Functions](Notes/03.md)|- Relation : Reflexive, Symmetric, Transitive, Equivalent, Anti-Symmetric <br> - Function, Domain, Co-Domain <br> - Ceiling, Floor Function <br> - One-One, Onto, Bijection|
 |4|[Sum and Product](Notes/04.md)|- Product Rule <br> - Sum Rule <br> - Bijection Principle|
+|5|[Permutations and Combinations](Notes/05.md)|- The k to 1 Rule|
 
 
 
