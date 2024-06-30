@@ -9,7 +9,8 @@
 |3|[Functions](Notes/03.md)|- Relation : Reflexive, Symmetric, Transitive, Equivalent, Anti-Symmetric <br> - Function, Domain, Co-Domain <br> - Ceiling, Floor Function <br> - One-One, Onto, Bijection|
 |4|[Sum and Product](Notes/04.md)|- Product Rule <br> - Sum Rule <br> - Bijection Principle|
 |5|[Permutations and Combinations](Notes/05.md)|- The k to 1 Rule|
-|6|[Tricky Combinatorics](Notes/06.md)|- |
+|6|[Tricky Combinatorics](Notes/06.md)|- Multiset|
+|7|[Basic Probability](Notes/07.md)|- Experiment, Sample Space, Event <br> - Probability Distribution : Uniform Distribution <br> - Complementary Probability|
 
 
 
