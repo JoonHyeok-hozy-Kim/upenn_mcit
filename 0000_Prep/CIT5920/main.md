@@ -11,8 +11,8 @@
 |5|[Permutations and Combinations](Notes/05.md)|- The k to 1 Rule|
 |6|[Tricky Combinatorics](Notes/06.md)|- Multiset|
 |7|[Basic Probability](Notes/07.md)|- Experiment, Sample Space, Event <br> - Probability Distribution : Uniform Distribution <br> - Complementary Probability|
-|8|[Probability of Unions](Notes/08.md)|- |
-|9|[Conditional Probability](Notes/09.md)|- Independence|
+|8|[Probability of Unions](Notes/08.md)|- ex) $${\color{red} \star \; Be careful! \star }$$|
+|9|[Conditional Probability](Notes/09.md)|- Independence <br> - ex) $${\color{red} \star \; Be careful! \star }$$|
 
 
 
