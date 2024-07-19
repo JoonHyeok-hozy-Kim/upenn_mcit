@@ -13,7 +13,7 @@
 |7|[Basic Probability](Notes/07.md)|- Experiment, Sample Space, Event <br> - Probability Distribution : Uniform Distribution <br> - Complementary Probability <br> - E.g.) File Safety $${\color{red} \star \; Be careful! \star }$$|
 |8|[Probability of Unions](Notes/08.md)|- ex) $${\color{red} \star \; Be careful! \star }$$|
 |9|[Conditional Probability](Notes/09.md)|- Independence <br> - ex) $${\color{red} \star \; Be careful! \star }$$|
-|10|[Expectations](Notes/10.md)|- Random Variable <br> - Expectation|
+|10|[Expectations](Notes/10.md)|- Random Variable <br> - Expectation <br> - Indicator Random Variable (Bernoulli Trial)|
 
 
 
