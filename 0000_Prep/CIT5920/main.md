@@ -16,6 +16,7 @@
 |10|[Expectations](Notes/10.md)|- Random Variable <br> - Expectation <br> - Indicator Random Variable (Bernoulli Trial)|
 |11|[Basic Logic](Notes/11.md)|- Proposition <br> - Boolean Operators : Conjunction, Disjunction, Exclusive (XOR), Not <br> - The Order of Operations for Boolean Algebra <br> - Truth Table <br> - De-Morgan <br> - Conditional Statements : Contrapositive, Converse, Inverse <br>- Predicate : Universal / Existential Quantifier|
 |12|[English with Logic](Notes/12.md)|- Free Variable, Bound Variable <br> - Nested Quantifiers : Same($`\forall x \forall y`$, $`\exists x \exists y`$), Alternate($`\forall x \exists y`$, $`\exists x \forall y`$) <br> - Domain Expansion <br> - Uniqueness <br> - Interchange between $`\wedge`$ and $`\rightarrow`$ $${\color{red} \star \; Be careful! \star }$$|
+|13|[Basics of Proof](Notes/13.md)|- |
 
 
 
