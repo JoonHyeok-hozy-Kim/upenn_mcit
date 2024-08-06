@@ -18,7 +18,7 @@
 |12|[English with Logic](Notes/12.md)|- Free Variable, Bound Variable <br> - Nested Quantifiers : Same($`\forall x \forall y`$, $`\exists x \exists y`$), Alternate($`\forall x \exists y`$, $`\exists x \forall y`$) <br> - Domain Expansion <br> - Uniqueness <br> - Interchange between $`\wedge`$ and $`\rightarrow`$ $${\color{red} \star \; Be careful! \star }$$|
 |13|[Basics of Proof](Notes/13.md)|- |
 |15|[Induction 1](Notes/15.md)|- Shaking Hands $${\color{red} \star \; Be \; careful! \star }$$|
-|16|[Induction 2](Notes/16.md)|- Strong Induction|
+|16|[Induction 2](Notes/16.md)|- Strong Induction $${\color{red} \star \; Be careful! \star }$$|
 
 
 
