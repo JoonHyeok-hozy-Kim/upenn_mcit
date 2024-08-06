@@ -530,8 +530,8 @@ so I can quickly adapt to your facilities.
 
 
 # 15. PWD  
-<img src="0000_Prep/CIT5920/Images/aj001.png" width="400px"><br>
-<img src="0000_Prep/CIT5920/Images/aj002.png" width="400px"><br>
+<img src="0000_Prep/CIT5920/Images/aj001.png" width="520px"><br>
+<img src="0000_Prep/CIT5920/Images/aj002.png" width="520px"><br>
 
 
 - (이미 진행중이라고 한다면)
