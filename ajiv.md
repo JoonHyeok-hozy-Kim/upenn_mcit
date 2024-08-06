@@ -18,6 +18,8 @@
   - [5)리더쉽- Unexpected work?](#5리더쉽--unexpected-work) <br>
 - [6. 트러블 환자랑](#6-트러블-환자랑) <br>
 - [7.  conflict](#7--conflict) <br>
+  - [Doctor and Colleague](#doctor-or-동료-)
+  - [일반적](#일반적)
 - [8. 가장 큰 첼린지 ? [나중에 보완 전직.]](#8-가장-큰-첼린지--나중에-보완-전직) <br>
 - [9. 실수](#9-실수) <br>
   - [10 스트레스 해결방법](#10-스트레스-해결방법) <br>
@@ -317,7 +319,7 @@ for signs of infection, thrombosis, or infiltration.
 - (It was determined that the patient's care would be better managed at another facility.)[(TOP)](#list-of-contents)
 
 # 7.  conflict
-- [Doctor or 동료 ]
+## [Doctor or 동료 ]
   - Once, I had a patient who needed to set dialysis ultrafiltration rate for 3kg, 
     - but his initial blood pressure was lower than usual,( around 100 millimeters of mercury systolic.) 
   - So, I decided to start the machine at 2.5kg,
@@ -343,8 +345,8 @@ for signs of infection, thrombosis, or infiltration.
     - and resolve the issue.
    
   - So, I think that effective communication is 
-    - essential for resolving conflicts.
-- (일반적)
+    - essential for resolving conflicts.[(TOP)](#list-of-contents)
+## (일반적)
   - To begin with, we often work under high pressure, so I try not to take anything personally. 
   - Instead, I think communication is the most important key.
   - so I would ask the colleague who I am in trouble with to have a conversation with me. 
