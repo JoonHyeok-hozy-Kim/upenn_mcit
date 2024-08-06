@@ -535,26 +535,28 @@ so I can quickly adapt to your facilities.
 
 
 - (이미 진행중이라고 한다면)
-"Could you provide an update 
-on which stage that clinic stands in the PWD process?")
+  - Could you provide an update 
+  - on which stage that clinic stands in the PWD process?"
 
-[구글맵.]
-Could you tell me the spelling of the name of the clinic?
- I want to search for it on Google Maps.
-I'm open to a commute of up to an hour and a half.
+- [구글맵.]
+  - Could you tell me the spelling of the name of the clinic?
+  -  I want to search for it on Google Maps.
+  -  I'm open to a commute of up to an hour and a half. [(TOP)](#list-of-contents)
 
-[연봉제안 하라면 ]
-I checked the indeed and the glassdoor and they said the average salary for dialysis is about 41 to 42 dollars per hour
 
 # 16. 연봉
-[연봉]
-I think that’s reasonable. 
+- [연봉제안 하라면 ]
+  - I checked the indeed and the glassdoor and they said the average salary for dialysis is about 41 to 42 dollars per hour
 
-Thanks for the offer ,
-but I can assure you that my 6 years of nursing experience
- and my familiary with the FMC machines will be helpful for your company and for the patients. besides considering the living cost of new Jersy
- 00 dollars per hours is not enough. 
-Could you raise it up a bit more. 
+- [연봉]
+  - I think that’s reasonable. 
+
+- [너무 적은 경우]
+  - Thanks for the offer ,
+  - but I can assure you that my 6 years of nursing experience
+  - and my familiarity with the FMC machines will be helpful for your company and for the patients. besides considering the living cost of new Jersy
+  - 00 dollars per hours is not enough. 
+  - Could you raise it up a bit more. [(TOP)](#list-of-contents)
 
 
 [(TOP)](#list-of-contents)
