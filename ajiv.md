@@ -529,9 +529,10 @@ so I can quickly adapt to your facilities.
   - to gain as much experience with acute cases as possible.[(TOP)](#list-of-contents)
 
 
-# 15. PWD
-![](0000_Prep/CIT5920/Images/aj001.png)    
-![](0000_Prep/CIT5920/Images/aj002.png)    
+# 15. PWD  
+<img src="0000_Prep/CIT5920/Images/aj001.png" width="400px"><br>
+<img src="0000_Prep/CIT5920/Images/aj002.png" width="400px"><br>
+
 
 - (이미 진행중이라고 한다면)
 "Could you provide an update 
