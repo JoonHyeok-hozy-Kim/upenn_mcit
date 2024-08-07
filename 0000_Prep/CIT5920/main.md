@@ -19,7 +19,7 @@
 |13|[Basics of Proof](Notes/13.md)|- |
 |15|[Induction 1](Notes/15.md)|- Shaking Hands $${\color{red} \star \; Be \; careful! \star }$$|
 |16|[Induction 2](Notes/16.md)|- Strong Induction $${\color{red} \star \; Be careful! \star }$$|
-|17|[Recursion](Notes/17.md)|- |
+|17|[Recursion](Notes/17.md)|- Big-O <br> - Recurrence <br> - First Order Linear Recurrences with Constant Coefficients : $`T(n)=rT(n-1) + g(n)`$ <br> - Binary Search Recurrence|
 
 
 
