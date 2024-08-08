@@ -20,7 +20,7 @@
 |15|[Induction 1](Notes/15.md)|- Shaking Hands $${\color{red} \star \; Be \; careful! \star }$$|
 |16|[Induction 2](Notes/16.md)|- Strong Induction $${\color{red} \star \; Be careful! \star }$$|
 |17|[Recursion](Notes/17.md)|- Big-O <br> - Recurrence <br> - First Order Linear Recurrences with Constant Coefficients : $`T(n)=rT(n-1) + g(n)`$ $${\color{red} \star \; Be careful! \star }$$ <br> - Binary Search Recurrence|
-|18|[Miscellaneous Topics in Recursion](Notes/18.md)|- Time Complexity Expressions : $`\Omega`$(Big-Omega), $`\Theta`$(Big-Theta) <br> - Algorithm for Solving Recurrence Relations : Fibonacci $${\color{red} \star \; Be careful! \star }$$|
+|18|[Miscellaneous Topics in Recursion](Notes/18.md)|- Time Complexity Expressions : $`\Omega`$(Big-Omega), $`\Theta`$(Big-Theta) <br> - Algorithm for Solving Recurrence Relations : Fibonacci $${\color{red} \star \; Be careful! \star }$$ <br> - Master Theorem $${\color{red} \star \; Be careful! \star }$$|
 
 
 
