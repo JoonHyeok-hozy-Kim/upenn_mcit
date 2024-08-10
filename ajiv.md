@@ -3,6 +3,7 @@
 - [0. 이력서](#이력서)
 - [1. 자기소개](#1-자기소개) <br>
   - [1) 왜 투석실 옮겼는지 / 투석실 만족(enjoy)하는지?](#11-자기소개--왜-투석실-옮겼는지--투석실-만족enjoy하는지) <br>
+  - [자기소개 -병원 소개](#1자기소개--병원-소개)
   - [1)자기소개 -EMR](#1자기소개--emr) <br>
   - [1)자기소개 -투석 간호사 일](#1자기소개--투석-간호사-일) <br>
 - [2. FMC 지원 동기](#2-fmc-지원-동기) <br>
@@ -10,7 +11,7 @@
   - [3)장단점-간호사 장, 단점](#3장단점-간호사-장-단점) <br>
 - [4. 팀워크 경험](#4-팀워크-경험) <br>
   - [4)팀워크- 업무가 많을 때 대처](#4팀워크--업무가-많을-때-대처) <br>
-- [5.리더십 경험](#5-리더십--독립적으로-일한-경험) <br>
+- [5.리더십 경험](#5리더십-경험) <br>
   - [5) 리더십- 독립적으로 일한 경험](#5-리더십--독립적으로-일한-경험) <br>
   - [5)리더쉽- 팀.개인 뭐가 더 좋아? ](#5리더쉽--팀개인-뭐가-더-좋아) <br>
   - [5)리더십- 리더쉽 뭐가 더 좋아?](#5리더십--리더쉽-뭐가-더-좋아) <br>
@@ -22,7 +23,7 @@
   - [일반적](#일반적) <br>
 - [8. 가장 큰 첼린지 ? [나중에 보완 전직.]](#8-가장-큰-첼린지--나중에-보완-전직) <br>
 - [9. 실수](#9-실수) <br>
-  - [10 스트레스 해결방법](#10-스트레스-해결방법) <br>
+- [10 스트레스 해결방법](#10-스트레스-해결방법) <br>
   - [8) 스트레스 -간호사로서 스트레스](#8-스트레스--간호사로서-스트레스) <br>
 - [11 취미](#11-취미) <br>
 - [12. 5년 후 계획](#12-5년-후-계획) <br>
@@ -418,7 +419,8 @@ for signs of infection, thrombosis, or infiltration.
   - in Adult Gerontology 재런탈러지 Care 
   - to enhance(인헨스) my nursing care skills and knowledge for dialysis patients. 
 
-- Also, I hope to buy a small house in the  US[(TOP)](#list-of-contents)
+- Also, I hope to buy a small house in the  US.
+- (Many dialysis patients are elderly. Studying gerontology will help us better understand their specific needs.) [(TOP)](#list-of-contents)
 
 # 13. 간호사가 된 이유
 - I went into nursing 
@@ -466,29 +468,40 @@ for signs of infection, thrombosis, or infiltration.
 - In Korea, summers are very hot, and winters are very cool[(TOP)](#list-of-contents)
 
 # 16. 왜 너를?
-- I am familiar with the Fresenius dialysis machine 
+- I am familiar with the Fresenius dialysis machine, 
 so I can quickly adapt to your facilities.
-- Besides, in Korea, I worked without technicians supporting
-  - the dialysis treatment,
 
-  - so I can handle most of the situations during the treatment. 
-- Additionally, during the past six years back in the NICU,
-  - I sometimes led the team of nurses and 
-  - this leadership experience will also be helpful.[(TOP)](#list-of-contents)
+- Besides, in Korea, I worked without technicians.
+- I have a comprehensive understanding of the dialysis process, 
+-and I can handle most of the situations during treatment.
+
+- Additionally, during the past six years in the NICU,
+- I sometimes led the team of nurses, 
+- and this leadership experience will also be helpful.
+[(TOP)](#list-of-contents)
 
 
 # 17. 마무리 질문
-- Could you tell me the nurse-to-patient ratios at FMC?
-- May I ask you how long the orientation program is for new RNs typically at FMC? 
-- I'm curious about the specific locations within Maryland. 
-- Would it be possible for me to apply for a position in an acute dialysis unit?"
-
+- Could you please tell me the average number of nurses, technicians, and patients per shift in your clinic?
+- How do you support your nurses to advance in their careers?
 - Could you please let me know when I might expect to hear the result?
-- Thank you for taking the time to interview me.
-- (Could you describe the type orientation or training you provide to new hires?)
-- (Are there any opportunities to work in other regions besides Maryland?)[(TOP)](#list-of-contents)
----------------------------------------------------------------------------------------------------------------
+- Thank you for taking the time to interview me. [(TOP)](#list-of-contents)
 
+
+# 18.필요한 표현
+- I can handle a 1-hour commute. I'm already doing it.
+- So, are you asking me ~~? 
+  - Did I get your question correctly?
+- Could you give me several seconds to think about it?
+- Many dialysis patients are elderly. 
+  - Studying gerontology will help me better understand their specific needs.
+- I've done some research on Sellersville, and I like its peaceful atmosphere and beautiful surroundings. 
+- It seems like a wonderful place to live and work.
+
+- To give you an example of my experiences at my current job,
+- Sorry, but I can't come up with such an experience.
+
+<br>
 
 [신규추가]
 
