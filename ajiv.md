@@ -445,9 +445,7 @@ for signs of infection, thrombosis, or infiltration.
 - I am so thrilled to start a new journey there.[(TOP)](#list-of-contents)
 
 # 15. 메릴랜드
-- "I'm looking for a job in Maryland, Virginia, or Massachusetts. 
-(Philadelphia or New Jersey. )
-- My top choice is Maryland.
+- I'm looking for a job in Maryland.
 
 - I am familiar with Maryland because the 
   - famous Johns Hopkins and Georgetown University are there.
@@ -461,12 +459,12 @@ for signs of infection, thrombosis, or infiltration.
 - A 24-month contract is okay with me because
   - my fiancé is pursuing a doctor’s degree, 
   - which typically takes 5 to 6 years, in Philadelphia. 
-- Additionally, I am satisfied with my current role as a dialysis nurse.[(TOP)](#list-of-contents)
+- Additionally, I am satisfied with my current role as a dialysis nurse. [(TOP)](#list-of-contents)
 
 # 13)메릴랜드-날씨
 - I'm okay with the weather of Maryland because 
 - I'm used to the four distinct seasons of South Korea.
-- In Korea, summers are very hot, and winters are very cool[(TOP)](#list-of-contents)
+- In Korea, summers are very hot, and winters are very cold. [(TOP)](#list-of-contents)
 
 # 16. 왜 너를?
 - I am familiar with the Fresenius dialysis machine, 
@@ -500,7 +498,7 @@ so I can quickly adapt to your facilities.
 - It seems like a wonderful place to live and work.
 
 - To give you an example of my experiences at my current job,
-- Sorry, but I can't come up with such an experience.
+- Sorry, but I can't come up with such an experience. [(TOP)](#list-of-contents)
 
 <br>
 
