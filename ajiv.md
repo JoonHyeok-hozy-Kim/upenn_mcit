@@ -253,7 +253,7 @@ for the regular and long-term treatment.
 - I prioritize tasks based on patient vital signs and needs. 
 - I create a written list to make sure I don't miss any lower-priority tasks. 
 - And if I find my workload is too much to handle,
-  - I’ll ask my supervisor for help.[(TOP)](#list-of-contents)
+  - I’ll ask my supervisor for help. [(TOP)](#list-of-contents)
 
 # 5.리더십 경험
 - Back in the NICU, as a senior nurse, 
@@ -266,7 +266,7 @@ for the regular and long-term treatment.
 - On the other hand, for the newer nurses,
   - I assigned the tasks they could handle,
   - closely monitoring their progress and
-  - providing support when needed.[(TOP)](#list-of-contents)
+  - providing support when needed. [(TOP)](#list-of-contents)
 
 # 5) 리더십- 독립적으로 일한 경험
 - At our clinic, each shift has five teams.
@@ -275,7 +275,7 @@ for the regular and long-term treatment.
 - After three months of working as a dialysis nurse,
   - my manager asked me to take on the single-nurse team.
   - Eager to demonstrate my abilities, 
-- I accepted the challenge and successfully managed patient care independently.[(TOP)](#list-of-contents)
+- I accepted the challenge and successfully managed patient care independently. [(TOP)](#list-of-contents)
 
 # 5)리더쉽- 팀.개인 뭐가 더 좋아? 
 - I am fully capable(케이퍼블) of working independently,
@@ -402,7 +402,8 @@ for the regular and long-term treatment.
   - during the next treatment with the doctor’s confirmation.
 - This was because the patient received the injection once a week.
 
-- This incident reinforced my belief in the importance of honesty.[(TOP)](#list-of-contents)
+- This incident reinforced my belief in the importance of honesty.
+- (If I hadn't told the truth, the patient would have skipped the injection for a week.) [(TOP)](#list-of-contents)
 
 # 10 스트레스 해결방법
 - I love riding a bicycle and I’m a huge foodie.
