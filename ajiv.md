@@ -37,13 +37,14 @@
 - [16. 왜 너를?](#16-왜-너를) <br>
 - [17. 마무리 질문](#17-마무리-질문) <br>
 - [18.필요한 표현](#18필요한-표현)
-- [18 테크니션이랑?](#18-테크니션이랑) <br>
-- [23. Disagreement with your manager](#23-disagreement-with-your-manager) <br>
-- [25. 인지장애](#25-인지장애) <br>
-- [26. 5am?](#26-5am) <br>
-- [14. acute](#14-acute) <br>
-- [15. PWD](#15-pwd)
-- [16. 연봉](#16-연봉)
+- [신규추가](#신규추가)
+  - [18 테크니션이랑?](#18-테크니션이랑) <br>
+  - [23. Disagreement with your manager](#23-disagreement-with-your-manager) <br>
+  - [25. 인지장애](#25-인지장애) <br>
+  - [26. 5am?](#26-5am) <br>
+  - [14. acute](#14-acute) <br>
+  - [15. PWD](#15-pwd)
+  - [16. 연봉](#16-연봉)
 
 <br>
 
@@ -511,8 +512,7 @@ so I can quickly adapt to your facilities.
 
 <br>
 
-[신규추가]
-
+# 신규추가
 # 18 테크니션이랑?
 - We don’t have technicians in Korean dialysis centers. 
 - So, nurses deal with most of the dialysis procedures
