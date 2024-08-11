@@ -120,7 +120,8 @@ for the regular and long-term treatment.
 
 
 # 1)자기소개 -병원 소개
-- The clinic where I work is one of the largest hemodialysis clinics in Seoul, with a capacity of 57 beds and equipped with 45 Fresenius 5008 dialysis machines and 12 Nipro dialysis machines. 
+- The clinic where I work is one of the largest hemodialysis clinics in Seoul, 
+  - with a capacity of 57 beds and equipped with 45 Fresenius 5008 dialysis machines and 12 Nipro dialysis machines. 
 - (Whether it's the FMC 5008 model or another, the operating principles are quite similar, so I can learn quickly..)
 - And the nurse-to-patient ratio is supposed to be 1:6,
   - My patient assignment fluctuates, ranging from six patients to 18 patients.
