@@ -13,27 +13,28 @@
 - [4. 팀워크 경험](#4-팀워크-경험)
   - [4.1 팀워크- 업무가 많을 때 대처](#41-팀워크--업무가-많을-때-대처)
 - [5.리더십 경험](#5리더십-경험)
-  - [5.1 리더십- 독립적으로 일한 경험](#51-리더십--독립적으로-일한-경험)
-  - [5.2 리더쉽- 팀.개인 뭐가 더 좋아?](#52-리더쉽--팀개인-뭐가-더-좋아)
-  - [5.3 리더십- 리더쉽 뭐가 더 좋아?](#53-리더십--리더쉽-뭐가-더-좋아)
-  - [5.4 리더쉽- 리더거나, 팀원 일 때](#54-리더쉽--리더거나-팀원-일-때)
-  - [5.5 리더쉽- Unexpected work?](#55-리더쉽--unexpected-work)
+  - [5.1 독립적으로 일한 경험](#51-독립적으로-일한-경험)
+  - [5.2 팀.개인 뭐가 더 좋아?](#52-팀개인-뭐가-더-좋아) 
+  - [5.3 리더쉽 뭐가 더 좋아?](#53-리더쉽-뭐가-더-좋아)
+  - [5.4 리더거나, 팀원 일 때](#54-리더거나-팀원-일-때)
+  - [5.5 Unexpected work?](#55-unexpected-work)
 - [6. 트러블 환자랑](#6-트러블-환자랑)
 - [7. conflict](#7-conflict)
-  - [7.1 Doctor or 동료](#71-doctor-or-동료)
+  - [7.1 Doctor or 동료](#71-doctor-or-동료) 
   - [7.2 일반적](#72-일반적)
-- [8. 가장 큰 첼린지 ? \[나중에 보완 전직.\]](#8-가장-큰-첼린지--나중에-보완-전직)
+- [8. 가장 큰 첼린지 ? [나중에 보완 전직.]](#8-가장-큰-첼린지--나중에-보완-전직)
 - [9. 실수](#9-실수)
 - [10 스트레스 해결방법](#10-스트레스-해결방법)
-  - [10.1 스트레스 -간호사로서 스트레스](#101-스트레스--간호사로서-스트레스)
+  - [10.1 간호사로서 스트레스](#101-간호사로서-스트레스)
 - [11. 취미](#11-취미)
 - [12. 5년 후 계획](#12-5년-후-계획)
 - [13. 간호사가 된 이유](#13-간호사가-된-이유)
+  - [13.1 간호사-모험](#131-간호사-모험)
 - [14. 미국에 오고 싶은 이유](#14-미국에-오고-싶은-이유)
 - [15. 메릴랜드](#15-메릴랜드)
   - [15.1 Sellersville](#151-sellersville)
-  - [15.2 메릴랜드-계약기간](#152-메릴랜드-계약기간)
-  - [15.3 메릴랜드-날씨](#153-메릴랜드-날씨)
+  - [15.2 계약기간](#152-계약기간)
+  - [15.3 날씨](#153-날씨)
 - [16. 왜 너를?](#16-왜-너를)
 - [17. 마무리 질문](#17-마무리-질문)
 - [18.필요한 표현](#18필요한-표현)
@@ -43,7 +44,7 @@
   - [21. 인지장애](#21-인지장애)
   - [22. 5am?](#22-5am)
   - [23. acute](#23-acute)
-  - [24. PWD](#24-pwd)
+  - [24. PWD  ](#24-pwd)
   - [25. 연봉](#25-연봉)
 
 <br>
@@ -166,7 +167,7 @@ for the regular and long-term treatment.
   - I'm currently studying for the TOEFL.
   - I will make sure to satisfy the Maryland endorsement English exam score.
 - [운전면허]
-  - I don't have a driver's license yet, but I am planning to obtain my driver's license next month.
+  - I don't have a driver's license yet, but I am planning to obtain it next month.
 
 
 
@@ -268,7 +269,7 @@ for the regular and long-term treatment.
   - closely monitoring their progress and
   - providing support when needed. [(TOP)](#list-of-contents)
 
-# 5.1 리더십- 독립적으로 일한 경험
+# 5.1 독립적으로 일한 경험
 - At our clinic, each shift has five teams.
 - Three teams consist of two nurses, 
 - while the rest two team are staffed by a single nurse. 
@@ -277,7 +278,7 @@ for the regular and long-term treatment.
   - Eager to demonstrate my abilities, 
 - I accepted the challenge and successfully managed patient care independently. [(TOP)](#list-of-contents)
 
-# 5.2 리더쉽- 팀.개인 뭐가 더 좋아? 
+# 5.2 팀.개인 뭐가 더 좋아? 
 - I am fully capable(케이퍼블) of working independently,
   - but I prefer to work as a team.
 - By working together, we can achieve better patient outcomes.
@@ -285,7 +286,7 @@ for the regular and long-term treatment.
 - I believe in the importance of teamwork, 
   - so I'm always willing to lend a helping hand to my colleagues. [(TOP)](#list-of-contents)
 
-# 5.3 리더십- 리더쉽 뭐가 더 좋아?
+# 5.3 리더쉽 뭐가 더 좋아?
 - I think I work best in environments where hands-on leadership and 
   - self-sufficiency are balanced. 
 - For example, I am in charge of a group consisted of 6 patients,
@@ -293,13 +294,13 @@ for the regular and long-term treatment.
 - But I am also open to seeking advice from my supervisor
   - on complex cases or adjusting dialysis schedules.[(TOP)](#list-of-contents)
 
-# 5.4 리더쉽- 리더거나, 팀원 일 때
+# 5.4 리더거나, 팀원 일 때
 - When I am a leader, I quickly prioritize tasks and delegate them efficiently. 
 - On the other hand, if I am a follower,
   - I follow my leader’s directions responsibly and 
   - keep my leader informed of important matters.[(TOP)](#list-of-contents)
 
-# 5.5 리더쉽- Unexpected work?
+# 5.5 Unexpected work?
 - I remember one day when a nursing assistant was out sick. 
 - The clinic was short-staffed, 
   - so I was asked to help with bed making 
@@ -409,7 +410,7 @@ for the regular and long-term treatment.
 - I love riding a bicycle and I’m a huge foodie.
 - These days, I enjoy going to cafes and restaurants by bicycle. 
 - I can eat delicious food and burn off those extra calories at the same time.
-# 10.1 스트레스 -간호사로서 스트레스
+# 10.1 간호사로서 스트레스
 - As nurses, we have a big responsibility to keep our patients safe.
 - Thus, we have to be extra careful. 
 - To minimize errors, I prioritize tasks and double-check critical aspects.[(TOP)](#list-of-contents)
@@ -430,10 +431,9 @@ for the regular and long-term treatment.
 - I went into nursing 
   - because I'm passionate about taking care of others 
   - and helping them.
-11)간호사-모험
+# 13.1 간호사-모험
 - I want to gain diverse clinical experience 
   - to expand my skills and knowledge. 
-
   - Ultimately, my career goal is to specialize in acute dialysis nursing.[(TOP)](#list-of-contents)
 
 # 14. 미국에 오고 싶은 이유
@@ -462,13 +462,13 @@ for the regular and long-term treatment.
   - and I like its peaceful atmosphere and beautiful surroundings. 
 - It seems like a wonderful place to live and work.
 
-# 15.2 메릴랜드-계약기간
+# 15.2 계약기간
 - A 24-month contract is okay with me because
   - my fiancé is pursuing a doctor’s degree, 
   - which typically takes 5 to 6 years, in Philadelphia. 
 - Additionally, I am satisfied with my current role as a dialysis nurse. [(TOP)](#list-of-contents)
 
-# 15.3 메릴랜드-날씨
+# 15.3 날씨
 - I'm okay with the weather of Maryland because 
 - I'm used to the four distinct seasons of South Korea.
 - In Korea, summers are very hot, and winters are very cold. [(TOP)](#list-of-contents)
