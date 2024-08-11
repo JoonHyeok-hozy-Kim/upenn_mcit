@@ -120,35 +120,13 @@ for the regular and long-term treatment.
 
 
 # 1)자기소개 -병원 소개
-- The clinic has a capacity of 57 patients, but they are not always full. 
-- Typically, we have around 48 patients per shift."
-
-- So, Eight nurses work per shift, operating on the three-shift system.
+- The clinic where I work is one of the largest hemodialysis clinics in Seoul, with a capacity of 57 beds and equipped with 45 Fresenius 5008 dialysis machines and 12 Nipro dialysis machines. 
+- (Whether it's the FMC 5008 model or another, the operating principles are quite similar, so I can learn quickly..)
 - And the nurse-to-patient ratio is supposed to be 1:6,
-
-- My patient assignment fluctuates, ranging from  six patients to twelve patients.
-- I'm currently caring for 12 patients with one other nurse. 
-- I am in charge of a group of 6 patients.
-  - (I am currently caring for 18 patients with two other nurses)
-
-- I have experience caring for patients who 
-  - are recently started dialysis, chronic dialysis patients, 
-  - and patients with permanent catheters.
-    - (polycystic kidney disease, gestational hypertension, diabetic ESRD, and hypertensive ESRD.)
-
-- I have experience working with  Dialysis Machines, infusion pumps, 이케이지, cardiac monitors, and defibrillators[(TOP)](#list-of-contents)
-- [엔클]
-  - I have a New York State nursing license issued in January 2023.
-- [학교 졸업]
-  - I graduated from Hanlim University's Nursing Department in February 2018.
-- [영어]
-  - I have a TOEIC score, but I haven't taken the TOEFL or IELTS test yet. 
-  - I'm currently studying for the TOEFL.
-  - I will make sure to satisfy the Maryland endorsement English exam score.
-- [운전면허]
-  - I don't have a driver's license yet. 
-  - But my older sister bought a car, 
-  - so I'm going to get my license and practice driving.[(TOP)](#list-of-contents)
+  - My patient assignment fluctuates, ranging from six patients to 18 patients.
+  - I'm currently caring for 12 patients with one other nurse. 
+- Eight nurses work per shift, operating on the three-shift system.
+ - I have experience operating dialysis machines, infusion pumps, EKG, cardiac monitors, and defibrillators in a clinical setting. [(TOP)](#list-of-contents)
 
 # 1)자기소개 -EMR
 - We use both paper documents and electronic medical records
