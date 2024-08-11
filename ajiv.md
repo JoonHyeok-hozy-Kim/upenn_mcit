@@ -279,9 +279,11 @@ for the regular and long-term treatment.
 
 # 5)리더쉽- 팀.개인 뭐가 더 좋아? 
 - I am fully capable(케이퍼블) of working independently,
-  - but I prefer to work as a team
+  - but I prefer to work as a team.
 - By working together, we can achieve better patient outcomes.
-- Sharing ideas and supporting each other improves overall care.[(TOP)](#list-of-contents)
+- Sharing ideas and supporting each other improves overall care.
+- I believe in the importance of teamwork, 
+  - so I'm always willing to lend a helping hand to my colleagues. [(TOP)](#list-of-contents)
 
 # 5)리더십- 리더쉽 뭐가 더 좋아?
 - I think I work best in environments where hands-on leadership and 
