@@ -475,6 +475,7 @@ for the regular and long-term treatment.
 - In Korea, summers are very hot, and winters are very cold. [(TOP)](#list-of-contents)
 
 # 16. 왜 너를?
+- (I can contribute my ability to enhance patient optimal experience.)
 - I am familiar with the Fresenius dialysis machine, 
 so I can quickly adapt to your facilities.
 
