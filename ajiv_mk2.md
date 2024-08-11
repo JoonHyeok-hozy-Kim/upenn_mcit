@@ -135,7 +135,7 @@ for the regular and long-term treatment.
 - We use both paper documents and electronic medical records
 - Paper documents are used to record patient condition and blood pressure .
   - Yes. I also used EMR in previous hospital for six years.
-  - (I'm not sure what specific EMR system I used)
+  - (I'm not sure what specific EMR system I used) [(TOP)](#list-of-contents)
 
 # 1.4 투석 간호사 일
 - I have experience caring for a diverse patient population, 
