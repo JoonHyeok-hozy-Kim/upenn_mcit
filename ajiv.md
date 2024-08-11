@@ -166,7 +166,7 @@ for the regular and long-term treatment.
   - I'm currently studying for the TOEFL.
   - I will make sure to satisfy the Maryland endorsement English exam score.
 - [운전면허]
-  - I don't have a driver's license yet, but I plan to obtain my driver's license next month.
+  - I don't have a driver's license yet, but I am planning to obtain my driver's license next month.
 
 
 
