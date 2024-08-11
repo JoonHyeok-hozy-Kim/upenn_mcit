@@ -3,9 +3,10 @@
 - [0. 이력서](#이력서)
 - [1. 자기소개](#1-자기소개) <br>
   - [1) 왜 투석실 옮겼는지 / 투석실 만족(enjoy)하는지?](#11-자기소개--왜-투석실-옮겼는지--투석실-만족enjoy하는지) <br>
-  - [자기소개 -병원 소개](#1자기소개--병원-소개)
-  - [1)자기소개 -EMR](#1자기소개--emr) <br>
-  - [1)자기소개 -투석 간호사 일](#1자기소개--투석-간호사-일) <br>
+  - [ -병원 소개](#1자기소개--병원-소개)
+  - [EMR](#1자기소개--emr) <br>
+  - [투석 간호사 일](#1자기소개--투석-간호사-일) <br>
+  - [내 자격](#내-자격)
 - [2. FMC 지원 동기](#2-fmc-지원-동기) <br>
 - [3. 장 단점](#3-장-단점) <br>
   - [3)장단점-간호사 장, 단점](#3장단점-간호사-장-단점) <br>
@@ -154,6 +155,20 @@ for the regular and long-term treatment.
 - I closely monitor for dialysis-related complications 
   - like muscle cramps, nausea, vomiting, or hypotension,
   - while also considering underlying medical conditions that might impact their treatment." [(TOP)](#list-of-contents)
+
+# 내 자격
+- [엔클]
+  - I have a New York State nursing license issued in January 2023.
+- [학교 졸업]
+  - I graduated from Hanlim University's Nursing Department in February 2018.
+- [영어]
+  - I have a TOEIC score, but I haven't taken the TOEFL or IELTS test yet. 
+  - I'm currently studying for the TOEFL.
+  - I will make sure to satisfy the Maryland endorsement English exam score.
+- [운전면허]
+  - I don't have a driver's license yet, but I plan to obtain my driver's license next month.
+
+
 
 # 2. FMC 지원 동기
 - I applied for the dialysis RN position at FMC
