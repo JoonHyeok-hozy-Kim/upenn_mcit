@@ -136,18 +136,20 @@ for the regular and long-term treatment.
   - (I'm not sure what specific EMR system I used)
 
 # 1)자기소개 -투석 간호사 일
-- For a dialysis patient, I would focus on assessing their vascular access, 
-  - vital signs, fluid status, dialysis-related complications, 
-  - and any other underlying medical conditions.
+- I have experience caring for a diverse patient population, 
+  - including those newly initiated on hemodialysis,
+  - patients with permanent catheters, 
+- and chronic dialysis patients 
+  - with underlying conditions 
+  - such as polycystic kidney disease, gestational hypertension,
+  - diabetic ESRD, and hypertensive ESRD.
+- For dialysis patients, I would focus on assessing their vascular access, vital signs, fluid status dialysis-related complications, and any other underlying medical conditions.
 
-- I would access for signs of 
-  1. Vascular access: Carefully inspect and palpate the access site 
-for signs of infection, thrombosis, or infiltration.
-  2. Vital signs: Monitor blood pressure, heart rate, respiratory rate,
- and temperature for any abnormalities.
-  3. Fluid status: Assess for signs of fluid overload or dehydration, 
-     1. (such as edema, shortness of breath, or hypotension.)
-  4. Complications: Look for signs of dialysis-related complications,( including muscle cramps, nausea, vomiting, and hypotension.)[(TOP)](#list-of-contents)
+- I carefully inspect and palpate the access site for signs of infection, thrombosis, or infiltration.
+- I monitor blood pressure, heart rate, respiratory rate, and temperature for any abnormalities. 
+- I assess for fluid overload or dehydration, such as edema, shortness of breath, or hypotension. 
+- I closely monitor for dialysis-related complications like muscle cramps, nausea, vomiting, or hypotension,
+  - while also considering underlying medical conditions that might impact their treatment." [(TOP)](#list-of-contents)
 
 # 2. FMC 지원 동기
 - I applied for the dialysis RN position at FMC
