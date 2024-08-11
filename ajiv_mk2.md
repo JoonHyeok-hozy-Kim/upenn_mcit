@@ -577,7 +577,8 @@ for the regular and long-term treatment.
 - [너무 적은 경우]
   - Thanks for the offer ,
   - but I can assure you that my 6 years of nursing experience
-  - and my familiarity with the FMC machines will be helpful for your company and for the patients. besides considering the living cost of new Jersy
+  - and my familiarity with the FMC machines will be helpful for your company and for the patients. 
+  - Besides, considering the living cost of Pennsylvania
   - 00 dollars per hours is not enough. 
   - Could you raise it up a bit more. [(TOP)](#list-of-contents)
 
