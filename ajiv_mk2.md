@@ -249,6 +249,19 @@ for the regular and long-term treatment.
   - our team successfully completed the treatments.
 - (I'm familiar with EMR, so I can work quickly.) [(TOP)](#list-of-contents)
 
+# 4.0 CPR
+- I haven't experienced a CPR situation during dialysis. 
+- If I encounter a cardiac arrest during a dialysis treatment, 
+  - I would immediately initiate a code blue. 
+- My primary focus would be to ensure patient safety by initiating chest compressions, 
+  - securing the airway, and rescue breathing, and preparing for advanced life support. 
+- I would also alert my team to gather necessary equipment, 
+  - such as an AED and emergency medications.
+- In addition, in the dialysis unit, 
+  - I would coordinate with my team to return the patient's blood 
+  - and secure the vascular access. 
+- I would also provide support and information to the patient's family during this difficult time.
+
 
 # 4.1 팀워크- 업무가 많을 때 대처
 - I prioritize tasks based on patient vital signs and needs. 
