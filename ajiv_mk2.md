@@ -47,6 +47,9 @@
   - [23. acute](#23-acute)
   - [24. PWD  ](#24-pwd)
   - [25. 연봉](#25-연봉)
+- [26. Shannon Interview 2](#26-shannon-interview-2)
+  - [26-1. 필리 말고 다른데도](#26-1-필리말고-다른데도-연결해줘)
+  - [26-2. 인터뷰 중 보완할만한거](#26-2-혹시-인터뷰-중-보완할게-있는지)
 
 <br>
 
@@ -595,6 +598,12 @@ for the regular and long-term treatment.
   - Besides, considering the living cost of Pennsylvania
   - 00 dollars per hours is not enough. 
   - Could you raise it up a bit more. [(TOP)](#list-of-contents)
+
+# 26. Shannon Interview 2
+## 26-1. 필리말고 다른데도 연결해줘.
+
+
+## 26-2. 혹시 인터뷰 중 보완할게 있는지?
 
 
 [(TOP)](#list-of-contents)
