@@ -601,25 +601,64 @@ for the regular and long-term treatment.
   - Could you raise it up a bit more. [(TOP)](#list-of-contents)
 
 # 26. Shannon Interview 2
-## 26-1. 필리말고 다른데도 연결해줘.
-- 필라델피아에서 먼 지역이어도 괜찮으니, international nurse에 대한 수요가 많아서 이민수속을 빠르게 도와줄 수 있는 지역과 연결해 줄 수 있는지?
-  - I really appreciate your efforts to consider my request to work near Philadelphia. 
-  - However, I'm concerned that since there are many local nurses in the Philadelphia area, 
-    - facilities may not have a high demand for international nurses. 
-  - For me, the most important thing is to start the immigration process as quickly as possible 
-    - and arrive in the US soon. 
-  - So, even if it's far from Pennsylvania, could you introduce me to a healthcare facility 
-    - that has a high demand for international nurses? [(TOP)](#list-of-contents)
-  
+## 26-1. 맘에 드는 곳 나오면
+- Awesome!
+- That’s a great news!
+- Thank you for your effort.
+- Do I have to do the interview again? 
+- (해야한다고 하면) I will make sure to do well on the interview.
+- (이메일) May I take some time to think about it until tomorrow and email you back? [(Top)](#shannon-interview-2)
 
-## 26-2. 혹시 인터뷰 중 보완할게 있는지?
-- 혹시 내가 담당자와의 인터뷰 중에 부족했거나 보완하면 좋을 만한 점은 없는지?
-  - Shannon, I am wondering if there are some points 
-    - that I can improve during the interview. 
-  - I really want to do well on interviews 
-    - to impress employers and get a job. 
-  - Any advice or recommendations will be very helpful. [(TOP)](#list-of-contents)
-  
+
+## 26-2 기다려!라 하면
+- In that case, I'll be patient.
+- If an opportunity arises, please let me know.
+
+ <혹시 인터뷰 중 보완할게 있는지?>
+By the way, was my previous interview with Marybeth was fine?
+I am wondering if there are some points that I can improve.
+I really want to do well so that I can impress employers and get a job.
+Any advice or recommendation will be very helpful.
+
+<필리말고 다른데도 연결해줘> 
+I really appreciate your efforts to consider my situation and forward me to Philadelphia.
+But, even if it's far from Pennsylvania, could you introduce me to a center
+that has a high demand for international nurses? 
+The reason that I’m saying this is because I'm concerned that 
+facilities in Philly may not have a high demand for international nurses
+because there are already many local nurses.
+For me, the most important thing is to start the immigration process as soon as possible.
+
+<가고 싶은 곳 어필 >
+For me, the facility that can support the prompt immigration process is the top priority. So, it wouldn't matter if the clinic is far from Philly such as New Jersey, Delaware especially Wilmington, Maryland, Virginia, and so on. 
+Any clinic is great with me if it can actively support my immigration process. 
+
+<구글맵>
+Could you tell me the spelling of the name of the clinic?
+I want to search for it on Google Maps.
+I'm open to a commute of up to an hour and a half.
+
+<비자 과정에서 내가 뭘?>
+What are the next steps in the hiring process?
+What documents will I need to provide to support the EB-3 visa application? (EB-3 비자 신청을 지원하기 위해 제가 제공해야 할 서류는 무엇인가요?)
+Are there any specific steps or actions that I need to take during the application process? (신청 과정에서 제가 취해야 할 특정 단계나 조치가 있나요?)
+
+<PWD>
+Could you please provide more details on the timeline for the prevailing wage determination process?
+
+
+<에이전시 지원 했어??>
+I've been very interested in Fresenius and have applied through various channels, including an agency. Did it pose any issue with my employment process?
+
+
+<다음 기회?>
+다음 기회:
+I appreciate you letting me know.
+Actually, I was so eager to work at Fresenius and was exploring various options to increase my chances. So, I had already applied through a direct hiring agency called WWHS, was forwarded to a Fresenius clinic in Maryland, and only the final interview was left.
+But after I started the direct hiring process with you, they somehow closed my case and could not do the final interview. Currently, it seems all my opportunities are gone. Could you please find a facility that is left? I am really desperate.
+- 그래도 안 된다.
+I understand your decision.
+Would there be any opportunities for me to apply again in the future?
 
 
 - (PWD설명)
