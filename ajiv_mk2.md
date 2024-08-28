@@ -601,9 +601,24 @@ for the regular and long-term treatment.
 
 # 26. Shannon Interview 2
 ## 26-1. 필리말고 다른데도 연결해줘.
-
+- 필라델피아에서 먼 지역이어도 괜찮으니, international nurse에 대한 수요가 많아서 이민수속을 빠르게 도와줄 수 있는 지역과 연결해 줄 수 있는지?
+  - I really appreciate your efforts to consider my request to work near Philadelphia. 
+  - However, I'm concerned that since there are many local nurses in the Philadelphia area, 
+    - facilities may not have a high demand for international nurses. 
+  - For me, the most important thing is to start the immigration process as quickly as possible 
+    - and arrive in the US soon. 
+  - So, even if it's far from Pennsylvania, could you introduce me to a healthcare facility 
+    - that has a high demand for international nurses? [(TOP)](#list-of-contents)
+  
 
 ## 26-2. 혹시 인터뷰 중 보완할게 있는지?
+- 혹시 내가 담당자와의 인터뷰 중에 부족했거나 보완하면 좋을 만한 점은 없는지?
+  - Shannon, I am wondering if there are some points 
+    - that I can improve during the interview. 
+  - I really want to do well on interviews 
+    - to impress employers and get a job. 
+  - Any advice or recommendations will be very helpful.
+  
 
 
 [(TOP)](#list-of-contents)
