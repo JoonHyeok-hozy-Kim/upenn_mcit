@@ -47,7 +47,8 @@
   - [23. acute](#23-acute)
   - [24. PWD  ](#24-pwd)
   - [25. 연봉](#25-연봉)
-- [26. Shannon Interview 2](#26-shannon-interview-2)
+
+# Shannon Interview 2
   - [26-1. 필리 말고 다른데도](#26-1-필리말고-다른데도-연결해줘)
   - [26-2. 인터뷰 중 보완할만한거](#26-2-혹시-인터뷰-중-보완할게-있는지)
 
@@ -619,6 +620,12 @@ for the regular and long-term treatment.
     - to impress employers and get a job. 
   - Any advice or recommendations will be very helpful. [(TOP)](#list-of-contents)
   
+
+
+- (PWD설명)
+  - It’s a previous stage of I-140 in immigration process 
+  - and I heard that it can be done 
+  - before applying for I-140 by the employer. 
 
 
 [(TOP)](#list-of-contents)
