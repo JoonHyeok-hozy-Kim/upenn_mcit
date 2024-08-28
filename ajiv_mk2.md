@@ -49,8 +49,19 @@
   - [25. 연봉](#25-연봉)
 
 # Shannon Interview 2
-  - [26-1. 필리 말고 다른데도](#26-1-필리말고-다른데도-연결해줘)
-  - [26-2. 인터뷰 중 보완할만한거](#26-2-혹시-인터뷰-중-보완할게-있는지)
+  - [](#26-1-맘에-드는-곳-나오면)
+  - [](#26-2-기다려라-하면)
+  - [](#26-3-혹시-인터뷰-중-보완할게-있는지)
+  - [](#26-4-필리말고-다른데도-연결해줘)
+  - [](#)
+  - []()
+  - []()
+  - []()
+  - []()
+  - []()
+  - []()
+  - []()
+  - []()
 
 <br>
 
@@ -600,6 +611,10 @@ for the regular and long-term treatment.
   - 00 dollars per hours is not enough. 
   - Could you raise it up a bit more. [(TOP)](#list-of-contents)
 
+---
+
+<br><br>
+
 # 26. Shannon Interview 2
 ## 26-1. 맘에 드는 곳 나오면
 - Awesome!
@@ -607,67 +622,103 @@ for the regular and long-term treatment.
 - Thank you for your effort.
 - Do I have to do the interview again? 
 - (해야한다고 하면) I will make sure to do well on the interview.
-- (이메일) May I take some time to think about it until tomorrow and email you back? [(Top)](#shannon-interview-2)
+- (이메일) May I take some time to think about it until tomorrow and email you back? [(섀넌2 Top)](#shannon-interview-2)
 
 
 ## 26-2 기다려!라 하면
 - In that case, I'll be patient.
-- If an opportunity arises, please let me know.
-
- <혹시 인터뷰 중 보완할게 있는지?>
-By the way, was my previous interview with Marybeth was fine?
-I am wondering if there are some points that I can improve.
-I really want to do well so that I can impress employers and get a job.
-Any advice or recommendation will be very helpful.
-
-<필리말고 다른데도 연결해줘> 
-I really appreciate your efforts to consider my situation and forward me to Philadelphia.
-But, even if it's far from Pennsylvania, could you introduce me to a center
-that has a high demand for international nurses? 
-The reason that I’m saying this is because I'm concerned that 
-facilities in Philly may not have a high demand for international nurses
-because there are already many local nurses.
-For me, the most important thing is to start the immigration process as soon as possible.
-
-<가고 싶은 곳 어필 >
-For me, the facility that can support the prompt immigration process is the top priority. So, it wouldn't matter if the clinic is far from Philly such as New Jersey, Delaware especially Wilmington, Maryland, Virginia, and so on. 
-Any clinic is great with me if it can actively support my immigration process. 
-
-<구글맵>
-Could you tell me the spelling of the name of the clinic?
-I want to search for it on Google Maps.
-I'm open to a commute of up to an hour and a half.
-
-<비자 과정에서 내가 뭘?>
-What are the next steps in the hiring process?
-What documents will I need to provide to support the EB-3 visa application? (EB-3 비자 신청을 지원하기 위해 제가 제공해야 할 서류는 무엇인가요?)
-Are there any specific steps or actions that I need to take during the application process? (신청 과정에서 제가 취해야 할 특정 단계나 조치가 있나요?)
-
-<PWD>
-Could you please provide more details on the timeline for the prevailing wage determination process?
+- If an opportunity arises, please let me know. [(섀넌2 Top)](#shannon-interview-2)
 
 
-<에이전시 지원 했어??>
-I've been very interested in Fresenius and have applied through various channels, including an agency. Did it pose any issue with my employment process?
+## 26-3 혹시 인터뷰 중 보완할게 있는지?
+- By the way, was my previous interview with Marybeth was fine?
+- I am wondering if there are some points that I can improve.
+- I really want to do well so that I can impress employers and get a job.
+- Any advice or recommendation will be very helpful. [(섀넌2 Top)](#shannon-interview-2)
 
 
-<다음 기회?>
-다음 기회:
-I appreciate you letting me know.
-Actually, I was so eager to work at Fresenius and was exploring various options to increase my chances. So, I had already applied through a direct hiring agency called WWHS, was forwarded to a Fresenius clinic in Maryland, and only the final interview was left.
-But after I started the direct hiring process with you, they somehow closed my case and could not do the final interview. Currently, it seems all my opportunities are gone. Could you please find a facility that is left? I am really desperate.
-- 그래도 안 된다.
-I understand your decision.
-Would there be any opportunities for me to apply again in the future?
+
+## 26-4 필리말고 다른데도 연결해줘
+- I really appreciate your efforts to 
+  - consider my situation and 
+  - forward me to Philadelphia.
+- But, even if it's far from Pennsylvania, could you introduce me to a center that 
+  - has a high demand for international nurses? 
+- The reason that I’m saying this is because 
+  - I'm concerned that 
+    - facilities in Philly may not have a high demand for international nurses because 
+    - there are already many local nurses.
+- For me, the most important thing is 
+  - to start the immigration process as soon as possible. [(섀넌2 Top)](#shannon-interview-2)
 
 
+
+## 26-5 가고 싶은 곳 어필
+- For me, the facility that can support the prompt immigration process 
+  - is the top priority. 
+- So, it wouldn't matter if the clinic is far from Philly such as 
+  - New Jersey, Delaware especially Wilmington, Maryland, Virginia, and so on. 
+- Any clinic is great with me if it can actively support my immigration process.  [(섀넌2 Top)](#shannon-interview-2)
+
+
+
+## 26-6 구글맵
+- Could you tell me the spelling of the name of the clinic?
+- I want to search for it on Google Maps.
+- I'm open to a commute of up to an hour and a half. [(섀넌2 Top)](#shannon-interview-2)
+
+
+
+## 26-7 비자 과정에서 내가 뭘?
+- What are the next steps in the hiring process?
+- What documents will I need to provide to support the EB-3 visa application? 
+  - (EB-3 비자 신청을 지원하기 위해 제가 제공해야 할 서류는 무엇인가요?)
+- Are there any specific steps or actions that I need to take during the application process? 
+  - (신청 과정에서 제가 취해야 할 특정 단계나 조치가 있나요?) [(섀넌2 Top)](#shannon-interview-2)
+
+
+
+## 26-8 PWD
+- Could you please provide more details on the timeline for 
+  - the prevailing wage determination process?
 - (PWD설명)
   - It’s a previous stage of I-140 in immigration process 
   - and I heard that it can be done 
-  - before applying for I-140 by the employer. 
+  - before applying for I-140 by the employer.  [(섀넌2 Top)](#shannon-interview-2)
 
 
-[(TOP)](#list-of-contents)
+
+
+## 26-9 에이전시 지원 했어?
+- I've been very interested in Fresenius and 
+  - have applied through various channels, 
+  - including an agency. 
+- Did it pose any issue with my employment process? [(섀넌2 Top)](#shannon-interview-2)
+
+
+
+
+## 26-10 다음 기회
+- I appreciate you letting me know.
+- Actually, I was so eager to work at Fresenius and 
+  - was exploring various options to increase my chances. 
+- So, I had already applied through a direct hiring agency called WWHS. 
+- Then, I was forwarded to a Fresenius clinic in Maryland, and 
+  - only the final interview was left.
+- But after I started the direct hiring process with you, 
+  - they somehow closed my case and 
+  - could not do the final interview. 
+- Currently, it seems all my opportunities are gone. 
+- Could you please be generous and find other facilities that are left? 
+- I am really desperate.
+- (그래도 안 된다.)
+  - I understand your decision.
+  - Would there be any opportunities for me to apply again in the future? [(섀넌2 Top)](#shannon-interview-2)
+
+
+
+
+[(전체 TOP)](#list-of-contents)
 
 - d
 - d
