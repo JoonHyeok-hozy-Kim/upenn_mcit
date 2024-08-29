@@ -3,7 +3,7 @@
 ## Module 1
 |No|Subject|Keywords|
 |:-:|:-|:-|
-| 1|[Vectors and Vector Spaces](notes/m01/01.md)|- |
+| 1|[Vectors and Vector Spaces](notes/m01/01.md)|- Group, Abelian Group (Commutative Group), Moniod <br> - Ring, Field <br> - Vector Space|
 | 2|[]()|- |
 | 3|[]()|- |
 | 4|[]()|- |
