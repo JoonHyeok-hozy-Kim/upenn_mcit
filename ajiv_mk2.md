@@ -658,12 +658,13 @@ for the regular and long-term treatment.
   - forward me to Philadelphia.
 - But, even if it's far from Pennsylvania, could you introduce me to a center that 
   - has a high demand for international nurses? 
+- (섀넌 눈치 한 번 보고)
 - The reason that I’m saying this is because 
   - I'm concerned that 
     - facilities in Philly may not have a high demand for international nurses because 
     - there are already many local nurses.
-- For me, the most important thing is 
-  - to start the immigration process as soon as possible. [(섀넌2 Top)](#shannon-interview-2)
+- (For me, the most important thing is 
+  - to start the immigration process as soon as possible.) [(섀넌2 Top)](#shannon-interview-2)
 
 
 
