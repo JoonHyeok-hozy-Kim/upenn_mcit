@@ -617,7 +617,10 @@ for the regular and long-term treatment.
 # 26. Shannon Interview 2
 ## 26-0 일상 대화
 - [첫 인사] Good Morning, glad to see you
-- [뭐라고?] Could you please rephrase that?
+- [뭐라고?] 
+  - Could you come again?
+  - May I beg your pardon?
+  - Pardon?
 - [뭐가 더 좋아?] While ~ is good, I think ~ is better
 - [스케줄 조정] I'm available on weekdays next week around the same time as today. 
 - [대답 언제 해줄거야?] Could you please let me know when I can expect a response from you?
