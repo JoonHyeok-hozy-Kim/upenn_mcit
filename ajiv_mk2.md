@@ -49,8 +49,10 @@
   - [25. 연봉](#25-연봉)
 
 # Shannon Interview 2
+  - [26-0. 일상 대화](#26-0-일상-대화)
   - [26-1. 맘에 드는 곳 나오면](#26-1-맘에-드는-곳-나오면)
   - [26-2. 기다려!라 하면](#26-2-기다려라-하면)
+    - [26-2-2 이민 수속과정 기다릴 수 있어?](#26-2-2-이민-수속-과정-기다릴-수-있어)
   - [26-3. 인터뷰 보완할게 있는지](#26-3-혹시-인터뷰-중-보완할게-있는지)
   - [26-4. 필리 말고 다른데도 알려줘](#26-4-필리말고-다른데도-연결해줘)
   - [26-5. 가고 싶은 곳 어필](#26-5-가고-싶은-곳-어필)
@@ -613,6 +615,14 @@ for the regular and long-term treatment.
 <br><br>
 
 # 26. Shannon Interview 2
+## 26-0 일상 대화
+- [첫 인사] Good Morning, glad to see you
+- [뭐라고?] Could you please rephrase that?
+- [뭐가 더 좋아?] While ~ is good, I think ~ is better
+- [스케줄 조정] I'm available on weekdays next week around the same time as today. 
+- [대답 언제 해줄거야?] Could you please let me know when I can expect a response from you?
+- [끝 인사] It was nice meeting you [(섀넌2 Top)](#shannon-interview-2)
+
 ## 26-1. 맘에 드는 곳 나오면
 - Awesome!
 - That’s a great news!
@@ -625,6 +635,10 @@ for the regular and long-term treatment.
 ## 26-2 기다려!라 하면
 - In that case, I'll be patient.
 - If an opportunity arises, please let me know. [(섀넌2 Top)](#shannon-interview-2)
+
+## 26-2-2 이민 수속 과정 기다릴 수 있어?
+- I am willing to wait for the immigration process, but 
+  - I would appreciate it if we could begin the immigration petition as soon as possible. [(섀넌2 Top)](#shannon-interview-2)
 
 
 ## 26-3 혹시 인터뷰 중 보완할게 있는지?
