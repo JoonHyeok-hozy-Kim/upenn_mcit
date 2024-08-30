@@ -1,9 +1,9 @@
 # CIT 593 Introduction to Computer Systems
 
 ## Module 1
-|No|Subject|Keywords|
+|Module|Subject|Keywords|
 |:-:|:-|:-|
-| 1|[Vectors and Vector Spaces]()|- |
+| 1-2|[Bits and Bytes](notes/m0102.md)|- Binary, Bits, Bytes, Nibbles, Overflow <br> - 1's Complement, 2's Complement <br> - Sign Extension <br> - Encoding : ASCII and Unicode|
 | 2|[]()|- |
 | 3|[]()|- |
 | 4|[]()|- |
