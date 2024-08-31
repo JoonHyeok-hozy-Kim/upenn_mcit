@@ -7,7 +7,7 @@
 |:-:|:-|:-|
 | 2|[Vectors and Vector Spaces](notes/m01/02.md)|- Group, Abelian Group (Commutative Group), Moniod <br> - Ring, Field <br> - Vector Space|
 | 3|[Indexed Families and Sum Notations](notes/m01/03.md)|- Sequence, Index Set|
-| 4|[Linear Independence and Subspaces](notes/m01/04.md)|- Linear Subspace|
+| 4|[Linear Independence and Subspaces](notes/m01/04.md)|- Linear Subspace, Span <br> - Affine Combination, Positive(Conic) Combination, Convex Combination <br> - Finite Support|
 | 5|[]()|- |
 | 6|[]()|- |
 | 7|[]()|- |
