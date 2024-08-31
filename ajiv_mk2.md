@@ -492,7 +492,8 @@ for the regular and long-term treatment.
 
 # 15.2 계약기간
 - A 24-month contract is okay with me because
-  - my fiancé is pursuing a master's degree in Philadelphia and he will do the doctor's as well.
+  - my fiancé is pursuing a master's degree in Philadelphia and 
+    - he will do the doctor's as well.
 - I heard that it will take at least 6 to 7 years.
 - Additionally, I am satisfied with my current role as a dialysis nurse. [(TOP)](#list-of-contents)
 
