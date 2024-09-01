@@ -32,7 +32,7 @@
 - [13. 간호사가 된 이유](#13-간호사가-된-이유)
   - [13.1 간호사-모험](#131-간호사-모험)
 - [14. 미국에 오고 싶은 이유](#14-미국에-오고-싶은-이유)
-- [15. 메릴랜드](#15-메릴랜드)
+- [15. 지역](#15-지역)
   - [15.2 계약기간](#152-계약기간)
   - [15.3 날씨](#153-날씨)
 - [16. 왜 너를?](#16-왜-너를)
@@ -467,16 +467,7 @@ for the regular and long-term treatment.
 
 - I am so thrilled to start a new journey there.[(TOP)](#list-of-contents)
 
-# 15. 메릴랜드
-- I'm looking for a job in Maryland.
-- I am familiar with Maryland because the 
-  - famous Johns Hopkins and Georgetown University are there.
-- Also, my fiancé is studying in Philadelphia
-- Because Philadelphia and Maryland are close to each other,
-  - I want to go to Maryland.
-- (While these regions are my top choices,
-- I am also opened to opportunities in )[(TOP)](#list-of-contents)
-
+# 15. 지역
 # 15.2 계약기간
 - A 24-month contract is okay with me because
   - my fiancé is pursuing a master's degree in Philadelphia and 
