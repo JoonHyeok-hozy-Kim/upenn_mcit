@@ -192,7 +192,7 @@ for the regular and long-term treatment.
 - The clinic where I work uses two types of machines: Fresenius and Nipro, 
   - which is a Japanese brand.
 
-- As an operator, I can assure you that FMC is far superior to Nipro 
+- As an operator, I can assure you that Fresenius is far superior to Nipro.
 - This is because FMC machines are incredibly convenient and 
   - patient-safe compared to its counterpart. 
 
