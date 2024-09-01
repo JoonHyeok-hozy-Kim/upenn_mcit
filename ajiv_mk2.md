@@ -196,10 +196,10 @@ for the regular and long-term treatment.
 - This is because FMC machines are incredibly convenient and 
   - patient-safe compared to its counterpart. 
 
-- For example, the FMC machines' buttons and alarms are
+- For example, the Fresenius machines' buttons and alarms are
   - so intuitive and effective.
 
-- Also the emergency button allows me to easily and quickly
+- Also their emergency buttons allow me to easily and quickly
   - initiate all necessary patient care simultaneously.
 
 - This is a critical advantage for patients in urgent situations.
