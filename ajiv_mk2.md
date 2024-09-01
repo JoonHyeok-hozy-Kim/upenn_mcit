@@ -188,33 +188,24 @@ for the regular and long-term treatment.
 # 2. FMC 지원 동기
 - I applied for the dialysis RN position at Fresenius for the following two reasons.
 - Firstly, I prefer the Fresenius machines to others.
-
-- The clinic where I work uses two types of machines: Fresenius and Nipro, 
-  - which is a Japanese brand.
-
-- As an operator, I can assure you that Fresenius is far superior to Nipro.
-- This is because FMC machines are incredibly convenient and 
-  - patient-safe compared to its counterpart. 
-
-- For example, the Fresenius machines' buttons and alarms are
-  - so intuitive and effective.
-
-- Also their emergency buttons allow me to easily and quickly
-  - initiate all necessary patient care simultaneously.
-
-- This is a critical advantage for patients in urgent situations.
-
+  - The clinic where I work uses two types of machines: Fresenius and Nipro, 
+    - which is a Japanese brand.
+  - As an operator, I can assure you that Fresenius is far superior to Nipro.
+  - This is because FMC machines are incredibly convenient and 
+    - patient-safe compared to its counterpart. 
+  - For example, the Fresenius machines' buttons and alarms are
+    - so intuitive and effective.
+  - Also their emergency buttons allow me to easily and quickly
+    - initiate all necessary patient care simultaneously.
+  - This is a critical advantage for patients in urgent situations.
 - Secondly, I believe that Fresenius is the perfect place 
   - to develop my career as a professional dialysis nurse. 
-
 - I want to become a proficient dialysis nurse someday, 
   - so I'm looking for a healthcare corporation 
   - where I can develop myself professionally.
-
 - And I was very impressed with Fresenius's mission of
   - providing the best possible care to patients, 
   - which aligns perfectly with my goal.
-
 - This is why I am particularly interested in working at your company.
 - (This button stops the ultrafiltration, gets the blood pressure, and drops the blood flow rate.)
 - convection.[(TOP)](#list-of-contents)
