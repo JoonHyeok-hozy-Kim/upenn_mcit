@@ -33,7 +33,6 @@
   - [13.1 간호사-모험](#131-간호사-모험)
 - [14. 미국에 오고 싶은 이유](#14-미국에-오고-싶은-이유)
 - [15. 메릴랜드](#15-메릴랜드)
-  - [15.1 Sellersville](#151-sellersville)
   - [15.2 계약기간](#152-계약기간)
   - [15.3 날씨](#153-날씨)
 - [16. 왜 너를?](#16-왜-너를)
@@ -187,14 +186,15 @@ for the regular and long-term treatment.
 
 
 # 2. FMC 지원 동기
-- I applied for the dialysis RN position at FMC
-  - because I prefer FMC machines to other dialysis machines. 
+- I applied for the dialysis RN position at Fresenius for the following two reasons.
+- Firstly, I prefer the Fresenius machines to others.
 
-- The clinic where I work uses two types of machines: FMC and Nipro, 
+- The clinic where I work uses two types of machines: Fresenius and Nipro, 
   - which is a Japanese brand.
 
 - As an operator, I can assure you that FMC is far superior to Nipro 
-  - because FMC machines are incredibly convenient and patient-safe compared to Nipro. 
+- This is because FMC machines are incredibly convenient and 
+  - patient-safe compared to its counterpart. 
 
 - For example, the FMC machines' buttons and alarms are
   - so intuitive and effective.
@@ -204,13 +204,14 @@ for the regular and long-term treatment.
 
 - This is a critical advantage for patients in urgent situations.
 
-- Besides, career development is very important to me. 
+- Secondly, I believe that Fresenius is the perfect place 
+  - to develop my career as a professional dialysis nurse. 
 
 - I want to become a proficient dialysis nurse someday, 
   - so I'm looking for a healthcare corporation 
   - where I can develop myself professionally.
 
-- I'm very impressed with FMC's mission of
+- And I was very impressed with Fresenius's mission of
   - providing the best possible care to patients, 
   - which aligns perfectly with my goal.
 
@@ -484,11 +485,6 @@ for the regular and long-term treatment.
   - I want to go to Maryland.
 - (While these regions are my top choices,
 - I am also opened to opportunities in )[(TOP)](#list-of-contents)
-
-# 15.1 Sellersville
-- I've done some research on Sellersville, 
-  - and I like its peaceful atmosphere and beautiful surroundings. 
-- It seems like a wonderful place to live and work. [(TOP)](#list-of-contents)
 
 # 15.2 계약기간
 - A 24-month contract is okay with me because
