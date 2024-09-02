@@ -9,11 +9,9 @@
 | 3|[Indexed Families and Sum Notations](notes/m01/03.md)|- Sequence, Index Set|
 | 4|[Linear Independence and Subspaces](notes/m01/04.md)|- Linear Subspace, Span <br> - Affine Combination, Positive(Conic) Combination, Convex Combination <br> - Finite Support|
 | 5|[Bases of Vector Space](notes/m01/05.md)|- Span (Generate), Generator <br> - Basis <br> - Maximal Linearly Independent Family / Minimal Generating Family <br> - Dimension : line, plane, hyperplane, $`k`$-plane <br> - Component (Coordinate) w.r.t. Basis |
-| 6|[]()|- |
-| 7|[]()|- |
-| 8|[]()|- |
-| 9|[]()|- |
-|10|[]()|- |
+| 6|[Matrices](notes/m01/06.md)|- 60-70|
+| 7|[](notes/m01/07.md)|- 71-81|
+| 8|[Linear Forms and the Dual Space](notes/m01/08.md)|- 82-92|
 
 
 
