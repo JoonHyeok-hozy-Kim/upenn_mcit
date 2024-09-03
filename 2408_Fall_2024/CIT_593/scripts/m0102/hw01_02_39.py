@@ -89,3 +89,5 @@ if __name__ == '__main__':
     '''
 
     print(IEEE_fraction_calculator(pow(2,128)))
+
+    print(pow(2,15))
