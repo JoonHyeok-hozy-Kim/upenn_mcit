@@ -507,19 +507,25 @@ for the regular and long-term treatment.
 
 
 # 18.필요한 표현
-- I believe that my ability to perform all aspects of dialysis and 
-  - my comprehensive understanding of the process 
-  - allow me to provide an optimal experience for my patients.
-- I can handle a 1-hour commute. I'm already doing it.
-- So, are you asking me ~~? 
-  - Did I get your question correctly?
-- Could you give me several seconds to think about it?
-- Many dialysis patients are elderly. 
-  - Studying gerontology will help me better understand their specific needs.
-- It seems like a wonderful place to live and work.
-
-- To give you an example of my experiences at my current job,
-- Sorry, but I can't come up with such an experience.  [(TOP -mid)](#mid)
+- (니들링)
+  - I believe that my ability to perform all aspects of dialysis and 
+    - my comprehensive understanding of the process 
+    - allow me to provide an optimal experience for my patients.
+- (Fiance in Philly)
+  - My fiancé is pursuing a master's degree in Philadelphia and 
+    - he will do the doctor's as well.
+  - I heard that it will take at least 6 to 7 years.
+- (출퇴근 오래걸림)
+  - I can handle a 1-hour commute. I'm already doing it.
+- (각종표현들)
+  - Could you give me several seconds to think about it?
+- (대학원)
+  - Many dialysis patients are elderly. 
+    - Studying gerontology will help me better understand their specific needs.
+- (지금 일 예시)
+  - To give you an example of my experiences at my current job,
+- (생각이 안나요)
+  - Sorry, but I can't come up with such an experience.  [(TOP -mid)](#mid)
 
 <br>
 
