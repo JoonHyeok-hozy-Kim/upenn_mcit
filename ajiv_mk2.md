@@ -507,6 +507,9 @@ for the regular and long-term treatment.
 
 
 # 18.필요한 표현
+- I believe that my ability to perform all aspects of dialysis and 
+  - my comprehensive understanding of the process 
+  - allow me to provide an optimal experience for my patients.
 - I can handle a 1-hour commute. I'm already doing it.
 - So, are you asking me ~~? 
   - Did I get your question correctly?
@@ -517,7 +520,7 @@ for the regular and long-term treatment.
 - It seems like a wonderful place to live and work.
 
 - To give you an example of my experiences at my current job,
-- Sorry, but I can't come up with such an experience. [(TOP -mid)](#mid)
+- Sorry, but I can't come up with such an experience.  [(TOP -mid)](#mid)
 
 <br>
 
