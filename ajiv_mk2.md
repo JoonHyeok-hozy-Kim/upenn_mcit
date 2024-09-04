@@ -19,6 +19,8 @@
   - [5.3 리더쉽 뭐가 더 좋아?](#53-리더쉽-뭐가-더-좋아)
   - [5.4 리더거나, 팀원 일 때](#54-리더거나-팀원-일-때)
   - [5.5 Unexpected work?](#55-unexpected-work)
+
+#### Mid
 - [6. 트러블 환자랑](#6-트러블-환자랑)
 - [7. conflict](#7-conflict)
   - [7.1 Doctor or 동료](#71-doctor-or-동료) 
@@ -343,7 +345,7 @@ for the regular and long-term treatment.
 
 - It was a very difficult experience, but
   - I learned how to deal with such challenging situations.
-- (It was determined that the patient's care would be better managed at another facility.)[(TOP)](#list-of-contents)
+- (It was determined that the patient's care would be better managed at another facility.)[(TOP -mid)](#mid)
 
 # 7. conflict
 # 7.1 Doctor or 동료 
@@ -372,14 +374,14 @@ for the regular and long-term treatment.
     - and resolve the issue.
    
   - So, I think that effective communication is 
-    - essential for resolving conflicts.[(TOP)](#list-of-contents)
+    - essential for resolving conflicts.[(TOP -mid)](#mid)
 # 7.2 일반적
   - To begin with, we often work under high pressure, so I try not to take anything personally. 
   - Instead, I think communication is the most important key.
   - so I would ask the colleague who I am in trouble with to have a conversation with me. 
   - Then, I would actively listen to his or her situation and try to understand that person’s perspective. 
   - If we cannot resolve the problem and it affects the patient care,
-  - I would then involve a supervisor by following the chain of command.[(TOP)](#list-of-contents)
+  - I would then involve a supervisor by following the chain of command.[(TOP -mid)](#mid)
 
 
 # 8. 가장 큰 첼린지 ? [나중에 보완 전직.]
@@ -404,7 +406,7 @@ for the regular and long-term treatment.
 - This challenging experience taught me the importance of empathy 
   - and finding solutions collaboratively.
 - (I believe that being able to perform all aspects of dialysis
-  - allows me to provide optimal experience for my patients.)[(TOP)](#list-of-contents)
+  - allows me to provide optimal experience for my patients.)[(TOP -mid)](#mid)
 
 
 # 9. 실수
@@ -424,20 +426,20 @@ for the regular and long-term treatment.
 - This was because the patient received the injection once a week.
 
 - This incident reinforced my belief in the importance of honesty.
-- (If I hadn't told the truth, the patient would have skipped the injection for a week.) [(TOP)](#list-of-contents)
+- (If I hadn't told the truth, the patient would have skipped the injection for a week.) [(TOP -mid)](#mid)
 
 # 10 스트레스 해결방법
 - I love riding a bicycle and I’m a huge foodie.
 - These days, I enjoy going to cafes and restaurants by bicycle. 
-- I can eat delicious food and burn off those extra calories at the same time. [(TOP)](#list-of-contents)
+- I can eat delicious food and burn off those extra calories at the same time. [(TOP -mid)](#mid)
 # 10.1 간호사로서 스트레스
 - As nurses, we have a big responsibility to keep our patients safe.
 - Thus, we have to be extra careful. 
-- To minimize errors, I prioritize tasks and double-check critical aspects.[(TOP)](#list-of-contents)
+- To minimize errors, I prioritize tasks and double-check critical aspects.[(TOP -mid)](#mid)
 
 # 11. 취미
 - I love traveling and riding a bicycle. 
-- So I enjoy going on a bicycle trip on weekends.[(TOP)](#list-of-contents)
+- So I enjoy going on a bicycle trip on weekends.[(TOP -mid)](#mid)
 
 # 12. 5년 후 계획
 - In the next five years, I want to pursue a Master’s degree
@@ -445,16 +447,16 @@ for the regular and long-term treatment.
   - to enhance(인헨스) my nursing care skills and knowledge for dialysis patients. 
 
 - Also, I hope to buy a small house in the  US.
-- (Many dialysis patients are elderly. Studying gerontology will help us better understand their specific needs.) [(TOP)](#list-of-contents)
+- (Many dialysis patients are elderly. Studying gerontology will help us better understand their specific needs.) [(TOP -mid)](#mid)
 
 # 13. 간호사가 된 이유
 - I went into nursing 
   - because I'm passionate about taking care of others 
-  - and helping them. [(TOP)](#list-of-contents)
+  - and helping them. [(TOP -mid)](#mid)
 # 13.1 간호사-모험
 - I want to gain diverse clinical experience 
   - to expand my skills and knowledge. 
-  - Ultimately, my career goal is to specialize in acute dialysis nursing.[(TOP)](#list-of-contents)
+  - Ultimately, my career goal is to specialize in acute dialysis nursing.[(TOP -mid)](#mid)
 
 # 14. 미국에 오고 싶은 이유
 - I believe that I can further develop my career and work 
@@ -465,7 +467,7 @@ for the regular and long-term treatment.
 - Beautiful environments, pleasant weather, and
   - kind people of the United States are attracting me. 
 
-- I am so thrilled to start a new journey there.[(TOP)](#list-of-contents)
+- I am so thrilled to start a new journey there.[(TOP -mid)](#mid)
 
 # 15. 지역
 # 15.2 계약기간
@@ -473,12 +475,12 @@ for the regular and long-term treatment.
   - my fiancé is pursuing a master's degree in Philadelphia and 
     - he will do the doctor's as well.
 - I heard that it will take at least 6 to 7 years.
-- Additionally, I am satisfied with my current role as a dialysis nurse. [(TOP)](#list-of-contents)
+- Additionally, I am satisfied with my current role as a dialysis nurse. [(TOP -mid)](#mid)
 
 # 15.3 날씨
 - I'm okay with the weather of Maryland because 
 - I'm used to the four distinct seasons of South Korea.
-- In Korea, summers are very hot, and winters are very cold. [(TOP)](#list-of-contents)
+- In Korea, summers are very hot, and winters are very cold. [(TOP -mid)](#mid)
 
 # 16. 왜 너를?
 - (I can contribute my ability to enhance patient optimal experience.)
@@ -491,14 +493,14 @@ for the regular and long-term treatment.
 
 - Additionally, during the past six years in the NICU,
   - I sometimes led the team of nurses, 
-  - and this leadership experience will also be helpful. [(TOP)](#list-of-contents)
+  - and this leadership experience will also be helpful. [(TOP -mid)](#mid)
 
 
 # 17. 마무리 질문
 - Could you please tell me the average number of nurses, technicians, and patients per shift in your clinic?
 - How do you support your nurses to advance in their careers?
 - Could you please let me know when I might expect to hear the result?
-- Thank you for taking the time to interview me. [(TOP)](#list-of-contents)
+- Thank you for taking the time to interview me. [(TOP -mid)](#mid)
 
 
 # 18.필요한 표현
@@ -512,7 +514,7 @@ for the regular and long-term treatment.
 - It seems like a wonderful place to live and work.
 
 - To give you an example of my experiences at my current job,
-- Sorry, but I can't come up with such an experience. [(TOP)](#list-of-contents)
+- Sorry, but I can't come up with such an experience. [(TOP -mid)](#mid)
 
 <br>
 
@@ -522,7 +524,7 @@ for the regular and long-term treatment.
 - So, nurses deal with most of the dialysis procedures
   - and control the machines. 
 - But if the machine does not work properly, 
-  - we call Fresenius Korea specialists.[(TOP)](#list-of-contents)
+  - we call Fresenius Korea specialists.[(TOP -mid)](#mid)
 
 # 20. Disagreement with your manager
 - As a team member, I believe in following leadership.
@@ -531,15 +533,15 @@ for the regular and long-term treatment.
 - However, if I ever disagree with a decision,
   - I would first try to understand the meaning behind it.
 - If I still have concerns after discussing the matter,
-  - I would follow the chain of commands to address the issue.[(TOP)](#list-of-contents)
+  - I would follow the chain of commands to address the issue.[(TOP -mid)](#mid)
 
 
 # 21. 인지장애
-- No, I haven’t. But I will learn from my colleagues how to deal with them and quickly get used to it.[(TOP)](#list-of-contents)
+- No, I haven’t. But I will learn from my colleagues how to deal with them and quickly get used to it.[(TOP -mid)](#mid)
 
 # 22. 5am?
 - I already start working at 6 am and it takes 
-  - more than an hour to work now. So, 5 am will be okay with me.[(TOP)](#list-of-contents)
+  - more than an hour to work now. So, 5 am will be okay with me.[(TOP -mid)](#mid)
 
 # 23. acute
 - I want to apply for the acute dialysis hospital.
@@ -551,7 +553,7 @@ for the regular and long-term treatment.
   - and improve my skills as a hemodialysis nurse.
 - It'll probably take about two years before I can land in the US,
   - so I'm going to make the most of my time in Korea 
-  - to gain as much experience with acute cases as possible.[(TOP)](#list-of-contents)
+  - to gain as much experience with acute cases as possible.[(TOP -mid)](#mid)
 
 
 # 24. PWD  
@@ -571,7 +573,7 @@ for the regular and long-term treatment.
 - [구글맵.]
   - Could you tell me the spelling of the name of the clinic?
   -  I want to search for it on Google Maps.
-  -  I'm open to a commute of up to an hour and a half. [(TOP)](#list-of-contents)
+  -  I'm open to a commute of up to an hour and a half. [(TOP -mid)](#mid)
 
 
 # 25. 연봉
@@ -587,7 +589,7 @@ for the regular and long-term treatment.
   - and my familiarity with the FMC machines will be helpful for your company and for the patients. 
   - Besides, considering the living cost of Pennsylvania
   - 00 dollars per hours is not enough. 
-  - Could you raise it up a bit more. [(TOP)](#list-of-contents)
+  - Could you raise it up a bit more. [(TOP -mid)](#mid)
 
 ---
 
