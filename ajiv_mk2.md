@@ -388,10 +388,10 @@ for the regular and long-term treatment.
 - (챌린지 기존 서론)
   - Starting a new career in the dialysis center,
     - performing invasive procedures such as cannulation was most challenging.
-- (환자와의 트러블로 서론) 
-  - dddd
-- (본론)
   - For example, one day, a patient complained during the procedure.  
+- (환자와의 트러블로 서론) 
+  - One day, a patient complained during the procedure. 
+- (본론)
   - Of course, I understood that he experienced discomfort(컴) during the procedure.   
   - So, I actively listened to his feelings and tried to be empathetic,
     - while offering sincere apologies.   
