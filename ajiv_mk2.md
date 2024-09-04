@@ -381,7 +381,7 @@ for the regular and long-term treatment.
   - so I would ask the colleague who I am in trouble with to have a conversation with me. 
   - Then, I would actively listen to his or her situation and try to understand that person’s perspective. 
   - If we cannot resolve the problem and it affects the patient care,
-  - I would then involve a supervisor by following the chain of command.[(TOP -mid)](#mid)
+  - I would then involve a supervisor by following the chain of command. [(TOP -mid)](#mid)
 
 
 # 8. 가장 큰 첼린지 ? [나중에 보완 전직.]
@@ -406,8 +406,9 @@ for the regular and long-term treatment.
     - that he was satisfied with my care. 
   - This challenging experience taught me the importance of empathy 
     - and finding solutions collaboratively.
-  - (I believe that being able to perform all aspects of dialysis
-    - allows me to provide optimal experience for my patients.)[(TOP -mid)](#mid)
+  - (I believe that my ability to perform all aspects of dialysis and 
+    - my comprehensive understanding of the process 
+    - allow me to provide an optimal experience for my patients.) [(TOP -mid)](#mid)
 
 
 
