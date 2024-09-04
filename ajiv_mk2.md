@@ -390,7 +390,7 @@ for the regular and long-term treatment.
     - performing invasive procedures such as cannulation was most challenging.
   - For example, one day, a patient complained during the procedure.  
 - (환자와의 트러블로 서론) 
-  - One day, a patient complained during the procedure and
+  - One day, a patient complained during cannulation and
     - refused to receive my treatment.
 - (본론)
   - Of course, I understood that he experienced discomfort(컴) during the procedure.   
