@@ -21,7 +21,7 @@
   - [5.5 Unexpected work?](#55-unexpected-work)
 
 #### Mid
-- [6. 트러블 환자랑](#6-트러블-환자랑)
+- [6. 트러블 (trouble)](#6-트러블-환자랑)
 - [7. conflict](#7-conflict)
   - [7.1 Doctor or 동료](#71-doctor-or-동료) 
   - [7.2 일반적](#72-일반적)
