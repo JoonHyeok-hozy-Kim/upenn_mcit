@@ -362,10 +362,10 @@ for the regular and long-term treatment.
     - would make him anxious, 
     - so I took the doctor aside to discuss the situation. 
 
-  - It turned out that the doctor thought 
-  - I had mistakenly set the ultrafiltration rate on the machine. 
+  - It turned out that the doctor thought that
+    - I had mistakenly set the ultrafiltration on the machine. 
 
-  - I explained that I had lowered the rate 
+  - I explained that I had lowered the setting 
     - due to the patient's low initial blood pressure 
     - and was planning to monitor their blood pressure
     - before increasing it.
