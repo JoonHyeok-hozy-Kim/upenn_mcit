@@ -39,7 +39,7 @@
   - [15.3 날씨](#153-날씨)
 - [16. 왜 너를?](#16-왜-너를)
 - [17. 마무리 질문](#17-마무리-질문)
-- [18.필요한 표현](#18필요한-표현)
+- [★★ 18.필요한 표현](#18필요한-표현)
 - [신규추가](#신규추가)
   - [19 테크니션이랑?](#19-테크니션이랑)
   - [20. Disagreement with your manager](#20-disagreement-with-your-manager)
@@ -511,7 +511,7 @@ for the regular and long-term treatment.
   - I believe that my ability to perform all aspects of dialysis and 
     - my comprehensive understanding of the process 
     - allow me to provide an optimal experience for my patients.
-- (Fiance in Philly)
+- (Fiancé in Philly)
   - My fiancé is pursuing a master's degree in Philadelphia and 
     - he will do the doctor's as well.
   - I heard that it will take at least 6 to 7 years.
