@@ -516,7 +516,6 @@ for the regular and long-term treatment.
 - Could you give me several seconds to think about it?
 - Many dialysis patients are elderly. 
   - Studying gerontology will help me better understand their specific needs.
-- I've done some research on Sellersville, and I like its peaceful atmosphere and beautiful surroundings. 
 - It seems like a wonderful place to live and work.
 
 - To give you an example of my experiences at my current job,
