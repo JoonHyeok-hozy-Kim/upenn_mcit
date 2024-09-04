@@ -366,8 +366,8 @@ for the regular and long-term treatment.
     - I had mistakenly set the ultrafiltration on the machine. 
 
   - I explained that I had lowered the setting 
-    - due to the patient's low initial blood pressure 
-    - and was planning to monitor their blood pressure
+    - due to the patient's low initial blood pressure, and 
+    - was planning to monitor their blood pressure
     - before increasing it.
 
   - We were able to understand each other's perspectives
