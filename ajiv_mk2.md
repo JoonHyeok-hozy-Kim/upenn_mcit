@@ -389,11 +389,13 @@ for the regular and long-term treatment.
   - Starting a new career in the dialysis center,
     - performing invasive procedures such as cannulation was most challenging.
   - For example, one day, a patient complained during the procedure.  
+  - Of course, I understood that he experienced discomfort(컴) during the procedure.
 - (환자와의 트러블로 서론) 
   - One day, a patient complained during cannulation and
     - refused to receive my treatment.
+  - Of course, I understood that he experienced discomfort(컴) during the procedure,
+    - because of its invasive nature.
 - (본론)
-  - Of course, I understood that he experienced discomfort(컴) during the procedure.   
   - So, I actively listened to his feelings and tried to be empathetic,
     - while offering sincere apologies.   
   - However, I realized that empathy(엠퍼띠) alone wasn’t enough.   
