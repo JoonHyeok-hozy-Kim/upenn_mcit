@@ -385,28 +385,27 @@ for the regular and long-term treatment.
 
 
 # 8. 가장 큰 첼린지 ? [나중에 보완 전직.]
-- Starting a new career in the dialysis center,
- performing invasive procedures such as cannulation was most challenging.
-- For example, one day, a patient complained during the procedure.
- 
-- Of course, I understood that he experienced discomfort(컴) during the procedure.
- 
-- So, I actively listened to his feelings and tried to be empathetic,
-  - while offering sincere apologies.
- 
-- However, I realized that empathy(엠퍼띠) alone wasn’t enough.
- 
-- To minimize patient discomfort and risk,
-- I practiced a lot using plastic cannulation tubes.
- 
-- Today, most patients are satisfied with my technique.(니)
-- I was happy when the same patient later told me
-  - that he was satisfied with my care. 
+- (챌린지 기존 서론)
+  - Starting a new career in the dialysis center,
+    - performing invasive procedures such as cannulation was most challenging.
+  - For example, one day, a patient complained during the procedure.  
+- (환자와의 트러블로 서론) 
+  - dddd
+- (본론)
+  - Of course, I understood that he experienced discomfort(컴) during the procedure.   
+  - So, I actively listened to his feelings and tried to be empathetic,
+    - while offering sincere apologies.   
+  - However, I realized that empathy(엠퍼띠) alone wasn’t enough.   
+  - To minimize patient discomfort and risk,
+  - I practiced a lot using plastic cannulation tubes.   
+  - Today, most patients are satisfied with my technique.(니)
+  - I was happy when the same patient later told me
+    - that he was satisfied with my care. 
+  - This challenging experience taught me the importance of empathy 
+    - and finding solutions collaboratively.
+  - (I believe that being able to perform all aspects of dialysis
+    - allows me to provide optimal experience for my patients.)[(TOP -mid)](#mid)
 
-- This challenging experience taught me the importance of empathy 
-  - and finding solutions collaboratively.
-- (I believe that being able to perform all aspects of dialysis
-  - allows me to provide optimal experience for my patients.)[(TOP -mid)](#mid)
 
 
 # 9. 실수
