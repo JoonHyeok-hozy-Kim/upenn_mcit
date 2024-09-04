@@ -349,9 +349,9 @@ for the regular and long-term treatment.
 
 # 7. conflict
 # 7.1 Doctor or 동료 
-  - Once, I had a patient who needed to set dialysis ultrafiltration for 3kg, 
+  - Once, I had a patient who needed to set dialysis ultrafiltration for 3kgs, 
     - but his initial blood pressure was lower than usual,( around 100 millimeters of mercury systolic.) 
-  - So, I decided to start the machine at 2.5kg,
+  - So, I decided to start the machine at 2.5kgs,
     - planning to gradually increase it as the patient's blood pressure stabilized.
 
   - However, the doctor on rounds was not aware 
