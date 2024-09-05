@@ -529,7 +529,7 @@ for the regular and long-term treatment.
   - (Were you asking someone else? I misunderstood)
 - (위치)
   - Could you please tell me the specific location of this clinic?
-  - That's amazing! University City is so close to your company! 
+  - That's amazing! University City is so close that place! 
   - I was even considering a one-hour commute. 
 - (기대됩니다)
   - I'm very excited about that. 
