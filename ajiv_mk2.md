@@ -508,6 +508,7 @@ for the regular and long-term treatment.
 # 17. 마무리 질문
 - Could you please tell me the average number of nurses, technicians, and patients per shift in your clinic?
 - How do you support your nurses to advance in their careers?
+- I was wondering what time I should start work each day.
 - (Could you please let me know when I might expect to hear the result?)
 - (더는 없어)
   - I don't have any further questions at this point. 
@@ -543,7 +544,9 @@ for the regular and long-term treatment.
 - (위치)
   - Could you please tell me the specific location of this clinic?
   - That's amazing! University City is so close to your company! 
-  - I was even considering a one-hour commute. [(TOP -mid)](#mid)
+  - I was even considering a one-hour commute. 
+- (기대됩니다)
+  - I'm very excited about that. [(TOP -mid)](#mid)
 
 <br>
 
