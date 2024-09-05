@@ -513,13 +513,17 @@ for the regular and long-term treatment.
 
 
 # 17. 마무리 질문
-- Could you please tell me the average number of nurses, technicians, and patients per shift in your clinic?
-- How do you support your nurses to advance in their careers?
-- I was wondering what time I should start work each day.
-- (Could you please let me know when I might expect to hear the result?)
+- (근무자 수)
+  - Could you please tell me the average number of nurses, technicians, and patients per shift in your clinic?
+- (근무 시작 시간)
+  - I was wondering what time I should start working each day.
+- (커리어 발전 지원)
+  - Do you provide support for your nurses to advance in their careers?
 - (더는 없어)
   - I don't have any further questions at this point. 
   - I think you've answered all my questions very clearly. 
+- (결과는 언제?)
+  - Could you please let me know when I might expect to hear the result?
 - (고마워 너랑 일할래)
   - Thank you for taking the time to interview me.
   - I am looking forward to working with your team. [(TOP -mid)](#mid)
