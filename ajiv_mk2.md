@@ -161,17 +161,21 @@ for the regular and long-term treatment.
   - with underlying conditions 
   - such as polycystic kidney disease, gestational hypertension,
   - diabetic ESRD, and hypertensive ESRD.
+- (뭐하는데?)
 - For dialysis patients, I would focus on 
-  - assessing their vascular access, vital signs, fluid status dialysis-related complications, 
+  - assessing their vascular access, vital signs, 
+  - fluid status dialysis-related complications, 
   - and any other underlying medical conditions.
-- I carefully inspect and palpate the access site 
-  - for signs of infection, thrombosis, or infiltration.
-- I monitor blood pressure, heart rate, respiratory rate, and temperature for any abnormalities. 
-- I assess for fluid overload or dehydration, 
-  - such as edema, shortness of breath, or hypotension. 
-- I closely monitor for dialysis-related complications 
-  - like muscle cramps, nausea, vomiting, or hypotension,
-  - while also considering underlying medical conditions that might impact their treatment." [(TOP)](#list-of-contents)
+- I carefully inspect and palpate the access site for signs of 
+  - infection, thrombosis, or infiltration. 
+- While monitoring blood pressure, heart rate, respiratory rate, and 
+  - temperature for any abnormalities, 
+  - I also assess for fluid overload or dehydration, such as 
+  - edema, shortness of breath, or hypotension. 
+- In addition to closely monitoring for dialysis-related complications like 
+  - muscle cramps, nausea, vomiting, or hypotension, 
+  - I consider underlying medical conditions 
+  - that might impact their treatment.[(TOP)](#list-of-contents)
 
 # 1.5 내 자격
 - [엔클]
