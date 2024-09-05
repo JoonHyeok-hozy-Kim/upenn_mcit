@@ -176,7 +176,9 @@ for the regular and long-term treatment.
 - In addition to closely monitoring for dialysis-related complications like 
   - muscle cramps, nausea, vomiting, or hypotension, 
   - I consider underlying medical conditions 
-  - that might impact their treatment.[(TOP)](#list-of-contents)
+  - that might impact their treatment.
+- (니들링 우리는 안한다.)
+  - Oh really? I got it. [(TOP)](#list-of-contents)
 
 # 1.5 내 자격
 - [엔클]
@@ -537,10 +539,8 @@ for the regular and long-term treatment.
   - I was even considering a one-hour commute. 
 - (기대됩니다)
   - I'm very excited about that. 
-- (니들링)
-  - I believe that my ability to perform all aspects of dialysis and 
-    - my comprehensive understanding of the process 
-    - allow me to provide an optimal experience for my patients.
+- (니들링 우리는 안한다.)
+  - Oh really? I got it.
 - (출퇴근 오래걸림)
   - I can handle a 1-hour commute. I'm already doing it.
 - (대학원)
