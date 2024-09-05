@@ -168,6 +168,7 @@ for the regular and long-term treatment.
   - and any other underlying medical conditions.
 - I carefully inspect, palpate, and auscultate the access site for 
   - signs of infection, thrombosis, or infiltration. 
+    - (thrill, bruit)
 - While monitoring blood pressure, heart rate, respiratory rate, and 
   - temperature for any abnormalities, 
   - I also assess for fluid overload or dehydration, such as 
