@@ -379,7 +379,12 @@ for the regular and long-term treatment.
     - and resolve the issue.
    
   - So, I think that effective communication is 
-    - essential for resolving conflicts.[(TOP -mid)](#mid)
+    - essential for resolving conflicts.
+  - (That patient typically experiences 
+    - a significant rise in blood pressure 
+    - toward the end of dialysis sessions, 
+    - which is then well-maintained.) [(TOP -mid)](#mid)
+
 # 7.2 일반적
   - To begin with, we often work under high pressure, so I try not to take anything personally. 
   - Instead, I think communication is the most important key.
