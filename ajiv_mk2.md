@@ -166,8 +166,8 @@ for the regular and long-term treatment.
   - assessing their vascular access, vital signs, 
   - fluid status dialysis-related complications, 
   - and any other underlying medical conditions.
-- I carefully inspect and palpate the access site for signs of 
-  - infection, thrombosis, or infiltration. 
+- I carefully inspect, palpate, and auscultate the access site for 
+  - signs of infection, thrombosis, or infiltration. 
 - While monitoring blood pressure, heart rate, respiratory rate, and 
   - temperature for any abnormalities, 
   - I also assess for fluid overload or dehydration, such as 
