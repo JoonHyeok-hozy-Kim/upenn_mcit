@@ -529,7 +529,7 @@ for the regular and long-term treatment.
   - (Were you asking someone else? I misunderstood)
 - (위치)
   - Could you please tell me the specific location of this clinic?
-  - That's amazing! University City is so close that place! 
+  - That's amazing! University City is so close to that place! 
   - I was even considering a one-hour commute. 
 - (기대됩니다)
   - I'm very excited about that. 
@@ -545,7 +545,7 @@ for the regular and long-term treatment.
   - I can handle a 1-hour commute. I'm already doing it.
 - (대학원)
   - Many dialysis patients are elderly. 
-    - Studying gerontology will help me better understand their specific needs.[(TOP -mid)](#mid)
+    - Studying gerontology will help me better understand their specific needs. [(TOP -mid)](#mid)
 
 <br>
 
