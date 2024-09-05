@@ -525,7 +525,7 @@ for the regular and long-term treatment.
 
 # 18.필요한 표현
 - (헉 나한테 질문 아닐떄?)
-  - I apologize, I thought you were asking me.
+  - I apologize(자이즈), I thought you were asking me.
   - (Were you asking someone else? I misunderstood)
 - (위치)
   - Could you please tell me the specific location of this clinic?
