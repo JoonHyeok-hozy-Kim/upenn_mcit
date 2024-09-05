@@ -19,6 +19,7 @@
   - [5.3 무슨 리더쉽?](#53-리더쉽-뭐가-더-좋아)
   - [5.4 리더 or 팀원?](#54-리더거나-팀원-일-때)
   - [5.5 Unexpected work?](#55-unexpected-work)
+- [★★ 18.필요한 표현 ★★](#18필요한-표현-mid)
 
 #### Mid
 - [6. 트러블 (trouble)](#6-트러블-환자랑)
@@ -336,6 +337,29 @@ for the regular and long-term treatment.
   - and sterilizing medical equipment.
 - It was a busy day, but I was able 
   - to complete all my tasks. I was happy to help my team.[(TOP)](#list-of-contents)
+
+
+# 18.필요한 표현 (mid)
+- (Fiancé in Philly)
+  - My fiancé is pursuing a master's degree in Philadelphia and 
+    - he will do the doctor's as well.
+  - I heard that it will take at least 6 to 7 years.
+- (헉 나한테 질문 아닐떄?)
+  - I apologize(자이즈), I thought you were asking me.
+  - (Were you asking someone else? I misunderstood)
+- (위치)
+  - Could you please tell me the specific location of this clinic?
+  - That's amazing! University City is so close to that place! 
+  - I was even considering a one-hour commute. 
+- (기대됩니다)
+  - I'm very excited about that. 
+- (니들링 우리는 안한다.)
+  - Oh really? I got it.
+- (출퇴근 오래걸림)
+  - I can handle a 1-hour commute. I'm already doing it.
+- (대학원)
+  - Many dialysis patients are elderly. 
+    - Studying gerontology will help me better understand their specific needs. [(TOP -mid)](#mid)
 
 
 # 6. 트러블 환자랑
