@@ -526,7 +526,9 @@ for the regular and long-term treatment.
   - Could you please let me know when I might expect to hear the result?
 - (고마워 너랑 일할래)
   - Thank you for taking the time to interview me.
-  - I am looking forward to working with your team. [(TOP -mid)](#mid)
+  - I am looking forward to working with your team. 
+- (나갈까?)
+  - Shall I leave the meeting now? [(TOP -mid)](#mid)
 
 
 # 18.필요한 표현
