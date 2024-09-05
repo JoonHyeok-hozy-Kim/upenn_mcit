@@ -524,6 +524,10 @@ for the regular and long-term treatment.
 
 
 # 18.필요한 표현
+- (Fiancé in Philly)
+  - My fiancé is pursuing a master's degree in Philadelphia and 
+    - he will do the doctor's as well.
+  - I heard that it will take at least 6 to 7 years.
 - (헉 나한테 질문 아닐떄?)
   - I apologize(자이즈), I thought you were asking me.
   - (Were you asking someone else? I misunderstood)
@@ -537,10 +541,6 @@ for the regular and long-term treatment.
   - I believe that my ability to perform all aspects of dialysis and 
     - my comprehensive understanding of the process 
     - allow me to provide an optimal experience for my patients.
-- (Fiancé in Philly)
-  - My fiancé is pursuing a master's degree in Philadelphia and 
-    - he will do the doctor's as well.
-  - I heard that it will take at least 6 to 7 years.
 - (출퇴근 오래걸림)
   - I can handle a 1-hour commute. I'm already doing it.
 - (대학원)
