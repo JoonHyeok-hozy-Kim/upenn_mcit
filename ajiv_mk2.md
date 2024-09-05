@@ -508,8 +508,13 @@ for the regular and long-term treatment.
 # 17. 마무리 질문
 - Could you please tell me the average number of nurses, technicians, and patients per shift in your clinic?
 - How do you support your nurses to advance in their careers?
-- Could you please let me know when I might expect to hear the result?
-- Thank you for taking the time to interview me. [(TOP -mid)](#mid)
+- (Could you please let me know when I might expect to hear the result?)
+- (더는 없어)
+  - I don't have any further questions at this point. 
+  - I think you've answered all my questions very clearly. 
+- (고마워 너랑 일할래)
+  - Thank you for taking the time to interview me.
+  - I am looking forward to working with your team. [(TOP -mid)](#mid)
 
 
 # 18.필요한 표현
@@ -531,7 +536,14 @@ for the regular and long-term treatment.
 - (지금 일 예시)
   - To give you an example of my experiences at my current job,
 - (생각이 안나요)
-  - Sorry, but I can't come up with such an experience.  [(TOP -mid)](#mid)
+  - Sorry, but I can't come up with such an experience.  
+- (헉 나한테 질문 아닐떄?)
+  - I apologize, I thought you were asking me.
+  - (Were you asking someone else? I misunderstood)
+- (위치)
+  - Could you please tell me the specific location of this clinic?
+  - That's amazing! University City is so close to your company! 
+  - I was even considering a one-hour commute. [(TOP -mid)](#mid)
 
 <br>
 
