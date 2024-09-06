@@ -791,7 +791,12 @@ for the regular and long-term treatment.
   - forward me to Philadelphia. [(섀넌3 Top)](#shannon-interview-3-top)
 
 # SI3-2. 검토기간 줘
-- May I take some time to review the contract and email you back?  [(섀넌3 Top)](#shannon-interview-3-top)
+- May I take some time to review the contract and email you back?  
+- (된다하면)
+  - Could you specify the deadline for it?
+- (알려주면)
+  - I'll make sure to do it promptly! 
+  - Thank you! [(섀넌3 Top)](#shannon-interview-3-top)
 
 # SI3-3. 연봉제안 하라면
 - I checked the indeed and the glassdoor and 
