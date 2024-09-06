@@ -840,9 +840,9 @@ for the regular and long-term treatment.
 - (좀더 설명해줘)
   - Could you describe it more specifically?
 - (궁금)
-  - I am curious about ~
+  - I am curious about <명사>
 - (마무리)
-  - Thank you Shannon.
+  - Thank you, Shannon.
   - I couldn't have done it without your support.
   - I really appreciate it.
   - Please, take care.
