@@ -820,12 +820,12 @@ for the regular and long-term treatment.
 - Could you raise it up a bit more? [(섀넌3 Top)](#shannon-interview-3-top)
 
 # SI3-5. 이민 과정 기다릴 수 있어?
-- I am willing to wait for the immigration process. 
+- I will definitely wait for the immigration process. 
 - Could you tell me the person that 
   - I should contact for the immigration process? [(섀넌3 Top)](#shannon-interview-3-top)
 
 # SI3-6. 다음 스텝
-- What are the next steps in the hiring process? [(섀넌3 Top)](#shannon-interview-3-top)
+- Could you describe how the rest of the hiring process will be like? [(섀넌3 Top)](#shannon-interview-3-top)
 
 # SI3-7. 난 뭘 할까
 - Are there any specific steps or actions that 
