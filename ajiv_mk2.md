@@ -787,10 +787,13 @@ for the regular and long-term treatment.
 
 # Shannon Interview 3
 # SI3-1. 고마워
-- That’s great news. That’s amazing. 
-- I really appreciate your efforts to 
-  - consider my situation and 
-  - forward me to Philadelphia. [(섀넌3 Top)](#shannon-interview-3-top)
+- That’s a great news.
+  - (That’s amazing.) 
+- I really appreciate your efforts. 
+- (섀넌이 생색을 즐기는 경우에만...)
+  - You considered my situation and 
+    - forwarded me to Philadelphia. 
+  - You are so kind and considerate. [(섀넌3 Top)](#shannon-interview-3-top)
 
 # SI3-2. 검토기간 줘
 - May I take some time to review the contract and email you back?  
