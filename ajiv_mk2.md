@@ -70,10 +70,11 @@
 - [SI3-3. 연봉제안 하라면](#si3-3-연봉제안-하라면)
 - [SI3-4. 연봉 너무 적은 경우](#si3-4-연봉-너무-적은-경우)
 - [SI3-5. 이민과정 기다릴 수 있어?](#si3-5-이민-과정-기다릴-수-있어)
+- [SI3-5-1. 변호사](#si3-5-1-변호사)
 - [SI3-6. 다음 스텝](#si3-6-다음-스텝)
 - [SI3-7. 난 뭘 할까?](#si3-7-난-뭘-할까)
 - [★★★ SI3-8. 각종 필요 표현들 ★★★](#si3-8-각종-필요-표현들)
-
+- [SI3-9. 마무리](#si3-9-마무리)
 
 <br>
 
@@ -817,10 +818,13 @@ for the regular and long-term treatment.
   - for the patients. 
 - Besides, considering the living cost of Philadelphia, 
   - XX dollars per hour is not enough. 
-- Could you raise it up a bit more? [(섀넌3 Top)](#shannon-interview-3-top)
+- Could you raise it up a bit more? 
+- I expect at least 42 dollars per hour. [(섀넌3 Top)](#shannon-interview-3-top)
 
 # SI3-5. 이민 과정 기다릴 수 있어?
-- I will definitely wait for the immigration process. 
+- I will definitely wait for the immigration process.  [(섀넌3 Top)](#shannon-interview-3-top)
+
+# SI3-5-1. 변호사 
 - Could you tell me the person that 
   - I should contact for the immigration process? [(섀넌3 Top)](#shannon-interview-3-top)
 
@@ -841,13 +845,14 @@ for the regular and long-term treatment.
   - Could you describe it more specifically?
 - (궁금)
   - I am curious about <명사>
-- (마무리)
-  - Thank you, Shannon.
-  - I couldn't have done it without your support.
-  - I really appreciate it.
-  - Please, take care.
-  - See you.
-  - Bye.  [(섀넌3 Top)](#shannon-interview-3-top)
+
+# SI3-9. 마무리
+- Thank you, Shannon.
+- I couldn't have done it without your support.
+- I really appreciate it.
+- Please, take care.
+- See you.
+- Bye.  [(섀넌3 Top)](#shannon-interview-3-top)
 
 
 [(전체 TOP)](#list-of-contents)
