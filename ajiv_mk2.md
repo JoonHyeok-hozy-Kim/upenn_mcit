@@ -836,7 +836,7 @@ for the regular and long-term treatment.
   - I really appreciate it.
   - Please, take care.
   - See you.
-  - Bye
+  - Bye.  [(섀넌3 Top)](#shannon-interview-3-top)
 
 
 [(전체 TOP)](#list-of-contents)
