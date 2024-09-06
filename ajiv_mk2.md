@@ -819,7 +819,23 @@ for the regular and long-term treatment.
 - Are there any specific steps or actions that 
   - I need to take during the application process? [(섀넌3 Top)](#shannon-interview-3-top)
 
-
+# SI3-8. 각종 필요 표현들
+- (이해한다) 
+  - I understand.
+  - I see what you mean.
+  - I get it.
+  - That makes sense.
+- (좀더 설명해줘)
+  - Could you describe it more specifically?
+- (궁금)
+  - I am curious about ~
+- (마무리)
+  - Thank you Shannon.
+  - I couldn't have done it without your support.
+  - I really appreciate it.
+  - Please, take care.
+  - See you.
+  - Bye
 
 
 [(전체 TOP)](#list-of-contents)
