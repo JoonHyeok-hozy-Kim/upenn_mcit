@@ -783,6 +783,8 @@ for the regular and long-term treatment.
   - I understand your decision.
   - Would there be any opportunities for me to apply again in the future? [(섀넌2 Top)](#shannon-interview-2)
 
+<br><br>
+
 # Shannon Interview 3
 # SI3-1. 고마워
 - That’s great news. That’s amazing. 
