@@ -816,7 +816,7 @@ for the regular and long-term treatment.
   - my familiarity with the Fresenius machines will be helpful for your company and 
   - for the patients. 
 - Besides, considering the living cost of Philadelphia, 
-  - XX dollars per hours is not enough. 
+  - XX dollars per hour is not enough. 
 - Could you raise it up a bit more? [(섀넌3 Top)](#shannon-interview-3-top)
 
 # SI3-5. 이민 과정 기다릴 수 있어?
