@@ -813,15 +813,16 @@ for the regular and long-term treatment.
 # SI3-4. 연봉 너무 적은 경우
 - Thanks for the offer, but 
   - I can assure you that my 6 years of nursing experience and 
-  - my familiarity with the FMC machines will be helpful for your company and 
+  - my familiarity with the Fresenius machines will be helpful for your company and 
   - for the patients. 
-- Besides, considering the living cost of Pennsylvania 
+- Besides, considering the living cost of Philadelphia, 
   - XX dollars per hours is not enough. 
 - Could you raise it up a bit more? [(섀넌3 Top)](#shannon-interview-3-top)
 
 # SI3-5. 이민 과정 기다릴 수 있어?
-- I am willing to wait for the immigration process, but 
-  - I would appreciate it if we could begin the immigration petition as soon as possible. [(섀넌3 Top)](#shannon-interview-3-top)
+- I am willing to wait for the immigration process. 
+- Could you tell me the person that 
+  - I should contact for the immigration process? [(섀넌3 Top)](#shannon-interview-3-top)
 
 # SI3-6. 다음 스텝
 - What are the next steps in the hiring process? [(섀넌3 Top)](#shannon-interview-3-top)
