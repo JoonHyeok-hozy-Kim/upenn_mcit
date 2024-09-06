@@ -64,6 +64,16 @@
   - [26-9. 에이전시 지원했어?](#26-9-에이전시-지원-했어)
   - [26-10. 다음 기회...](#26-10-다음-기회)
 
+# Shannon Interview 3 Top
+- [SI3-1. 고마워](#si3-1-고마워)
+- [SI3-2. 검토기간 줘](#si3-2-검토기간-줘)
+- [SI3-3. 연봉제안 하라면](#si3-3-연봉제안-하라면)
+- [SI3-4. 연봉 너무 적은 경우](#si3-4-연봉-너무-적은-경우)
+- [SI3-5. 이민과정 기다릴 수 있어?](#si3-5-이민-과정-기다릴-수-있어)
+- [SI3-6. 다음 스텝](#si3-6-다음-스텝)
+- [SI3-7. 난 뭘 할까?](#si3-7-난-뭘-할까)
+
+
 <br>
 
 ---
@@ -771,6 +781,43 @@ for the regular and long-term treatment.
 - (그래도 안 된다.)
   - I understand your decision.
   - Would there be any opportunities for me to apply again in the future? [(섀넌2 Top)](#shannon-interview-2)
+
+# Shannon Interview 3
+# SI3-1. 고마워
+- That’s great news. That’s amazing. 
+- I really appreciate your efforts to 
+  - consider my situation and 
+  - forward me to Philadelphia. [(섀넌3 Top)](#shannon-interview-3-top)
+
+# SI3-2. 검토기간 줘
+- May I take some time to review the contract and email you back?  [(섀넌3 Top)](#shannon-interview-3-top)
+
+# SI3-3. 연봉제안 하라면
+- I checked the indeed and the glassdoor and 
+  - they said the average salary for dialysis is about 
+  - 45 dollars per hour
+- (연봉 맘에 들면)
+  - I think that’s reasonable. [(섀넌3 Top)](#shannon-interview-3-top)
+
+# SI3-4. 연봉 너무 적은 경우
+- Thanks for the offer, but 
+  - I can assure you that my 6 years of nursing experience and 
+  - my familiarity with the FMC machines will be helpful for your company and 
+  - for the patients. 
+- Besides, considering the living cost of Pennsylvania 
+  - XX dollars per hours is not enough. 
+- Could you raise it up a bit more? [(섀넌3 Top)](#shannon-interview-3-top)
+
+# SI3-5. 이민 과정 기다릴 수 있어?
+- I am willing to wait for the immigration process, but 
+  - I would appreciate it if we could begin the immigration petition as soon as possible. [(섀넌3 Top)](#shannon-interview-3-top)
+
+# SI3-6. 다음 스텝
+- What are the next steps in the hiring process? [(섀넌3 Top)](#shannon-interview-3-top)
+
+# SI3-7. 난 뭘 할까
+- Are there any specific steps or actions that 
+  - I need to take during the application process? [(섀넌3 Top)](#shannon-interview-3-top)
 
 
 
