@@ -1,5 +1,5 @@
 1. [Complex Project](#1-complex-project)
-2. 
+2. [Difficult Technical Challenge](#2-difficult-technical-challenge)
 
 
 ## 1. Complex Project
@@ -17,30 +17,43 @@
 - I shared my findings with the clients, 
   - who requested specific accounting treatments for the dynamic parameters in the algorithms. 
 - This project was especially tricky because battery production was not yet stabilized. 
-- It was difficult to distinguish between noise data and 
-  - new, unstable data, which required extensive testing.
+- It was difficult to distinguish between noise data and new, unstable data
+- So, it required extensive testing.
 - Despite these challenges, we successfully developed an algorithm that 
   - calculated justifiable devaluation values.
-- Fortunately the LG Electronics' business administration was also satisfied with the result. 
+- And fortunately, the LG Electronics' business administration was also satisfied with the result. 
 - This project was valuable because it taught me how to effectively collaborate with clients 
   - who had limited programming knowledge and deliver a result that met their expectations.
             
 
 ## 2. Difficult Technical Challenge
-- Providing real-time system support for the cost calculation process for the LG Electronics Monthly Closing was so complicated and time consuming
-    - This was because the process involved numerous manual operations by the account managers
-    - Some of them could be skipped depending on the dataset, but the existing system required manual operation for every steps.
-    - I had to support 135 branches world wide simultaneously, which was too challenging when operators generated human errors all together.
-    - The time they had to wait for my support was one of the serious bottlenecks during the process.
-- I started to list-up the processes during the closing that could be automized depending on the dataset.
-    - Devised ways to automize them while guaranteeing the accurate calculation
-        - Modified process to request manual process only when certain data exceeded the threshold.
-        - Set UI that users can easily set up those thresholds by themselves.
-        - Gave users authorities to re-set the data and fix their errors by themselves with the click of a button
-- Made an official proposal of an program automation project consisted the tasks that I devised.
-- Suggested to my team-leader and the client.
-- Started the project and successfully implemented the program set.
-- Reduced my workload significantly during the closing and enhanced the speed of LGE's closing process substantially.
+- For me, one of the biggest challenges I faced was 
+  - supporting the real-time cost calculation process for LG Electronics' Monthly Closing. 
+- This was a monthly event that accounting managers from 135 branches world wide
+  - simultaneously closing their financial accounts at the beginning of each month.
+- This process was incredibly complex and time-consuming because
+  - account managers had to check their monthly production and sales data and
+  - they had to perform numerous manual operations on the system.
+- My duty was to support technical issues when these managers had trouble closing their accounts.
+- The human errors were inevitable due to the complicated process of cost calculation and
+  - the amount of data accounting managers had to check during the procedure.
+- So, whenever multiple managers got in trouble simultaneously,
+  - they all requested the solution and there was a bottle neck on the whole closing process.
+- To address these issues, I thought about the way to simplify the closing process.
+- Of course it was impossible to simplify the cost calculation process itself,
+  - but I had an idea that some procedures could be skipped,
+  - depending on the data.
+- For example, when checking the gap between the receiving amount on the accounting book and
+  - the actual business data recorded on the ERP system are small enough
+  - we could remove accounting managers' burden by automatically skipping such process.
+- Based on this idea, I developed a solution that automated several steps of the process based on the dataset. 
+- I devised ways to automate the process while ensuring accurate calculations, 
+  - such as modifying the process to require manual input only when certain data exceeded a threshold. 
+- I also created a user-friendly interface that allowed users 
+  - to set these thresholds themselves and easily correct errors.
+- Based on these improvements, I proposed a program automation project to my team leader and the client. 
+- The project was successfully implemented, significantly reducing my workload during the closing process and 
+  - substantially improving the overall speed of LG Electronics' monthly closing.
     
 
 ## 3. Collaboration with Team
