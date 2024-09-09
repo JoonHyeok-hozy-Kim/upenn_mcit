@@ -35,10 +35,10 @@
   - account managers had to check their monthly production and sales data and
   - they had to perform numerous manual operations on the system.
 - My duty was to support technical issues when these managers had trouble closing their accounts.
-- The human errors were inevitable because the cost calculation was complex and
+- But the human errors were inevitable because the cost calculation itself was very complex and
   - the amount of data accounting managers had to check during the procedure was massive.
-- So, whenever multiple managers got in trouble simultaneously,
-  - they all requested the solution and there was a bottle neck on the whole closing process.
+- So, when multiple managers encountered problems at the same time, 
+  - it created a bottleneck that put significant pressure on me.
 - And I felt great pressure when these bottlenecks took place because
   - I had to receive numerous calls from the managers 
   - while finding the reason they made mistake and finally
