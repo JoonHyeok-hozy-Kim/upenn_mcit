@@ -39,9 +39,9 @@
   - the amount of data accounting managers had to check during the procedure was massive.
 - So, when multiple managers encountered problems at the same time, 
   - it created a bottleneck that put huge pressure on me.
-- This was because I had to receive numerous calls from other managers 
-  - while finding the reason what caused the trouble and finally
-  - providing solutions to fix the problems one by one.
+- This was because while finding the reason what caused the trouble and 
+  - providing solutions to fix the problems one by one,
+  - I had to receive numerous calls from other managers begging prompt assistance.
 - I though some improvement was definitely required for my own mental safety
   - and thought about the way to simplify the closing process.
 - Of course it was impossible to simplify the cost calculation process itself,
