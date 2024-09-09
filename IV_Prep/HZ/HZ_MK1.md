@@ -29,17 +29,17 @@
 ## 2. Difficult Technical Challenge
 - For me, one of the biggest challenges I faced was 
   - supporting the real-time cost calculation process for LG Electronics' Monthly Closing. 
-- This was a monthly event that accounting managers from 135 branches world wide
+- Monthly Closing was a monthly event that accounting managers from 135 branches world wide
   - simultaneously closing their financial accounts at the beginning of each month.
 - This process was incredibly complex and time-consuming because
-  - account managers had to check their monthly production and sales data and
+  - account managers had to check their monthly production data and sales data, and
   - they had to perform numerous manual operations on the system.
 - My duty was to support technical issues when these managers had trouble closing their accounts.
 - But the human errors were inevitable because the cost calculation itself was very complex and
   - the amount of data accounting managers had to check during the procedure was massive.
 - So, when multiple managers encountered problems at the same time, 
   - it created a bottleneck that put huge pressure on me.
-- This was because while finding the reason what caused the trouble and 
+- This was because while I was finding the reason what caused the trouble and 
   - providing solutions to fix the problems one by one,
   - I had to receive numerous calls from other managers begging prompt assistance.
 - I though some improvement was definitely required for my own mental safety
@@ -56,8 +56,10 @@
 - I also created a user-friendly interface that allowed users 
   - to set these thresholds themselves and easily correct errors.
 - Based on these improvements, I proposed a program automation project to my team leader and the client. 
-- The project was successfully implemented, significantly reducing my workload during the closing process and 
-  - substantially improving the overall speed of LG Electronics' monthly closing.
+- The project was successfully implemented afterward, and 
+  - it significantly reduced my workload during the closing process.
+- Additionally, it improved the overall speed of LG Electronics' monthly closing,
+  - which made my client very satisfied.
     
 
 ## 3. Collaboration with Team
