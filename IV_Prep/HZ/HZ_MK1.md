@@ -38,11 +38,10 @@
 - But the human errors were inevitable because the cost calculation itself was very complex and
   - the amount of data accounting managers had to check during the procedure was massive.
 - So, when multiple managers encountered problems at the same time, 
-  - it created a bottleneck that put significant pressure on me.
-- And I felt great pressure when these bottlenecks took place because
-  - I had to receive numerous calls from the managers 
-  - while finding the reason they made mistake and finally
-  - providing solutions to fix the problems.
+  - it created a bottleneck that put huge pressure on me.
+- This was because I had to receive numerous calls from other managers 
+  - while finding the reason what caused the trouble and finally
+  - providing solutions to fix the problems one by one.
 - I though some improvement was definitely required for my own mental safety
   - and thought about the way to simplify the closing process.
 - Of course it was impossible to simplify the cost calculation process itself,
