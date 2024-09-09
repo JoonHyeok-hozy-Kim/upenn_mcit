@@ -35,22 +35,22 @@
   - account managers had to check their monthly production and sales data and
   - they had to perform numerous manual operations on the system.
 - My duty was to support technical issues when these managers had trouble closing their accounts.
-- The human errors were inevitable due to the complicated process of cost calculation and
-  - the amount of data accounting managers had to check during the procedure.
+- The human errors were inevitable because the cost calculation was complex and
+  - the amount of data accounting managers had to check during the procedure was massive.
 - So, whenever multiple managers got in trouble simultaneously,
   - they all requested the solution and there was a bottle neck on the whole closing process.
 - And I felt great pressure when these bottlenecks took place because
   - I had to receive numerous calls from the managers 
-  - while finding the reason they made mistake and 
+  - while finding the reason they made mistake and finally
   - providing solutions to fix the problems.
-- I though some improvement was required for my own mental safety
+- I though some improvement was definitely required for my own mental safety
   - and thought about the way to simplify the closing process.
 - Of course it was impossible to simplify the cost calculation process itself,
   - but I had an idea that some procedures could be skipped,
   - depending on the data.
-- For example, when checking the gap between the receiving amount on the accounting book and
+- For example, when the gap between the receiving amount on the accounting book and
   - the actual business data recorded on the ERP system are small enough
-  - we could remove accounting managers' burden by automatically skipping such process.
+  - I could develop an algorithm that automatically skip the accounting managers' related process.
 - Based on this idea, I developed a solution that automated several steps of the process based on the dataset. 
 - I devised ways to automate the process while ensuring accurate calculations, 
   - such as modifying the process to require manual input only when certain data exceeded a threshold. 
