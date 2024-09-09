@@ -39,7 +39,12 @@
   - the amount of data accounting managers had to check during the procedure.
 - So, whenever multiple managers got in trouble simultaneously,
   - they all requested the solution and there was a bottle neck on the whole closing process.
-- To address these issues, I thought about the way to simplify the closing process.
+- And I felt great pressure when these bottlenecks took place because
+  - I had to receive numerous calls from the managers 
+  - while finding the reason they made mistake and 
+  - providing solutions to fix the problems.
+- I though some improvement was required for my own mental safety
+  - and thought about the way to simplify the closing process.
 - Of course it was impossible to simplify the cost calculation process itself,
   - but I had an idea that some procedures could be skipped,
   - depending on the data.
