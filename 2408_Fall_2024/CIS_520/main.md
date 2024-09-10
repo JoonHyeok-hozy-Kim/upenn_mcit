@@ -2,11 +2,10 @@
 
 # CIS 520 Machine Learning
 
-## Module 1
 |No|Subject|Keywords|
 |:-:|:-|:-|
-| 1|[Supervised Learning and Error]()|- Model, Training <br> - Supervised Learning : Classification, Regression <br> - Training Error, Loss, Mean Squared Error, Empirical Risk Minimization <br> - Generalization, True Risk, Empirical Risk, Generalization Gap|
-| 2|[]()|- |
+| 1|[Supervised Learning and Error](notes/01.md)|- Model, Training <br> - Supervised Learning : Classification, Regression <br> - Training Error, Loss, Mean Squared Error, Empirical Risk Minimization <br> - Generalization, True Risk, Generalization Gap|
+| 2|[k Nearest Neighbors (k-NN)](notes/02.md)|- Minkowski Distance, Normalized Compression Distance (NCD) <br> - Curse of Dimensionality|
 | 3|[]()|- |
 | 4|[]()|- |
 
