@@ -51,6 +51,14 @@
   - [24. PWD  ](#24-pwd)
   - [25. 연봉](#25-연봉)
 
+# Perfect Choice
+- [1. 투석실 자리? 시설?](#pcq-1-투석실-자리--시설)
+- [2. 병원 인터뷰 언제?](#pcq-2-병원-인터뷰는)
+- [3. 계약기간 2년?](#pcq-3-계약기간-2년)
+- [4. 경력 유지?](#pcq-4-한국-경력-유지)
+- [5. I-140 바로?](#pcq-5-i-140-바로)
+- [6. 결과 언제쯤?](#pcq-6-결과-언제-들을-수-있어)
+
 # Shannon Interview 2
   - [26-0. 일상 대화](#26-0-일상-대화)
   - [26-1. 맘에 드는 곳](#26-1-맘에-드는-곳-나오면)
@@ -680,6 +688,49 @@ for the regular and long-term treatment.
   - Could you raise it up a bit more. [(TOP -mid)](#mid)
 
 ---
+
+<br><br>
+
+# Perfect Choice Questions
+## PCQ 1. 투석실 자리 / 시설?
+- Since it will take 2 to 3 years to get there, but
+  - could you tell me what kinds of dialysis facilities are available 
+  - at least for now?
+- (저쪽 얘기 들어보고) (Acute / Clinic) 
+  - So are there acute facilities and clinic? [(TOP Perfect Choice)](#perfect-choice)
+
+## PCQ 2. 병원 인터뷰는?
+- When will I have interview with the staff from the hospital?
+- Is it after I arrive in the US? [(TOP Perfect Choice)](#perfect-choice)
+
+## PCQ 3. 계약기간 2년?
+- How long is the contract period?
+- (적게 일한 경우)
+  - Is it possible that if I work less time for some weeks,
+    - then the contract gets extended? [(TOP Perfect Choice)](#perfect-choice)
+
+## PCQ 4. 한국 경력 유지
+- Is there a guideline for continuing the dialysis career in Korea, 
+  - before arriving in the US?
+- (몇달 휴식)
+  - Since it takes 2 to 3 years for the immigration,
+    - I am planning to have few months of break.
+  - And I will go back to the dialysis clinic right after it.
+  - Is it okay to do so? [(TOP Perfect Choice)](#perfect-choice)
+
+## PCQ 5. I-140 바로?
+- If I get the offer letter and sign it, can I immediately
+  - start the I-140?
+- I heard that for some facilities, PWD is not completed that
+  - they couldn't even start the I-140 and get the priority date.
+- Can you promptly support it? [(TOP Perfect Choice)](#perfect-choice)
+
+## PCQ 6. 결과 언제 들을 수 있어?
+- I'm sorry if I'm rushing, but
+  - could you let me know when I can expect to hear back? 
+- I need to make a quick decision because I've received an offer from another facility. [(TOP Perfect Choice)](#perfect-choice)
+
+
 
 <br><br>
 
