@@ -698,7 +698,7 @@ for the regular and long-term treatment.
   - could you tell me what kinds of dialysis facilities are available
   - at least for now?
 - (저쪽 얘기 들어보고) (Acute / Clinic) 
-  - So, are there positions for acute facilities or clinic? [(TOP Perfect Choice)](#perfect-choice)
+  - So, are there positions for acute facilities or clinics? [(TOP Perfect Choice)](#perfect-choice)
 
 ## PCQ 2. 병원 인터뷰는?
 - When will I have interview with the staff from the hospital?
