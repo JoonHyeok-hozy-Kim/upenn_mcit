@@ -694,6 +694,21 @@ for the regular and long-term treatment.
 <br><br>
 
 # Perfect Choice Questions
+- (질문이 많다)
+  - I have several questions to ask.
+- (중간 중간 리액션)
+  - 알겠다 
+    - I see
+    - Got it.
+  - 긍정
+    - Sure
+    - Great
+    - Awesome.
+  - 고맙다.
+    - Thank you
+- 이음말
+  - So, the next question is that
+
 ## PCQ 1. 투석실 자리 / 시설?
 - I understand that it will take 2 to 3 years to get there, but
   - could you tell me what kinds of dialysis facilities are available
