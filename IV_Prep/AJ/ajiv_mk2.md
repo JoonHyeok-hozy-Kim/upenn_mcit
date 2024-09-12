@@ -58,6 +58,7 @@
 - [4. 경력 유지?](#pcq-4-한국-경력-유지)
 - [5. I-140 바로?](#pcq-5-i-140-바로)
 - [6. 결과 언제쯤?](#pcq-6-결과-언제-들을-수-있어)
+- [7. 마무리](#pcq-7-마무리)
 
 # Shannon Interview 2
   - [26-0. 일상 대화](#26-0-일상-대화)
@@ -697,7 +698,7 @@ for the regular and long-term treatment.
   - could you tell me what kinds of dialysis facilities are available
   - at least for now?
 - (저쪽 얘기 들어보고) (Acute / Clinic) 
-  - So are there acute facilities and clinic? [(TOP Perfect Choice)](#perfect-choice)
+  - So, are there positions for acute facilities or clinic? [(TOP Perfect Choice)](#perfect-choice)
 
 ## PCQ 2. 병원 인터뷰는?
 - When will I have interview with the staff from the hospital?
@@ -730,8 +731,17 @@ for the regular and long-term treatment.
   - could you let me know when I can expect to hear back? 
 - I need to make a quick decision because I've received an offer from another facility. [(TOP Perfect Choice)](#perfect-choice)
 
-## PCQ 7. 마무리
-- 
+## PCQ 7. 마무리 
+- (더는 없어)
+  - I don't have any further questions at this point. 
+  - I think you've answered all my questions very clearly. 
+- (결과는 언제?)
+  - Could you please let me know when I might expect to hear the result?
+- (고마워 너랑 일할래)
+  - Thank you for taking the time to interview me.
+  - I am looking forward to working with your team. 
+- (나갈까?)
+  - Shall I leave the meeting now? [(TOP Perfect Choice)](#perfect-choice)
 
 
 <br><br>
