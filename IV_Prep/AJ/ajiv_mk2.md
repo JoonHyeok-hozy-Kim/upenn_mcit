@@ -693,8 +693,8 @@ for the regular and long-term treatment.
 
 # Perfect Choice Questions
 ## PCQ 1. 투석실 자리 / 시설?
-- Since it will take 2 to 3 years to get there, but
-  - could you tell me what kinds of dialysis facilities are available 
+- I understand that it will take 2 to 3 years to get there, but
+  - could you tell me what kinds of dialysis facilities are available
   - at least for now?
 - (저쪽 얘기 들어보고) (Acute / Clinic) 
   - So are there acute facilities and clinic? [(TOP Perfect Choice)](#perfect-choice)
@@ -730,6 +730,8 @@ for the regular and long-term treatment.
   - could you let me know when I can expect to hear back? 
 - I need to make a quick decision because I've received an offer from another facility. [(TOP Perfect Choice)](#perfect-choice)
 
+## PCQ 7. 마무리
+- 
 
 
 <br><br>
