@@ -735,8 +735,6 @@ for the regular and long-term treatment.
 - (더는 없어)
   - I don't have any further questions at this point. 
   - I think you've answered all my questions very clearly. 
-- (결과는 언제?)
-  - Could you please let me know when I might expect to hear the result?
 - (고마워 너랑 일할래)
   - Thank you for taking the time to interview me.
   - I am looking forward to working with your team. 
