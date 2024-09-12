@@ -8,6 +8,7 @@
   - [1.4 투석 간호사 일](#14-투석-간호사-일)
   - [1.5 내 자격](#15-내-자격)
 - [2. FMC 지원 동기](#2-fmc-지원-동기)
+  - [2.1 Perfect Choice 지원 동기]()
 - [3. 장 단점](#3-장-단점)
   - [3.1 간호사 장, 단점](#31-간호사-장-단점)
 - [4. 팀워크 (Teamwork)](#4-팀워크-경험)
@@ -231,6 +232,20 @@ for the regular and long-term treatment.
 - This is why I am particularly interested in working at your company.
 - (This button stops the ultrafiltration, gets the blood pressure, and drops the blood flow rate.)
 - convection.[(TOP)](#list-of-contents)
+
+# 2.1 Perfect Choice 지원 동기
+- I hope I can work in the US as soon as possible. 
+- While I have received a direct hire offer from another facility, 
+  - I've been dissatisfied with the lack of 
+    - detailed immigration information and support there. 
+- So, I have not signed the letter yet.
+- Meanwhile, I heard that Perfect Choice is well-prepared for 
+  - processes like securing the PWD date for the new employees. 
+- Nurses in Korea also told me that 
+  - you can minimize the time it takes to immigrate and 
+  - you have extensive knowledge in this area. 
+- That's why I've decided to apply to you.
+
 
 # 3. 장 단점
 - My strong point is that I am an outgoing person.
