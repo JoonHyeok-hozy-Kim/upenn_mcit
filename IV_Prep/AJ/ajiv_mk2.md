@@ -729,7 +729,8 @@ for the regular and long-term treatment.
 ## PCQ 6. 결과 언제 들을 수 있어?
 - I'm sorry if I'm rushing, but
   - could you let me know when I can expect to hear back? 
-- I need to make a quick decision because I've received an offer from another facility. [(TOP Perfect Choice)](#perfect-choice)
+- I need to make a quick decision because 
+  - I've received an offer from another facility. [(TOP Perfect Choice)](#perfect-choice)
 
 ## PCQ 7. 마무리 
 - (더는 없어)
