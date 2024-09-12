@@ -235,7 +235,7 @@ for the regular and long-term treatment.
 
 # 2.1 Perfect Choice 지원 동기
 - I hope I can work in the US as soon as possible. 
-- While I have received a direct hire offer from another facility, 
+- Actually, I have received a direct hire offer from another facility recently, but 
   - I've been dissatisfied with the lack of 
     - detailed immigration information and support there. 
 - So, I have not signed the letter yet.
