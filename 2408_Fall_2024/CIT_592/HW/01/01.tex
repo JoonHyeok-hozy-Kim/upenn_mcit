@@ -1,0 +1,240 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[11pt, nopagenumbers]{adamblan-hw}
+\usepackage{enumitem}
+\setcounter{questionCounter}{0}
+
+%%%%%%%%%%%%%%%%% Identifying Information %%%%%%%%%%%%%%%%%
+%% DO NOT INCLUDE YOUR NAME ANYWHERE IN THE PDF. WE WANT %%
+%% TO GRADE ANONYMOUSLY TO AVOID BIAS!!!!                %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+
+\begin{question}{Real Life Sets}
+    \begin{enumerate}[label=\Alph*.]
+        \item 
+            $R = \left\{ 
+                    \begin{matrix}
+                        \text{Albrecht Music Library} &
+                        \text{Annenberg School for Communication Library}, \\
+                        \text{Biddle Law Library}, &
+                        \text{Center for Global Collections}, \\
+                        \text{Chemistry Library}, &
+                        \text{Education Commons}, \\
+                        \text{Ormandy Music and Media Center}, &
+                        \text{Fisher Fine Arts Library}, \\
+                        \text{Goldstein Undergraduate Study Center}, &
+                        \text{Holman Biotech Commons}, \\
+                        \text{Kislak Center}, &
+                        \text{Levy Dental Medicine Library}, \\
+                        \text{LIBRA - Penn Libraries Research Annex}, &
+                        \text{Library at Katz Center for Advanced Judaic Studies}, \\
+                        \text{Lippincott Library of the Wharton School}, &
+                        \text{Math/Physics/Astronomy Library}, \\
+                        \text{Penn Museum Library}, &
+                        \text{University Archives}, \\
+                        \text{University Records Center}, &
+                        \text{Van Pelt-Dietrich Library Center}, \\
+                        \text{Veterinary Medicine: Atwood Library and Information Commons}, &
+                        \text{Veterinary Medicine: du Pont Library}, \\
+                        \text{Weigle Information Commons} 
+                    \end{matrix}
+                     \right\}$ \\
+        Thus, $\vert R\vert = 23$
+
+        \item 
+            $T(F) = \left\{ 
+                        \begin{matrix}
+                            \text{Shivani Agarwal}, &
+                            \text{Rajeev Alur},&
+                            \text{Sebastian Angel}, &
+                            \text{Ryan Baker}, \\
+                            \text{Yoseph Barash}, &
+                            \text{Osbert Bastani}, &
+                            \text{Arvind Bhusnurmath}, &
+                            \text{Chris Callison-Burch}, \\
+                            \text{Damon Centola}, &
+                            \text{Pratik Chaudhari}, &
+                            \text{Konstantinos Daniilidis}, &
+                            \text{Susan B. Davidson}, \\
+                            \text{Anindya De}, &
+                            \text{Andre DeHon}, &
+                            \text{Joseph Devietti}, &
+                            \text{Eric Eaton}, \\
+                            \text{Thomas Farmer}, &
+                            \text{Nadia Figueroa}, &
+                            \text{Jean H. Gallier}, &
+                            \text{Rajiv Gandhi}, \\
+                            \text{Jacob Gardner}, &
+                            \text{James Gee}, &
+                            \text{Surbhi Goel}, &
+                            \text{Sharath Chandra Guntuku}, \\
+                            \text{Andreas Haeberlen}, &
+                            \text{Daniel A. Hashimoto}, &
+                            \text{Hamed Hassani}, &
+                            \text{Andrew Head}, \\
+                            \text{Brett Hemenway}, &
+                            \text{Daniel J. Hopkins}, &
+                            \text{M. Ani Hsieh}, &
+                            \text{Zachary Ives}, \\
+                            \text{Dinesh Jayaraman}, &
+                            \text{Kevin B. Johnson}, &
+                            \text{Yasmin Kafai}, &
+                            \text{Sampath K. Kannan}, \\
+                            \text{Michael Kearns}, &
+                            \text{Sanjeev Khanna}, &
+                            \text{Bongho Kim}, &
+                            \text{Junhyong Kim}, \\
+                            \text{Daniel E. Koditschek}, &
+                            \text{Konrad Paul Kording}, &
+                            \text{Brandon Krakowsky}, &
+                            \text{Vijay Kumar}, \\
+                            \text{Stephen Lane}, &
+                            \text{Benjamin C. Lee}, &
+                            \text{Insup Lee}, &
+                            \text{Jing (Jane) Li}, \\
+                            \text{Gushu Li}, &
+                            \text{Mark Y. Liberman}, &
+                            \text{Vincent Liu}, &
+                            \text{Lingjie Liu}, \\
+                            \text{Qi Long}, &
+                            \text{Boon Thau Loo}, &
+                            \text{Jérémie O. Lumbroso}, &
+                            \text{Adam David Mally}, \\
+                            \text{Rahul Mangharam}, &
+                            \text{Ryan Marcus}, &
+                            \text{Nikolai Matni}, &
+                            \text{Travis Q. McGaha}, \\
+                            \text{Danaë Metaxa}, &
+                            \text{Pratyush Mishra}, &
+                            \text{Mayur Naik}, &
+                            \text{George J. Pappas}, \\
+                            \text{Robin Pemantle}, &
+                            \text{Linh Thi Xuan Phan},  &
+                            \text{Benjamin C. Pierce}, &
+                            \text{Joshua B. Plotkin}, \\
+                            \text{Michael Posa}, &
+                            \text{Victor M. Preciado}, &
+                            \text{Tal Rabin}, &
+                            \text{Alejandro Ribeiro}, \\
+                            \text{Dan Roth}, &
+                            \text{Aaron Roth}, &
+                            \text{Harvey Rubin}, &
+                            \text{Shirin Saeedi Bidokhti}, \\
+                            \text{Andre Scedrov}, &
+                            \text{Swapneel Sheth}, &
+                            \text{Jianbo Shi}, &
+                            \text{Harry Smith}, \\
+                            \text{Jonathan M. Smith}, &
+                            \text{Oleg Sokolsky}, &
+                            \text{Weijie Su}, &
+                            \text{Cynthia Sung}, \\
+                            \text{Val B. Tannen}, &
+                            \text{Camillo Jose Taylor}, &
+                            \text{Lyle H. Ungar}, &
+                            \text{René Vidal}, \\
+                            \text{Rakesh V. Vohra}, &
+                            \text{Erik Waingarten}, &
+                            \text{Li-San Wang}, &
+                            \text{Duncan J. Watts}, \\
+                            \text{Scott Weinstein}, &
+                            \text{Stephanie Weirich}, &
+                            \text{Eric Wong}, &
+                            \text{Charles Yang}, \\
+                            \text{Mark Yatskar}, &
+                            \text{Mark Yim}, &
+                            \text{Christopher S. Yoo}, &
+                            \text{Stephan A. Zdancewic}, \\
+                            \text{Mingmin Zhao}, &
+                            \text{Norman I. Badler}, &
+                            \text{Ruzena Bajcsy}, &
+                            \text{Peter Buneman}, \\
+                            \text{David J. Farber}, &
+                            \text{Justin Gottschlich}, &
+                            \text{Mitch Marcus}, &
+                            \text{Ani Nenkova}, \\
+                            \text{Richard Paul}, &
+                            \text{Mark Steedman}, &
+                            \text{Bonnie Webber}, &
+                            \text{James Weimer}, \\
+                            \text{Stella Yu}
+                        \end{matrix}
+                    \right\}$ \\
+            $T(F, CIS/CIT 5000) = \left\{ 
+                                    \begin{matrix}
+                                        \text{Brandon Krakowsky}, &
+                                        \text{Jérémie O. Lumbroso}, &
+                                        \text{Val B. Tannen}, \\
+                                        \text{Thomas Farmer}, &
+                                        \text{Boon Thau Loo}, &
+                                        \text{Anindya De}, \\
+                                        \text{Sanjeev Khanna}, &
+                                        \text{Stephan A. Zdancewic}, &
+                                        \text{Linh Thi Xuan Phan},  \\
+                                        \text{Danaë Metaxa}, &
+                                        \text{Jean H. Gallier}, &
+                                        \text{Dinesh Jayaraman}, \\
+                                        \text{Mingmin Zhao}, &
+                                        \text{Jacob Gardner}, &
+                                        \text{Chris Callison-Burch}, \\
+                                        \text{Mark Yatskar}, &
+                                        \text{Junhyong Kim}, &
+                                        \text{Insup Lee}, \\
+                                        \text{Ryan Marcus}, &
+                                        \text{Zachary Ives}, &
+                                        \text{Bongho Kim}, \\
+                                        \text{Susan B. Davidson}, &
+                                        \text{Sebastian Angel}, &
+                                        \text{Stephanie Weirich}, \\
+                                        \text{Vincent Liu}, &
+                                        \text{Andreas Haeberlen}, &
+                                        \text{Adam David Mally}, \\
+                                        \text{Stephen Lane}, &
+                                        \text{Konstantinos Daniilidis}, &
+                                        \text{Jianbo Shi}, \\
+                                    \end{matrix}
+                                \right\}$ 
+    \end{enumerate}
+\end{question}
+
+
+\begin{question}{Set Proof}
+    % Put your solution here
+\end{question}
+
+
+\begin{question}{Set Index Notation and Formal Union}
+    % Put your solution here
+\end{question}
+
+
+\begin{question}{Set Builder Notation}
+    % Put your solution here
+\end{question}
+
+
+\begin{question}{Set Identity Proofs}
+    % Put your solution here
+\end{question}
+
+
+        
+\end{document}
