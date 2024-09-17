@@ -6,7 +6,7 @@
 |:-:|:-|:-|
 | 1-2|[Bits and Bytes](notes/m01.md)|- Binary, Bits, Bytes, Nibbles, Overflow <br> - 1's Complement, 2's Complement <br> - Sign Extension <br> - Encoding : ASCII and Unicode <br> - Hexadecimal Notation <br> - Fixed-Point, Floating-Point (IEEE 754)|
 | 3|[Transistors and Combinational Logic](notes/m03.md)|- Transistor, MOSFET: nMOS, pMOS, cMOS <br> - Logic Gates : Inverter, NAND, NOR, Multiple N-Input Gates, Gate Delay, Truth Tables & Boolean(Logic) Function <br> - PLA <br> - Incrementer : One-Bit Incrementer, N-Bit Incrementer <br> - Adder : Half-Adder, One-Bit Adder (Full-Adder, Ripple Adder) <br> - Subtractor <br> - Multiplexer (MUX) : Control Signal, Adder/Subtractor <br> - Multiplier : Shift and Add Architecture|
-| 3|[Sequential Logic to Memory](notes/m04.md)|- Combinational Logic <br> - Sequential Logic : R-S Latch|
+| 3|[Sequential Logic to Memory](notes/m04.md)|- Combinational Logic <br> - Sequential Logic : R-S Latch, D-Latch, D-Flip-Flop, Clock|
 | 4|[]()|- |
 | 5|[]()|- |
 
