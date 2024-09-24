@@ -9,11 +9,12 @@
 | 3|[Linear Models and Perceptron](notes/03.md)|- Linear Predictors <br> - Perceptron : Separability, Convergence Theorem|
 | 4|[Gradient Descent](notes/04.md)|- Taylor Approximation, Learning Rate <br> - ADAGRAD <br> - Newton's Method <br> - Convexity, Smoothness <br> - Convergence, Convergence Rate|
 | 5|[Gradient Descent on Smooth and Strongly Convex Functions](notes/05.md)|- $`\mu`$-Strongly Convex|
+| 6|[Linear Regression](notes/06.md)|- Steps of Learning <br> - Linear Regression <br> - Overfitting|
 
 
 
 
-
+Steps of Learning
 
 
 
