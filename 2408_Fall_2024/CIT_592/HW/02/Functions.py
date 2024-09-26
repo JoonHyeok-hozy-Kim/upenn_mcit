@@ -13,5 +13,5 @@ def comb(n, r):
 
 
 if __name__ == '__main__':
-    x = 2 * math.pow(10, 4) * perm(10,3)
+    x = factorial(3) * factorial(6)
     print(x)
