@@ -13,5 +13,5 @@ def comb(n, r):
 
 
 if __name__ == '__main__':
-    x = factorial(3) * factorial(6)
+    x = perm(60, 10)
     print(x)
