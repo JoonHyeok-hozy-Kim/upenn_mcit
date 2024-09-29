@@ -13,5 +13,13 @@ def comb(n, r):
 
 
 if __name__ == '__main__':
-    x = perm(60, 10)
-    print(x)
+    # x = factorial(23) / factorial(10) / factorial(6) / factorial(4) / factorial(3)
+    # print(x)
+
+    a = math.pow(factorial(11), 10)/ math.pow(factorial(6), 10) 
+    print(a)
+
+    b = math.pow(perm(11, 5), 10)
+    print(b)
+
+    print(a-b)
