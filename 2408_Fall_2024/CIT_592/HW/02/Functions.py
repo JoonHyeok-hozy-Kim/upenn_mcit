@@ -16,10 +16,8 @@ if __name__ == '__main__':
     # x = factorial(23) / factorial(10) / factorial(6) / factorial(4) / factorial(3)
     # print(x)
 
-    a = factorial(23) / factorial(10) / factorial(6) / factorial(4) / factorial(3)
-    print(a)
+    a = comb(18,3) -comb(17,2)
 
-    b = factorial(13) * factorial(9) * factorial(7) / factorial(10) / factorial(6) / factorial(4)  / math.pow(factorial(3), 3)
-    print(b)
+    b = comb(17, 3)
 
     print(a-b)
