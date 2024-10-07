@@ -14,7 +14,10 @@
 | 8|[Support Vector Machine (SVM)](notes/08.md)|- Margin <br> - Hard Margin SVM <br> - Soft Margin SVM|
 | 9|[Kernels Part 1](notes/09.md)|- Feature Map $`\phi(\mathbf{x})`$ <br> - Kernel Trick|
 
+<br>
 
+- Exam Prep
+  - [Mid Term](exam_prep/mid_term.md)
 
 
 
