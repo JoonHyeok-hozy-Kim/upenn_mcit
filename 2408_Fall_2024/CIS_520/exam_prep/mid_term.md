@@ -20,4 +20,5 @@
   - Data points with norm at most 1
   - Linearly Separable
   - Margin $`\gamma`$
-- Algorithm)
+- Algorithm
+- Convergence Theorem
