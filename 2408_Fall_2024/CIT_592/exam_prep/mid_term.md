@@ -1,4 +1,4 @@
-## HW.
+## HW2 Ex2)
 <img src="../Images/03/001.png">
 <details>
   <summary>Sol.</summary>
@@ -13,7 +13,7 @@
 </details>
 
 
-## HW.
+## HW2 Ex5)
 <img src="../Images/03/002.png">
 <details>
   <summary>Sol.</summary>
@@ -26,7 +26,7 @@
 </details>
 
 
-## HW.
+## HW2 Ex6)
 <img src="../Images/03/003.png"><br>
 <img src="../Images/03/004.png">
 <details>
@@ -40,7 +40,7 @@
 </details>
 
 
-## HW.
+## HW2 Ex9)
 <img src="../Images/03/005.png">
 <details>
   <summary>Sol.</summary>
@@ -239,6 +239,38 @@ For $`a,b\in\mathbb{R}`$, the relation ship is $`a^2 = b^2`$. Is it reflexive, s
   Suppose $a,b$ are symmetric and transitive but not reflexive.    
   By the symmetry, $`(a,b), (b,a) \in R`$.    
   Then by the transitivity, $`(a,a),(b,b) \in R \Leftrightarrow \text{Reflexivity.} \cdots \otimes`$
+
+  </p>
+</details>
+
+
+## HW3 Ex3)
+<img src="../Images/exam_prep/007.png">
+<details>
+  <summary>Sol.</summary>
+  <p>
+  
+  $`\begin{aligned}
+    \begin{pmatrix} 60\\6 \end{pmatrix}\begin{pmatrix} 54\\6 \end{pmatrix}\cdots \begin{pmatrix} 6\\6 \end{pmatrix} \cdot (11!)^{10} 
+    &= \prod_{i=1}^{10} \begin{pmatrix} 6i\\6 \end{pmatrix} \cdot (11!)^{10} \\
+    &= \frac{60!}{6^{10}} \cdot (11!)^{10} \\
+    &= 60!\cdot \left(\frac{11!}{6}\right)^{10}
+  \end{aligned}`$
+  
+  </p>
+</details>
+
+
+## HW3 Ex4)
+<img src="../Images/exam_prep/007.png">
+<details>
+  <summary>Sol.</summary>
+  <p>
+  
+  $`R \text{ is a reflexive relation on } A \Leftrightarrow (a,a)\in R, \forall a\in A`$.   
+  Additionally, other elements in $`\vert A\times A\vert`$ can be either included or excluded.      
+  Thus, number of optionally inclusive elements are $`\vert A\times A \vert - \vert A \vert = \vert A \vert^2 - \vert A \vert`$.   
+  Thus, the number of total count is $`\displaystyle 2^{\vert A \vert^2 - \vert A \vert}`$.   
 
   </p>
 </details>
