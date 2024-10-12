@@ -6,7 +6,7 @@
 |:-:|:----|:-------|:-:|
 |1|[Sets](Notes/01.md)|- Set-Builder <br>- Subset <br>- Set Operations : Union, Intersection, Difference, Complement  <br> (Commutative/Associative/Distributive Laws)<br>- De-Morgan's Laws<br>- Cardinality : $`\|A\|`$<br>- Power Set : $`P(A)`$ ||
 |2|[Set Operations](Notes/02.md)|- Element of $`(\in)`$ vs Subset of $`(\subset)`$ <br> - Cartesian Product <br> - Partition||
-|3|[Functions](Notes/03.md)|- Relation : Reflexive, Symmetric, Transitive, Equivalent, Anti-Symmetric <br> - Function, Domain, Co-Domain <br> - Ceiling, Floor Function <br> - One-One, Onto, Bijection|[Q](exam_prep/03.md)|
+|3|[Functions](Notes/03.md)|- Relation : Reflexive, Symmetric, Transitive, Equivalent, Anti-Symmetric <br> - Function, Domain, Co-Domain <br> - Ceiling, Floor Function <br> - One-One, Onto, Bijection||
 |4|[Sum and Product](Notes/04.md)|- Product Rule <br> - Sum Rule <br> - Bijection Principle|
 |5|[Permutations and Combinations](Notes/05.md)|- The k to 1 Rule||
 |6|[Tricky Combinatorics](Notes/06.md)|- Multiset||
@@ -24,6 +24,8 @@
 |20|[Graph Theory](Notes/20.md)|- Graph <br> - Path / Walk <br> - Degree|
 |21|[Graph Theory 2](Notes/21.md)|- Isomorphism <br> - Circuit (Cycle), Eulerian Path, Ore's Theorem, Hamiltonian Path <br> - Connectedness||
 
+- Exam Prep)
+  - [Mid Term Qs](exam_prep/mid_term.md)
 
 
 
