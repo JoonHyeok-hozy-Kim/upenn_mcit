@@ -263,7 +263,7 @@ For $`a,b\in\mathbb{R}`$, the relation ship is $`a^2 = b^2`$. Is it reflexive, s
 
 
 ## HW3 Ex4)
-<img src="../Images/exam_prep/007.png">
+<img src="../Images/exam_prep/017.png">
 <details>
   <summary>Sol.</summary>
   <p>
