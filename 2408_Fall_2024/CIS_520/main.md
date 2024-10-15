@@ -14,7 +14,7 @@
 | 8|[Support Vector Machine (SVM)](notes/08.md)|- Margin <br> - Hard Margin SVM <br> - Soft Margin SVM|
 |9-10|[Kernels Part 1 & 2](notes/09.md)|- Feature Map $`\phi(\mathbf{x})`$ <br> - Kernel Trick <br> - The Radial Basis Function (RBF) Kernel (Gaussian Kernel) <br> - Kernel Constructions|
 |11|[Gaussian Process](notes/11.md)|- Multivariate Gaussian Distribution, Covariance, Correlation <br> - Periodic Kernel <br> - Gaussian Process Regression|
-|12|[Neural Networks](notes/12.md)|- |
+|12|[Neural Networks](notes/12.md)|- Activation Function, Hidden Layers, Hidden Representation <br> - Neural Network : Training, Regularization <br> - Stochastic Gradient Descent (SGD)|
 
 
 
