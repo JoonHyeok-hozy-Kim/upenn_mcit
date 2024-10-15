@@ -192,7 +192,8 @@ For $`a,b\in\mathbb{R}`$, the relation ship is $`a^2 = b^2`$. Is it reflexive, s
   <summary>Sol.</summary>
   <p>
   
-  $`\displaystyle \frac{(6+(n-1))!}{6!(n-1)!}`$
+  Distributing $`n`$ identical items to 6 distinct shelves.   
+  $`\begin{pmatrix} n + 6 - 1 \\ 6 - 1 \end{pmatrix} = \begin{pmatrix} n + 5 \\ 5 \end{pmatrix}`$
 
   </p>
 </details>
