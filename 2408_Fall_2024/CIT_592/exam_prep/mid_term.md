@@ -275,3 +275,81 @@ For $`a,b\in\mathbb{R}`$, the relation ship is $`a^2 = b^2`$. Is it reflexive, s
   </p>
 </details>
 
+
+## Prairie HW1.8)
+<img src="../Images/exam_prep/009.png" width="500px">
+<details>
+  <summary>Sol.</summary>
+  <p>
+  
+  <img src="../Images/exam_prep/010.png" width="500px"> 
+
+  </p>
+</details>
+
+
+## Prairie HW2.1)
+Let $`A = \emptyset`$. Calculate $`\vert P(A) \vert`$ and $`\vert P(P(A)) \vert`$
+
+<details>
+  <summary>Sol.</summary>
+  <p>
+  
+  $`\vert P(A) \vert = 2^0 = 1`$    
+  $`\vert P(P(A)) \vert = 2^1 = 2`$    
+
+  </p>
+</details>
+
+
+## Prairie HW2.8)
+<img src="../Images/exam_prep/011.png" width="500px">
+
+<details>
+  <summary>Sol.</summary>
+  <p>
+  
+  <img src="../Images/exam_prep/012.png" width="500px"> 
+
+  </p>
+</details>
+
+
+## Prairie HW3.5)
+<img src="../Images/exam_prep/013.png">
+
+<details>
+  <summary>Sol.</summary>
+  <p>
+  
+  $`(6+1)\times(8+1)\times(3+1) - 1 = 251`$
+
+  </p>
+</details>
+
+
+## Prairie HW3.6)
+<img src="../Images/exam_prep/014.png">
+
+<details>
+  <summary>Sol.</summary>
+  <p>
+
+  1. $`(6-1)^{9}`$
+  2. $`\displaystyle \frac{(7+2-1)!}{7!(2-1)!} \times \frac{((9-7)+(4-1))!}{(9-7)!(4-1)!}`$
+
+  </p>
+</details>
+
+
+## Prairie HW3.10)
+<img src="../Images/exam_prep/015.png">
+
+<details>
+  <summary>Sol.</summary>
+  <p>
+  
+  $`\displaystyle \begin{pmatrix} 64\\6 \end{pmatrix} \times \frac{6!}{2!2!}`$
+
+  </p>
+</details>
