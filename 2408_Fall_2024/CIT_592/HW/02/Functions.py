@@ -15,11 +15,8 @@ def comb(n, r):
 if __name__ == '__main__':
     # x = factorial(23) / factorial(10) / factorial(6) / factorial(4) / factorial(3)
     # print(x)
-    a = comb(12, 9)
-    b = comb(8, 5)
-    print(a-b)
-
-    c = 0
-    for i in range(4):
-        c += comb(8+i, 2)
-    print(c)
+    a = factorial(15)
+    b = factorial(5)
+    for _ in range(3):
+        a /= b
+    print(a-1)
