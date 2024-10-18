@@ -1,6 +1,8 @@
 import math
 
 def factorial(n):
+    if n < 0:
+        return -1
     if n == 0 or n == 1:
         return 1
 
@@ -8,7 +10,7 @@ def factorial(n):
 
 
 if __name__ == '__main__':
-    X = pow(2, 16) - 1
+    x = [6, 5, 8, 10, -5]
 
-    print(bin(X))
-    print(bin(factorial(8)))
+    for i in x:
+        print(hex(factorial(i)))
