@@ -10,6 +10,8 @@
 | 5|[Making a Basic CPU](notes/m05.md)|- ALU <br> - Register File <br> - Control Signals <br> - Program Counter|
 | 6|[ISA - HW/SW Bridge](notes/m06.md)|- LC-4 (Little Computer version 4) <br> - Instruction Set Architecture (ISA) <br> - Processor Status-Word Register (PSR)|
 | 7|[Programming with LC-4 Assembly Language](notes/m07.md)|- Machine Language, Assembly, Assembler <br> - Subroutine : `.FALIGN` <br> - Data Memory, Program Memory <br> - Directives : `.DATA`, `.ADDR`, `.FILL IMM16`, `.CODE` |
+| 8|[IO and OS](notes/m08.md)|- IO Controller (Status Register, Data Register) <br> - Memory-Mapped I/O <br> - Directives : `.UNCONST`, `.LC` |
+
 
 
 
