@@ -10,7 +10,5 @@ def factorial(n):
 
 
 if __name__ == '__main__':
-    x = [6, 5, 8, 10, -5]
-
-    for i in x:
-        print(hex(factorial(i)))
+    print(bin(factorial(7)))
+    print(bin(factorial(8)))
