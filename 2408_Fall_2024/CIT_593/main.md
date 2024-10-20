@@ -12,7 +12,8 @@
 | 7|[Programming with LC-4 Assembly Language](notes/m07.md)|- Machine Language, Assembly, Assembler <br> - Subroutine : `.FALIGN` <br> - Data Memory, Program Memory <br> - Directives : `.DATA`, `.ADDR`, `.FILL IMM16`, `.CODE` |
 | 8|[IO and OS](notes/m08.md)|- IO Controller (Status Register, Data Register) <br> - Memory-Mapped I/O <br> - Directives : `.UNCONST`, `.LC` |
 
-
+- Exam Prep
+  - [Mid Term](exam_prep/midterm.md)
 
 
 [Back to Main](../../README.md)
