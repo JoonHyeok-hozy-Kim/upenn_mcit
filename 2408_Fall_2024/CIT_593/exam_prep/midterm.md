@@ -21,9 +21,7 @@
   
   </p>
 </details>
-
-
-
+<br>
 
 ### Floating Point
 - [Reference](../notes/m01.md#concept-floating-point)
@@ -65,7 +63,7 @@
 </details>
 
 <details>
-  <summary>Convert the floating point # 0 111111110 0000000000000000000000 to decimal</summary>
+  <summary>Convert the floating point # 0 11111111 00000000000000000000000 to decimal</summary>
   <p>
   
   - +infinity
@@ -101,4 +99,112 @@
   
   </p>
 </details>
+<br>
+
+### Transistors and Combinational Logic
+<details>
+  <summary>Draw transistor level Inverter, NAND, NOR gate</summary>
+  <p>
+  
+  ![](../images/m03/021.png)
+  
+  </p>
+</details>
+
+<details>
+  <summary>Draw transistor level mux and decoder</summary>
+  <p>
+  
+  <img src="../images/m03/043.png"><br>
+  <img src="../images/m03/038.png">  
+  
+  </p>
+</details>
+
+<details>
+  <summary>Draw logic gate level half adder and add/subtractor</summary>
+  <p>
+  
+  <img src="../images/m03/032.png"><br>
+  <img src="../images/m03/041.png">  
+  
+  </p>
+</details>
+<br>
+
+### Sequential Logic to Memory
+<details>
+  <summary>Difference between Combinational and Sequential Logic</summary>
+  <p>
+
+  |Logic Type|Desc.|
+  |:-:|:-|
+  |[Combinational Logic](m03.md#3-transistors-and-combinational-logic)|- Always gives the same output for a given set of inputs <br> - Stateless|
+  |Sequential Logic|- Its output depends on its inputs & its last output! <br> - Forms the basis for “state” or “memory” for a computer|
+  
+  </p>
+</details>
+
+<details>
+  <summary>Draw logic gate level R/S Latch, D-Latch, D-Flip-Flop</summary>
+  <p>
+  
+  <img src="../images/m03/032.png"><br>
+  <img src="../images/m03/041.png">  
+  
+  </p>
+</details>
+
+<details>
+  <summary>What is the clock period in nano second of a clock with 2.5GHz clock frequency?</summary>
+  <p>
+  
+  $`(2.5\times{10}^9)^{-1} = \frac{1}{2.5\times{10}^9} = \frac{4}{10}\text{ns} = 0.4\text{ns}.`$
+  
+  </p>
+</details>
+
+<details>
+  <summary>Explain the Memory Hierarchy</summary>
+  <p>
+  
+  <img src="../images/m04/023.png">  
+  
+  </p>
+</details>
+
+<br>
+
+### Making a Basic CPU
+
+<details>
+  <summary>Draw Von Neumann Model</summary>
+  <p>
+  
+  <img src="../images/m05/011.png" width="600px">  
+  
+  </p>
+</details>
+
+<details>
+  <summary>Explain the Memory Hierarchy</summary>
+  <p>
+  
+  <img src="../images/m04/023.png">  
+  
+  </p>
+</details>
+
+<details>
+  <summary>What is the word length?</summary>
+  <p>
+  
+  The size of the quantities normally processed by the ALU is often referred to 
+  as the word length of the computer, and each element is referred to as a word.
+  
+  </p>
+</details>
+
+<br>
+
 
