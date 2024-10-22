@@ -15,6 +15,7 @@
 |11|[Gaussian Process](notes/11.md)|- Multivariate Gaussian Distribution, Covariance, Correlation <br> - Periodic Kernel <br> - Gaussian Process Regression|
 |12|[Neural Networks](notes/12.md)|- Activation Function, Hidden Layers, Hidden Representation <br> - Neural Network : Training, Regularization <br> - Stochastic Gradient Descent (SGD)|
 |13|[Decision Trees](notes/13.md)|- Split, Purity <br> - Loss Functions : Entropy, Gini Index|
+|14|[Random Forest](notes/14.md)|- Bagging <br> - Random Forest: Subsampling Features, Out of Bag (OOB) Estimation|
 
 
 

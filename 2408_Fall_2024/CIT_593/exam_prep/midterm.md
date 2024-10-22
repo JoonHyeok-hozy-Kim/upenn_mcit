@@ -207,4 +207,40 @@
 
 <br>
 
+### ISA
+
+<details>
+  <summary> ISA vs Microarchitecture </summary>
+  <p>
+  
+  - ISA
+    - the specification of the interface between programs and hardwares
+  - Microarchitecture
+    - a more detailed implementation of the ISA
+  
+  </p>
+</details>
+
+<details>
+  <summary> 3 components specified in ISA </summary>
+  <p>
+  
+  1. The set of instructions
+     1. the type of operation
+     2. what data is needed
+  2. Data types : acceptable representation for operands
+  3. Addressing Modes : the mechanism that the computer can use to figure out where the operands are located at.
+  
+  </p>
+</details>
+
+<details>
+  <summary> 2 components of an instruction </summary>
+  <p>
+  
+  1. Opcode : what the instruction do
+  2. Operand : the target of the instruction
+  
+  </p>
+</details>
 
