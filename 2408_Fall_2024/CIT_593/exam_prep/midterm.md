@@ -151,8 +151,8 @@
   <summary>Draw logic gate level R/S Latch, D-Latch, D-Flip-Flop</summary>
   <p>
   
-  <img src="../images/m03/032.png"><br>
-  <img src="../images/m03/041.png">  
+  <img src="../images/m04/001.png"><br>
+  <img src="../images/m04/003.png">  
   
   </p>
 </details>
