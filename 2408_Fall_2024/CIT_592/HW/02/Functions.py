@@ -15,6 +15,4 @@ def comb(n, r):
 if __name__ == '__main__':
     # x = factorial(23) / factorial(10) / factorial(6) / factorial(4) / factorial(3)
     # print(x)
-    a = comb(64, 6)
-    b = factorial(6) / factorial(3) / factorial(2)
-    print(a*b)
+    print(1000000000/(50**6))

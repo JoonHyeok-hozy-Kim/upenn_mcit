@@ -106,7 +106,9 @@
   <summary>Draw transistor level Inverter, NAND, NOR gate</summary>
   <p>
   
-  ![](../images/m03/021.png)
+  |||
+  |:-|:-|
+  |![](../images/m03/013.png)|![](../images/m03/015.png)|
   
   </p>
 </details>
