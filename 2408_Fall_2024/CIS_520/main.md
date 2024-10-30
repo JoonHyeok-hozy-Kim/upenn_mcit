@@ -16,6 +16,7 @@
 |12|[Neural Networks](notes/12.md)|- Activation Function, Hidden Layers, Hidden Representation <br> - Neural Network : Training, Regularization <br> - Stochastic Gradient Descent (SGD)|
 |13|[Decision Trees](notes/13.md)|- Split, Purity <br> - Loss Functions : Entropy, Gini Index|
 |14|[Random Forest](notes/14.md)|- Bagging <br> - Random Forest: Subsampling Features, Out of Bag (OOB) Estimation|
+|15-16|[Boosting](notes/15.md)|- Weak Learner|
 
 
 
