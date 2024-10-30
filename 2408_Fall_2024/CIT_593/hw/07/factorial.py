@@ -12,3 +12,5 @@ def factorial(n):
 if __name__ == '__main__':
     print(bin(factorial(7)))
     print(bin(factorial(8)))
+
+    x = 'Carriage Return'
