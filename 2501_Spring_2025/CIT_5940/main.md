@@ -2,7 +2,7 @@
 
 |No|Subject|Keywords|
 |:-:|:-|:-|
-| 1|[File I/O](notes/m01/01.md)|- Stream, InputStream|
+| 1|[File I/O](notes/m01/01.md)|- Stream, InputStream, OutputStream|
 | 2|[]()|- |
 | 3|[]()|- |
 | 4|[]()|- |
