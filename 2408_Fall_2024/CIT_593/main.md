@@ -12,7 +12,7 @@
 | 7|[Programming with LC-4 Assembly Language](notes/m07.md)|- Machine Language, Assembly, Assembler <br> - Subroutine : `.FALIGN` <br> - Data Memory, Program Memory <br> - Directives : `.DATA`, `.ADDR`, `.FILL IMM16`, `.CODE` |
 | 8|[IO and OS](notes/m08.md)|- IO Controller (Status Register, Data Register) <br> - Memory-Mapped I/O : Read, Write, Timer, Video <br> - Directives : `.UNCONST`, `.LC` <br> - `TRAP`/`RTI` : TRAP Vector Table |
 | 9|[Introduction to C & The Stack](notes/m09.md)|- C : Stack, Stack Frame, Frame Pointer <br> - Compile : Symbol Table|
-|10|[C Variables, Pointers, and Arrays](notes/m10.md)|- Data types : `char`, `int`, `float`, `double` <br> - Data Type Modifier : `long`, `short`, `unsigned` <br> - Type Casting|
+|10|[C Variables, Pointers, and Arrays](notes/m10.md)|- Data types : `char`, `int`, `float`, `double` <br> - Data Type Modifier : `long`, `short`, `unsigned` <br> - Type Casting <br> - User Defined Type : `struct`, `typedef` <br> - Pointer: Dereferencing|
 
 
 
