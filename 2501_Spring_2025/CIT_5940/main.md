@@ -3,7 +3,7 @@
 |No|Subject|Keywords|
 |:-:|:-|:-|
 | 1|[File I/O](notes/m01/01.md)|- Stream, InputStream, OutputStream|
-| 2|[Java Collections](notes/02.md)|- |
+| 2|[Java Collections](notes/02.md)|- `Comparable` (Interface), `Comparator` (ADT) <br> - `Map` (Interface)|
 | 3|[]()|- |
 | 4|[]()|- |
 | 5|[]()|- |
