@@ -17,6 +17,7 @@
 |13|[Decision Trees](notes/13.md)|- Split, Purity <br> - Loss Functions : Entropy, Gini Index|
 |14|[Random Forest](notes/14.md)|- Bagging <br> - Random Forest: Subsampling Features, Out of Bag (OOB) Estimation|
 |15-16|[Boosting](notes/15.md)|- Weak Learner : Decision Stump <br> - Gradient Boosted Regression Trees (GBRT) <br> - AdaBoost : Exponential Loss, Categorical Distribution (Multinomial Distribution)|
+|17-18|[Bias, Variance, and Model Performance](notes/17.md)|- Bias-Variance Decomposition, Noise|
 
 
 
