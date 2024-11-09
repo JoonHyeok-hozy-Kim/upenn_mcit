@@ -8,7 +8,7 @@
 | 4|[Stacks & Queues](notes/04.md)|- Stack : Linked Stack, Array-Based Stack <br> - Queue|
 | 5|[Binary Trees](notes/05.md)|- Full Binary Tree, Complete Binary Tree, Balanced Binary Tree <br> - Traversal Algorithm|
 | 6|[Huffman Coding Trees](notes/06.md)|- Huffman Code|
-| 7|[Binary Search Trees](notes/07.md)|- |
-| 8|[]()|- |
+| 7|[Binary Search Trees](notes/07.md)|- Searchable Symbol Table <br> - `TreeSet`, `TreeMap`|
+| 8|[Heaps & Priority Queues](notes/08.md)|- Priority Queue, Complete Binary Tree, Binary Heap|
 | 9|[]()|- |
 |10|[]()|- |
