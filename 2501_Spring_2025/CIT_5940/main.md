@@ -13,7 +13,7 @@
 | 9|[AVL Tree](notes/09.md)|- Height, Balance Factor, Rotation|
 |10|[Quad Trees](notes/10.md)|- Point Region Quad Tree|
 |11|[Software Design](notes/11.md)|- Class Design: Abstraction, Interface, Encapsulation <br>- Unified Modeling Language (UML)<br>- Class Diagram : Domain Model Diagram, Diagram of Implementation Classes, Association, Inheritance, Implementation|
-|12|[]()|- |
+|12|[File I/O, Collections, and Tries](12.md)|- Stream-Based Reader vs Random Access Files <br> - `java.util.Collections` <br> - Trie|
 |13|[]()|- |
 |14|[]()|- |
 |15|[]()|- |
