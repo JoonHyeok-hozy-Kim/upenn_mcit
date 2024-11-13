@@ -14,6 +14,7 @@
 | 9|[Introduction to C & The Stack](notes/m09.md)|- C : Stack, Stack Frame, Frame Pointer <br> - Compile : Symbol Table|
 |10|[C Variables, Pointers, and Arrays](notes/m10.md)|- Data types : `char`, `int`, `float`, `double` <br> - Data Type Modifier : `long`, `short`, `unsigned` <br> - Type Casting <br> - User Defined Type : `struct`, `typedef` <br> - Pointer: Dereferencing, Pointer Arithmetics <br> - Null Pointer, Segmentation Fault <br> - `void`, Void Pointer <br> - Constants : `const`, `#define`<br> - Storage Classes: Automatic, Static, Global Variable, Heap|
 |11|[Strings, Character Arrays, and Points to Strings](notes/m11.md)|- String vs Literal (Pointer to a String) <br> - `strlen` of `string.h` <br> - Arrays of Strings|
+|12|[C-Files (Basic I/O)](notes/m12.md)|- Files : ASCII File, Binary File|
 
 
 
