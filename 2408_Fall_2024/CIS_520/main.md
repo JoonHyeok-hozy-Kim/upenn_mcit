@@ -18,6 +18,7 @@
 |14|[Random Forest](notes/14.md)|- Bagging <br> - Random Forest: Subsampling Features, Out of Bag (OOB) Estimation|
 |15-16|[Boosting](notes/15.md)|- Weak Learner : Decision Stump <br> - Gradient Boosted Regression Trees (GBRT) <br> - AdaBoost : Exponential Loss, Categorical Distribution (Multinomial Distribution)|
 |17-18|[Bias, Variance, and Model Performance](notes/17.md)|- Bias-Variance Decomposition, Noise|
+|19|[Performance Measures](notes/19.md)|- Class Probability Estimation (CPE) model <br> - 0-1 Loss, Cost-Sensitive Loss(Asymmetric Classification Cost), Weighted Surrogate Loss Minimization|
 
 
 
