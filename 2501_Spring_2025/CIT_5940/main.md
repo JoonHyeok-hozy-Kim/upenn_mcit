@@ -14,12 +14,12 @@
 |10|[AVL Tree](notes/10.md)|- Height, Balance Factor, Rotation|
 |11|[Quad Trees](notes/11.md)|- Point Region Quad Tree|
 |12|[Software Design](notes/12.md)|- Class Design: Abstraction, Interface, Encapsulation <br>- Unified Modeling Language (UML)<br>- Class Diagram : Domain Model Diagram, Diagram of Implementation Classes, Association, Inheritance, Implementation|
-|14|[File I/O, Collections, and Tries](14.md)|- Stream-Based Reader vs Random Access Files <br> - `java.util.Collections` <br> - Trie|
-|13|[]()|- |
-|14|[]()|- |
-|15|[]()|- |
+|14|[File I/O, Collections, and Tries](notes/14.md)|- Stream-Based Reader vs Random Access Files <br> - `java.util.Collections` <br> - Trie|
+|15-16|[Open Hashing and Bucket Hashing](notes/15.md)|- Hash System, Collision, Load Factor<br>- Open Hashing, Closed Hashing, Bucket Hashing<br>- Collision Resolution Policies, Linear Probing, Primary Clustering, Pseudo-Random probing|
 |16|[]()|- |
 |17|[]()|- |
 |18|[]()|- |
 |19|[]()|- |
+
+
 
