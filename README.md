@@ -10,5 +10,5 @@
 
 ### Spring 2025
 - [CIT5950 Computer Systems Programming]()
-- [CIS6200 Advanced Topics in Deep Learning]()
+- [CIS5230 Ethical Algorithm Design]()
 - [CIS7000 Bayesian Optimization]()
