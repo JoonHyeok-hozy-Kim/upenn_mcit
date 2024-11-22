@@ -1,5 +1,14 @@
 [Back to Note 13](m13.md#concept-heap-api-malloc-free)
 
+- Table of Contents
+  - [Creating an Array at Runtime](#eg1-creating-an-array-at-runtime)
+  - [Returning addresses on the Heap from Functions](#eg2-returning-addresses-on-the-heap-from-functions)
+  - [Heap vs Other Regions of Memory](#eg3-heap-vs-other-regions-of-memory)
+  - [Multidimensional Arrays on the Heap](#eg4-multidimensional-arrays-on-the-heap)
+  - [Structures on the Heap](#eg5-structures-on-the-heap)
+
+<br>
+
 ## E.g.1) Creating an Array at Runtime
 
 <table border="1">
@@ -155,7 +164,7 @@ int main(){
 
 <table border="1">
     <tr>
-        <th>Program in C</th>
+        <th>Case 1) Only a field of a <code>struct</code> is on heap.</th>
         <th> Memory </th>
     </tr>
     <tr>
@@ -164,20 +173,27 @@ int main(){
 ```c
 #include <stdlib.h>
 
+typedef struct cust_struct {
+    int id;
+    char* name;
+} customer;
 
+int main(){
+    customer my_cust;
+    my_cust.id = 1234;
+    my_cust.name = malloc(strlen("Tom") + 1);
+    strcpy(my_cust.name, "Tom");
+
+    free(my_cust.name);
+    return 0;
+}
 ```
 
 </td>
-        <td><img src="../images/m13/002.png" width="400px"></td>
+        <td><img src="../images/m13/006.png" width="400px"></td>
     </tr>
-</table><br><br>
-
-
-## E.g.6) Pointers to Structures on the Heap
-
-<table border="1">
     <tr>
-        <th>Program in C</th>
+        <th>Case 2) Whole <code>struct</code> on heap.</th>
         <th> Memory </th>
     </tr>
     <tr>
@@ -186,21 +202,30 @@ int main(){
 ```c
 #include <stdlib.h>
 
+typedef struct cust_struct {
+    int id;
+    char* name;
+} customer;
 
+int main(){
+    customer* my_cust;
+    my_cust = malloc(sizeof(customer));
+
+    my_cust->id = 1234;
+    my_cust->name = malloc(sizeof("Tom")+1);
+    strcpy(my_cust->name, "Tom");
+
+    free(my_cust.name);
+    free(my_cust);
+
+    return 0;
+}
 ```
 
 </td>
-        <td><img src="../images/m13/002.png" width="400px"></td>
+        <td><img src="../images/m13/007.png" width="400px"></td>
     </tr>
 </table><br><br>
-
-
-
-
-
-
-
-
 
 
 
