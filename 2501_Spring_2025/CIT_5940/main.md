@@ -17,8 +17,8 @@
 |14|[File I/O, Collections, and Tries](notes/14.md)|- Stream-Based Reader vs Random Access Files <br> - `java.util.Collections` <br> - Trie|
 |15-17|[Open Hashing and Bucket Hashing](notes/15.md)|- Hash System, Collision, Load Factor<br>- Open Hashing, Closed Hashing, Bucket Hashing<br>- Collision Resolution Policies, Linear Probing, Primary Clustering, Pseudo-Random Probing, Quadratic Probing, Secondary Clustering, Double Hashing|
 |18|[Indexing](notes/18.md)|- Primary Key, Secondary Key|
-|19|[Graph](notes/19.md)|- Undirected/Directed/Labeled Graph <br> - Incident, Adjacent, Degree, Path, Cycle, Clique <br> - Adjacency Matrix, Adjacency List <br> - Traversal : DFS, BFS, Dijkstra|
-|20|[]()|- |
+|19|[Graph I](notes/19.md)|- Undirected/Directed/Labeled Graph <br> - Incident, Adjacent, Degree, Path, Cycle, Clique <br> - Adjacency Matrix, Adjacency List <br> - Traversal : DFS, BFS, Dijkstra|
+|20|[Graph II]()|- |
 |21|[]()|- |
 |22|[]()|- |
 |23|[]()|- |
