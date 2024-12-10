@@ -21,6 +21,7 @@
 
 - Exam Prep
   - [Mid Term](exam_prep/midterm.md)
+  - [Final](exam_prep/final.md)
 
 
 [Back to Main](../../README.md)
