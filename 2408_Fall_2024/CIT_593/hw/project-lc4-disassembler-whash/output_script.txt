@@ -1,0 +1,31 @@
+#########################################################
+#  file name   : output_script.txt                   #
+#  author      : Joon Hyeok Kim                          #
+#  description : PennSim script file to automate        #
+#                assembling, loading, reset, and PC set #
+#########################################################
+
+# clear the PennSim screen
+clear
+
+# reset PennSim Simulator (clears all memory/regs)
+reset
+
+# assemble output.asm file into output.obj file
+as output output
+
+# load output.obj into USER program memory
+ld output
+
+# assemble output_os.asm file into output.obj file
+as output_os output_os
+
+# load output.obj into OS program memory
+ld output_os
+
+# Set PC to 0.
+set PC x0000
+
+# once the PC = this label, it will stop the LC4
+break set END
+

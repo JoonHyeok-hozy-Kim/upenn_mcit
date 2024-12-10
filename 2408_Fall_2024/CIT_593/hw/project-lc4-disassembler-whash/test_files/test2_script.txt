@@ -1,0 +1,25 @@
+#########################################################
+#  file name   : test2_script.txt                   #
+#  author      : Joon Hyeok Kim                          #
+#  description : PennSim script file to automate        #
+#                assembling, loading, reset, and PC set #
+#########################################################
+
+# clear the PennSim screen
+clear
+
+# reset PennSim Simulator (clears all memory/regs)
+reset
+
+# assemble test2.asm file into test2.obj file
+as test2 test2
+
+# load user_echo.obj into USER program memory
+ld test2
+
+# Set PC to 0.
+set PC 0
+
+# once the PC = this label, it will stop the LC4
+break set END
+

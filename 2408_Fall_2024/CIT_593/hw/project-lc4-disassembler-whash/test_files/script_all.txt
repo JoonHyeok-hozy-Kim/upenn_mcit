@@ -1,0 +1,18 @@
+#########################################################
+#  file name   : script_all.txt                   #
+#  author      : hozy
+#  description : PennSim script file to automate        #
+#                assembling, loading, reset, and PC set #
+#########################################################
+
+# clear the PennSim screen
+clear
+
+# reset PennSim Simulator (clears all memory/regs)
+reset
+
+# assemble test1.asm file into test1.obj file
+as test0 test0
+as test1 test1
+as test2 test2
+as test3 test3

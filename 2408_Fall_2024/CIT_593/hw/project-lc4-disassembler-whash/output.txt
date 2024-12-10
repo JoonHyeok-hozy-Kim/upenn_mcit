@@ -1,0 +1,9 @@
+<label>                  <address>           <contents>          <assembly>          
+                         0000                9201                CONST R1, #1        
+                         0001                1241                ADD R1, R1, R1      
+                         0002                9403                CONST R2, #3        
+                         0003                164a                MUL R3, R1, R2      
+                         0004                f0ff                TRAP #255           
+HALT                     80ff                0000                NOP                 
+                         8200                9e00                CONST R7, #0        
+                         8201                8000                RTI                 

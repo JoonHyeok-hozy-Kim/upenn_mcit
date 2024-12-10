@@ -1,0 +1,20 @@
+.CODE
+.ADDR x0000
+
+	CONST R1, #1
+	ADD R1, R1, R1
+	CONST R2, #3
+	MUL R3, R1, R2
+	TRAP #255
+
+.OS
+.CODE
+.ADDR x80ff
+
+HALT
+	NOP
+
+.ADDR x8200
+	CONST R7, #0
+	RTI
+

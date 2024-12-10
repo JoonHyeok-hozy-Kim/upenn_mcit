@@ -1,0 +1,42 @@
+.CODE
+.ADDR x0000
+SR1
+ADD R2 R0 #15
+JSR SR2
+END
+
+.FALIGN
+SR2
+AND R2 R7 #-15
+JMP SR1
+
+
+
+;.DATA
+;.ADDR x4000
+;FIRST_LABEL
+;.FILL #3
+;.FILL #3
+;.FILL #3
+;.FILL #3
+;.FILL #3
+;
+;
+;.ADDR x5000
+;SECOND_LABEL
+;.FILL #3
+;.FILL #3
+;.FILL #3
+;.FILL #3
+;.FILL #3
+;
+;
+;.ADDR x6000
+;THIRD_LABEL
+;.FILL #3
+;.FILL #3
+;.FILL #3
+;.FILL #3
+;.FILL #3
+
+
