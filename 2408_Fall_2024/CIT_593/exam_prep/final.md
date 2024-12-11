@@ -1,4 +1,5 @@
-### IO and OS
+# IO and OS
+
 <details>
   <summary>Draw IO Controller Diagram</summary>
   <p>
@@ -124,3 +125,97 @@ STR R6, R7, #6        ; Store R6 in TEMPS[6]
 
   </p>
 </details><br>
+
+
+
+# C Language and Stack Memory
+
+<details>
+  <summary>Explain three partitions in User Data Memory</summary>
+  <p>
+  
+  <img src="../images/m09/002.png">
+  
+  </p>
+</details><br>
+
+<details>
+  <summary>Explain stack frame and frame pointer.</summary>
+  <p>
+  
+  [Answer](../notes/m09.md#concept-stack-frame)   
+  
+  </p>
+</details><br>
+
+<details>
+  <summary>Explain compiling, assembling, and linking.</summary>
+  <p>
+  
+  <img src="../images/m09/001.png"><br>
+  
+  - Compiling : High Level Program (.c) -> Assembly (.asm)
+  - Assembling : Assembly (.asm) -> Machine code (.o, .obj)
+  - Linking : Machine code (.o, .obj) -> Executable.
+  
+  </p>
+</details><br>
+
+<details>
+  <summary>Explain symbol table.</summary>
+  <p>
+  
+  [Answer](../notes/m09.md#concept-symbol-table)   
+  
+  </p>
+</details><br>
+
+<details>
+  <summary>Draw Stack for the Following Problem
+  
+```c
+int pow(int a, int p){
+  int c;
+  for (c=1; p > 0; p--){
+    c = c * a;
+  }
+  return c;
+}
+
+int main(){
+  int a = 2;
+  int b = 3;
+  int c = 0;
+  c = pow(a, b);
+}
+```
+
+- Assumptions)
+  - `main()` is located at x0004.
+  - `pow()` is located at x0061.
+  - Initial FP is x0000.  
+  
+  </summary>
+  <p>
+  
+|Address|Value|Desc.|
+|:-:|:-:|:-|
+|x7FF3|#1->#2->#4->#8|c|
+|x7FF4|x7FFC|pow's FP|
+|x7FF5|x0062|pow's RA|
+|x7FF6|#8|pow's RV|
+|x7FF7|#2|a|
+|x7FF8|#3->#2->#1->#0|p|
+|x7FF9|#0->#8|c|
+|x7FFA|#3|b|
+|x7FFB|#2|a|
+|x7FFC|x0000|main's FP|
+|x7FFD|x0005|main's RA|
+|x7FFE|0|main's RV|
+|x7FFF||Argument to main|
+  
+  </p>
+</details><br>
+
+
+
