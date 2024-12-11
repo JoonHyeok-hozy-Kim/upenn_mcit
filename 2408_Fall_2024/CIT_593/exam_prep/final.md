@@ -218,4 +218,25 @@ int main(){
 </details><br>
 
 
+## C Variables, Pointers, and Arrays
+
+<details>
+  <summary>Explain implicit/explicit typecasting.</summary>
+  <p>
+  
+  [Answer](../notes/m10.md#concept-type-casting)   
+  
+  </p>
+</details><br>
+
+<details>
+  <summary>Write User Defined Type <code>struct</code> and <code>typedef struct</code> syntaxes.</summary>
+  <p>
+  
+  [Answer](../notes/m10.md#concept-user-defined-type)   
+  
+  </p>
+</details><br>
+
+
 

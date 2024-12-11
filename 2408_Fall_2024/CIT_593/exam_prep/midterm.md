@@ -1,4 +1,4 @@
-### Binary & Hexadecimal
+## Binary & Hexadecimal
 <details>
   <summary>Calculate addition between 2C binary #s: 11 + 01010101</summary>
   <p>
@@ -23,7 +23,7 @@
 </details>
 <br>
 
-### Floating Point
+## Floating Point
 - [Reference](../notes/m01.md#concept-floating-point)
 
 <details>
@@ -101,7 +101,7 @@
 </details>
 <br>
 
-### Transistors and Combinational Logic
+## Transistors and Combinational Logic
 <details>
   <summary>Draw transistor level Inverter, NAND, NOR gate</summary>
   <p>
@@ -134,7 +134,7 @@
 </details>
 <br>
 
-### Sequential Logic to Memory
+## Sequential Logic to Memory
 <details>
   <summary>Difference between Combinational and Sequential Logic</summary>
   <p>
@@ -177,7 +177,7 @@
 
 <br>
 
-### Making a Basic CPU
+## Making a Basic CPU
 
 <details>
   <summary>Draw Von Neumann Model</summary>
@@ -187,6 +187,23 @@
   
   </p>
 </details>
+
+
+
+<details>
+  <summary>Explain the Von Neumann Loop</summary>
+  <p>
+
+- Von Neumann Loop)
+  1. Fetch instruction at PC
+  1. Decode instruction (Convert to Control Signals!)
+  1. Execute instruction
+  1. Update PC
+  
+  </p>
+</details>
+
+
 
 <details>
   <summary>Explain the Memory Hierarchy</summary>
@@ -209,7 +226,7 @@
 
 <br>
 
-### ISA
+## ISA
 
 <details>
   <summary> ISA vs Microarchitecture </summary>
