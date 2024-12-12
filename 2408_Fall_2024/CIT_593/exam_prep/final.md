@@ -333,5 +333,83 @@ int main(){
   </p>
 </details><br>
 
+## C-Files (Basic IO)
+
+<details>
+  <summary>Explain 6 file operations in C.</summary>
+  <p>
+    
+  [Answer](../notes/m12.md#concept-file-operations-in-c)  
+  
+  </p>
+</details><br>
+
+<details>
+  <summary>Write a C code that copies text from read.txt to write.txt using fputc and fgetc.</summary>
+  <p>
+    
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+        FILE* read_file = fopen("read.txt", "r");
+        if (read_file == NULL){
+                perror("Read file open error.\n");
+                return 1;
+        }
+
+        FILE* write_file = fopen("write.txt", "w");
+        if (write_file == NULL){
+                perror("Write file open error.\n");
+                return 1;
+        }
+        char curr;
+
+        while (1){
+                curr = fgetc(read_file);
+                fputc(curr, write_file);
+                if (curr == EOF) break;
+        }
+
+        fclose(read_file);
+        fclose(write_file);
+        return 0;
+}
+```
+  
+  </p>
+</details><br>
+
+<details>
+  <summary>Write a C code that parse and prints .obj file using fread().</summary>
+  <p>
+    
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+        FILE* obj_file = fopen("test.obj", "rb");
+        if (obj_file == NULL){
+                perror("obj_file not opened.\n");
+                return 1;
+        }
+
+        unsigned short int curr;
+
+        while (fread(&curr, sizeof(unsigned short int), 1, obj_file) == 1){
+                 curr = curr << 8 | curr >> 8;
+                 printf("%04x\n", curr);
+        }
+
+        fclose(obj_file);
+
+}
+```
+  
+  </p>
+</details><br>
+
 
 

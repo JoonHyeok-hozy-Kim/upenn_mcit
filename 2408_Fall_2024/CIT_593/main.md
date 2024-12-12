@@ -16,6 +16,7 @@
 |11|[Strings, Character Arrays, and Points to Strings](notes/m11.md)|- String vs Literal (Pointer to a String) <br> - `strlen` of `string.h` <br> - Arrays of Strings|
 |12|[C-Files (Basic I/O)](notes/m12.md)|- Files : ASCII File, Binary File|
 |13|[C-Heap-Linked List](notes/m13.md)|- Dynamic Memory Allocation <br>- Heap API : `malloc`, `free`|
+|14|[C-Heap-Hash Table / Function Pointer](notes/m14.md)|- |
 
 
 
