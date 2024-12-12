@@ -149,6 +149,54 @@ STR R6, R7, #6        ; Store R6 in TEMPS[6]
 </details><br>
 
 <details>
+  <summary>Write prologue/body/epilogue assemblies in the following format.<br>
+  
+```assy
+MAIN
+  ; Prologue
+  ;; Fill in this part!
+  ;; Skip allocating local variables
+
+  ; Body
+  ;; Skip running main algorithms.
+  ;; Fill in this part!
+
+  ; Epilogue
+  ;; Fill in this part!
+```
+  
+  </summary>
+  <p>
+  
+
+- Answer
+  ```assy
+  MAIN
+    ; Prologue
+    ADD R6, R6, #-3   ; Increase stack for RV, RA, and FP
+    STR R7, R6, #-1   ; Store R7(return address given by the caller with JSR) at dmem[R6-1]
+    STR R5, R6, #0    ; Store previous R5 at dmem[R6]
+    ADD R5, R6, #0    ; Update FP.
+    ;; Skip allocating local variables
+
+    ; Body
+    ;; Skip running main algorithms.
+    ;; Put return value at R7.
+    ;; e.g.) CONST R7, #0
+
+    ; Epilogue
+    ADD R6, R5, #0    ; Pop stack by moving R6 to FP.
+    ADD R6, R6, #3    ; Pop FP, RA, RV
+    STR R7, R6, #-1   ; Store Main's return value at R7 at RV.
+    LDR R5, R6, #-3   ; Load previous FP at R5.
+    LDR R7, R6, #-2   ; Load RA at R7.
+    RET               ; PC = R7
+  ```
+  
+  </p>
+</details><br>
+
+<details>
   <summary>Explain compiling, assembling, and linking.</summary>
   <p>
   
@@ -234,6 +282,53 @@ int main(){
   <p>
   
   [Answer](../notes/m10.md#concept-user-defined-type)   
+  
+  </p>
+</details><br>
+
+<details>
+  <summary>What is Null Pointer, Void Pointer, and Segmentation Fault?</summary>
+  <p>
+  
+  [Null Pointer & Segmentation Fault](../notes/m10.md#concept-null-pointer)     
+  [Void Pointer](../notes/m10.md#concept-void-pointer)     
+  
+  </p>
+</details><br>
+
+<details>
+  <summary>What the difference between <code>CONST</code> and <code>#DEFINE</code>?</summary>
+  <p>
+  
+  [Answer](../notes/m10.md#concept-constants)     
+  
+  </p>
+</details><br>
+
+<details>
+  <summary>What the difference between the following constant pointers?<br>
+  
+  - `const int* x`
+  - `int const* x`
+  - `int* const x`
+  - `const int* const x`
+  
+  </summary>
+  <p>
+    
+  - `const int* x` : Cannot change `*x` (the value where the pointer is pointing at).
+  - `int const* x` : Cannot change `*x` (the value where the pointer is pointing at).
+  - `int* const x` : Cannot change `z` (the address that the pointer holds).
+  - `const int* const x` : Cannot change both.
+  
+  </p>
+</details><br>
+
+<details>
+  <summary>Explain the difference between automatic, static, extern, and register variable.</summary>
+  <p>
+    
+  [Answer](../notes/m10.md#concept-storage-classes-for-variables-in-c)  
   
   </p>
 </details><br>
