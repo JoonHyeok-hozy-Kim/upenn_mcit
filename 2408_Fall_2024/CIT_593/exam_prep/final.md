@@ -325,10 +325,11 @@ int main(){
 </details><br>
 
 <details>
-  <summary>Explain the difference between automatic, static, extern, and register variable.</summary>
+  <summary>Explain the difference between automatic, static, dynamic, extern, and register variable.</summary>
   <p>
     
   [Answer](../notes/m10.md#concept-storage-classes-for-variables-in-c)  
+  - Dynamic Variable : Storage that is explicitly allocated from the heap by the program using `malloc()`.
   
   </p>
 </details><br>
