@@ -26,6 +26,7 @@
 
 - Exam Prep)
   - [Mid Term Qs](exam_prep/mid_term.md)
+  - [Final Qs](exam_prep/final.md)
 
 
 
