@@ -28,6 +28,10 @@
 
 <br>
 
+- PyTorch HWs
+  |Note|Concepts|
+  |:-:|:-|
+  |[HW0](hw/00/CIS5200%20HW0%20Revisited.ipynb)|Tensor (matrix) multiplication : `unsqueeze`, `repeat` <br> Stat functions : `mean`, `var` <br> Plotting with `matplotlib`|
 - Exam Prep
   - [Mid Term](exam_prep/mid_term.md)
 
