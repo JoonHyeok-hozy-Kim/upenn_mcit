@@ -18,7 +18,7 @@
 |15-17|[Open Hashing and Bucket Hashing](notes/15.md)|- Hash System, Collision, Load Factor<br>- Open Hashing, Closed Hashing, Bucket Hashing<br>- Collision Resolution Policies, Linear Probing, Primary Clustering, Pseudo-Random Probing, Quadratic Probing, Secondary Clustering, Double Hashing|
 |18|[Indexing](notes/18.md)|- Primary Key, Secondary Key|
 |19|[Graph I](notes/19.md)|- Undirected/Directed/Labeled Graph <br> - Incident, Adjacent, Degree, Path, Cycle, Clique <br> - Adjacency Matrix, Adjacency List <br> - Traversal : DFS, BFS, Dijkstra|
-|20|[Graph II]()|- |
+|20-21|[Graph II](notes/20.md)|- Topological Sort <br> - Shortest-Paths Problems <br> - Minimal Cost Spanning Trees (MCST)|
 |21|[]()|- |
 |22|[]()|- |
 |23|[]()|- |
