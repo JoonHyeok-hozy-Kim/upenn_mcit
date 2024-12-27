@@ -19,8 +19,7 @@
 |18|[Indexing](notes/18.md)|- Primary Key, Secondary Key|
 |19|[Graph I](notes/19.md)|- Undirected/Directed/Labeled Graph <br> - Incident, Adjacent, Degree, Path, Cycle, Clique <br> - Adjacency Matrix, Adjacency List <br> - Traversal : DFS, BFS, Dijkstra|
 |20-21|[Graph II](notes/20.md)|- Topological Sort <br> - Shortest-Paths Problems <br> - Minimal Cost Spanning Trees (MCST)|
-|21|[]()|- |
-|22|[]()|- |
+|22|[All-Pairs Shortest Paths (APSP)](notes/22.md)|- Floyd-Warshall <br> - Knapsack <br> - Dynamic Programming and Heuristics|
 |23|[]()|- |
 |24|[]()|- |
 |25|[]()|- |
