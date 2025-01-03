@@ -31,7 +31,9 @@
 - PyTorch HWs
   |Note|Concepts|
   |:-:|:-|
-  |[HW0](hw/00/CIS5200%20HW0%20Revisited.ipynb)|Tensor (matrix) multiplication : `unsqueeze`, `repeat` <br> Stat functions : `mean`, `var` <br> Plotting with `matplotlib`|
+  |[HW0](hw/00/CIS5200%20HW0%20Revisited.ipynb)|- Tensor (matrix) multiplication : `unsqueeze`, `repeat` <br> - Stat functions : `mean`, `var` <br> - Plotting with `matplotlib`|
+  |[HW1](hw/01/CIS5200%20HW1%20Revisited.ipynb)|- Perceptron, Plotting with `matplotlib` <br> - k-Nearest Neighbors (MNIST data)|
+  |[HW2](hw/02/CIS5200_HW2Revisited.ipynb)|- Log Regression (Scikit Learn : Wine quality data) <br> - Ridge Regression <br> - Soft SVM (Scikit Learn : Breast cancer data)|
 - Exam Prep
   - [Mid Term](exam_prep/mid_term.md)
 
