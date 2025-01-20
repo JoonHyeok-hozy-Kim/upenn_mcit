@@ -12,3 +12,4 @@
 - [CIT5950 Computer Systems Programming]()
 - [CIS5230 Ethical Algorithm Design]()
 - [CIS7000 Bayesian Optimization]()
+  - (Waiver Requested) [CIT5940 Data Structures & Software Design]()
