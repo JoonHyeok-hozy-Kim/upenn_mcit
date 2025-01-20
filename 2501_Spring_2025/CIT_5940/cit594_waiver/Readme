@@ -1,0 +1,32 @@
+Catching Plagiarists
+
+- Goal
+  - Detect whether a certain group of texts plagiarizes each other.
+    - How?
+      - We may suspect that a group of texts has plagiarized each other if they share certain combinations of words.
+      - Let an n-word-length combination of words be an **nGram**.
+      - This program detects the “affinity” of each text by counting how many nGrams they share.
+
+- Procedures
+  - Extract all possible nGrams from each text and store them in a text file.
+  - Compare all possible nGrams from two texts and count how many they share.
+    - (These would be the suspicious texts!)
+  - Print the pairs of texts that share the same nGrams more than **k** times.
+
+- Classes
+  - DocumentIterator
+    - Iterates through a text and creates nGrams of length **n** (given as an argument).
+    - Converts uppercase letters to lowercase.
+  - DocumentsProcessor
+    - Given the directory of text files, calculates the affinities between them.
+    - Creates a single `nGramFile` that contains all nGrams from every text.
+    - Creates a `HashMap` that uses an nGram as the key and a list of integers as its value.
+    - Parses this `nGramFile` using `DocumentIterator` with the length of 1.
+      - Checks if the current nGram is already in the HashMap:
+        - If **not**, adds the nGram as a new key, initializes an empty list, and adds the current text's index to this list.
+        - If **yes**, checks the stored indices in the list for that nGram:
+          - If no corresponding `Similarity` object exists between an already-stored index and the current text's index, creates one.
+          - Increments the similarity count.
+    - After parsing all nGrams, adds the resulting `Similarities` to a `TreeSet`.
+      - This efficiently sorts the `Similarities` by their counts.
+    - Prints the elements in the `TreeSet` that meet or exceed the user-specified count (**k**).
