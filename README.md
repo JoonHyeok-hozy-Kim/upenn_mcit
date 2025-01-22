@@ -3,7 +3,7 @@
 ### Spring 2025
 - [CIS5230 Ethical Algorithm Design](2501_Spring_2025/CIS_5230/main.md)
 - [CIS7000 Bayesian Optimization](2501_Spring_2025/CIS_7000/main.md)
-- [CIT5950 Computer Systems Programming]()
+- [CIT5950 Computer Systems Programming](2501_Spring_2025/CIT_5950/main.md)
   - (Waived) [CIT5940 Data Structures & Software Design](2501_Spring_2025/CIT_5940/)
 
 ### Fall 2024
