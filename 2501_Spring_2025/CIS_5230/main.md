@@ -3,7 +3,7 @@
 ## Lecture Notes
 |Date|Subject|Keywords|
 |:-:|:-|:-|
-|Jan. 21|[Foundations of ML](notes/m01/01.md)|- |
+|Jan. 21|[Foundations of ML](notes/01.md)|- |
 ||[]()|- |
 ||[]()|- |
 ||[]()|- |
