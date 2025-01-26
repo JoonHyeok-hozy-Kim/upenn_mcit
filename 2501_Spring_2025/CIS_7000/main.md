@@ -4,7 +4,7 @@
 |No|Subject|Keywords|
 |:-:|:-|:-|
 | 1|[Bayesian Statistics](notes/01.md)|- |
-| 2|[]()|- |
+| 2|[Multivariate Gaussian Distribution](notes/02.md)|- |
 | 3|[]()|- |
 | 4|[]()|- |
 | 5|[]()|- |
@@ -13,3 +13,6 @@
 | 8|[]()|- |
 | 9|[]()|- |
 |10|[]()|- |
+
+- HW
+  - [Gaussian Distribution Diagnostic Problem Set](hw/01.md)
