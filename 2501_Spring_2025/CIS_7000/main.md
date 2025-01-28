@@ -5,7 +5,7 @@
 |:-:|:-|:-|
 | 1|[Bayesian Statistics](notes/01.md)|- |
 | 2|[Multivariate Gaussian Distribution](notes/02.md)|- |
-| 3|[]()|- |
+| 3|[Regression in Bayesian Optimization](notes/03.md)|- |
 | 4|[]()|- |
 | 5|[]()|- |
 | 6|[]()|- |
