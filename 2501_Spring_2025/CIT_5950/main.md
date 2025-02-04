@@ -5,7 +5,7 @@
 |:-:|:-|:-|
 | 1|[Memory, Heap, Classes](notes/01.md)|- |
 | 2|[References, RAII, and C++ Concepts](notes/02.md)|- Error Reporting : `std::optional<T>` <br>- Vector <br> - References <br> - C++ Classes : Destructor(dtor) (RAII), Copy Constructor(cctor)|
-| 3|[]()|- |
+| 3|[More C++](notes/03.md)|- `const` <br> - Copying <br> - Temporal Safety <br> - `std::variant`, `std::unordered_map`, `std::unordered_set` <br> - Clang-tidy|
 | 4|[]()|- |
 | 5|[]()|- |
 | 6|[]()|- |
