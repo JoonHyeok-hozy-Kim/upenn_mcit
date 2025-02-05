@@ -6,8 +6,8 @@
 | 1|[Bayesian Statistics](notes/01.md)|- |
 | 2|[Multivariate Gaussian Distribution](notes/02.md)|- |
 | 3|[Regression in Bayesian Optimization](notes/03.md)|- |
-| 4|[]()|- |
-| 5|[]()|- |
+| 4|[Gaussian Process](notes/04.md)|- |
+| 5|[Bayesian Optimization Procedure](notes/05.md)|- |
 | 6|[]()|- |
 | 7|[]()|- |
 | 8|[]()|- |
