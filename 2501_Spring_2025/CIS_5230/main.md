@@ -1,11 +1,11 @@
 # CIS 5230 Ethical Algorithm Design
 
 ## Lecture Notes
-|Date|Subject|Keywords|
+|nO|Subject|Keywords|
 |:-:|:-|:-|
-|Jan. 21|[Foundations of ML](notes/01.md)|- |
-|Jan. 29|[Propublica](notes/02.md)|- |
-||[]()|- |
+|1|[Foundations of ML](notes/01.md)|- |
+|2|[Bias in Machine Learning: COMPAS and ProPublica](notes/02.md)|- |
+|3|[Science of Fair ML: Models and Algorithms](notes/03.md)|- |
 ||[]()|- |
 ||[]()|- |
 ||[]()|- |

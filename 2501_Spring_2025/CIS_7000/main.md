@@ -14,5 +14,17 @@
 | 9|[]()|- |
 |10|[]()|- |
 
+<br>
+
+## Textbook : Bayesian Optimization
+|No|Subject|Keywords|
+|:-:|:-|:-|
+| 0|[Preface](notes/00.md)|- |
+| 1|[Introduction]()|- |
+|  |[]()|- |
+|  |[]()|- |
+|  |[]()|- |
+|  |[]()|- |
+
 - HW
   - [Gaussian Distribution Diagnostic Problem Set](hw/01.md)
