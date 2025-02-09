@@ -1,0 +1,16 @@
+1. Attendance
+[Done]
+ - Spreadsheet edited.
+[To-Do]
+ - Check before we start the lecture every week?
+
+2. Scratch
+[Done]
+ - Created an educator account
+ - Added student accounts (but not the ones SFX provided)
+ - Doesn't seem to control students' access / Just sharing projects...
+
+3. Lecture Material
+- Block?
+  - Lecture Slide
+  - Draw Sprite project
