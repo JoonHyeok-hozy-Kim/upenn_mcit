@@ -14,3 +14,19 @@
 - Block?
   - Lecture Slide
   - Draw Sprite project
+
+<class>
+check attendance
+showing demo first  <-- Joon
+lecture   <-- Jessie slides
+(turn on pc) project?
+
+
+<additional stuffs>
+importing sprite
+customizing the character
+
+<Quest: Draw certain shape>
+- How blocks are used to do...
+	change color
+	rotating to certain degrees
