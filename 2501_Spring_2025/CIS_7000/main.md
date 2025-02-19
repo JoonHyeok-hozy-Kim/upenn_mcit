@@ -1,4 +1,4 @@
-# CIS 515 Fundamentals of Linear Algebra and Optimization
+# CIS 7000 Bayesian Optimization
 
 ## Module 1
 |No|Subject|Keywords|
@@ -8,7 +8,7 @@
 | 3|[Regression in Bayesian Optimization](notes/03.md)|- |
 | 4|[Gaussian Process](notes/04.md)|- |
 | 5|[Bayesian Optimization Procedure](notes/05.md)|- |
-| 6|[]()|- |
+| 6|[Variational Inference](notes/06.md)|- KL Divergence <br> - Evidence Lower Bound (ELBO) <br> - Bayesian Logistic Regression|
 | 7|[]()|- |
 | 8|[]()|- |
 | 9|[]()|- |

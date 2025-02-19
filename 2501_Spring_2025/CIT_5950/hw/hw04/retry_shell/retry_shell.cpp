@@ -190,7 +190,7 @@ int main(int argc, char** argv){
 		int curr_cnt = 0;
 		int run_check = -1;
 		while (curr_cnt < retry_cnt) {
-			cout << "retrying..." << endl;
+			cerr << "retrying..." << endl;
 
 			run_check = execute_cstr(cstr_cmd);
 			if (run_check == 0){
@@ -201,7 +201,7 @@ int main(int argc, char** argv){
 		}
 
 		if (run_check != 0) {
-			cout << "Failed to run program after retrying" << endl;
+			cerr << "Failed to run program after retrying" << endl;
 		}
 
 	}
