@@ -8,6 +8,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <array>
 #include <unistd.h> // for fork, execvp
 #include <cstring> // for strerror
 #include <sys/types.h>
@@ -106,7 +107,7 @@ vector<string> split(const string& str, const string& dilim) {
 }
 
 
-vector<char*> convert_to_cstring(vector<string> src){
+vector<char*> convert_to_cstring(vector<string> &src){
 	vector<char*> res;
 	for (auto& str: src){
 		res.push_back(str.data());
@@ -119,8 +120,10 @@ int execute_cstr(vector<char*> &cstr_vec) {
 	pid_t cpid = fork();
 
 	if (cpid == 0){
-		cout.flush();
+		//cout.flush();
 		execvp(cstr_vec.at(0), const_cast<char**>(cstr_vec.data()));
+
+		cerr << "exec_cstr, run failure" << endl;
 		exit(EXIT_FAILURE);
 	} else if (cpid < 0) {
 		cerr << "execute_cstr run, fork error." << endl;
@@ -143,6 +146,7 @@ int execute_cstr(vector<char*> &cstr_vec) {
 		} 
 	}	
 
+	cerr << "exec_cstr, run failure" << endl;
 	return EXIT_FAILURE;
 }
 

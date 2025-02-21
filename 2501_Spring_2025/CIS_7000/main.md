@@ -9,7 +9,7 @@
 | 4|[Gaussian Process](notes/04.md)|- |
 | 5|[Bayesian Optimization Procedure](notes/05.md)|- |
 | 6|[Variational Inference](notes/06.md)|- KL Divergence <br> - Evidence Lower Bound (ELBO) <br> - Bayesian Logistic Regression|
-| 7|[]()|- |
+| 7|[Markov Chain Monte Carlo (MCMC)](notes/07.md)|- |
 | 8|[]()|- |
 | 9|[]()|- |
 |10|[]()|- |
