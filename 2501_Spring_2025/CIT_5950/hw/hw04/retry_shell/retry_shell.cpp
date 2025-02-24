@@ -123,7 +123,7 @@ int execute_cstr(vector<char*> &cstr_vec) {
 		//cout.flush();
 		execvp(cstr_vec.at(0), const_cast<char**>(cstr_vec.data()));
 
-		cerr << "exec_cstr, run failure" << endl;
+		cerr << "exec_cstr, run failure return from execvp" << endl;
 		exit(EXIT_FAILURE);
 	} else if (cpid < 0) {
 		cerr << "execute_cstr run, fork error." << endl;
@@ -146,7 +146,7 @@ int execute_cstr(vector<char*> &cstr_vec) {
 		} 
 	}	
 
-	cerr << "exec_cstr, run failure" << endl;
+	cerr << "exec_cstr, run failure after wait" << endl;
 	return EXIT_FAILURE;
 }
 
@@ -194,7 +194,7 @@ int main(int argc, char** argv){
 		int curr_cnt = 0;
 		int run_check = -1;
 		while (curr_cnt < retry_cnt) {
-			cerr << "retrying..." << endl;
+			cout << "retrying..." << endl;
 
 			run_check = execute_cstr(cstr_cmd);
 			if (run_check == 0){
@@ -205,7 +205,7 @@ int main(int argc, char** argv){
 		}
 
 		if (run_check != 0) {
-			cerr << "Failed to run program after retrying" << endl;
+			cout << "Failed to run program after retrying" << endl;
 		}
 
 	}

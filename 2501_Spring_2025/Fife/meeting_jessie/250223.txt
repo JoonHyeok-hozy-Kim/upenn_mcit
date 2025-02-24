@@ -1,0 +1,26 @@
+Oreo
+
+Back ground : elementary school hallway
+kids are chasing
+
+- Substitute teacher
+
+<choice 1>
+- Play Ground
+	- Still so many kids outside
+		<choice>
+		- Ride a rocket
+			- Two buttons
+				1 : Flies
+				2 : Explodes
+		- Unicorn
+			- Being eaten by it
+
+- Room B : classroom with students
+	- Oreo is not safe. Kids are trying to catch.
+		<choice>
+		- Going into a box
+			- There are two buttons
+				- Peanut
+				- Peanut flavor
+		- Jumping out of window -> Go to Play ground

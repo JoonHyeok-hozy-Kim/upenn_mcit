@@ -107,6 +107,14 @@
       - Pareto Optimality
         - Def.) A point $`\mathbf{x}^*\in\mathcal{P}_s`$ is considered Pareto-Optimal if 
           - $`\nexists\mathbf{x}\in\mathcal{X} \text{ s.t. } \begin{cases} f_i(\mathbf{x}^*) \ge f_i(\mathbf{x}),\; \forall i \\ f_i(\mathbf{x}^*) \gt f_i(\mathbf{x}),\; \exists i \end{cases}`$
+  - Dataset
+    - $`(X, Y) \subset \mathcal{X}\times\mathcal{Y}\subset \mathbb{R}^{d\times m}`$ : dataset
+    - $`(\mathbf{x}, \mathbf{y})\in(X,Y)`$ : datapoint
+      - where    
+        $`\begin{aligned}
+          & \mathbf{y} = \mathbf{f}(\mathbf{x}) + \epsilon, & \epsilon\sim N(0, \sigma_m^2) \\
+          \Leftrightarrow& \begin{bmatrix} y_1 \\ \vdots \\ y_m \end{bmatrix} = \begin{bmatrix} f_1(\mathbf{x}) \\ \vdots \\ f_m(\mathbf{x}) \end{bmatrix} + \begin{bmatrix} \epsilon_1 \\ \vdots \\ \epsilon_m \end{bmatrix}, & \epsilon_j\sim N(0, \sigma_j^2)
+        \end{aligned}`$
 - How do we measure the utility of the set of points?)
   - MOO commonly uses **hypervolume indicator**
     - Concept) Hypervolume $`\mathcal{H}(\mathcal{P}_f)`$
@@ -174,6 +182,107 @@
     - i.e.) each of the $`N`$ intervals in a given dimension is used exactly once.   
       ![](../images/paper_002.png)
 
+<br>
 
+### Algorithm 1) DGEMO
+- Settings)
+  - $`\mathbf{f} = (f_1, \cdots, f_m):\mathcal{X}\rightarrow\mathbb{R}^m`$ : a vector of $`m`$ black-box objectives
+    - where
+      - $`\mathcal{X}\subset\mathbb{R}^d`$
+      - $`f_j:\mathcal{X}\rightarrow\mathbb{R}`$
+  - $`X_0\subset\mathcal{X}\subset\mathbb{R}^d`$ : a small set of initial samples, usually drawn by [LHS](#concept-latin-hypercube-sampling-lhs)
+  - $`Y_0 = \{\mathbf{f}(\mathbf{x}_i), \; \forall\mathbf{x}_i\in X_0\} \subset\mathbb{R}^m`$
+- Input)
+  - $`\mathcal{X}`$ : the design space
+  - $`\mathbf{f}(\mathbf{x}) = (f_1(\mathbf{x}), \cdots, f_m(\mathbf{x}))`$ : $`m`$ black-box objectives
+  - $`n`$ : the number of iteration
+  - $`k`$ : the number of initial samples
+  - $`b`$ : the batch size 
+- Output)
+  - $`\mathcal{P}_s`$ : the Pareto set
+  - $`\mathcal{P}_f`$ : the Pareto front
+- Algorithm)
+  - Initialize $`\begin{cases} X_0 \leftarrow \{\mathbf{x}_1, \cdots, \mathbf{x}_k\} \\ Y_0 \leftarrow \{\mathbf{f}(\mathbf{x}_1), \cdots, \mathbf{f}(\mathbf{x}_k)\} \end{cases}`$
+  - `for` $`i=0,\cdots,n`$ `do`
+    - [Train surrogate models](#41-surrogate-model) $`G_j^{(i)}`$ on $`X_i, Y_i`$ for each objective $`f_j, \; j\in\{1,\cdots,m\}`$.
+    - Define acquisition function $`\tilde{f_j}^{(i)}`$ from each $`G_j^{(i)}`$.
+      - i.e.) $`\tilde{\mathbf{f}}^{(i)}(\mathbf{x}) \leftarrow \left(\tilde{f_1}^{(i)}(\mathbf{x}), \cdots, \tilde{f_m}^{(i)}(\mathbf{x}) \right)`$
+    - [Approximate Pareto set](#42-pareto-front-approximation) $`\mathcal{P}_s^{(i)}`$ and Pareto front $`\mathcal{P}_f`$ over $`\tilde{\mathbf{f}}^{(i)}`$.
+    - Split points from $`\mathcal{P}_s^{(i)}`$ into diversity regions $`\mathcal{D}_1^{(i)}, \cdots, \mathcal{D}_r^{(i)}`$.
+    - [Select points](#43-batch-selection-strategy) $`\mathbf{x}_1^{(i)}, \cdots, \mathbf{x}_b^{(i)}`$ to evaluate from $`\mathcal{D}_1^{(i)}, \cdots, \mathcal{D}_r^{(i)}`$.
+    - Evaluate and update $`\begin{cases} X_{i+1} &\leftarrow X_i \cup \left\{ \mathbf{x}_1^{(i)}, \cdots, \mathbf{x}_b^{(i)} \right\} \\ Y_{i+1} &\leftarrow Y_i \cup \left\{ \mathbf{f}^{(i)}\left(\mathbf{x}_1^{(i)}\right), \cdots, \mathbf{f}^{(i)}\left(\mathbf{x}_b^{(i)}\right) \right\} \end{cases}`$
+  - Compute Pareto front $`\mathcal{P}_f`$ from points in $`Y_n`$ and corresponding Pareto set $`\mathcal{P}_s`$
+
+<br>
+
+### 4.1 Surrogate Model
+- Goal)
+  - Model each objective **independently**
+    - $`f_j, \; j\in\{1, \cdots, m\}`$
+- How)
+  - Use Gaussian Process as the surrogate model $`G_j`$ of the objective function $`f_j`$
+  - Then, with the prior and the likelihood, get the posterior of $`f_j`$.
+    - i.e.) $`f_j \sim N(\mu_j(\mathbf{x}), \Sigma_j(\mathbf{x}))`$.
+- Derivation)
+  - For the $`j`$-th  independent objective function $`f_j, \;\forall j\in\{1, \cdots, m\}`$...
+    - Prior)
+      - Any prior beliefs about the objective functions if available, without depending on the input data
+      - Mean Function : $`m_j : \mathcal{X}\rightarrow\mathbb{R}`$
+        - $`m_j(\mathbf{x}) = 0`$
+      - Kernel Function $`k_j : \mathcal{X}\times\mathcal{X} \rightarrow \mathbb{R}`$
+        - Matern Kernel
+          - $`\displaystyle k(\mathbf{x},\mathbf{x}') = \sigma^2 \frac{2^{1-\nu}}{\Gamma(\nu)}\left(\sqrt{2\nu}\frac{\|\mathbf{x}-\mathbf{x}'\|}{\ell}\right)^\nu K_\nu\left(\sqrt{2\nu}\frac{\|\mathbf{x}-\mathbf{x}'\|}{\ell}\right)`$
+            - where
+              - $`\sigma^2`$ : the variance parameter
+              - $`\ell`$ : the length scale
+              - $`\nu`$ : the smoothness parameter
+              - $`K_\nu`$ : the modified Bessel function
+          - Why Matern?)
+            - It can capture large variety of function properties.
+    - Likelihood) The log marginal likelihood of  on the available dataset $`\{X, Y\}`$
+      - $`p_j(\mathbf{y}\vert\mathbf{x},\theta_j)`$ : 
+        - where $`\theta_j`$ is the parameters set
+          - i.e.) $`\sigma^2, \ell, \nu \in \theta_j`$
+        - Recall, $`\mathbf{y} = \mathbf{f}(\mathbf{x}) + \epsilon`$
+    - Posterior)
+      - $`f_j \sim N(\mu_j(\mathbf{x}), \Sigma_j(\mathbf{x}, \mathbf{x}))`$
+        - where
+          - $`\begin{cases} \mu_j(\mathbf{x}) = m_j(\mathbf{x}) + k_jK_j^{-1}Y = k_jK_j^{-1}Y \\ \Sigma_j(\mathbf{x}) = k_j(\mathbf{x}, \mathbf{x}) - k_jK_j^{-1}k_j^\top \end{cases} \text{ for } \begin{cases} k_j=k_j(\mathbf{x}, X) \\ K_j = k_j(X, X) \end{cases}`$
+- What we calculate)
+  - For each independent objective function $`f_j`$
+    - calculate the posterior of $`f_j \sim N(\mu_j(\mathbf{x}), \Sigma_j(\mathbf{x}, \mathbf{x}))`$
+      - where $`\begin{cases} \mu_j(\mathbf{x}) = k_j(\mathbf{x}, X)k_j(X, X)^{-1}Y \\ \Sigma_j(\mathbf{x}) = k_j(\mathbf{x}, \mathbf{x}) - k_j(\mathbf{x}, X)k_j(X, X)^{-1}k_j(\mathbf{x}, X)^\top \end{cases}`$
+        - for the matern kernel   
+          $`\displaystyle k_j(\mathbf{x},\mathbf{x}') = \sigma_j^2 \frac{2^{1-\nu_j}}{\Gamma(\nu_j)}\left(\sqrt{2\nu_j}\frac{\|\mathbf{x}-\mathbf{x}'\|}{\ell_j}\right)^\nu K_{\nu_j}\left(\sqrt{2\nu_j}\frac{\|\mathbf{x}-\mathbf{x}'\|}{\ell_j}\right)`$
+
+
+
+<br>
+
+### 4.2 Pareto Front Approximation
+- Assumption)
+  - Use the **mean function** $`\mu_j`$ of GP posterior as an acquisition function $`\tilde{f}_j`$.
+    - Desc.)
+      - Recall that we drived GP posterior $`G_j`$ for each objective function $`f_j`$.
+        - i.e.) $`f_j(\mathbf{x}) \sim N(\mu_j(\mathbf{x}), \Sigma(\mathbf{x}))`$
+      - Here, we use only $`\mu_j(\mathbf{x})`$ as the acquisition function.
+        - hozy) Why not taking advantage of the variance?
+          - What if we use the stochastic function $`f_j(\mathbf{x}) \sim N(\mu_j(\mathbf{x}), \Sigma(\mathbf{x}))`$?
+      - Denote $`\tilde{f}_j(\mathbf{x}) = \mu_j(\mathbf{x})`$
+- How to calculate the Pareto Front
+  - Schulz et al., *Interactive exploration of design trade-offs.*
+    - How?)
+      - Solve a dual problem based on KKT conditions.
+      - Derive a first-order approximation of the Pareto front.
+        - This allows discovering large piecewise **continunous** regions of the Pareto front.
+        - cf.) Evolutionalry algorithms' obtain only a **sparse** set of points.
+- Procedure)
+  1. A stochastic sampling scheme is used to generate a set of random samples $`\mathbf{x}_i\in\mathcal{X}`$
+
+<br>
+
+### 4.3 Batch Selection Strategy
+
+<br>
 
 
