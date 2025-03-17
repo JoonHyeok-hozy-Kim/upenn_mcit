@@ -120,7 +120,7 @@
     - Concept) Hypervolume $`\mathcal{H}(\mathcal{P}_f)`$
       - Def.)
         - Let
-          - $`\mathcal{P}_f`$ : a Pareto Front **approximation** in an $`m`$-dim'l performance sapce
+          - $`\mathcal{P}_f`$ : a Pareto Front **approximation** in an $`m`$-dim'l performance space
           - $`r\in\mathbb{R}^m`$ : a reference point
             - i.e.) a fixed point deliberately chosen so that its performance is “inferior” to that of all candidate solutions (or Pareto-optimal solutions)
         - Then the **hypervolume** $`\mathcal{H}(\mathcal{P}_f)`$ is defined as   
@@ -130,6 +130,7 @@
               - $`\mathcal{P}_f(i)`$ : the $`i`$-th solution in $`\mathcal{P}_f`$
               - $`\preceq`$ : the relation operator of objective dominance
               - $`\mathbb{1}_{H(\mathcal{P}_f)} = \begin{cases} 1 & \text{ if } z\in H(\mathcal{P}_f) \\ 0 & \text{ otherwise} \end{cases}`$ : a Dirac Delta function
+                ![](./images/dgemo%20001.png)
     - Concept) Hypervolume Improvement $`\text{HVI}(P, \mathcal{P}_f)`$
       - Def.)
         - $`\text{HVI}(P, \mathcal{P}_f) = \mathcal{H}(\mathcal{P}_f \cup P) - \mathcal{H}(\mathcal{P}_f)`$
@@ -180,7 +181,7 @@
     - There will be $`N^d`$ cells total.
   - We want exactly one sample in each interval along each dimension.
     - i.e.) each of the $`N`$ intervals in a given dimension is used exactly once.   
-      ![](../images/paper_002.png)
+      ![](./images/dgemo%20002.png)
 
 <br>
 

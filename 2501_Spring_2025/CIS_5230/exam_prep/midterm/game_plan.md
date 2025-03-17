@@ -9,23 +9,32 @@
 |3|[Science of Fair ML: Models and Algorithms](../../notes/03.md)|||
 |4|[ML Fairness via "Bias Bounties"](../../notes/04.md)||- |
 
+- Cause of bias
+  1. Imbalanced training data
+  2. Feature selection bias
+  3. Data quality issue
+  4. Inherent predictability of some subgroups
+  5. Loss minimization training methodology issue
+  6. Feedback loop
 
 ## 2. Papers
 
 |No|Note|Required|
 |:-:|:-|:-|
-|1|[Inherent Trade-Offs in the Fair Determination of Risk Scores](../../readings/03/01.md)|First 8 pages|
-|2|[The Frontiers of Fairness in Machine Learning](../../readings/03/02.md)|Required|
-|3|[(Google) Attacking discrimination with smarter machine learning](../../readings/03/03.md)|Required|
-|4|[Equality of Opportunity in Supervised Learning](../../readings/03/04.md)|Intro|
-|5|[A Reductions Approach to Fair Classification](../../readings/03/05.md)|Intro|
-|6|[An Empirical Study of Rich Subgroup Fairness for Machine Learning](../../readings/03/06.md)|Intro|
-|7|[An Algorithmic Framework for Bias Bounties](../../readings/03/07.md)|Intro, Section 5 and 6|
-|8|[](../../readings/03/08.md)|Skim|
+|1-1|[Responsible AI in the generative era](https://www.amazon.science/blog/responsible-ai-in-the-generative-era)|Required|
+|1-2|[Responsible AI in the wild: Lessons learned at AWS](https://www.amazon.science/blog/responsible-ai-in-the-wild-lessons-learned-at-aws)|Required|
+|3-1|[Inherent Trade-Offs in the Fair Determination of Risk Scores](../../readings/03/01.md)|First 8 pages|
+|3-2|[The Frontiers of Fairness in Machine Learning](../../readings/03/02.md)|Required|
+|3-3|[(Google) Attacking discrimination with smarter machine learning](../../readings/03/03.md)|Required|
+|3-4|[Equality of Opportunity in Supervised Learning](../../readings/03/04.md)|Intro|
+|3-5|[A Reductions Approach to Fair Classification](../../readings/03/05.md)|Intro|
+|3-6|[An Empirical Study of Rich Subgroup Fairness for Machine Learning](../../readings/03/06.md)|Intro|
+|3-7|[An Algorithmic Framework for Bias Bounties](../../readings/03/07.md)|Intro, Section 5 and 6|
+|3-8|[](../../readings/03/08.md)|Skim|
 
 <br>
 
-#### Paper1) Inherent Trade-Offs in the Fair Determination of Risk Scores
+#### Paper 3-1) Inherent Trade-Offs in the Fair Determination of Risk Scores
 - Three Fairness Conditions
   1. Calibration within Groups
   2. Balance for the Negative Class
@@ -37,7 +46,7 @@
 
 <br>
 
-#### Paper2) The Frontiers of Fairness in Machine Learning
+#### Paper 3-2) The Frontiers of Fairness in Machine Learning
 - Three Causes of Unfairness
   1. Bias Encoded in Data
   2. Minimizing Average Error Fits Majority Populations
@@ -45,7 +54,7 @@
 
 <br>
 
-#### Paper3) (Google) Attacking discrimination with smarter machine learning
+#### Paper 3-3) (Google) Attacking discrimination with smarter machine learning
 - Max Profit
   - Goal)
     - Just maximize the total profit.
@@ -74,7 +83,7 @@
 
 <br>
 
-#### Paper4) Equality of Opportunity in Supervised Learning
+#### Paper 3-4) Equality of Opportunity in Supervised Learning
 - Unfair Methods
   - Fairness through Unawareness
     - i.e.) Dropping sensitive features
@@ -91,7 +100,7 @@
 
 <br>
 
-#### Paper5) Reductions Approach to Fair Classification
+#### Paper 3-5) Reductions Approach to Fair Classification
 - Key Idea)
   - Reduce fair classification to a sequence of cost-sensitive classification problems
     - whose solutions yield a **randomized** classifier with the lowest (empirical) error subject to the desired constraints
@@ -99,7 +108,7 @@
 
 <br>
 
-#### Paper6) An Empirical Study of Rich Subgroup Fairness for Machine Learning
+#### Paper 3-6) An Empirical Study of Rich Subgroup Fairness for Machine Learning
 - Fairness Gerrymandering
   - A model appears to be fair when evaluated on the broad subgroups exhibits unfairness at the intersections of the subgroups or at the individuals.
 - Proposal)
@@ -115,7 +124,7 @@
 
 <br>
 
-#### Paper7) An Algorithmic Framework for Bias Bounties
+#### Paper 3-7) An Algorithmic Framework for Bias Bounties
 - Bias Bounty Approach
   - Meaning)
     - External parties are invited to find biases in a model and reward doing so.
