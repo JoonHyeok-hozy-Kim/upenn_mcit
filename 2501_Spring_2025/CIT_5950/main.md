@@ -10,7 +10,7 @@
 | 5|[Unix Shell & Hierarchical File System](notes/05.md)|- POSIX : `open()`, `read()`, `write()`, `close()`, `lseek()` <br> - stdout, stdin, stderr <br> - File Descriptor Table, Redirection : `dup2()`|
 | 6|[Pipes](notes/06.md)|- `pipe`|
 | 7|[Locality, Buffering, and Caches](notes/07.md)|- |
-| 8|[]()|- |
+| 8|[Move & File Descriptors](./notes/08.md)|- `std::vector.reserve()`|
 | 9|[]()|- |
 |10|[]()|- |
 
