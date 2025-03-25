@@ -11,7 +11,11 @@
 | 6|[Pipes](notes/06.md)|- `pipe`|
 | 7|[Locality, Buffering, and Caches](notes/07.md)|- |
 | 8|[Move & File Descriptors](./notes/08.md)|- `std::vector.reserve()`|
-| 9|[]()|- |
-|10|[]()|- |
+| 9|[Buffering & Virtual Memory](./notes/09.md)|- Virtual Memory <br> - C++: `=` Operator Overloading, Initialization List, `static_cast`, `dynamic_cast`, `const_cast`, `reinterpret_cast`|
+|10|[Thread](./notes/10.md)|- |
+|11|[]()|- |
+|12|[]()|- |
+|13|[]()|- |
+|14|[]()|- |
 
 

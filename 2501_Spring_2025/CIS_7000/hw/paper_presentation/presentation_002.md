@@ -104,6 +104,11 @@ $\text{DGEMO solves } \underbrace{\text{multi-objective problem}}_{\text{MOO}} \
 
 ---
 
+<div class="flex-container">
+  <div>
+
+
+
 # Outline
 1. Multi-Objective Optimization (MOO)
    - Pareto Front
@@ -113,6 +118,11 @@ $\text{DGEMO solves } \underbrace{\text{multi-objective problem}}_{\text{MOO}} \
 3. DGEMO
    - Pareto Front Approximation
    - Batch Selection Strategy
+
+
+  </div>
+  <img class="right-imgx" src="./images/pre 011.png">
+</div>
 
 ---
 
