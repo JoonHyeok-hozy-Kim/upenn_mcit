@@ -51,27 +51,28 @@ style: |
   }
 ---
 
-# DGEBO
+# Enhancing DGEMO with Bayesian Optimization Properties: Towards DGEBO
 ## Summary
 - Adding more Bayesian Optimization properties to DGEMO may improve its performance.
 
 ---
 ### How?
-#### 1. Treating the multivariate objective as stochastic.
+#### 1. Stochastic multivariate objective in First order approximation
 - As is) 
   - $\tilde{F} = (\mu_1, \cdots, \mu_d) \text{ where } \mu_j = k_jK_j^{-1}Y \forall j$
 - To be)
   - $\tilde{F} \sim N(\mu, \Sigma)$
 
+![height:300px](./images/pre%20013.png)
 
+---
 
-#### 2. Modify Performance Buffer Sampling to use a BO approach
+#### 2. Modify Stochastic Sampling to use a BO approach
 - As is) 
-  1. $\displaystyle\mathbf{x}_s = \mathbf{x}^j + \frac{1}{2^{\delta_p}}\mathbf{d}_p$
-  2. $\displaystyle\mathbf{x}_o = \arg\min_{\mathbf{x}\in\mathcal{X}} \Vert F(\mathbf{x}) - \mathbf{z(x_s)} \Vert^2$
+  1. $\displaystyle\mathbf{x}_s = \mathbf{x}^j + \frac{1}{2^{\delta_p}}\mathbf{d}_p$ : random sampling
 - To be)
-  1. Expected Improvement with Information Gain 
-  2. Use distance metric for probability distribution : KL Divergence, Mutual Information, Wasserstein Distance
+  - Exploration method from BO.
+    - Acquisition functions like EI.
 
 
 ---
@@ -91,8 +92,8 @@ style: |
 
 # DGEMO's Limit
 ### 1. Not fully utilizes the GP.
-- Simply using the mean function $\mu_j$ as the acquisition function.
-- Discarding the variance function $\sigma^2_j$ might be wasting the valuable info.
+- Simply using the posterior $\mu_j$ for the first order approximation.
+- Not fully utilizing the posterior variance $\Sigma^2_j$ might be wasting the valuable info.
 
 ### 2. Arbitrary Sampling procedure in the First-Order Approximation.
 - From the previous candidate $\mathbf{x}_j$ in the performance buffer $B(j)$, it generates the new sample $\mathbf{x}_s$ as
@@ -146,23 +147,15 @@ style: |
 ### 2.  When sampling a new point in the performance buffer, what if we use BO acquisition function such as EI?
 
 #### As is) 
-1. $\displaystyle\mathbf{x}_s = \mathbf{x}^j + \frac{1}{2^{\delta_p}}\mathbf{d}_p$
-2. $\displaystyle\mathbf{x}_o = \arg\min_{\mathbf{x}\in\mathcal{X}} \Vert F(\mathbf{x}) - \mathbf{z(x_s)} \Vert^2$
+- $\displaystyle\mathbf{x}_s = \mathbf{x}^j + \frac{1}{2^{\delta_p}}\mathbf{d}_p$
 #### To be)
-1. Expected Improvement with Information Gain 
-2. Use distance metric for probability distribution : KL Divergence, Mutual Information, Wasserstein Distance
-
-- Additionally, what if we update the $F$'s posterior using these new samples?
-  - Data structure)
-    - Maintain a hashmap of $F=(f_1, \cdots, f_d)$
+- Expected Improvement with Information Gain 
 
 ---
 
 # Possible Costs and Improvements?
 ### 1. Treating $F$ to be stochastic may be more expensive than treating it to be deterministic.
-- Still, the key performance boosting part of DGEMO was the batch selection strategy.
-- These procedures take place before the batch selection.
-- Thus, we can still take advantage of the DGEMO's efficiency.
+- Check if the simple kernels like low dimensional polynomials work.
 
 ### 2. Treating the multivariate stochastic function $F\sim N(\mu, \Sigma)$
 - Is this set up compatible with the performance buffer set up in DGEMO?
@@ -170,14 +163,14 @@ style: |
 
 ---
 
-### 3. Will this more BO style of approach have advantage?
-  - Maybe yes?
-  - DGEMO achieved diversity by...
+### 3. Will this approach have advantage?
+- More accurate approximation on the Pareto front may be available.
+- More efficient sampling using the BO approach.
+- DGEMO's batch selection strategy is **NOT** deteriorated by this approach.
+  - Stochastic modification is applied only to the First-order approximation.
+  - We do not change any of these key factors.
     - Initial LHS sampling
-    - Setting $\mathbf{z(x_s)} = \mathbf{x}_s + \mathbf{s(x_s)}C(\mathbf{x}_s)$ where 
-      - $\mathbf{s(x_s)}$ was a unit length search direction pushing $\mathbf{x}_s$ toward the Pareto front $\mathcal{P}$
-      - Selected the search direction assigned to a cell on the neighborhood of cell $j$ selected uniformly at random, within distance $\delta_N$
-    - Using affine subspace around the candidates in the performance buffer as the fraction of the Pareto Frontier
-  - We do not change any of those key factors.
-    - So we may still take advantage of DGEMO.
-    - May BO enhance this even more?
+    - Local optimization on $\mathbf{z(x_s)} = \mathbf{x}_s + \mathbf{s(x_s)}C(\mathbf{x}_s)$
+    - First order approximation using the affine subspace
+    - Use Graph-cut algorithm to achieve continuity
+  - Thus, we can still take advantage of the DGEMO's efficiency.

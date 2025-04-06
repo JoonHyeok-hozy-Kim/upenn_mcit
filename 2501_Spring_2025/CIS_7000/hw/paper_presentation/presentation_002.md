@@ -75,7 +75,7 @@ Luković et al.
 }
 </style>
 
-## Three-Minute Summary of DGEMO
+# DGEMO in One Sentence
 
 $\text{DGEMO solves } \underbrace{\text{multi-objective problem}}_{\text{MOO}} \text{ with } \underbrace{\text{black-box functions}}_{\text{BO}} \text{ } \underbrace{\text{fast in parallel}}_{\text{MOBO}}.$
 
@@ -93,8 +93,8 @@ $\text{DGEMO solves } \underbrace{\text{multi-objective problem}}_{\text{MOO}} \
 ### 2. Bayesian Optimization (BO)
 - Gaussian Process
 
-### 3. Multi-Objective Bayesian Optimization (MOBO)
-- Diversity Region Batch Selection : Running in parallel = Faster!
+### 3. Multi-Objective **Bayesian** Optimization (MOBO)
+- Diversity Region Batch Selection
 
 
   </div>
@@ -110,14 +110,14 @@ $\text{DGEMO solves } \underbrace{\text{multi-objective problem}}_{\text{MOO}} \
 
 
 # Outline
-1. Multi-Objective Optimization (MOO)
-   - Pareto Front
-   - Hypervolume Index (HVI)
-2. Batch Selection Method (MOBO)
-   - Sequential Selection vs Batch Selection
-3. DGEMO
-   - Pareto Front Approximation
-   - Batch Selection Strategy
+### 1. Multi-Objective Optimization (MOO)
+- Pareto Front
+- Hypervolume Index (HVI)
+### 2. Multi Objective **Bayesian** Opt. (MOBO)
+- Sequential Selection vs Batch Selection
+### 3. DGEMO
+- Pareto Front Approximation
+- Diversity Region Batch Selection Strategy
 
 
   </div>
@@ -165,23 +165,40 @@ $x^*$ is Pareto optimal if there is **no** other solution $x$ s.t. $\left\{\begi
 
 ---
 
-### The Goal of Multiple Objective Optimization Problem
-- Get the Pareto front.
+# MOO's Goal
+- Get the **Pareto front**.
   - i.e.) the set of Pareto optimal solutions
-- Points on the Pareto fronts are better off than other available points.
+  - Points on the Pareto fronts are better off than other available points.
 
 ![h:400px](./images/gardner%20001.png)
 
 ---
 
-### How to measure the improvement on Pareto Fronts
+### How do we measure the improvement on Pareto Fronts?
 
-1. Calculate the initial Hypervolume of the Pareto Front.
-2. Update the Pareto Front and calculate the Hypervolume again.
-3. If the Hypervolume increased, then there was an improvement : HVI
+<div class="flex-container">
+  <div>
 
-<br>
-<img src="./images/dgemo%20001.png" width="500px">
+
+
+
+  </div>
+  <img src="./images/dgemo 004.png" width="550px">
+  <img src="./images/dgemo 005.png" width="550px">
+</div>
+
+---
+
+<div class="flex-container">
+  <div>
+
+
+# HyperVolume  
+
+
+  </div>
+  <img src="./images/dgemo 003.png" width="700px">
+</div>
 
 ---
 ### Hypervolume
@@ -197,6 +214,20 @@ $x^*$ is Pareto optimal if there is **no** other solution $x$ s.t. $\left\{\begi
         - $\mathcal{P}_f(i)$ : the $i$-th solution in $\mathcal{P}_f$
         - $\preceq$ : the relation operator of objective dominance
         - $\mathbb{1}_{H(\mathcal{P}_f)} = \begin{cases} 1 & \text{ if } z\in H(\mathcal{P}_f) \\ 0 & \text{ otherwise} \end{cases}$ : a Dirac Delta function
+
+---
+
+<div class="flex-container">
+  <div>
+
+
+# HVI
+### HyperVolume Improvement 
+
+
+  </div>
+  <img src="./images/dgemo 001.png" width="700px">
+</div>
 
 ---
 
@@ -237,11 +268,11 @@ $x^*$ is Pareto optimal if there is **no** other solution $x$ s.t. $\left\{\begi
 ---
 
 
-# 2. Batch Selection Method (MOBO)
+# 2. Multi Objective **Bayesian** Optimization (MOBO)
 
 <br>
 
-### Sequential Selection vs Batch Selection
+## Sequential Selection vs Batch Selection
 
 ---
 
@@ -311,7 +342,7 @@ $x^*$ is Pareto optimal if there is **no** other solution $x$ s.t. $\left\{\begi
 
 ## DGEMO is a Batch Selection MOBO  
 
-with Diversity Region Batch Selection Strategy
+with **Diversity Region** Batch Selection Strategy
 
 
   </div>
@@ -356,7 +387,7 @@ with Diversity Region Batch Selection Strategy
 
 ### with Batch Selection Strategy that utilizes...
 
-1. GP as a surrogate model
+1. **GP** as a surrogate model
 2. **First-order Approximation** $(\mathcal{A}_i)$ on Pareto Front
 3. HVI maximization w.r.t. **Diversity Regions** $(\mathcal{D}_i)$
    - where $\mathcal{A}_i = \mathcal{D}_i$
@@ -367,7 +398,24 @@ with Diversity Region Batch Selection Strategy
 </div>
 
 ---
-## Problem Setting) Multiple Objective Problem
+## Problem Setting) Design Space vs Performance
+
+<img src="./images/design_performance_001.png" width="1000px">
+
+---
+## Problem Setting) Design Space vs Performance
+
+<img src="./images/design_performance_002.png" width="1000px">
+
+
+---
+
+## Problem Setting) Design Space vs Performance
+
+<img src="./images/design_performance_003.png" width="1000px">
+
+
+---
 
 #### Def.) Design Space and Constraints
 - $\mathcal{X} = \{\mathbf{x}=(x^1, \cdots, x^D) \in\mathbb{R}^D : g_j(\mathbf{x})\le0, \forall j\in\{1,\cdot, K\} \}$
@@ -429,8 +477,9 @@ with Diversity Region Batch Selection Strategy
 # 3-1. GP as a surrogate model.
 ### Problem)
 - All we have is the data $\mathcal{D} = \{X, Y\}$
-  - Each data point looks like $(\;\underbrace{x_1, x_2, \cdots, x_D}_{D\text{ features}}, \; \underbrace{y_1, y_2, \cdots, y_d}_{d\text{ objectives}} \;)$.
+  -  $d=(\;\underbrace{x_1, x_2, \cdots, x_D}_{D\text{ features}}, \; \underbrace{y_1, y_2, \cdots, y_d}_{d\text{ objectives}} \;) \in \mathcal{D}$
 - We want to find $F(X) = (f_1(X), f_2(X), \cdots, f_d(X))$
+- But we don't know what $F(X)$ looks like...
 
 
   </div>
@@ -442,10 +491,8 @@ with Diversity Region Batch Selection Strategy
 For the $j$-th  independent objective function $f_j, \;\forall j\in\{1, \cdots, m\}$...
 
 ### 1. Prior
-- Mean Function : $m_j : \mathcal{X}\rightarrow\mathbb{R}$
-  - $m_j(\mathbf{x}) = 0$
-- Kernel Function $k_j : \mathcal{X}\times\mathcal{X} \rightarrow \mathbb{R}$
-  - Matern Kernel
+- Mean Function : $m_j(\mathbf{x}) = 0$
+- Kernel Function Matern Kernel
     - $\displaystyle k(\mathbf{x},\mathbf{x}') = \sigma^2 \frac{2^{1-\nu}}{\Gamma(\nu)}\left(\sqrt{2\nu}\frac{\|\mathbf{x}-\mathbf{x}'\|}{\ell}\right)^\nu K_\nu\left(\sqrt{2\nu}\frac{\|\mathbf{x}-\mathbf{x}'\|}{\ell}\right)$
       - where
         - $\sigma^2$ : the variance parameter
@@ -522,26 +569,29 @@ Schulz et al. "Interactive Exploration of Design Trade-Offs"
 ---
 
 
-![](./images/interactive%20001.png) 
+![](./images/interactive%20001.png) But, do we know $F(X)$ ?
 
 ---
 
-### Question
-But how can we find the intersection point between the ray and the Pareto front if we don't know what the Pareto frontier looks like?
+![height:600px](./images/pre%20019.png)
 
-<br>
-
-### Solution
-Get some candidate points that seem to be close to the Pareto Front and choose the best point from them.
-
-How?)
-1. Setting the Performance Buffer (Buffer Cell)
-2. Stochastic Sampling
-3. Local Optimization
-   
 ---
 
-### 1. Setting the Performance Buffer (Buffer Cell)
+![height:600px](./images/pre%20020.png)
+
+---
+
+![height:600px](./images/pre%20021.png)
+
+---
+
+# 1. Performance Buffer (Buffer Cell)
+
+![height:500px](./images/pre%20018.png)
+
+---
+
+## 1. Performance Buffer (Buffer Cell)
 - $(d-1)$-dimensional array discretized using (hyper)spherical coordinates
 - Partitions the **performance space** $\mathcal{S}=F(\mathcal{X}) \subseteq\mathbb{R}^d$
 - Each buffer cell $B(j)$ contains a list of candidate solutions.
@@ -552,11 +602,19 @@ How?)
 
 ---
 
-![height:600px](./images/interactive%20004.png)
+### $K$ candidates for each performance buffer $B(j)$
+
+![](./images/pre%20022.png)
 
 ---
 
-#### 2. Stochastic Sampling
+# 2. Stochastic Sampling
+
+![](./images/pre%20005.png)
+
+---
+
+## 2. Stochastic Sampling
 - Goal)
   - Choose $N_S$ samples in the design space $\mathcal{X}$
     - i.e.) $\mathbf{x}_s^i \in\mathcal{X}$ for $i=1,\cdots,N_S$
@@ -572,7 +630,9 @@ How?)
 
 ---
 
-![](./images/pre%20005.png)
+# 3. Local Optimization
+
+![](./images/pre%20007.png)
 
 ---
 
@@ -583,10 +643,6 @@ How?)
   - A scalarization scheme is used to convert the problem into **single** objective problem
     - **Diversification** is essential to avoid having solutions cluster in certain areas, failing to provide a good representation for the shape.
             ![](./images/interactive%20010.png)
-
----
-
-![](./images/pre%20007.png)
 
 ---
 
@@ -605,18 +661,24 @@ How?)
 
 ### Result)
 
+![](./images/pre%20022.png)
+
 #### Although we don't know the actual Pareto Front, we have candidates.
 - We have Performance Buffers $B(j)$ that partitions the performance space.
 - For each $B(j)$ we have $K$ number of candidate points $\mathbf{x}_o$.
 
 ---
 
-### First-Order Approximation of the Pareto Front
-- Goal)
-  - For each point $\mathbf{x}_o^i$ perform first-order approximation to find an affine subspace $\mathcal{A}_i$ around $\mathbf{x}_o^i$
-  - $\mathcal{A}_i$ is stored in a matrix $M^i$ which is defined by the $d-1$ directions for local exploration.
-    - e.g.) $\mathcal{A}_i$ in $D=3$ design space   
-      ![height:350px](./images/interactive%20012.png)
+# 4. First-Order Approximation
+
+![](./images/pre%20008.png)
+
+---
+
+# Affine Subspace around the point $\mathbf{x}_o$
+
+![height:500px](./images/interactive%20012.png)
+    
 
 ---
 - How?)
@@ -626,8 +688,10 @@ How?)
 ![](./images/interactive%20008.png)
 
 ---
+# Back to CIS5200 : 2nd-Order Taylor Approx
+Newton's Method : $F(w+v) \approx F(w) + \nabla F(w)^\top v + \frac{1}{2} v^\top Hv$
 
-![](./images/pre%20008.png)
+![height:450px](./images/002.png)
 
 ---
 <!-- _backgroundColor: #ADD8E6 -->
@@ -704,12 +768,18 @@ $\mathbf{x}'(0) \in \mathbb{R}^{d+K'-1}$ where $K'$ is the number of active cons
 
 ---
 
-Now, we have $K$ approximations for each performance buffer $B(j)$.
+![height:600px](./images/interactive%20004.png)
 
-We want to choose the best $\mathcal{A}_j$ for each $B(j)$.
+---
 
-![](./images/pre%20008.png)
+# Result)
+![](./images/pre%20023.png)
 
+
+---
+## Sparse Approximation : $\displaystyle\bigcup_{j=1}^{N_S} \mathcal{A}_j^* \approx \text{Pareto Front}$
+
+![height:480px](./images/interactive%20014.png)
 
 ---
 
@@ -724,12 +794,11 @@ We want to choose the best $\mathcal{A}_j$ for each $B(j)$.
 
 ---
 
-How to choose the best candidate from each Peformance Buffer $B(j)$?
 
-### Use Graph-Cut Algorithm
+# Graph-Cut Algorithm
 - Criteria)
-  - Continuity : adjacent cells share similar affine space $\mathcal{A}_i$
   - Optimality : Minimal distance to Origin
+  - Continuity : adjacent cells share similar affine space $\mathcal{A}_i$
 - Optimization using two constraints
   - $E_B(j,k)$ : binary term for continuity
     - How?) Lable $\mathcal{A}_i$ with $l_i$ and compare labels between solutions in adjacent buffer cells $B(j)$ and $B(k)$
@@ -737,13 +806,13 @@ How to choose the best candidate from each Peformance Buffer $B(j)$?
 
 ---
 
-![height:600px](./images/interactive%20013.png)
+## Optimality
+
+![](./images/pre%20024.png)
 
 ---
-
-$\displaystyle\bigcup_{j=1}^{N_S} \mathcal{A}_j \approx \text{Pareto Front}$
-
-![height:480px](./images/interactive%20014.png)
+## Continuity (Diversity!)
+![height:550px](./images/interactive%20013.png)
 
 ---
 
@@ -766,16 +835,11 @@ $\displaystyle\bigcup_{j=1}^{N_S} \mathcal{A}_j \approx \text{Pareto Front}$
 $\displaystyle \arg\max_{X_B} \text{HVI} (Y_B, \mathcal{P_f}) \quad\text{s.t.}\quad \max_{1\le i\le\vert\mathcal{D}\vert} \delta_i(X_B) - \max_{1\le i\le\vert\mathcal{D}\vert} \delta_i(X_B) \le 1$
 
 
-where $\quad\left\{\begin{array}{l} 
-    X_B = \{\mathbf{x}_1, \cdots, \mathbf{x}_b\} \text{ : a set of b samples in a batch} \\ 
-    Y_B = \{ \tilde{f}(\mathbf{x}_1), \cdots, \tilde{f}(\mathbf{x}_b) \} \\
-    \mathcal{P}_f \text{ : the current Pareto Front} \\
-    \delta_i(X) \text{ : the number of elements in } X \text{ that belongs to the region } \mathcal{D}_i (=\mathcal{A}_i)
-    \end{array}\right.$
-
 <br>
 
-![height:300px](./images/dgemo%20001.png) ![height:300px](./images/pre%20012.png) Looks great, but...
+![height:450px](./images/dgemo%20001.png) ![height:450px](./images/pre%20012.png) 
+
+Looks great, but...
 
 ---
 
