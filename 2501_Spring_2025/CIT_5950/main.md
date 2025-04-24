@@ -13,8 +13,8 @@
 | 8|[Move & File Descriptors](./notes/08.md)|- `std::vector.reserve()`|
 | 9|[Buffering & Virtual Memory](./notes/09.md)|- Virtual Memory <br> - C++: `=` Operator Overloading, Initialization List, `static_cast`, `dynamic_cast`, `const_cast`, `reinterpret_cast`|
 |10|[Thread & Mutex](./notes/10.md)|- |
-|11|[Condition Variables](./notes/11.md)|- |
-|12|[]()|- |
+|11|[Networking](./notes/11.md)|- |
+|12|[Socket Programming](./notes/12.md)|- |
 |13|[]()|- |
 |14|[]()|- |
 

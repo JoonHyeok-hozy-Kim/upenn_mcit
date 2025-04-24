@@ -1,0 +1,153 @@
+#include <fstream>
+#include <iostream>
+#include <optional>
+#include <string>
+#include <vector>
+#include <unordered_set>
+#include "./grep_request.hpp"
+#include "./RequestQueue.hpp"
+
+#include <pthread.h>
+#include <unistd.h> // sleep()
+
+using namespace std;
+
+
+vector<string> split(const string& input) {
+  vector<string> tokens;
+  size_t pos = input.find_first_of(" \r\t\n");
+  size_t start = 0;
+  while (pos != string::npos) {
+          if (pos - start > 1) {
+                  tokens.push_back(input.substr(start, pos-start));
+          }
+          start = pos+1;
+          pos = input.find_first_of(" \r\t\n", start+1);
+  }
+
+  if (start < input.size()-1) {
+          tokens.push_back(input.substr(start, input.size()-start));
+  }
+
+  return tokens;
+}
+
+
+void* read_query(void* args){
+	//cout << "reader called.\n";
+	RequestQueue* rq_arg = static_cast<RequestQueue*>(args);
+	bool closed = false;
+
+	string line;
+	if(!getline(cin, line)) {
+		if (!cin.eof()) {
+			cerr << "Warning: error while reading input from user." << endl;
+		}
+
+		//cout << "EOF!" << endl;
+		closed = true;
+	}
+	
+	while (cin && !closed) {
+		vector<string> tokens = split(line);
+		grep_request curr_request;
+
+		cout << "token : " << token << ", size : " << token.size() << endl;
+		if (tokens.size() > 1) {
+			curr_request.fname = tokens.at(0);
+			tokens.erase(tokens.begin());
+			curr_request.queries = std::move(tokens);
+
+			// Add request 
+			//cout << "reader add() called" << endl;
+			rq_arg->add(curr_request);
+			sleep(1); // sleep as guided!
+		}
+
+		if(!getline(cin, line)) {
+			if (!cin.eof()) {
+				cerr << "Warning: error while reading input from user." << endl;
+			}
+
+			//cout << "EOF!" << endl;
+			break;
+		}
+	}
+
+	// Close and broadcast all waiting threads. 
+	rq_arg->close();
+
+	//cout << "reader exit" << endl;
+	pthread_exit(nullptr);
+	//return nullptr;
+}
+
+void* grep(void* args) {
+	//cout << "grepper called.\n";
+	RequestQueue* rq_arg = static_cast<RequestQueue*>(args);
+
+	while (true) {
+		//cout << "grepper : wait_remove() called" << endl;
+		optional<grep_request> popped = rq_arg->wait_remove();
+
+		if (!popped.has_value()) {
+			break;
+		}
+
+		grep_request curr_request = popped.value();
+		cout << curr_request.to_string() << endl; 
+		ifstream file(curr_request.fname);
+		
+		if (!file.is_open()) {
+			cerr << "Cannot open file : " << curr_request.fname << endl;
+			continue;
+		}
+
+		string line;
+		while (getline(file, line)) {
+			vector<string> line_vec = split(line);
+			unordered_set<string> line_set(line_vec.begin(), line_vec.end());
+
+			 bool skip = false;
+			 for (auto word: curr_request.queries) {
+				 if (!line_set.contains(word)) {
+					 skip = true;
+					 break;
+				 }
+			 }
+			 if (!skip) {
+				 cout << line << endl;
+			 }
+		}
+
+	}
+
+	//cout << "grep exit" << endl;
+	pthread_exit(nullptr);
+	//return nullptr;
+}
+
+int main() {
+	pthread_t reader;
+	pthread_t grepper;
+
+	RequestQueue* rq_arg = new RequestQueue(); // Be careful with the dealloc!
+
+
+	if (pthread_create(&reader, nullptr, read_query, static_cast<void*>(rq_arg)) != 0 ){
+		cerr << "Thread creation error for the reader." << endl;
+		exit(EXIT_FAILURE);
+	}
+
+	if (pthread_create(&grepper, nullptr, grep, static_cast<void*>(rq_arg)) != 0) {
+		cerr << "Thread creation error for the reader." << endl;
+                exit(EXIT_FAILURE);
+        }
+
+	pthread_join(reader, nullptr);
+	pthread_join(grepper, nullptr);
+
+	delete rq_arg; 	// Delete!
+
+	return EXIT_SUCCESS;
+}
