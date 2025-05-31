@@ -1,4 +1,0 @@
-echo hello world!
-cat ./test_files/Bye.txt
-exit
-echo this line should not print

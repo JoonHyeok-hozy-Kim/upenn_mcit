@@ -19,3 +19,10 @@
 <br><br>
 
 ### Concept) Datagram Protocol (UDP)
+- Desc.)
+  - Provides applications with unreliable packet delivery
+    - Good for speed
+  - No notion of connection
+    - It sends packets without establishing the connection
+  - Really thin and simple layer on top of IP
+

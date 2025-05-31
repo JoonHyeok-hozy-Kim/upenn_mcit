@@ -21,7 +21,7 @@
       - other outputs but PP ignored
   - PP got the data from B county FL that only discloses the criminal records.
     - Joining this with COMPAS data, figured out wether they recidivated or not.
-    - Binary classification with threshold 7, high/low risk
+    - Binary classification with threshold 8, high/low risk
     - Compute the error rate
       - FPR : PP says its more harmful. Falsely being tagged as the recidivism
         - FP was high on Black
