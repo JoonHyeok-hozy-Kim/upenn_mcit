@@ -1,5 +1,8 @@
 # penn_mcit
 
+### Summer 2025
+- [CIS5600 Interactive Computer Graphics](2408_Fall_2024/CIS_520/main.md)
+
 ### Spring 2025
 - [CIS5230 Ethical Algorithm Design](2501_Spring_2025/CIS_5230/main.md)
 - [CIS7000 Bayesian Optimization](2501_Spring_2025/CIS_7000/main.md)
