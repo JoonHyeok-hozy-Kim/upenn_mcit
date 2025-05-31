@@ -3,7 +3,7 @@
 ## Module 1
 |No|Subject|Keywords|
 |:-:|:-|:-|
-| 1|[Vectors and Vector Spaces](notes/m01/01.md)|- |
+| 1|[C++ Pt. 1](notes/m01/01.md)|- |
 | 2|[]()|- |
 | 3|[]()|- |
 | 4|[]()|- |
