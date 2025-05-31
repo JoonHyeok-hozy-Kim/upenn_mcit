@@ -1,7 +1,7 @@
 # penn_mcit
 
 ### Summer 2025
-- [CIS5600 Interactive Computer Graphics](2408_Fall_2024/CIS_520/main.md)
+- [CIS5600 Interactive Computer Graphics](./2505_Summer_2025/CIS_5600/main.md)
 
 ### Spring 2025
 - [CIS5230 Ethical Algorithm Design](2501_Spring_2025/CIS_5230/main.md)
