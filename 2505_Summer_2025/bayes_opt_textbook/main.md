@@ -5,7 +5,7 @@ Roman Garnet
 |No|Subject|Keywords|
 |:-:|:-|:-|
 | 1|[Introduction](./notes/01.md)|- Observation Model <br> - Prior, Likelihood, Posterior <br> - Stochastic Process, Posterior Process, Posterior Predictive Distribution|
-| 2|[]()|- |
+| 2|[Gaussian Process](./notes/02.md)|- |
 | 3|[]()|- |
 | 4|[]()|- |
 | 5|[]()|- |
