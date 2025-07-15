@@ -4,6 +4,7 @@ from urllib.parse import urljoin, urlparse
 import time
 
 visited = set()
+exclusions = set()
 
 def crawl(url, keyword="bayesian", depth=0, max_depth=2):
     
@@ -40,4 +41,5 @@ def crawl(url, keyword="bayesian", depth=0, max_depth=2):
 # 시작점 예시
 # start_url = "https://directory.seas.upenn.edu/computer-and-information-science/"
 start_url = "https://directory.seas.upenn.edu/jacob-gardner/"
+# exclusions.add()
 crawl(start_url)
