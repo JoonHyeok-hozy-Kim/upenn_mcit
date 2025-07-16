@@ -1,6 +1,8 @@
 # penn_mcit
 
 ### Summer 2025
+- [Bayes Opt](./2505_Summer_2025/bayes_opt_textbook/main.md)
+- [CUDA](./2505_Summer_2025/cuda/main.md)
 - [CIS5600 Interactive Computer Graphics](./2505_Summer_2025/CIS_5600/main.md)
 
 ### Spring 2025
