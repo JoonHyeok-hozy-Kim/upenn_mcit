@@ -2,6 +2,20 @@
 
 # CUDA Setup
 
+### 0. Windows Nvidia Driver 확인 및 설치
+- Windows cmd에서 쳐보기
+  ```sh
+  nvidia-smi
+  ```
+  ![](../images/01/008.png)
+- Driver 설치하기 ([여기서](https://developer.nvidia.com/cuda/wsl))
+  ![](../images/01/009.png)   
+  ![](../images/01/010.png)   
+  ![](../images/01/011.png)   
+  - 다운로드 받아서 설치
+- 재부팅
+
+
 ### 1. wsl - Ubuntu
 
 ![](../images/01/001.png)
@@ -52,25 +66,41 @@ export LD_LIBRARY_PATH=/usr/local/cuda-12.9/lib64:$LD_LIBRARY_PATH
 source ~/.bashrc
 ```
 
-확인 1
+Compiler nvcc check
 ```sh
 nvcc --version
 ```
 
-확인 2
+GPU Check
 ```sh
 nvidia-smi
 ```
-- 안되는 경우
-  - Windows cmd에서 쳐보기
-    ```sh
-    nvidia-smi
-    ```
-    ![](../images/01/008.png)
-  - Driver 설치하기 ([여기서](https://developer.nvidia.com/cuda/wsl))
-    ![](../images/01/009.png)   
-    ![](../images/01/010.png)   
-    ![](../images/01/011.png)   
+![](../images/01/012.png)
+
+<br>
+
+### 3. Check if nvcc is working properly
+Create `main.cu` as
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int main(){
+        cout << "Hello world!" << endl;
+}
+```
+
+Compile it using nvcc as
+```sh
+nvcc -o main main.cu
+```
+
+Run the executable
+```sh
+./main
+```
+![](../images/01/013.png)
 
 
 <br><br>
