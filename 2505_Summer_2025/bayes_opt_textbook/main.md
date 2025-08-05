@@ -9,8 +9,8 @@ Roman Garnet
 | 3|[Modeling with Gaussian Process](./notes/03.md)|- Prior Mean Function $`\mu(x)`$ : Interpolation vs Extrapolation, Constant Mean <br> - Prior Covariance Function $`K(x,x')`$: Stationary, Isotropic, Bochner Thm. <br> --- Matérn Family, Spectral Mixture, Linear Covariance <br> --- Output Space Scaling (Length Scale), Domain Transformation (ARD), General Transformation (Mahalanobis distance), Nonlinear Warping, Combining Covariance Functions <br> - Neural Imbedding|
 | 4|[Model Assessment, Selection, and Averaging](./notes/04.md)|- Model Assessment: Latent Function, Model Space, Hyperparameter <br> --- Model Prior $`p(\boldsymbol{\theta})`$, Model Posterior $`p(\boldsymbol{\theta}\mid\mathcal{D})`$, Model Evidence (Model Likelihood) $`p(\mathbf{y\mid x},\boldsymbol{\theta})`$, Bayesian Occam's Razor <br> - Model Selection: Maximum A Posteriori (MAP) <br> - Model Averaging: $`p(f\mid\mathcal{D})`$, $`p(y\mid x,\mathcal{D})`$, Monte Carlo (HMC, NUTS) <br> - Multiple Model Structures|
 | 5|[Decision Theory for Optimization](./notes/05.md)|- Sequential Optimization <br> - Acquisition Function <br> - Isolated Decision, Decision Horizon $`(\tau)`$ <br> - Bellman Optimality $`O(n^\tau q^\tau)`$, Approximate Dynamic programming (Limited Lookahead, Rollout) <br> - Termination, Cost-Aware Optimization|
-| 6|[]()|- |
-| 7|[]()|- |
+| 6|[Utility Functions for Optimization](./notes/06.md)|- Terminal Recommendation <br> - Utility Function <br> --- Risk-Tolerance : Neutral, Averse, Seeking $`\mu+\beta\sigma`$, Certainty Equivalent <br> - Expected Utilities: Simple Reward, Global Reward, Cumulative Reward, Information Gain|
+| 7|[Common Bayesian Optimization Policies](./notes/07.md)|- |
 | 8|[]()|- |
 | 9|[]()|- |
 |10|[]()|- |
