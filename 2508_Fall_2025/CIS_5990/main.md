@@ -1,13 +1,13 @@
 # CIS 5990 Independent Study
 
 ## Research Project
-- [MOBy-Div]()
+- [MOBy-DiK](./research/MOBy-DiK/ideation.md)
 
 
 ## Meetings Record
-|Week|Subject|Keywords|
+|Date|Week|Keywords|
 |:-:|:-|:-|
-| 1|[Vectors and Vector Spaces](notes/01.md)|- |
+| Aug. 26|[Week 1](notes/01.md)|- |
 | 2|[]()|- |
 | 3|[]()|- |
 | 4|[]()|- |

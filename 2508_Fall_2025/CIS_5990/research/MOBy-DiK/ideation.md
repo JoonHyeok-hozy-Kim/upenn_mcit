@@ -1,4 +1,4 @@
-# Multi-Objective Bayesian Optimization with Diverse Solutions (MOBy-Divs)
+# Multi-Objective Bayesian Optimization with Diverse Solutions from K-clusters (MOBy-DiK)
 
 ### Goal)
 Search diverse solutions along the Pareto Front
