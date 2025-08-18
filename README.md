@@ -1,12 +1,15 @@
 # penn_mcit
 
 ### Summer 2025
-- [Bayes Opt by Roman Garnet](./2505_Summer_2025/bayes_opt_textbook/main.md)
+- [Bayes Opt by Roman Garnett](./2505_Summer_2025/bayes_opt_textbook/main.md)
 - MOBO Paper Reading
+  - [DGEMO](./2501_Spring_2025/CIS_7000/hw/paper_presentation/DGEMO.md)
+    - [Schulz et al. First-Order Approximation](./2501_Spring_2025/CIS_7000/hw/paper_presentation/interactive_exploration.md)
   - [TuRBO](./2505_Summer_2025/bayes_opt_papers/TuRBO/note.md)
   - [MORBO](./2505_Summer_2025/bayes_opt_papers/MORBO/note.md)
+  - [qNEHVI]()
+  - [ROBOT]()
 - [CUDA](./2505_Summer_2025/cuda/main.md)
-- [CIS5600 Interactive Computer Graphics](./2505_Summer_2025/CIS_5600/main.md)
 
 ### Spring 2025
 - [CIS5230 Ethical Algorithm Design](2501_Spring_2025/CIS_5230/main.md)

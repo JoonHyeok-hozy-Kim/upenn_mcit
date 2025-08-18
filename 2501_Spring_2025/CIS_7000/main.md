@@ -16,15 +16,7 @@
 
 <br>
 
-## Textbook : Bayesian Optimization
-|No|Subject|Keywords|
-|:-:|:-|:-|
-| 0|[Preface](notes/00.md)|- |
-| 1|[Introduction]()|- |
-|  |[]()|- |
-|  |[]()|- |
-|  |[]()|- |
-|  |[]()|- |
+- Textbook : [Bayesian Optimization](../../2505_Summer_2025/bayes_opt_textbook/main.md)
 
 - HW
   - [Gaussian Distribution Diagnostic Problem Set](hw/01.md)
