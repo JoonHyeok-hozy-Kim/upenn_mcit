@@ -41,6 +41,8 @@ Daulton et al. (2022)
     - Condition them upon the previously selected points in a batch by computing the HVI w.r.t. the current $`\mathcal{P}`$
       - Desc.)
         - Suppose we are at the $`i`$-th iteration and want to select the $`i`$-th point from $`r`$ candidate points $`\hat{\boldsymbol{x}_1},\cdots,\hat{\boldsymbol{x}_r}`$.
+          - How to get $`\{\hat{\boldsymbol{x}_1},\cdots,\hat{\boldsymbol{x}_r}\}`$
+            - Perturb existing $`\{ \boldsymbol{x}_1, \cdots, \boldsymbol{x}_{i-1} \}`$
         - Draw a sample from the joint posterior over $`\boldsymbol{f}\left( \underbrace{\{ \boldsymbol{x}_1, \cdots, \boldsymbol{x}_{i-1} \}}_{\text{existing PF}} \cup \{\hat{\boldsymbol{x}}_1,\cdots,\hat{\boldsymbol{x}}_r\} \right)`$.
         - Then, we get realization $`\left\{ \tilde{\boldsymbol{f}}(\boldsymbol{x}_{1}), \cdots, \tilde{\boldsymbol{f}}(\boldsymbol{x}_{i-1}), \tilde{\boldsymbol{f}}(\hat{\boldsymbol{x}}_{1}), \cdots, \tilde{\boldsymbol{f}}(\hat{\boldsymbol{x}}_{r}) \right\}`$
         - Select the point that maximizes the HVI jointly with the realizations $`\tilde{\boldsymbol{f}}(\boldsymbol{x}_{1}), \cdots, \tilde{\boldsymbol{f}}(\boldsymbol{x}_{i-1})`$
@@ -95,4 +97,66 @@ Daulton et al. (2022)
 <br>
 
 ### Concept) Re-Initialization Strategy
-- 
+- Goal)
+  - When a trust region's length reaches $`L_{\text{min}}`$, we should terminate and assign a new TR $`\mathcal{T}_i`$
+  - Using the below methodology, we cat get the center of the new TR.
+    - Based on Zhang and Golovin (2020) *Random hypervolume scalarizations for provable multi-objective black box optimization*
+- Settings)
+  - Recall that $`f:\mathbb{R}^d\rightarrow\mathbb{R}^M`$.
+    - Then $`M`$ is the dimension of the performance space.
+  - Let
+    - $`\boldsymbol{\lambda}\sim S_+^{M-1}`$ : a random unit vector in the performance space
+      - where $`\underbrace{S_+^{M-1}=\{\boldsymbol{w}\in\mathbb{R}_+^M:\Vert\boldsymbol{w}\Vert_2=1\}}_{\text{a quadrant in }\mathbb{R}^M}`$ (i.e. 사분구, 구의 양의영역)
+    - $`\tilde{f}_{t-1}\sim P(f\mid\mathcal{D}_{t-1})`$ : the realization on the GP posterior at $`t-1`$
+      - cf.) This make this procedure the Thompson Sampling.
+        - Why?)
+          - $`\tilde{f}_{t-1}(x)`$ is a sample path.
+          - Below, we optimize the problem of $`x_t = \displaystyle\arg\max_{x\in\mathcal{X}} s_{\boldsymbol{\lambda}}\left[ \tilde{f}_{t-1}(x) \right]`$.
+          - i.e., finding the best point in the sample path, which is the Thompson Sampling
+    - $`(\cdot)_m`$ : the $`i`$-th element of $`(\cdot)`$
+    - $`s_{\boldsymbol{\lambda}}[\boldsymbol{y}] = \displaystyle\left(\min_{m\in\{1,\cdots,M\}}\left\{\max\left(\frac{y_m}{\lambda_m}, 0\right)\right\}\right)^M`$: an HV scalarization
+      - Meaning)
+        - Each dimension of the objective value $`y_m`$ is scaled by the corresponding value $`\lambda_m`$ of a random unit vector $`\boldsymbol{\lambda}`$.
+        - Using the $`\max`$ function we trim the dimensions with the negative values.
+          - Why?) Not needed for the HVI calculation.
+        - Find the dimension that has the worst performance with $`\displaystyle\min_{m\in\{1,\cdots,M\}}`$
+          - Why?) Assuming that the reference point $`\boldsymbol{z=0}`$, the smallest positive value will denote the worst performance.
+        - Scale it to the power of $`M`$ to match the dimension of the performance space.
+      - cf.)
+        - Zhang et al. used $`s_{\boldsymbol{\lambda}}[\boldsymbol{y-z}]`$ where $`\boldsymbol{z}`$ was a reference point for the HVI.
+        - In this context, we assume $`\boldsymbol{z=0}`$
+- Optimization)
+  - $`x_t = \displaystyle\arg\max_{x\in\mathcal{X}} s_{\boldsymbol{\lambda}}\left[ \tilde{f}_{t-1}(x) \right]`$
+    - Interpretation)
+      - Pick the point $`x_t`$ that its realization is located near the pareto front.
+      - This is the Thompson Sampling.
+        - Why?) Refer to the $`\tilde{f}_{t-1}\sim P(f\mid\mathcal{D}_{t-1})`$ description above.
+
+<br><br>
+
+### Algorithm
+- Input
+  - $`f`$ : the objective function
+  - $`n_{\text{TR}}`$ : the number of Trust Regions
+  - $`L_{\text{init}}, L_{\text{min}}, L_{\text{max}}`$ : initial/minimum/maximum TR length
+- Output
+  - $`\mathcal{P}_n`$ : Approximate Pareto Front
+- Procedure
+  - Evaluate an initial set of points.
+  - $`\mathbf{X}_0\leftarrow\emptyset,\;\mathbf{y}_0\leftarrow\emptyset,\;t\leftarrow1`$
+  - `while` budget not exhausted `do`
+    - Pick $`n_{\text{TR}}`$ centers using the [HVC](#concept-coordinated-trust-region-center-selection)
+    - Initialize trust regions $`\mathcal{T}_1,\cdots,\mathcal{T}_{n_{\text{TR}}}`$
+    - `for` $`i\in\{1,\cdots,n_{\text{TR}}\}`$
+      - Fit local GP to observations within $`\mathcal{T}_i`$
+    - Select $`q`$ candidates $`\{ \boldsymbol{x}_1, \cdots, \boldsymbol{x}_q \}`$ using the [sequential greedy HVI procedure](#concept-collaborative-batch-selection-via-global-utility-maximization).
+    - Evaluate $`\{ \boldsymbol{x}_1, \cdots, \boldsymbol{x}_q \}`$
+    - Update budget count.
+    - `for` $`i\in\{1,\cdots,n_{\text{TR}}\}`$
+      - Pick $`n_{\text{TR}}`$ centers using the [HVC](#concept-coordinated-trust-region-center-selection)
+      - Update $`\mathcal{T}_i`$
+      - Count Success/Failure within $`\mathcal{T}_i`$
+      - Update edge length $`L_i`$
+      - `if` $`L_i\lt L_{\text{min}}`$ `then`
+        - [Re-initialize](#concept-re-initialization-strategy) $`\mathcal{T}_i`$ centered on $`x_t = \displaystyle\arg\max_{x\in\mathcal{X}} s_{\boldsymbol{\lambda}}\left[ \tilde{f}_{t-1}(x) \right]`$.
+        - Set $`\mathbf{X}_t = \mathbf{X}_{t-1} \cup \{x_t\}`$
