@@ -59,7 +59,7 @@ Search diverse solutions along the Pareto Front
 - Procedure
   - $`\mathcal{D}\leftarrow\mathcal{D_0^*}`$
   - `while` budget is not exhausted `do`
-    - $`\mathcal{GP} \leftarrow \tilde{f}(\mathcal{D})`$
+    - $`\tilde{f} \leftarrow \tilde{f} \sim \mathcal{GP}(\boldsymbol{\theta}\mid\mathcal{D})`$
     - Get clusters $`\{C_1,\cdots,C_K\} \subseteq \mathbb{R}^{d}`$ with [Cluster](#clustering-algorithm)$`(\mathcal{D})`$
     - `for` $`k=1,\cdots,K`$
       - Select two points $`\mathbf{x}_1,\mathbf{x}_2\in C_k \subseteq \mathbb{R}^d`$
@@ -156,3 +156,8 @@ Search diverse solutions along the Pareto Front
       - MW7: disconnected
       - MW8: biased
       - MW9: concave + discontinuous + irregular
+
+
+$\mathbf{y}_{\mathrm{intra}}^* = f(\mathbf{x}_{\mathrm{intra}}^*)$
+
+$\mathbf{y}^*_{\mathrm{intra}} = f(\mathbf{x}_{\mathrm{intra}}^*)$
