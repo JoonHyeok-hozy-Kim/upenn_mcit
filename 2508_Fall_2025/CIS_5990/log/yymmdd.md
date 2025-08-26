@@ -1,5 +1,5 @@
 # Research Log
-2025-08-22
+2025-mm-dd
 
 ### Goal)
 
