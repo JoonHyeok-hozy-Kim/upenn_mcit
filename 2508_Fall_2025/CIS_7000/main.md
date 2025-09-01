@@ -1,9 +1,9 @@
-# CIS 515 Fundamentals of Linear Algebra and Optimization
+# CIS 7000 Advanced Generative Models
 
-## Module 1
+## Lecture Notes
 |No|Subject|Keywords|
 |:-:|:-|:-|
-| 1|[Vectors and Vector Spaces](notes/01.md)|- |
+| 1|[](notes/01.md)|- |
 | 2|[]()|- |
 | 3|[]()|- |
 | 4|[]()|- |
@@ -13,3 +13,10 @@
 | 8|[]()|- |
 | 9|[]()|- |
 |10|[]()|- |
+
+<br>
+
+## Paper Presentation
+- Auto-Encoder Variational Bayes
+  - [Paper Summary](./papper_presentation/250917_vae/paper_note.md)
+- High-Resolution Image Synthesis with Latent Diffusion Models
