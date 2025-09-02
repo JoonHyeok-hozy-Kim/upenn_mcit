@@ -162,7 +162,7 @@ Kingma et al.
           &\simeq \displaystyle\frac{1}{L}\sum_{l=1}^L f(\mathbf{z}^{(l)}) \nabla_{q_{\boldsymbol{\phi}}(\mathbf{z})} \log q_{\boldsymbol{\phi}} (\mathbf{z}^{(l)})
         \end{aligned}`$
         - Drawback)
-          - high variance
+          - high variance $`\rightarrow`$ Unstable gradient $`\rightarrow \max \tilde{\mathcal{L}}`$ problem becomes hard to solve. 
           - impractical for this paper's purpose
       - Approach 2) [SGVB estimator](#concept-stochastic-gradient-variational-bayes-sgvb-estimator) with [AEVB algorithm](#23-the-sgvb-estimator-and-aevb-algorithm)
         - What this paper suggests!
@@ -210,8 +210,74 @@ Kingma et al.
 <br>
 
 #### Algorithm) Auto-Encoding Variational Bayes (AEVB) Algorithm
-- Algorithm)
+![](./images/001.png)
 
 <br>
 
 ### 2.4 The Reparameterization Trick
+- Goal)
+  - Make the sampling process differentiable w.r.t. $`\boldsymbol{\phi}`$, so that we can optimize the ELBO with gradient methods.
+- How)
+  - Let 
+    - $`\mathbf{z}`$ : a continuous random variable
+    - $`\mathbf{z}\sim q_{\boldsymbol{\phi}}(\mathcal{z\vert x})`$ : some conditional distribution
+  - Then we may express $`\mathbf{z}`$ as
+    - $`\mathbf{z} = g_{\boldsymbol{\phi}}(\boldsymbol{\epsilon}, \mathbf{x})`$
+      - where
+        - $`\boldsymbol{\epsilon}`$ : an auxiliary variable with independent marginal distribution of $`p(\boldsymbol{\epsilon})`$
+          - i.e.) $`\boldsymbol{\epsilon} \sim p(\boldsymbol{\epsilon})`$
+        - $`g_{\boldsymbol{\phi}}(\cdot)`$ : some vector-valued function parameterized by $`\boldsymbol{\phi}`$
+- Prop.)
+  - $`\mathbf{z} = g_{\boldsymbol{\phi}}(\boldsymbol{\epsilon}, \mathbf{x})`$ can be used to rewrite an expectation w.r.t. $`q_{\boldsymbol{\phi}}(\mathcal{z\vert x})`$ that is differentiable w.r.t. $`\boldsymbol{\phi}`$
+    - Desc.)
+      - Recall that we wanted to solve    
+        $`\begin{aligned}
+          \arg\max_{\mathbf{x}} \log p_{\boldsymbol{\theta}}(\mathbf{x}) 
+          &\approx \mathcal{L}(\boldsymbol{\theta,\phi};\mathbf{x}) \\
+          &= \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x})}\left[ \log q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x} \right) -\log \left( p_{\boldsymbol{\theta}} \left(\mathbf{z, x} \right)  \right) \right] \\
+          &\approx \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x})}\left[ f(\mathbf{z}) \right] \quad (\exists f(\mathbf{z})=\log p_{\boldsymbol{\theta}}(\mathbf{x,z}))
+        \end{aligned}`$
+      - To optimize the problem, we should get $`\nabla_{\boldsymbol{\phi}} \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)})}\left[ f(\mathbf{z}) \right]`$.
+      - This method enables   
+        $`\begin{array}{}
+          \nabla_{\boldsymbol{\phi}} \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x})}\left[ f(\mathbf{z}) \right] 
+          &= \nabla_{\boldsymbol{\phi}} \displaystyle\int & q_{\boldsymbol{\phi}}(\mathbf{z\vert x}) & f(\mathbf{z}) & \text{d}\mathbf{z} \\
+          &= \nabla_{\boldsymbol{\phi}} \displaystyle\int & p(\boldsymbol{\epsilon}) & f(g_{\boldsymbol{\phi}}(\boldsymbol{\epsilon}, \mathbf{x})) & \text{d}\boldsymbol{\epsilon}
+        \end{array}`$
+      - With it, we can construct a differentiable estimator
+        - $`\displaystyle\int  q_{\boldsymbol{\phi}}(\mathbf{z\vert x})  f(\mathbf{z})  \text{d}\mathbf{z} \simeq \frac{1}{L} \sum_{l=1}^L f(g_{\boldsymbol{\phi}}(\boldsymbol{\epsilon}, \mathbf{x}))`$
+          - where $`\boldsymbol{\epsilon}^{(l)} \sim p(\boldsymbol{\epsilon})`$
+    - Pf.)
+      - Given the deterministic mapping $`\mathbf{z} = g_{\boldsymbol{\phi}}(\boldsymbol{\epsilon}, \mathbf{x})`$, we have   
+        $`\begin{aligned}
+          q_{\boldsymbol{\phi}}(\mathbf{z\vert x}) \prod_i \text{d} z_i &= p(\boldsymbol{\epsilon}) \prod_i \text{d} \epsilon_i
+        \end{aligned}`$
+      - Thus, 
+        - $`\displaystyle\int q_{\boldsymbol{\phi}}(\mathbf{z\vert x}) f(\mathbf{z}) \text{d}\mathbf{z} = \int p(\boldsymbol{\epsilon}) f(g_{\boldsymbol{\phi}}(\boldsymbol{\epsilon}, \mathbf{x})) \text{d}\boldsymbol{\epsilon}`$
+- Suggested $`g_{\boldsymbol{\phi}}(\cdot)`$ and $`\boldsymbol{\epsilon}\sim p(\boldsymbol{\epsilon})`$
+  - Tractable inverse CDF existing case
+    - e.g.)
+      - Exponential, Cauchy, Logistic, Rayleigh, Pareto, Weibull, Reciprocal, Gompertz,Gumbel, and Erlangdistributions
+  - "Location-Scale" family of distributions
+    - e.g.)
+      - [Gaussian](#eg-gaussian), Laplace, Elliptical, Student’s t, Logistic, Uniform, Triangular  distributions
+  - Composition of the above distributions
+    - e.g.)
+      - Log-Normal : exponentiation of normally distributed variable
+      - Gamma : a sum over exponentially distributed variables
+      - Dirichlet : weighted sumof Gamma variates
+      - Beta
+      - Chi-Squared
+      - F distribution
+
+#### e.g.) Gaussian
+  - We may assume $`z\sim p(z\mid x) = \mathcal{N}(\mu, \sigma^2)`$.
+  - Then a valid reparameterization $`g_{\boldsymbol{\phi}}(\boldsymbol{\epsilon}, \mathbf{x})`$ is
+    - $`z = \mu + \sigma \epsilon`$
+      - where $`\epsilon\sim\mathcal{N}(0,1)`$
+  - Thus, we may get the estimator of   
+    $`\begin{aligned}
+      \mathbb{E}_{\mathcal{N}(z;\mu,\sigma^2)}[f(z)] 
+      &= \mathbb{E}_{\mathcal{N}(\epsilon; 0,1)}[f(\mu + \sigma\epsilon)] \\
+      &\simeq \frac{1}{L}\sum_{l=1}^L f(\mu + \sigma\epsilon^{(l)}) \text{ where } \epsilon^{(l)}\sim\mathcal{N}(0,1)
+    \end{aligned}`$
