@@ -76,6 +76,7 @@
     - `for i, tr in enumerate(self.trust_regions)`
       - Check if the global model is used.
       - Call [tr](#12-trustregion)`.update()`
+        - Update GP model, adjust TR, and update center
 - `trbo_state.TR_index_history.fill_(-2)`
 - while Loop until reaches the `max_evals`
   - Thompson Sampling
@@ -136,6 +137,9 @@
       - Normalize and standardize $`X`$ w.r.t. [BenchmarkFunction](#31-benchmarkfunction)'s bounds
       - Call `morbo.utils.get_fitted_model`
         - cf.) This method calls gpytorch optimization functions.
+  - `_set_center_and_best_points()`
+    - Purpose) Set
+      - `self.X_center`, `self.Y_center`, `self.best_X`, `self.`, `self.best_Y`, 
 - Children Classes
   - [ScalarizedTrustRegion](#121-scalarizedtrustregion)
   - [HypervolumeTrustRegion](#122-hypervolumetrustregion)
@@ -163,7 +167,9 @@
     - If the problem has constraint, call `get_constraint_slack_and_feasibility()` to add constraints.
       - Location: `morbo.utils.get_constraint_slack_and_feasibility`
     - Set center to be the one that maximize `obj`.
-      - `center_idx = obj.argmax().item()`
+      ```python
+      center_idx = obj.argmax().item()
+      ```
     - Save by calling `self._set_center_and_best_points()`.
 
 #### 1.2.2 HypervolumeTrustRegion
@@ -173,6 +179,17 @@
     - Use the `DominatedPartitioning` object to calculate the HVI.
       - cf.) `botorch.utils.multi_objective.box_decompositions.dominated.DominatedPartitioning`
   - `_update_center_and_best_points`
+    - Procedure)
+      - Update current best $`X,Y`$, reference point, and HV.
+      - If `X_center` is given, 
+        - find that row in `self.X` and save that index by calling `_set_center_and_best_points`
+      - Otherwise, get new center as...
+        - Mask indices of target points in $`X`$ as `eligible_mask`
+          - where 
+            - `eligible_mask = indices_mask & not_taken_mask`
+            - `indices_mask` : Indices within this TR.
+              - cf.) [get_indices_in_hypercube](#44-get_indices_in_hypercube) is used.
+            - `not_taken_mask` : Indices of points that are not (current best and included in `invalid_centers`)
 
 <br>
 
@@ -196,12 +213,18 @@
       - `IdentityMCMultiOutputObjective` for the multi-objective
     - `pareto_X` : Initialized to `torch.empty((0,d),)`
     - `pareto_Y` : Initialized to `torch.empty((0,m),)`
+    - `self.hv`
+      - Scalar datatype
+      - Updated by `TRBOState.update()`
+    - `self.hv_contribution`
+      - `BoxDecompositionList` datatype that contains HVI for each point on the Pareto Front
+      - Updated by `TRBOState.update()`
 - Methods
   - `update()`
     - Purpose
-      - Update datapoints of the current MORBO 
-      - Count # of evaluations
-      - ([HVTR](#122-hypervolumetrustregion) only!) Calculate improvement and update pareto front.
+      - Update datapoints of the current MORBO : `self.X_history`, `self.Y_history` 
+      - Count # of evaluations: `self.n_evals`
+      - ([HVTR](#122-hypervolumetrustregion) only!) Calculate improvement and update pareto front: `self.hv`, `self.hv_contribution`
     - Procedure
       - Add `X` and `Y` to `X_history` and `Y_history` respectively.
       - Increment the number of evaluations
@@ -211,7 +234,13 @@
           - Add `X` and `Y` to `pareto_X` and `pareto_Y` respectively.
           - Pick pareto dominating points using `from botorch.utils.multi_objective.pareto import is_non_dominated`
           - Calculate HVI using `self.hv_contributions = self.hv - partitioning.compute_hypervolume()`
-            - where `partitioning = BoxDecompositionList(*partitionings)`
+            - How?)
+              - `batch_paretos=` $`N\times \underbrace{(N-1)\times m}_{\text{PF points that exclude itself}}`$ Tensor 
+                - where $`N=\vert\mathcal{PF}\vert`$
+                - i.e.) PF points that exclude itself for each PF point
+              - Calculate HV for each PF point, subtract it from `self.hv`, and store it in `self.hv_contributions`
+                - `self.hv` is scalar.
+                - `self.hv_contributions` is $`N\times`$
   - `initialize_standard(tr_idx=i, ...)`
     - Purpose: Update the i-th TR and GP model
     - Procedure
@@ -226,6 +255,29 @@
 #### 3.1 BenchmarkFunction
   - `morbo.benchmark_function.BenchmarkFunction`
 
+<br>
 
+### 4. Utilities
+- Location : `morbo.utils`
+#### 4.1 sample_tr_discrete_points
+
+#### 4.2 sample_tr_discrete_points_subset_d
+
+#### 4.3 get_tr_center
+
+#### 4.4 get_indices_in_hypercube
+- Purpose)
+  - Given `X_center` and `X`, return the indices of `X` that are included in the TR centered at `X_center`.
+- Return val
+  `Tensor[indices of X]` in $(k,)$-shape
+  - e.g.) [0,2,5,10]
+
+#### 4.5 get_fitted_model
+
+#### 4.6 coalesce
+
+#### 4.7 decay_function
+
+#### 4.8 get_constraint_slack_and_feasibility
 
 [Back to Main](../../main.md)
