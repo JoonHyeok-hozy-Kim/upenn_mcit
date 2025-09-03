@@ -33,6 +33,7 @@ Kingma et al.
   - $`q_{\boldsymbol{\phi}}(\mathbf{z\vert x})`$ : the recognition model
     - Desc.)
       - $`q_{\boldsymbol{\phi}}(\mathbf{z\vert x})`$ is an approximation to the intractable true posterior $`p_{\boldsymbol{\theta}}(\mathbf{z\vert x})`$
+        - cf.) The [ELBO](#concept-the-variational-lower-bound-elbo) maximization problem
     - Props.)
       - It is not necessarily factorial.
       - Its parameters $`\boldsymbol{\phi}`$ are not computed from me closed-form expectation.
@@ -71,57 +72,34 @@ Kingma et al.
     \end{aligned}`$
 
 
-- Props.)
-  - $`\underbrace{\log p_{\boldsymbol{\theta}} \left( \mathbf{x}^{(i)} \right)}_{\text{marginal likelihood of a datapoint}} = \underbrace{D_{KL} \left( \left. q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) \right\Vert p_{\boldsymbol{\theta}} \left(\mathbf{z\vert x}^{(i)} \right)  \right)}_{\text{KL-div of the approximate from the true posterior}} + \mathcal{L}(\boldsymbol{\theta,\phi};\mathbf{x}^{(i)})`$
-    - pf.) 
-      - Considering the log marginal likelihood, we have   
-        $`\begin{aligned}
-          \log p_{\boldsymbol{\theta}}(\mathbf{x}) 
-          &= \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x})} \left[ \log p_{\boldsymbol{\theta}}(\mathbf{x}) \right] & (\because p_{\boldsymbol{\theta}}(\mathbf{x}) \text{ is indep. of } \mathbf{z}) \\
-          &= \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x})} \left[ \displaystyle \log \frac{p_{\boldsymbol{\theta}}(\mathbf{x,z})}{p_{\boldsymbol{\theta}}(\mathbf{z\vert x})} \right]  \\
-          &= \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x})} \left[ \displaystyle \log \frac{p_{\boldsymbol{\theta}}(\mathbf{x,z})}{p_{\boldsymbol{\theta}}(\mathbf{z\vert x})} \right]
-        \end{aligned}`$
-      - By definition of ELBO, we have   
-        $`\begin{aligned}
-          \log p_{\boldsymbol{\theta}}(\mathbf{x}) - \mathcal{L}(\boldsymbol{\theta,\phi};\mathbf{x}) 
-          &= \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x})} \left[ \displaystyle \log \frac{p_{\boldsymbol{\theta}}(\mathbf{x,z})}{p_{\boldsymbol{\theta}}(\mathbf{z\vert x})} \right] - \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x})} \left[ \log \displaystyle\frac{p_{\boldsymbol{\theta}}(\mathbf{x,z})}{q_{\boldsymbol{\phi}}(\mathbf{z\vert x})}\right] \\
-          &= \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x})} \left[ \displaystyle \log \frac{q_{\boldsymbol{\phi}}(\mathbf{z\vert x})}{p_{\boldsymbol{\theta}}(\mathbf{z\vert x})} \right] \\
-          &= D_{KL}(q_{\boldsymbol{\phi}}(\mathbf{z\vert x}) \Vert p_{\boldsymbol{\theta}}(\mathbf{z\vert x}))
-        \end{aligned}`$
-    - cf.)
-      - We may get the marginal likelihood as
-        - $`\log p_{\boldsymbol{\theta}} \left( \mathbf{x}^{(1)}, \cdots, \mathbf{x}^{(N)}  \right) = \displaystyle\sum_{i=1}^N \log p_{\boldsymbol{\theta}} \left(\mathbf{x}^{(i)} \right)`$
-    - cf.) KL-Divergence's non-negativity corresponds with ELBO as the lower bound of the log marginal liklihood.
-      - Consider that the KL-divergence is non-negative.
-      - Thus,   
-        $`\begin{aligned}
-            \log p_{\boldsymbol{\theta}} \left( \mathbf{x}^{(i)} \right) &= \underbrace{D_{KL} \left( \left. q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) \right\Vert p_{\boldsymbol{\theta}} \left(\mathbf{z\vert x}^{(i)} \right)  \right)}_{\text{always non negative}} + \mathcal{L}(\boldsymbol{\theta,\phi};\mathbf{x}^{(i)}) \\
-            &\ge \mathcal{L}(\boldsymbol{\theta,\phi};\mathbf{x}^{(i)}) \\
-            &= \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)})}\left[ \log q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) -\log p_{\boldsymbol{\theta}} \left(\mathbf{z, x}^{(i)} \right) \right] & \text{(Check Prop.1 below.)}
-        \end{aligned}`$
-- Props. from the Paper)
-  - $`\mathcal{L}(\boldsymbol{\theta,\phi};\mathbf{x}^{(i)}) = \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)})}\left[ \log q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) -\log \left( p_{\boldsymbol{\theta}} \left(\mathbf{z, x}^{(i)} \right)  \right) \right]`$
-    - pf.)
-      - By definition, we have   
-        $`\begin{array}{clll}
-            \mathcal{L}(\boldsymbol{\theta,\phi};\mathbf{x}^{(i)}) 
-            &= \log p_{\boldsymbol{\theta}} \left( \mathbf{x}^{(i)} \right) &-& D_{KL} \left( \left. q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) \;\right\Vert\; p_{\boldsymbol{\theta}} \left(\mathbf{z\vert x}^{(i)} \right)  \right) \\
-            &= \log p_{\boldsymbol{\theta}} \left( \mathbf{x}^{(i)} \right) &-& \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)})}\left[ \log\left( \displaystyle\frac{q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right)}{p_{\boldsymbol{\theta}} \left(\mathbf{z\vert x}^{(i)} \right)} \right) \right] \\
-            &= \log p_{\boldsymbol{\theta}} \left( \mathbf{x}^{(i)} \right) &-& \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)})}\left[ \log q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) -\log \left( \displaystyle\frac{p_{\boldsymbol{\theta}} \left(\mathbf{z, x}^{(i)} \right)}{p_{\boldsymbol{\theta}} \left(\mathbf{x}^{(i)} \right)} \right) \right] \\
-            &= \log p_{\boldsymbol{\theta}} \left( \mathbf{x}^{(i)} \right) &-& \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)})}\left[ \log q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) -\log p_{\boldsymbol{\theta}} \left(\mathbf{z, x}^{(i)} \right) \right] - \log p_{\boldsymbol{\theta}} \left(\mathbf{x}^{(i)} \right) 
-        \end{array}`$
-      - Therefore,
-        - $`\mathcal{L}(\boldsymbol{\theta,\phi};\mathbf{x}^{(i)}) = \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)})}\left[ \log q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) -\log p_{\boldsymbol{\theta}} \left(\mathbf{z, x}^{(i)} \right) \right] \quad\cdots\quad (A)`$
-  - $`\mathcal{L}(\boldsymbol{\theta,\phi};\mathbf{x}^{(i)}) = -D_{KL}\left(\left. q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) \;\right\Vert\; p_{\boldsymbol{\theta}}(\mathbf{z}) \right) + \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x})}\left[ \log  p_{\boldsymbol{\theta}} \left(\mathbf{x}^{(i)}\vert\mathbf{z} \right) \right]`$
-    - pf.)
-      - From $`\text{(A)}`$, we have   
-        $`\begin{array}{cl}
-          \mathcal{L}(\boldsymbol{\theta,\phi};\mathbf{x}^{(i)}) 
-          &= \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)})}\left[ \log q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) -\log p_{\boldsymbol{\theta}} \left(\mathbf{z, x}^{(i)} \right) \right] \\
-          &= \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)})}\left[ \log q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) -\log p_{\boldsymbol{\theta}} \left(\mathbf{z, x}^{(i)} \right) + \log p_{\boldsymbol{\theta}}(\mathbf{z}) - \log p_{\boldsymbol{\theta}}(\mathbf{z}) \right] \\
-          &= \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)})}\left[ \log q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right)- \log p_{\boldsymbol{\theta}}(\mathbf{z}) \right] + \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)})}\left[ -\log p_{\boldsymbol{\theta}} \left(\mathbf{z, x}^{(i)} \right) + \log p_{\boldsymbol{\theta}}(\mathbf{z})\right] \\
-          &= -D_{KL}\left(\left. q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) \;\right\Vert\; p_{\boldsymbol{\theta}}(\mathbf{z}) \right) + \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x})}\left[ \log  p_{\boldsymbol{\theta}} \left(\mathbf{x}^{(i)}\vert\mathbf{z} \right) \right]
-        \end{array}`$
+#### Prop.) ELBO Prop. 1
+$`\underbrace{\log p_{\boldsymbol{\theta}} \left( \mathbf{x}^{(i)} \right)}_{\text{marginal likelihood of a datapoint}} = \underbrace{D_{KL} \left( \left. q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) \right\Vert p_{\boldsymbol{\theta}} \left(\mathbf{z\vert x}^{(i)} \right)  \right)}_{\text{KL-div of the approximate from the true posterior}} + \mathcal{L}(\boldsymbol{\theta,\phi};\mathbf{x}^{(i)})`$
+- pf.) 
+  - Considering the log marginal likelihood, we have   
+    $`\begin{aligned}
+      \log p_{\boldsymbol{\theta}}(\mathbf{x}) 
+      &= \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x})} \left[ \log p_{\boldsymbol{\theta}}(\mathbf{x}) \right] & (\because p_{\boldsymbol{\theta}}(\mathbf{x}) \text{ is indep. of } \mathbf{z}) \\
+      &= \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x})} \left[ \displaystyle \log \frac{p_{\boldsymbol{\theta}}(\mathbf{x,z})}{p_{\boldsymbol{\theta}}(\mathbf{z\vert x})} \right]  \\
+      &= \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x})} \left[ \displaystyle \log \frac{p_{\boldsymbol{\theta}}(\mathbf{x,z})}{p_{\boldsymbol{\theta}}(\mathbf{z\vert x})} \right]
+    \end{aligned}`$
+  - By definition of ELBO, we have   
+    $`\begin{aligned}
+      \log p_{\boldsymbol{\theta}}(\mathbf{x}) - \mathcal{L}(\boldsymbol{\theta,\phi};\mathbf{x}) 
+      &= \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x})} \left[ \displaystyle \log \frac{p_{\boldsymbol{\theta}}(\mathbf{x,z})}{p_{\boldsymbol{\theta}}(\mathbf{z\vert x})} \right] - \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x})} \left[ \log \displaystyle\frac{p_{\boldsymbol{\theta}}(\mathbf{x,z})}{q_{\boldsymbol{\phi}}(\mathbf{z\vert x})}\right] \\
+      &= \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x})} \left[ \displaystyle \log \frac{q_{\boldsymbol{\phi}}(\mathbf{z\vert x})}{p_{\boldsymbol{\theta}}(\mathbf{z\vert x})} \right] \\
+      &= D_{KL}(q_{\boldsymbol{\phi}}(\mathbf{z\vert x}) \Vert p_{\boldsymbol{\theta}}(\mathbf{z\vert x}))
+    \end{aligned}`$
+- cf.)
+  - We may get the marginal likelihood as
+    - $`\log p_{\boldsymbol{\theta}} \left( \mathbf{x}^{(1)}, \cdots, \mathbf{x}^{(N)}  \right) = \displaystyle\sum_{i=1}^N \log p_{\boldsymbol{\theta}} \left(\mathbf{x}^{(i)} \right)`$
+- cf.) KL-Divergence's non-negativity corresponds with ELBO as the lower bound of the log marginal liklihood.
+  - Consider that the KL-divergence is non-negative.
+  - Thus,   
+    $`\begin{aligned}
+        \log p_{\boldsymbol{\theta}} \left( \mathbf{x}^{(i)} \right) &= \underbrace{D_{KL} \left( \left. q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) \right\Vert p_{\boldsymbol{\theta}} \left(\mathbf{z\vert x}^{(i)} \right)  \right)}_{\text{always non negative}} + \mathcal{L}(\boldsymbol{\theta,\phi};\mathbf{x}^{(i)}) \\
+        &\ge \mathcal{L}(\boldsymbol{\theta,\phi};\mathbf{x}^{(i)}) \\
+        &= \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)})}\left[ \log q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) -\log p_{\boldsymbol{\theta}} \left(\mathbf{z, x}^{(i)} \right) \right] & \text{(Check Prop.1 below.)}
+    \end{aligned}`$
 - Intuition)
   - We want to know $`p_{\boldsymbol{\theta}}(\mathbf{x})`$.
     - Why?)
@@ -147,11 +125,42 @@ Kingma et al.
         - We can rewrite $`p(\mathbf{x})`$ as the sum of KL-Divergence and ELBO $`\mathcal{L}(\boldsymbol{\theta,\phi};\mathbf{x}^{(i)})`$
         - Since KL-Divergence is non-negative, ELBO is the lower bound of $`p(\mathbf{x})`$
   - Log likelihood $`p_{\boldsymbol{\theta}}(\mathbf{z})`$ maximization problem and ELBO $`\mathcal{L}`$ maximization problem is identical to the minimization problem of the KL-Divergence between $`p_{\boldsymbol{\theta}}(\mathbf{z\vert x})`$ and $`q_{\boldsymbol{\phi}^*}(\mathbf{z\vert x})`$.
-- Optimization)
-  - We want to maximize the ELBO $`\mathcal{L}`$, which is the lower bound of the log likelihood.
+
+#### Prop.) ELBO Prop. 2
+$`\mathcal{L}(\boldsymbol{\theta,\phi};\mathbf{x}^{(i)}) = \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)})}\left[ \log q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) -\log \left( p_{\boldsymbol{\theta}} \left(\mathbf{z, x}^{(i)} \right)  \right) \right]`$
+- pf.)
+  - By definition, we have   
+    $`\begin{array}{clll}
+        \mathcal{L}(\boldsymbol{\theta,\phi};\mathbf{x}^{(i)}) 
+        &= \log p_{\boldsymbol{\theta}} \left( \mathbf{x}^{(i)} \right) &-& D_{KL} \left( \left. q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) \;\right\Vert\; p_{\boldsymbol{\theta}} \left(\mathbf{z\vert x}^{(i)} \right)  \right) \\
+        &= \log p_{\boldsymbol{\theta}} \left( \mathbf{x}^{(i)} \right) &-& \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)})}\left[ \log\left( \displaystyle\frac{q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right)}{p_{\boldsymbol{\theta}} \left(\mathbf{z\vert x}^{(i)} \right)} \right) \right] \\
+        &= \log p_{\boldsymbol{\theta}} \left( \mathbf{x}^{(i)} \right) &-& \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)})}\left[ \log q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) -\log \left( \displaystyle\frac{p_{\boldsymbol{\theta}} \left(\mathbf{z, x}^{(i)} \right)}{p_{\boldsymbol{\theta}} \left(\mathbf{x}^{(i)} \right)} \right) \right] \\
+        &= \log p_{\boldsymbol{\theta}} \left( \mathbf{x}^{(i)} \right) &-& \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)})}\left[ \log q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) -\log p_{\boldsymbol{\theta}} \left(\mathbf{z, x}^{(i)} \right) \right] - \log p_{\boldsymbol{\theta}} \left(\mathbf{x}^{(i)} \right) 
+    \end{array}`$
+  - Therefore,
+    - $`\mathcal{L}(\boldsymbol{\theta,\phi};\mathbf{x}^{(i)}) = \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)})}\left[ \log q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) -\log p_{\boldsymbol{\theta}} \left(\mathbf{z, x}^{(i)} \right) \right] \quad\cdots\quad (A)`$
+
+#### Prop.) ELBO Prop. 3
+$`\mathcal{L}(\boldsymbol{\theta,\phi};\mathbf{x}^{(i)}) = -D_{KL}\left(\left. q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) \;\right\Vert\; p_{\boldsymbol{\theta}}(\mathbf{z}) \right) + \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x})}\left[ \log  p_{\boldsymbol{\theta}} \left(\mathbf{x}^{(i)}\vert\mathbf{z} \right) \right]`$
+- pf.)
+  - From $`\text{(A)}`$, we have   
+    $`\begin{array}{cl}
+      \mathcal{L}(\boldsymbol{\theta,\phi};\mathbf{x}^{(i)}) 
+      &= \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)})}\left[ \log q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) -\log p_{\boldsymbol{\theta}} \left(\mathbf{z, x}^{(i)} \right) \right] \\
+      &= \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)})}\left[ \log q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) -\log p_{\boldsymbol{\theta}} \left(\mathbf{z, x}^{(i)} \right) + \log p_{\boldsymbol{\theta}}(\mathbf{z}) - \log p_{\boldsymbol{\theta}}(\mathbf{z}) \right] \\
+      &= \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)})}\left[ \log q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right)- \log p_{\boldsymbol{\theta}}(\mathbf{z}) \right] + \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)})}\left[ -\log p_{\boldsymbol{\theta}} \left(\mathbf{z, x}^{(i)} \right) + \log p_{\boldsymbol{\theta}}(\mathbf{z})\right] \\
+      &= -D_{KL}\left(\left. q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) \;\right\Vert\; p_{\boldsymbol{\theta}}(\mathbf{z}) \right) + \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x})}\left[ \log  p_{\boldsymbol{\theta}} \left(\mathbf{x}^{(i)}\vert\mathbf{z} \right) \right]
+    \end{array}`$
+
+#### Tech.) ELBO Optimization
+- Desc.)
+  - Suppose we want to get $`\underbrace{\log p_{\boldsymbol{\theta}} \left( \mathbf{x}^{(i)} \right)}_{\text{marginal likelihood of a datapoint}}`$.
+  - Although we don't know the MLE, we have the lower bound [ELBO](#concept-the-variational-lower-bound-elbo).
+  - Thus, we instead maximize the [ELBO](#concept-the-variational-lower-bound-elbo).
   - Recall that ELBO was defined as
     - $`\mathcal{L}(\boldsymbol{\theta,\phi};\mathbf{x}^{(i)}) = \mathbb{E}_{q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)})}\left[ \log q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) -\log p_{\boldsymbol{\theta}} \left(\mathbf{z, x}^{(i)} \right) \right]`$
   - Since $`q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right)`$ is what we decide, we can choose a differentiable $`q`$ and apply optimization methods.
+    - Refer to the [reparameterization trick](#24-the-reparameterization-trick) below.
   - However, $`p_{\boldsymbol{\theta}} \left(\mathbf{z, x}^{(i)} \right)`$ is a probability distribution dependent on the given data $`\mathbf{x}`$.
   - Thus, we consider a function $`f(\mathbf{z}) = \log p_{\boldsymbol{\theta}} \left(\mathbf{z, x}^{(i)} \right)`$, which gradient is tractable, so that we can apply optimization algorithms.
     - How?)
@@ -176,7 +185,7 @@ Kingma et al.
 - Estimators)
   - Version A : $`\tilde{\mathcal{L}}^{A} \left( \boldsymbol{\theta, \phi}; \mathbf{x}^{(i)} \right)`$
     - Def.) 
-      - $`\tilde{\mathcal{L}}^{A} \left( \boldsymbol{\theta, \phi}; \mathbf{x}^{(i)} \right) = \displaystyle\frac{1}{L} \sum_{l=1}^L \log p_{\boldsymbol{\theta}} \left( \mathbf{x}^{(i)}, \mathbf{z}^{(i,l)} \right) - \log_{q_{\boldsymbol{\phi}}} \left( \mathbf{z}^{(i,l)} \mid \mathbf{x}^{(i)} \right)`$
+      - $`\tilde{\mathcal{L}}^{A} \left( \boldsymbol{\theta, \phi}; \mathbf{x}^{(i)} \right) = \displaystyle\frac{1}{L} \sum_{l=1}^L \log p_{\boldsymbol{\theta}} \left( \mathbf{x}^{(i)}, \mathbf{z}^{(i,l)} \right) - \log{q_{\boldsymbol{\phi}}} \left( \mathbf{z}^{(i,l)} \mid \mathbf{x}^{(i)} \right)`$
         - where 
           - $`\mathbf{z}^{(i,l)} = g_{\boldsymbol{\phi}} \left( \boldsymbol{\epsilon^{(i,l)}}, \mathbf{x}^{(i)} \right)`$ : a differentiable transformation
           - $`\boldsymbol{\epsilon}^{(l)} \sim p(\boldsymbol{\epsilon})`$ : an (auxiliary) noise variable
@@ -281,3 +290,43 @@ Kingma et al.
       &= \mathbb{E}_{\mathcal{N}(\epsilon; 0,1)}[f(\mu + \sigma\epsilon)] \\
       &\simeq \frac{1}{L}\sum_{l=1}^L f(\mu + \sigma\epsilon^{(l)}) \text{ where } \epsilon^{(l)}\sim\mathcal{N}(0,1)
     \end{aligned}`$
+
+<br><br>
+
+## 3. Example: Variational Auto-Encoder
+![](./images/002.png)
+- Objective)
+  - Use a **neural network** for the probabilistic encoder $`q_{\boldsymbol{\phi}}(\mathbf{z\vert x})`$.
+    - Recall that the [ELBO](#concept-the-variational-lower-bound-elbo) maximization problem was the KL-Divergence minimization problem: $`\underbrace{\log p_{\boldsymbol{\theta}} \left( \mathbf{x}^{(i)} \right)}_{\text{marginal likelihood of a datapoint}} = \underbrace{D_{KL} \left( \left. q_{\boldsymbol{\phi}} \left(\mathbf{z\vert x}^{(i)} \right) \right\Vert p_{\boldsymbol{\theta}} \left(\mathbf{z\vert x}^{(i)} \right)  \right)}_{\text{KL-div of the approximate from the true posterior}} + \mathcal{L}(\boldsymbol{\theta,\phi};\mathbf{x}^{(i)})`$
+    - i.e.) Approximating $`q_{\boldsymbol{\phi}}(\mathbf{z\vert x})`$ to $`p_{\boldsymbol{\theta}} \left(\mathbf{z\vert x} \right)`$ 
+      - where $`p_{\boldsymbol{\theta}} \left(\mathbf{z\vert x} \right)`$ is the posterior of the model $`p_{\boldsymbol{\theta}}(\mathbf{x,z})`$
+- Problem Setting)
+  - Let
+    - $`p_{\boldsymbol{\theta}}(\mathbf{z}) = \mathcal{N}(\mathbf{z}; \mathbf{0, I})`$ : the centered isotropic multivariate Gaussian **prior**
+    - $`p_{\boldsymbol{\theta}}(\mathbf{x\vert z})`$ : the **likelihood** from a MLP (a fully connected NN with a single hidden layer)
+      - This could be either
+        - a multivariate Gaussian in case of real-valued data
+        - Bernoulli in case of binary data
+      - This is the output of this model.
+        - Why?)
+          - We want to generate $`\mathbf{x}'`$ by 
+            - $`\mathbf{z}\sim p(\mathbf{z}) \rightarrow \mathbf{x}'\vert\mathbf{z} \sim p(\mathbf{x\vert z})`$
+  - Then, the posterior $`p_{\boldsymbol{\theta}}(\mathbf{z\vert x})`$ is intractable.
+  - Thus, we should set $`q_{\boldsymbol{\phi}}(\mathbf{z\vert x})`$ to approximate $`p_{\boldsymbol{\theta}}(\mathbf{z\vert x})`$
+  - We may choose
+    - $`\log q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)}) = \log\mathcal{N}(\mathbf{z};\boldsymbol{\mu}^{(i)}, \boldsymbol{\sigma}^{2(i)}\mathbf{I})`$
+      - where
+        - $`\boldsymbol{\phi}^{(i)} = \{\boldsymbol{\mu}^{(i)}, \boldsymbol{\sigma}^{(i)}\}`$ are outputs of the encoding MLP
+  - Now, we should sample $`\mathbf{z}\sim q_{\boldsymbol{\phi}}(\mathbf{z\vert x}^{(i)})`$
+    - Using the [reparameterization trick](#24-the-reparameterization-trick), we can sample
+      - $`\mathbf{z}^{(i,l)} = g_{\boldsymbol{\phi}}\left( \mathbf{x}^{(i)}, \boldsymbol{\epsilon}^{(l)} \right) = \boldsymbol{\mu}^{(i)} + \boldsymbol{\sigma}^{(i)}\odot \boldsymbol{\epsilon}^{(l)}`$
+        - where 
+          - $`\boldsymbol{\epsilon}^{(l)}\sim\mathcal{N}(\mathbf{0, I})`$
+          - $`\odot`$ denotes the element-wise (Hadamard) product
+        - This $`g_{\boldsymbol{\phi}}`$ can be seen as the encoder : $`g_{\boldsymbol{\phi}}:\mathbf{X}\rightarrow\mathbf{Z}`$
+  - With $`\mathbf{z}`$ we sampled we may decode using the Neural Network as
+    - $`\log p(\mathbf{x\vert z}) = \log \mathcal{N}(\mathbf{x};\boldsymbol{\mu,\sigma^2}\mathbf{I})`$
+      - where
+        - $`\boldsymbol{\mu} = \mathbf{W}_4\mathbf{h} + \mathbf{b}_4`$
+        - $`\boldsymbol{\sigma^2} = \mathbf{W}_5\mathbf{h} + \mathbf{b}_5`$
+        - $`\mathbf{h} = \tanh(\mathbf{W}_3\mathbf{z} + \mathbf{b}_3)`$   
