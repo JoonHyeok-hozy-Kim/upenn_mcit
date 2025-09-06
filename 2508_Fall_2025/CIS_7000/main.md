@@ -17,6 +17,9 @@
 <br>
 
 ## Paper Presentation
-- Auto-Encoder Variational Bayes
-  - [Paper Summary](./papper_presentation/250917_vae/paper_note.md)
+- Styled-GAN (250908)
+  - [GAN Paper Summary](./papper_presentation/250908_style_gan/paper_note_gan.md)
+  - [Style-GAN Paper Summary](./papper_presentation/250908_style_gan/paper_note_style_gan.md)
+- (Stolen) Auto-Encoder Variational Bayes
+  - [VAE Paper Summary](./papper_presentation/250917_vae/paper_note.md)
 - High-Resolution Image Synthesis with Latent Diffusion Models
