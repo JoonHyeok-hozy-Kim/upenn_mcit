@@ -139,7 +139,9 @@
         - cf.) This method calls gpytorch optimization functions.
   - `_set_center_and_best_points()`
     - Purpose) Set
-      - `self.X_center`, `self.Y_center`, `self.best_X`, `self.`, `self.best_Y`, 
+      - `self.X_center`, `self.Y_center`, 
+      - `self.best_X = self.X_center`
+      - `self.best_Y = self.Y_center`, 
 - Children Classes
   - [ScalarizedTrustRegion](#121-scalarizedtrustregion)
   - [HypervolumeTrustRegion](#122-hypervolumetrustregion)
@@ -190,6 +192,8 @@
             - `indices_mask` : Indices within this TR.
               - cf.) [get_indices_in_hypercube](#44-get_indices_in_hypercube) is used.
             - `not_taken_mask` : Indices of points that are not (current best and included in `invalid_centers`)
+        - Let `self.X_center` be the point from `eligible_mask` that has the best value in caller `TRBOState.hv_contribution`.
+          - cf.) `base_idx = hv_contributions[eligible_indices].argmax()`
 
 <br>
 
@@ -201,8 +205,8 @@
 - Location: `morbo.state.TRBOState`  
 - Members
   - TR related
-    - `trust_regions` : a list that contains TRs.
-      - Each TR object contains the `model` member
+    - `trust_regions` : a list that contains [TR object](#12-trustregion)s.
+      - Each [TR object](#12-trustregion) contains the `model` member
         - Single Obj : `from botorch.models.model import Model`
         - MOO : `from botorch.models.model_list_gp_regression import ModelListGP`
       - These `model`s are created in `TrustRegion.update_model()`.
@@ -253,12 +257,12 @@
 
 ### 3. Benchmark Evaluation Function
 #### 3.1 BenchmarkFunction
-  - `morbo.benchmark_function.BenchmarkFunction`
+- `morbo.benchmark_function.BenchmarkFunction`
 
 <br>
 
 ### 4. Utilities
-- Location : `morbo.utils`
+- Location : `morbo.utils.py`
 #### 4.1 sample_tr_discrete_points
 
 #### 4.2 sample_tr_discrete_points_subset_d
@@ -279,5 +283,27 @@
 #### 4.7 decay_function
 
 #### 4.8 get_constraint_slack_and_feasibility
+
+<br>
+
+### 5. Generators
+#### 5.1 TS_select_batch_MORBO
+- Purpose
+  - Get candidates for the next batch in greedy fashion
+  - Refer to [Collaborative Batch Selection via Global Utility Maximization](./morbo_paper_summary.md#concept-collaborative-batch-selection-via-global-utility-maximization) in MORBO
+- Return `CandidateSelectionOutput` s.t.
+  ```python
+  class CandidateSelectionOutput(NamedTuple):
+      X_cand: Tensor
+      tr_indices: Tensor
+  ```
+- Procedure
+  - `for i in batch_size`
+    - Let `tr_indices` be
+      - each indices of TRs for [HVTR](#122-hypervolumetrustregion)
+      - randomly chosen index of TR for [ScalarizationTR](#121-scalarizedtrustregion)
+    - `for tr_idx in tr_indices`
+      - Let `best_X` be indices of the normalized values of `tr.best_X`.
+
 
 [Back to Main](../../main.md)

@@ -3,18 +3,12 @@
 ### Fall 2025
 - [CIS5990 Independent Study](./2508_Fall_2025/CIS_5990/main.md)
 - [CIS7000 Advanced Topics of Deep Generative Models](./2508_Fall_2025/CIS_7000/main.md)
-- [ESE5460 Principles of Deep Learning](./2508_Fall_2025/ESE_5460/main.md)
+  - (dropped) [ESE5460 Principles of Deep Learning](./2508_Fall_2025/ESE_5460/main.md)
 
 ### Summer 2025
 - [Bayes Opt by Roman Garnett](./2505_Summer_2025/bayes_opt_textbook/main.md)
 - MOBO Paper Reading
-  - [DGEMO](./2501_Spring_2025/CIS_7000/hw/paper_presentation/DGEMO.md)
-    - [Schulz et al. First-Order Approximation](./2501_Spring_2025/CIS_7000/hw/paper_presentation/interactive_exploration.md)
-  - [TuRBO](./2505_Summer_2025/bayes_opt_papers/TuRBO/note.md)
-  - [MORBO](./2505_Summer_2025/bayes_opt_papers/MORBO/note.md)
-    - HV scalarization : Zhang and Golovin (2020) *Random hypervolume scalarizations for provable multi-objective black box optimization*
-  - [qNEHVI](./2505_Summer_2025/bayes_opt_papers/NEHVI/note.md)
-  - [ROBOT](./2505_Summer_2025/bayes_opt_papers/ROBOT/note.md)
+  - [DGEMO](./2501_Spring_2025/CIS_7000/hw/paper_presentation/DGEMO.md) ([Schulz et al. First-Order Approximation](./2501_Spring_2025/CIS_7000/hw/paper_presentation/interactive_exploration.md)), [TuRBO](./2505_Summer_2025/bayes_opt_papers/TuRBO/note.md), [MORBO](./2505_Summer_2025/bayes_opt_papers/MORBO/note.md) (HV scalarization : Zhang and Golovin (2020)), [qNEHVI](./2505_Summer_2025/bayes_opt_papers/NEHVI/note.md), [ROBOT](./2505_Summer_2025/bayes_opt_papers/ROBOT/note.md)
 - [CUDA](./2505_Summer_2025/cuda/main.md)
 
 ### Spring 2025

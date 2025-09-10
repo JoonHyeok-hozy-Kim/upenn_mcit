@@ -128,6 +128,17 @@ Def.) different latent dimensions (or factors) control independent, semantically
 https://blog.metaphysic.ai/better-gan-disentanglement-could-facilitate-better-synthetic-data/
 
 ---
+
+# Goal
+### 1. Identify the latent variables
+### 2. Disentangle latent variables so that we can control them independently
+
+<br><br>
+
+### Did StyleGAN achieve this?
+yes + High Quality Image!
+
+---
 # StyleGAN (Karras et al., 2019)
 
 
@@ -295,8 +306,32 @@ $B_\ell$ : the noise input to the $\ell$-th AdaIN layer
 
 ---
 
+# Summary : StyleGAN
+
+<div class="flex-container">
+  <div>
+
+- The mapping network $f$ successfully mapped the latent code $\mathbf{z}$ to an intermediate latent code $\mathbf{w}$.
+
+- These latent codes $\mathbf{w}$ were passed through the affine transformation $A$ and used as interpretable style concepts.
+
+- AdaIN normalized the style from the previous activation and re-introduced the style information from the latent code.
+
+- Progressive growing enabled stable high-resolution image generation.
+
+- Noise is added to introduce stochastic local variations.
+
+  </div>
+  <img class="right-img" src="./images/style_gan_001.png" width="500px">
+  <div> 
+  
+  </div>
+</div>
+
+---
+
 # Pros, cons, and updates on StyleGAN
-### Advantage) StyleGAN...
+### Strength) StyleGAN...
 - disentangled latent control (styles)
 - enabled style mixing and stochastic variation
 - improved interpretability of the latent dimension
@@ -305,28 +340,34 @@ $B_\ell$ : the noise input to the $\ell$-th AdaIN layer
 
 ---
 
-### Disadvantage) StyleGAN...
+### Weakness) StyleGAN...
 - is unconditional, so does not support conditional image synthesis.
-  - e.g.) "Generate a photo of a cat dancing" $\cdots (X)$
-- fails on multi-class datasets (cf. BigGAN on ImageNet)   
-  ![h:470px](./images/presentation_single_class.png)
+
+![h:500px](./images/presentation_conditional.png)
 
 ---
 
-### Disadvantage) StyleGAN...
+### Weakness) StyleGAN...
+- fails on multi-class datasets (cf. BigGAN on ImageNet)   
+
+![h:500px](./images/presentation_single_class.png)
+
+---
+
+### Weakness) StyleGAN...
+- is very computationally expensive at high resolution and needs multi-GPU training   
+
+![h:500px](./images/presentation_karras_nvidia.png)
+
+---
+
+### Weakness) StyleGAN...
 - has progressive growing checkerboard, droplet artifacts    
   ![](./images/style_gan_ii_001.png)
   - Solved in Style GAN 2 (Karras et al., 2020) by discarding AdaIN and Progressive Growing (...)
   - Instead it...
     - replaced AdaIN with Weight Demodulation
     - performed full-resolution training from the start 
-
----
-
-### Disadvantage) StyleGAN...
-- is very computationally expensive at high resolution and needs multi-GPU training   
-
-![h:500px](./images/presentation_karras_nvidia.png)
 
 ---
 
