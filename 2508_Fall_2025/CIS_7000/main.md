@@ -7,6 +7,29 @@
 - (Stolen) Auto-Encoder Variational Bayes
   - [VAE Paper Summary](./paper_presentation/250917_vae/paper_note.md)
 - High-Resolution Image Synthesis with Latent Diffusion Models (250929)
+  - DDPM
+  - Score-Based Model
+  - Latent Diffusion
+
+<br>
+
+## Project Game Plan
+- Reference
+  - Basics
+    - Improved DDPM
+    - Classifier-Free Guidance
+    - Autoguidance
+    - Rectified Flow
+      - Implementation : [minRF](https://github.com/cloneofsimo/minRF/tree/main)
+    - Conditional Flow Matching
+    - Stable Diffusion 3
+  - Project Related
+    - Self-Rectifying Diffusion Sampling with Perturbed-Attention Guidance
+      - Implementation
+    - Smoothed Energy Guidance: Guiding Diffusion Models with Reduced Energy Curvature of Attention
+    - Fine-Grained Perturbation Guidance via Attention Head Selection
+    - [Yan](https://greatx3.github.io/Yan/)
+    - [Matrix-Game 2.0](https://matrix-game-v2.github.io/)
 
 <br>
 
