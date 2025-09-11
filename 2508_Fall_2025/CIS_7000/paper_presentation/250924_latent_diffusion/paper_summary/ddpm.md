@@ -113,8 +113,8 @@ Ho et al. 2020
 
 ### 3.2 Reverse Process and L_{1:T-1}
 - Goal)
-  - Choose (parameterize) $`p_\theta(\mathbf{x}_{t-1}\mid \mathbf{x}_t) = \mathcal{N}(\mathbf{x}_{t-1}; \mu_\theta(\mathbf{x}_t, t), \Sigma_\theta(\mathbf{x}_t, t))`$
-- Options)
+  - Parameterize $`p_\theta(\mathbf{x}_{t-1}\mid \mathbf{x}_t) = \mathcal{N}(\mathbf{x}_{t-1}; \mu_\theta(\mathbf{x}_t, t), \Sigma_\theta(\mathbf{x}_t, t))`$
+- Moments)
   - Variance Parameterization $`(\boldsymbol{\Sigma}_\theta)`$
     - Def.)
       - $`\displaystyle\boldsymbol{\Sigma}_\theta(\mathbf{x}_t, t) = \sigma_t^2 \mathbf{I}`$
@@ -126,3 +126,126 @@ Ho et al. 2020
         - Result)
           - Optimal for $`\mathbf{x}_0`$ deterministically set to one point
   - Mean Parameterization $`(\mu_\theta)`$
+    - $`\begin{aligned}
+        \boldsymbol{\mu}_\theta(\mathbf{x}_t, t) 
+        &= \tilde{\boldsymbol{\mu}}_t \left( \mathbf{x}_t, \; \frac{1}{\sqrt{\bar{\alpha}_t}} (\mathbf{x}_t - \sqrt{1-\bar{\alpha}_t} \boldsymbol{\epsilon}_\theta(\mathbf{x}_t)) \right) \\
+        &= \frac{1}{\sqrt{\bar{\alpha}_t}} \left( \mathbf{x}_t - \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}} \boldsymbol{\epsilon}_\theta(\mathbf{x}_t, t) \right)
+      \end{aligned}`$
+      - where $`\boldsymbol{\epsilon}_\theta`$ is a function approximator intended to predict $`\boldsymbol{\epsilon}`$ from $`\mathbf{x}_t`$
+    - Derivation)
+      - Choosing the variance as $`\displaystyle\boldsymbol{\Sigma}_\theta(\mathbf{x}_t, t) = \sigma_t^2 \mathbf{I}`$, we have
+        - $`p_\theta(\mathbf{x}_{t-1}\mid \mathbf{x}_t) = \mathcal{N}(\mathbf{x}_{t-1}; \mu_\theta(\mathbf{x}_t, t), \sigma_t^2 \mathbf{I})`$
+      - Then, we may rewrite $`L_{t-1}`$ as
+        - $`L_{t-1} = \displaystyle\mathbb{E}_q\left[ \frac{1}{2\sigma_t^2} \Vert \tilde{\boldsymbol{\mu}}_t(\mathbf{x}_t, \mathbf{x}_0) - \boldsymbol{\mu}_\theta(\mathbf{x}_t, t) \Vert^2 \right] + C`$
+          - where $`C`$ is a constant that does not depend on $`\theta`$
+      - Also, from $`q(\mathbf{x}_{t-1} \mid \mathbf{x}_t, \mathbf{x}_0) = \mathcal{N}(\mathbf{x}_{t-1}; \tilde{\boldsymbol{\mu}}_t(\mathbf{x}_t, \mathbf{x}_0), \tilde{\beta}_t\mathbf{I})`$, we may reparameterize as
+        - $`\displaystyle\mathbf{x}_t(\mathbf{x}_0, \boldsymbol{\epsilon}) = \sqrt{\bar{\alpha}} \mathbf{x}_0 + \sqrt{1-\bar{\alpha}_t} \boldsymbol{\epsilon}`$ for $`\boldsymbol{\epsilon}\sim\mathcal{N}(\mathbf{0, I})`$
+      - Thus, we have   
+        $`\begin{aligned}
+          L_{t-1} - C &= \mathbb{E}_{\mathbf{x}_0, \boldsymbol{\epsilon}} \left[ \frac{1}{2\sigma_t^2} \left\Vert \tilde{\boldsymbol{\mu}}_t \left( \mathbf{x}_t(\mathbf{x}_0, \boldsymbol{\epsilon}), \frac{1}{\sqrt{\bar{\alpha}}_t}(\mathbf{x}_t(\mathbf{x}_0, \boldsymbol{\epsilon}) - \sqrt{1-\bar{\alpha}} \boldsymbol{\epsilon}) \right) - \boldsymbol{\mu}_\theta(\mathbf{x}_t, t) \right\Vert^2 \right] \\
+          &= \mathbb{E}_{\mathbf{x}_0, \boldsymbol{\epsilon}} \left[ \frac{1}{2\sigma_t^2} \left\Vert \tilde{\boldsymbol{\mu}}_t \left( \mathbf{x}_t(\mathbf{x}_0, \boldsymbol{\epsilon}), \frac{1}{\sqrt{\bar{\alpha}}_t}(\mathbf{x}_t(\mathbf{x}_0, \boldsymbol{\epsilon}) - \sqrt{1-\bar{\alpha}} \boldsymbol{\epsilon}) \right) - \boldsymbol{\mu}_\theta(\mathbf{x}_t, t) \right\Vert^2 \right] \\
+        \end{aligned}`$
+- Loss Function)   
+  - Again from the above derivation, we have
+    $`\begin{aligned}
+      L_{t-1} - C 
+      &= \mathbb{E}_{\mathbf{x}_0, \boldsymbol{\epsilon}} \left[ \frac{1}{2\sigma_t^2} \left\Vert \underbrace{\frac{1}{\sqrt{\bar{\alpha}_t}} \left( \mathbf{x}_t - \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}} \boldsymbol{\epsilon} \right)}_{\text{Target posterior mean}} - \underbrace{\boldsymbol{\mu}_\theta(\mathbf{x}_t(\mathbf{x}_0, \boldsymbol{\epsilon}), t)}_{\text{Model mean}} \right\Vert^2 \right] \\
+      &= \mathbb{E}_{\mathbf{x}_0, \boldsymbol{\epsilon}} \left[ \frac{1}{2\sigma_t^2} \left\Vert \underbrace{\frac{1}{\sqrt{\bar{\alpha}_t}} \left( \mathbf{x}_t - \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}} \boldsymbol{\epsilon} \right)}_{\text{Target posterior mean}} - \underbrace{\frac{1}{\sqrt{\bar{\alpha}_t}} \left( \mathbf{x}_t - \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}} \boldsymbol{\epsilon}_\theta(\mathbf{x}_t, t) \right)}_{\text{Model mean}} \right\Vert^2 \right] \\
+      &= \mathbb{E}_{\mathbf{x}_0, \boldsymbol{\epsilon}} \left[ \frac{1}{2\sigma_t^2} \left\Vert \frac{\beta_t}{\sqrt{\bar{\alpha}_t}\sqrt{1-\bar{\alpha}_t}} \left( \boldsymbol{\epsilon}_\theta(\mathbf{x}_t, t) - \boldsymbol{\epsilon} \right) \right\Vert^2 \right] \\
+      &= \mathbb{E}_{\mathbf{x}_0, \boldsymbol{\epsilon}} \left[ \frac{\beta_t^2}{2\sigma_t^2 \bar{\alpha}_t (1-\bar{\alpha}_t)} \left\Vert \boldsymbol{\epsilon} - \boldsymbol{\epsilon}_\theta(\mathbf{x}_t, t) \right\Vert^2 \right] \\
+      &= \mathbb{E}_{\mathbf{x}_0, \boldsymbol{\epsilon}} \left[ \underbrace{\frac{\beta_t^2}{2\sigma_t^2 \bar{\alpha}_t (1-\bar{\alpha}_t)}}_{\text{all fixed at fwd process}} \left\Vert \boldsymbol{\epsilon} - \boldsymbol{\epsilon}_\theta(\sqrt{\bar{\alpha}_t}\mathbf{x}_0 + \sqrt{1-\bar{\alpha}_t} \boldsymbol{\epsilon}, t) \right\Vert^2 \right] \\
+    \end{aligned}`$
+- Training)
+  - Algorithm)   
+    ![](../images/ddpm/001.png)
+    - Uses the [simplifed loss below](#34-simplified-training-object)
+- Sampling)
+  - Algorithm)   
+    ![](../images/ddpm/002.png)
+
+<br>
+
+### 3.3 Data scaling, reverse process decoder, and L_0
+#### Concept) Gaussian Discretization
+- Purpose)
+  - Consider that an image data is in the format of $`16\times16=256`$.
+  - This can be thought of as 256 different dimensions.
+  - However, if we categorize them and get probability distribution independently, ...
+    - it's computationally expensive (256-way softmax)
+    - it's hard to propagate gradients, and have high variance
+    - its sampling will also be discrete
+- Idea)
+  - Partition the range $`[-1,1]`$ into 256 bins.
+    - e.g.) the $`k`$-th bin would be $`\displaystyle\left[\frac{k}{256}-\frac{1}{256},\; \frac{k}{256}+\frac{1}{256}\right]`$
+  - Treat them as one dimensional data and get the Gaussian distribution as
+    - $`p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t) = \displaystyle\prod_{i=1}^D \int_{\delta_{-}(x_0^i)}^{\delta_{+}(x_0^i)} \mathcal{N}(x;\; \mu_\theta^i(\mathbf{x}_{t}, t), \sigma_t^2) \;\text{d} x`$
+      - where   
+        $`\begin{aligned}
+          \delta_{+}(x_0^i) &= \begin{cases} \infty & \text{if } x=1 \\ x+\frac{1}{255} & \text{if } x\lt 1 \end{cases} \\
+          \delta_{-}(x_0^i) &= \begin{cases} -\infty & \text{if } x=-1 \\ x-\frac{1}{255} & \text{if } x\gt -1 \end{cases} \\
+        \end{aligned}`$   
+        $`D`$ is the dimension of the data (e.g. 256)   
+        $`i`$ indicates extraction of one coordinate.
+- Prop.)
+  - Similar to VAE decoders, and AR models
+    - This distribution ensures that the variational bound (ELBO) is a lossless codelength of discrete data.
+      - Why codelength?)
+        - Recall that MLE $`\left(\displaystyle\argmin_\theta -\log p(\theta)\right)`$ is finding $`\theta`$ that minimizes the [code length](https://github.com/JoonHyeok-hozy-Kim/ai_paper_study/blob/main/text_books/elmnts_info_theory/ch05/07/note.md#prop4-shannon-code) in information theory.
+        - Consider that we modified the discrete data into the continuous one.
+        - Thus, there can be a chance that the discrete data is lost.
+        - However, the discretized likelihood guarantees that no data is lost and the value that ELBO is the actual lossless code length.
+    - No need to 
+      - add noise to the data 
+      - incorporate the Jacobian of the scaling operation into the log likelihood
+
+<br>
+
+#### Concept) Reverse Process Decoder
+- Starting point
+  - $`p(\mathbf{x}_T) \sim \mathcal{N}(\mathbf{0,I})`$ : the standard normal prior
+- Last part    
+  - $`p_\theta(\mathbf{x}_{0}\mid\mathbf{x}_1) = \displaystyle\prod_{i=1}^D \int_{\delta_{-}(x_0^i)}^{\delta_{+}(x_0^i)} \mathcal{N}(x;\; \mu_\theta^i(\mathbf{x}_{1}, 1), \sigma_1^2) \;\text{d} x`$
+- Prop.)
+  - At the end of sampling, it displays $`\mu_\theta(\mathbf{x}_1, 1)`$ noiselessly.
+
+<br>
+
+### 3.4 Simplified training object
+- Def.)
+  - $`L_{\text{simple}}(\theta) := \displaystyle\mathbb{E}_{t,\mathbf{x}_0, \boldsymbol{\epsilon}} \left[ \left\Vert \boldsymbol{\epsilon} - \boldsymbol{\epsilon}_\theta (\sqrt{\bar{\alpha}_t}\mathbf{x}_0 + \sqrt{1-\bar{\alpha}_t} \boldsymbol{\epsilon}, t) \right\Vert^2 \right]`$
+    - where
+      - $`t\sim\text{Uniform}[1,T]`$
+- Props.)
+  - $`t=1`$
+    - $`L_0`$ with the integral in the [discrete decoder definition (last part)](#concept-reverse-process-decoder) approximated by the Gaussian pdf times the bin width, ignoring $`\sigma_1^2`$ and edge effects.
+  - $`t\gt1`$
+    - Unweighted version of 
+      - $`\mathbb{E}_{\mathbf{x}_0, \boldsymbol{\epsilon}} \left[ \underbrace{\frac{\beta_t^2}{2\sigma_t^2 \bar{\alpha}_t (1-\bar{\alpha}_t)}}_{\text{all fixed at fwd process}} \left\Vert \boldsymbol{\epsilon} - \boldsymbol{\epsilon}_\theta(\sqrt{\bar{\alpha}_t}\mathbf{x}_0 + \sqrt{1-\bar{\alpha}_t} \boldsymbol{\epsilon}, t) \right\Vert^2 \right]`$
+
+
+<br><br>
+
+## Implementation
+- Network Model
+  - Input
+    - $`\mathbf{x}_t`$ : the forwarded image
+      - Recall that $`\beta_t`$ is given and $`\epsilon\sim\mathcal{N}(\mathbf{0,I})`$ is sampled.
+      - Then, we may generate $`\mathbf{x}_t`$ using them.
+    - $`t`$ : the time stamp
+      - This will go thought the embedding such as sinusoidal embedding.
+        - Why?)
+          - To inject the integer $`t`$ into the CNN such as UNET
+  - Model
+    - e.g.) UNET   
+      ![](../images/ddpm/003.png)
+      - Use convolution to get the global features.
+      - Upsample and mix with the cropped copy
+  - Output
+    - $`\epsilon_\theta(\mathbf{x}_t, t)`$
+- Loss
+  - The difference between $`\epsilon`$ and $`\epsilon_\theta(\mathbf{x}_t, t)`$
+- Training
+  - Minimize the loss using the backprop.
+- Sampling
+  - Input the complete noise $`\mathbf{x}_T`$.
+  - Then the reverse process will generate the image.
