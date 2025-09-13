@@ -167,15 +167,30 @@ Ho et al. 2020
 
 ### 3.3 Data scaling, reverse process decoder, and L_0
 #### Concept) Gaussian Discretization
-- Purpose)
-  - Consider that an image data is in the format of $`16\times16=256`$.
-  - This can be thought of as 256 different dimensions.
-  - However, if we categorize them and get probability distribution independently, ...
-    - it's computationally expensive (256-way softmax)
+- Problem)
+  - To optimize $`L_0`$, we need to calculate the likelihood $`p_\theta(\mathbf{x}_0\mid\mathbf{x}_1)`$
+  - However, the given original image data $`\mathbf{x}_0`$ is in the discrete format.
+    - Why?)
+      - Consider that an image data that each channel of a pixel has the value of in range $`0\sim255`$.
+        - Why) 
+          - Recall that in each pixel, there are three channels, RGB.
+          - And each channel has the value in range $`0\sim255`$.
+      - Thus, Each pixel consists of 3 channels (R, G, B), and each channel has 256 discrete states.  
+      - Thus, its likelihood should be calculated as
+        - $`p_\theta(\mathbf{x}_0^i \mid \mathbf{x}_1) = \text{Softmax}(Wh^i + b)[\mathbf{x}_0^i],\quad \mathbf{x}_0^i\in\{0,1,\cdots,255\}`$
+          - i.e.) 256 categorical
+  - If we categorize them and get probability distribution independently, ...
+    - it's computationally expensive (256-way softmax for each channel of each pixel!)
+      - Massive computations for $`D`$ times
+        - where $`D = \text{(height)}\times\text{(width)}\times 3`$
     - it's hard to propagate gradients, and have high variance
     - its sampling will also be discrete
-- Idea)
-  - Partition the range $`[-1,1]`$ into 256 bins.
+- Idea) Discretization
+  - Instead of predicting a categorical distribution, use a continuous Gaussian and compute the probability mass assigned to the correct bin.
+  - For example, if the R(red) value of the 56-th pixel is 128,
+    - evaluate $\displaystyle\int_{127.5}^{128.5} \mathcal{N}(x;\,\mu_\theta^i,\sigma^2) dx$.
+- How?)
+  - In normalized form, the channel range $[-1,1]$ is partitioned into 256 bins:
     - e.g.) the $`k`$-th bin would be $`\displaystyle\left[\frac{k}{256}-\frac{1}{256},\; \frac{k}{256}+\frac{1}{256}\right]`$
   - Treat them as one dimensional data and get the Gaussian distribution as
     - $`p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t) = \displaystyle\prod_{i=1}^D \int_{\delta_{-}(x_0^i)}^{\delta_{+}(x_0^i)} \mathcal{N}(x;\; \mu_\theta^i(\mathbf{x}_{t}, t), \sigma_t^2) \;\text{d} x`$
@@ -184,8 +199,15 @@ Ho et al. 2020
           \delta_{+}(x_0^i) &= \begin{cases} \infty & \text{if } x=1 \\ x+\frac{1}{255} & \text{if } x\lt 1 \end{cases} \\
           \delta_{-}(x_0^i) &= \begin{cases} -\infty & \text{if } x=-1 \\ x-\frac{1}{255} & \text{if } x\gt -1 \end{cases} \\
         \end{aligned}`$   
-        $`D`$ is the dimension of the data (e.g. 256)   
-        $`i`$ indicates extraction of one coordinate.
+        - $`D`$ is the dimension of the data (e.g. $`\text{(height)}\times\text{(width)}\times 3`$)   
+          - Why 3?) RGB
+        - $`i`$ indicates extraction of one coordinate.
+    - Interpretation)
+      - The range $`\left[\delta_{-}(x_0^i), \delta_{+}(x_0^i)\right]`$ corresponds with the discrete value (e.g. $`128\in[0,255]`$)
+      - $`\displaystyle\int_{\delta_{-}(x_0^i)}^{\delta_{+}(x_0^i)} \mathcal{N}(x;\; \mu_\theta^i(\mathbf{x}_{t}, t), \sigma_t^2) \;\text{d} x`$ is the probability mass in that range.
+      - Think of the value  as the probability that the Gaussian exists in that range.
+      - And, that Gaussian is determined by the moments provided from the previous step $`\mu_\theta(\mathbf{x}_t,t)`$
+      - It's just a trick to fit discrete value in to continuous setting.
 - Prop.)
   - Similar to VAE decoders, and AR models
     - This distribution ensures that the variational bound (ELBO) is a lossless codelength of discrete data.
