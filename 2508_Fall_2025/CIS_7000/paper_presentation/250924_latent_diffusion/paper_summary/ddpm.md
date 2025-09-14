@@ -33,6 +33,9 @@ Ho et al. 2020
 - Def.)
   - A parameterized Markov chain that aims to invert the forward process and recover data from noise as
     - $`p_\theta(\mathbf{x}_{t-1}\mid \mathbf{x}_t) = \mathcal{N}(\mathbf{x}_{t-1}; \mu_\theta(\mathbf{x}_t, t), \Sigma_\theta(\mathbf{x}_t, t))`$
+      - Desc.)
+        - The probability distribution of $`\mathbf{x}_{t-1}\mid\mathbf{x}_{t}`$ is assumed to be Gaussian.
+        - And their moments are dependent on $`\mathbf{x}_{t}`$
 - Props.)
   - $`\theta`$ : the learnable parameters
   - Learned via minimizing a denoising objective:
@@ -81,16 +84,42 @@ Ho et al. 2020
         &\ge \mathbb{E}_{q(\mathbf{x}_{1:T}\mid \mathbf{x}_0)} \left[ \log\frac{p_\theta(\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T}\mid \mathbf{x}_0)} \right] & \because (\text{Jensen Inequality})
     \end{aligned}`$
   - Taking the negative, we may get the loss function as   
-    $`\begin{aligned}
-        \mathcal{L} &= \mathbb{E}_q \left[ -\log\frac{p_\theta(\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T}\mid \mathbf{x}_0)} \right] \\
-        &= \mathbb{E}_q \left[ -\log\frac{p(\mathbf{x}_T)\displaystyle\prod_{t=1}^T p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t)}{\displaystyle\prod_{t=1}^T q(\mathbf{x}_t\mid \mathbf{x}_{t-1})} \right] \\
-        &= \mathbb{E}_q \left[ -\log p(\mathbf{x}_T) -\sum_{t=1}^T \log\frac{p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t)}{q(\mathbf{x}_t\mid \mathbf{x}_{t-1})} \right] &\ge \mathbb{E}_q \left[ -\log p_\theta(\mathbf{x}{0}) \right] \\
-    \end{aligned}`$
+    $`\begin{array}{lll}
+        \mathcal{L} 
+        &= \displaystyle\mathbb{E}_q \left[ -\log\frac{p_\theta(\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T}\mid \mathbf{x}_0)} \right] \\
+        &= \displaystyle\mathbb{E}_q \left[ -\log\frac{p(\mathbf{x}_T)\displaystyle\prod_{t=1}^T p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t)}{\displaystyle\prod_{t=1}^T q(\mathbf{x}_t\mid \mathbf{x}_{t-1})} \right] \\
+        &= \displaystyle\mathbb{E}_q \left[ -\log p(\mathbf{x}_T) -\sum_{t=1}^T \log\frac{p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t)}{q(\mathbf{x}_t\mid \mathbf{x}_{t-1})} \right] \\
+        &= \displaystyle\mathbb{E}_q \left[ -\log p(\mathbf{x}_T) -\sum_{t=2}^T \log\frac{p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t)}{q(\mathbf{x}_t\mid \mathbf{x}_{t-1})} - \log\frac{p_\theta(\mathbf{x}_0\mid\mathbf{x}_1)}{q(\mathbf{x}_1\mid\mathbf{x}_0)} \right] \\
+    \end{array}`$
+  - Here, we want to add $`q(\mathbf{x}_{t-1}\mid\mathbf{x}_t,\mathbf{x}_0)`$ term.      
+    $`\begin{array}{lll}
+        \mathcal{L} 
+        &= \displaystyle\mathbb{E}_q \left[ -\log p(\mathbf{x}_T) -\sum_{t=2}^T \log\frac{p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t)}{q(\mathbf{x}_t\mid \mathbf{x}_{t-1})} \cdot \underbrace{\frac{q(\mathbf{x}_{t-1}\mid\mathbf{x}_t,\mathbf{x}_0)}{q(\mathbf{x}_{t-1}\mid\mathbf{x}_t,\mathbf{x}_0)}}_{\text{Posterior of }q} - \log\frac{p_\theta(\mathbf{x}_0\mid\mathbf{x}_1)}{q(\mathbf{x}_1\mid\mathbf{x}_0)} \right] \\
+    \end{array}`$
+    - Why?)
+      - The model we want to train is $`p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t)`$ in the reverse process.
+        - However, we don't know what it looks like.
+      - Recall that we know the forward process $`q(\mathbf{x}_t\mid\mathbf{x}_{t-1})`$.
+      - Using the Bayes Rule, we may get   
+        $`\begin{aligned}
+          q(\mathbf{x}_{t-1}\mid\mathbf{x}_t,\mathbf{x}_0) 
+          &= \frac{q(\mathbf{x}_t\mid\mathbf{x}_{t-1},\mathbf{x}_0) q(\mathbf{x}_{t-1}\mid\mathbf{x}_0)}{q(\mathbf{x}_t\mid\mathbf{x}_0)} \\
+          &= \frac{q(\mathbf{x}_t\mid\mathbf{x}_{t-1}) q(\mathbf{x}_{t-1}\mid\mathbf{x}_0)}{q(\mathbf{x}_t\mid\mathbf{x}_0)} \\
+        \end{aligned}`$
+      - Thus, we may train our [reverse process](#concept-reverse-process) by approximating $`p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t) \approx q(\mathbf{x}_{t-1}\mid\mathbf{x}_t,\mathbf{x}_0)`$
+  - Plugging in the value we derived from the Bayes Rule, we have      
+    $`\begin{array}{lll}
+        \mathcal{L} 
+        &= \displaystyle\mathbb{E}_q \left[ -\log p(\mathbf{x}_T) -\sum_{t=2}^T \log\frac{p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t)}{q(\mathbf{x}_t\mid \mathbf{x}_{t-1})} \cdot\frac{\frac{q(\mathbf{x}_t\mid\mathbf{x}_{t-1},\mathbf{x}_0) q(\mathbf{x}_{t-1}\mid\mathbf{x}_0)}{q(\mathbf{x}_t\mid\mathbf{x}_0)}}{q(\mathbf{x}_{t-1}\mid\mathbf{x}_t,\mathbf{x}_0)} - \log\frac{p_\theta(\mathbf{x}_0\mid\mathbf{x}_1)}{q(\mathbf{x}_1\mid\mathbf{x}_0)} \right] & \because \text{Bayes Rule}  \\
+        &= \displaystyle\mathbb{E}_q \left[ -\log p(\mathbf{x}_T) -\sum_{t=2}^T \log\frac{p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t)}{q(\mathbf{x}_t\mid \mathbf{x}_{t-1})} \cdot\frac{\frac{q(\mathbf{x}_t\mid\mathbf{x}_{t-1},\mathbf{x}_0) q(\mathbf{x}_{t-1}\mid\mathbf{x}_0)}{q(\mathbf{x}_t\mid\mathbf{x}_0)}}{q(\mathbf{x}_{t-1}\mid\mathbf{x}_t,\mathbf{x}_0)} - \log\frac{p_\theta(\mathbf{x}_0\mid\mathbf{x}_1)}{q(\mathbf{x}_1\mid\mathbf{x}_0)} \right] & \because q(\mathbf{x}_t\mid \mathbf{x}_{t-1}) = q(\mathbf{x}_t\mid\mathbf{x}_{t-1},\mathbf{x}_0) \\
+        &= \displaystyle\mathbb{E}_q \left[ -\log p(\mathbf{x}_T) -\sum_{t=2}^T \log\frac{p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t)}{q(\mathbf{x}_{t-1}\mid\mathbf{x}_t,\mathbf{x}_0)} \cdot\frac{q(\mathbf{x}_{t-1}\mid\mathbf{x}_0)}{q(\mathbf{x}_t\mid\mathbf{x}_0)} - \log\frac{p_\theta(\mathbf{x}_0\mid\mathbf{x}_1)}{q(\mathbf{x}_1\mid\mathbf{x}_0)} \right]  \\
+        &= \displaystyle\mathbb{E}_q \left[ -\log p(\mathbf{x}_T) -\sum_{t=2}^T \log\frac{p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t)}{q(\mathbf{x}_{t-1}\mid\mathbf{x}_t,\mathbf{x}_0)} -\log\frac{q(\mathbf{x}_{1}\mid\mathbf{x}_0)}{q(\mathbf{x}_T\mid\mathbf{x}_0)} - \log\frac{p_\theta(\mathbf{x}_0\mid\mathbf{x}_1)}{q(\mathbf{x}_1\mid\mathbf{x}_0)} \right] & \displaystyle\because -\sum_{t=2}^T \log \frac{q(\mathbf{x}_{t-1}\mid\mathbf{x}_0)}{q(\mathbf{x}_t\mid\mathbf{x}_0)} = -\log\frac{q(\mathbf{x}_{1}\mid\mathbf{x}_0)}{q(\mathbf{x}_T\mid\mathbf{x}_0)} \\
+        &= \displaystyle\mathbb{E}_q \left[ -\log\frac{p(\mathbf{x}_T)}{q(\mathbf{x}_T\mid\mathbf{x}_0)} -\sum_{t=2}^T \log\frac{p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t)}{q(\mathbf{x}_{t-1}\mid\mathbf{x}_t,\mathbf{x}_0)} - \log p_\theta(\mathbf{x}_0\mid\mathbf{x}_1) \right] \\
+        &= \displaystyle\mathbb{E}_q \left[ \underbrace{D_{KL}({q(\mathbf{x}_T\mid\mathbf{x}_0)}\Vert{p(\mathbf{x}_T)})}_{L_T} + \sum_{t=2}^T \underbrace{D_{KL}({q(\mathbf{x}_{t-1}\mid\mathbf{x}_t,\mathbf{x}_0)}\Vert{p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t)})}_{L_{t-1}} - \underbrace{\log p_\theta(\mathbf{x}_0\mid\mathbf{x}_1)}_{L_0} \right] \\
+    \end{array}`$
   - Using the prop. from the [forward process](#concept-forward-process) that $`\mathbf{x}_t \mid \mathbf{x}_0 = \displaystyle\sqrt{\bar{\alpha}_t} \mathbf{x}_0 + \sqrt{1-\bar{\alpha}_t} \epsilon`$, we have   
     - $`q(\mathbf{x}_t\mid \mathbf{x}_0) =\mathcal{N}\left( \mathbf{x}_t; \sqrt{\bar{\alpha}_t} \mathbf{x}_0, (1-\bar{\alpha}_t)\mathbf{I} \right)`$
-  - Using the KL-Divergence, we may rewrite $`\mathcal{L}`$ as
-    - $`\displaystyle\mathcal{L} = \mathbb{E}_q \left[ \underbrace{D_{\text{KL}}(q(\mathbf{x}_T\mid\mathbf{x}_0) \Vert p(\mathbf{x}_{T}))}_{L_T} + \sum_{t\gt1} \underbrace{D_{\text{KL}}(q(\mathbf{x}_{t-1} \mid \mathbf{x}_t, \mathbf{x}_0) \;\Vert\; p_\theta (\mathbf{x}_{t-1} \mid \mathbf{x}_t))}_{L_{t-1}} - \underbrace{\log p_\theta(\mathbf{x}_0 \mid \mathbf{x}_1)}_{L_0} \right]`$
-  - In the previous loss' $`L_{t-1}`$, we may derive
+  - In the previous loss' $`L_{t-1}`$, we may get the closed form posterior ($`\because`$ Gaussian)
     - $`q(\mathbf{x}_{t-1} \mid \mathbf{x}_t, \mathbf{x}_0) = \mathcal{N}(\mathbf{x}_{t-1}; \tilde{\boldsymbol{\mu}}_t(\mathbf{x}_t, \mathbf{x}_0), \tilde{\beta}_t\mathbf{I})`$ : the forward process posterior
       - where
         - $`\tilde{\boldsymbol{\mu}}_t(\mathbf{x}_t, \mathbf{x}_0) := \displaystyle\frac{\sqrt{\bar{\alpha}_{t-1}}\beta_t}{1-\bar{\alpha}_t} \mathbf{x}_0 + \frac{\sqrt{\alpha_t}(1-\bar{\alpha}_{t-1})}{1-\bar{\alpha}_t}\mathbf{x}_t`$
@@ -119,7 +148,7 @@ Ho et al. 2020
     - Def.)
       - $`\displaystyle\boldsymbol{\Sigma}_\theta(\mathbf{x}_t, t) = \sigma_t^2 \mathbf{I}`$
     - Options)
-      - $`\displaystyle \sigma_t^2 = \tilde{\beta}_t`$
+      - $`\displaystyle \sigma_t^2 = \tilde{\beta}_t`$ : the posterior variance of $`q`$
         - Result)
           - Optimal for $`\mathbf{x}_0\sim\mathcal{N}(\mathbf{0, I})`$
       - $`\displaystyle \sigma_t^2 = \frac{1-\bar{\alpha}_{t-1}}{1-\bar{\alpha}_{t}}\beta_t`$
@@ -247,6 +276,15 @@ Ho et al. 2020
 
 <br><br>
 
+## 4. Experiments
+- Settings)
+  - $`T = 1000`$
+  - Linear noise schedule $`\beta_t`$
+    - $`\beta_1 = 10^{-4}`$
+    - $`\beta_T = 0.02`$
+
+<br><br>
+
 ## Implementation
 - Network Model
   - Input
@@ -271,3 +309,5 @@ Ho et al. 2020
 - Sampling
   - Input the complete noise $`\mathbf{x}_T`$.
   - Then the reverse process will generate the image.
+
+

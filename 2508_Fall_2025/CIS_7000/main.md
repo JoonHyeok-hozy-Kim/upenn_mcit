@@ -16,7 +16,7 @@
 ## Project Game Plan
 - Reference
   - Basics
-    - [Improved DDPM (WIP)](./project/references/basics/improved_ddpm.md)
+    - [Improved DDPM](./project/references/basics/improved_ddpm.md)
     - Classifier-Free Guidance
     - Autoguidance
     - Rectified Flow
