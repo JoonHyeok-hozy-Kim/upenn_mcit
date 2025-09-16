@@ -9,7 +9,7 @@
 - High-Resolution Image Synthesis with Latent Diffusion Models (250929)
   - [DDPM](./paper_presentation/250924_latent_diffusion/paper_summary/ddpm.md)
   - [Score-Based Model](./paper_presentation/250924_latent_diffusion/paper_summary/score_based_model.md)
-  - [Latent Diffusion (WIP)](./paper_presentation/250924_latent_diffusion/paper_summary/latent_diffusion.md)
+  - [Latent Diffusion](./paper_presentation/250924_latent_diffusion/paper_summary/latent_diffusion.md)
 
 <br>
 
@@ -17,7 +17,7 @@
 - Reference
   - Basics
     - [Improved DDPM](./project/references/basics/improved_ddpm.md)
-    - Classifier-Free Guidance
+    - [(WIP) Classifier-Free Guidance](./project/references/basics/classifier_free_guidance.md)
     - Autoguidance
     - Rectified Flow
       - Implementation : [minRF](https://github.com/cloneofsimo/minRF/tree/main)
