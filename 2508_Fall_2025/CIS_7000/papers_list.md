@@ -18,8 +18,11 @@
     - Density Estimation Using Real NVP (Dinh et al., 2017),
     - Glow: Generative Flow with Invertible 1×1 Convolutions (Kingma & Dhariwal, 2018),
     - Flow++: Improving Flow-Based Generative Models with Variational Dequantization (Ho et al., 2019),
-    - STARFlow: Scaling Latent Normalizing Flows for High-resolution Image Synthesis (Gu et al., 2025)"
-    - 2025-9-22	VAE	"Auto-Encoding Variational Bayes (Kingma & Welling, 2014),
+    - STARFlow: Scaling Latent Normalizing Flows for High-resolution Image Synthesis (Gu et al., 2025)
+
+- 2025-9-22	
+  - VAE	
+    - Auto-Encoding Variational Bayes (Kingma & Welling, 2014),
     - Very Deep VAEs: A Neural Architecture for Probabilistic Autoregressive Modeling (Child, 2021),
     - NVAE: A Deep Hierarchical Variational Autoencoder (Vahdat & Kautz, 2020)
     - beta-VAE: Learning Basic Visual Concepts with a Constrained Variational Framework (Higgins et al., 2017)

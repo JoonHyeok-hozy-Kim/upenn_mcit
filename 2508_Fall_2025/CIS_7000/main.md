@@ -13,6 +13,17 @@
 
 <br>
 
+| Concept| [DDPM](./paper_presentation/250924_latent_diffusion/paper_summary/ddpm.md) (Ho 2020)| [SDE](./paper_presentation/250924_latent_diffusion/paper_summary/score_based_model.md) (Song 2021)| [CFG](./project/references/basics/classifier_free_guidance.md) (Ho 2022)|
+|--------------------|------------------------------|------------------------------------------------|----------------------------------------------------|
+| time variable| discrete step $`t`$| continuous time $`t \in [0,1]`$| log-SNR $`\lambda`$|
+| noisy sample| $`x_t`$| $`x_t`$| $`z_\lambda`$|
+| cumulative factor| $`\bar{\alpha}_t`$| $`\exp\!\left(-\int \beta(s)\, ds\right)`$| $`\alpha_\lambda^2 = \frac{1}{1+e^{-\lambda}}`$     |
+| variance| $`1-\bar{\alpha}_t`$| depends on SDE type| $`\sigma_\lambda^2 = 1-\alpha_\lambda^2`$|
+| model target| $`\epsilon_\theta(x_t, t)`$| score $`s_\theta(x_t, t)`$| $`\epsilon_\theta(z_\lambda, \lambda)`$|
+
+
+<br>
+
 ## Project Game Plan
 - Reference
   - Basics
@@ -30,6 +41,14 @@
     - Fine-Grained Perturbation Guidance via Attention Head Selection
     - [Yan](https://greatx3.github.io/Yan/)
     - [Matrix-Game 2.0](https://matrix-game-v2.github.io/)
+    - Feedback Guidance of Diffusion Models
+    - Tweeter
+      - Rosinality
+      - minRF
+
+#### Exploration
+- Distill
+  - Thread: circuits
 
 <br>
 
