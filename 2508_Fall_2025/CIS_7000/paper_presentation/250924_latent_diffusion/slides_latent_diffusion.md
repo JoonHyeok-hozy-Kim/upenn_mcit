@@ -47,12 +47,12 @@ Rombach et al. 2022
 # Contents
 ### 1. Recap & Weaknesses of **DDPM**
 ### 2. Suggestion : **Latent** Diffusion Model (**L**DM) $=$ DDPM $\times$ **VAE** 
-### 3. Upgrade : **Conditional** LDM $=$ DDPM $\times$ VAE $\times$ **(Cross) Attention**
+### 3. Upgrade : **Conditional** LDM $=$ DDPM $\times$ VAE $\times$ **Cross-Attention**
 ### 4. Pros, Cons, and **Updates** of LDM : **Stable Diffusion** v1 $\rightarrow$ v2 $\rightarrow$ v3
 
 ---
 
-## Recap of **D**enoising **D**iffusion **P**robabilistic **M**odel (**DDPM**)
+## Recap : **D**enoising **D**iffusion **P**robabilistic **M**odel (**DDPM**)
 
 #### **Forward** Process $q(\mathbf{x}_{t-1}\mid\mathbf{x}_t)$ : $\underbrace{\mathbf{x}_0}_{\text{original image}} \rightarrow \mathbf{x}_1 \rightarrow \cdots \rightarrow \mathbf{x}_{T-1} \rightarrow \underbrace{\mathbf{x}_{T}}_{\text{pure noise!}}$
 ![](./images/ddpm/004_improved_ddpm.png)

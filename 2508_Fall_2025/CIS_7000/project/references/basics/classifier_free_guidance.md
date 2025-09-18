@@ -1,3 +1,7 @@
+[Back to Main](../../../main.md)
+
+<br>
+
 # Classifier-Free Diffusion Guidance
 Ho et al. 2022
 
@@ -155,3 +159,43 @@ Dhariwal & Nichol 2021
 <br>
 
 ## 3. Guidance
+### 3.1 Classifier Guidance
+- Problem Setting)
+  - $`\mathbf{c}`$ : the classifier
+  - $`\epsilon_\theta(\mathbf{z}_\lambda,\mathbf{c})`$ : the classifier guidance
+    - where $`\epsilon_\theta(\mathbf{z}_\lambda,\mathbf{c}) \approx -\sigma_\lambda \nabla_{\mathbf{z}_\lambda} \log p(\mathbf{z}_{\lambda}\mid\mathbf{c})`$ : the diffusion score
+- Goal)
+  - We want to generate data that can be clearly classified into the chosen category.
+  - How?)
+    - Maximize $`\log p(\mathbf{z}\mid\mathbf{c})`$.
+      - Meaning)
+        - For a given class $`\mathbf{c}`$, higher $`\log p(\mathbf{z}\mid\mathbf{c})`$ indicates a higher probability of generating $`\mathbf{z}`$ that is recognized as belonging to $`\mathbf{c}`$
+    - Practical Trick)
+      - Add an extra term $`\log p(\mathbf{c\mid z})`$ to steer the gradient towards increasing the probability that the classifier identifies $`\mathbf{z}`$ as class $`\mathbf{c}`$
+        - i.e.) $`\nabla_{\mathbf{z}_\lambda} \log \tilde{p}_\theta(\mathbf{z}_\lambda\mid\mathbf{c}) = \nabla_{\mathbf{z}_\lambda} \log p_\theta(\mathbf{z}_\lambda\mid\mathbf{c}) + w \cdot \underbrace{\nabla_{\mathbf{z}_\lambda} \log  p_\theta(\mathbf{c}\mid\mathbf{z}_\lambda)}_{\text{extra guidance term!}}`$
+- Model)   
+  $`\begin{aligned}
+    \tilde{\epsilon}_\theta(\mathbf{z}_\lambda, \mathbf{c}) 
+    &= \epsilon_\theta(\mathbf{z}_\lambda, \mathbf{c}) - w\sigma_\lambda \nabla_{\mathbf{z}_\lambda} \log p_\theta(\mathbf{c}\mid\mathbf{z}_{\lambda}) \\
+    &\approx - \sigma_\lambda \nabla_{\mathbf{z}_\lambda} \left[ \log p(\mathbf{z}_{\lambda}\mid\mathbf{c}) + w\log p_\theta(\mathbf{c}\mid\mathbf{z}_{\lambda}) \right]
+  \end{aligned}`$
+  - where
+    - $`w`$ : a parameter that controls the strength of the classifier guidance
+- Usage)
+  - Replace the original $`\epsilon_\theta(\mathbf{z}_\lambda,\mathbf{c})`$ with $`\tilde{\epsilon}_\theta(\mathbf{z}_\lambda, \mathbf{c})`$ in the objective function.
+  - Then the sampling distribution goes
+    - $`\tilde{p}_\theta(\mathbf{z}_\lambda\mid\mathbf{c})\varpropto p_\theta(\mathbf{z}_\lambda\mid\mathbf{c}) \cdot p_\theta(\mathbf{c}\mid\mathbf{z}_\lambda)^w`$
+      - Desc.)
+        - By setting $`w\gt0`$, we may up-weight the probability of data for which the classifier $`p_\theta(\mathbf{c\mid z}_\lambda)`$ assigns high likelihood to the correct label. 
+- Effect)
+  - Boost the Inception score
+  - Decrease in sample diversity
+- e.g.)  
+  - Three mixture of Gaussian distributions being more separable.
+    ![](./images/classifier_free_guidance_001.png)
+
+
+
+<br>
+
+[Back to Main](../../../main.md)
