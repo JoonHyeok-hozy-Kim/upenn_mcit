@@ -28,9 +28,9 @@
 - Reference
   - Basics
     - [Improved DDPM](./project/references/basics/improved_ddpm.md)
-    - [(WIP) Classifier-Free Guidance](./project/references/basics/classifier_free_guidance.md)
-    - Autoguidance
-    - Rectified Flow
+    - [Classifier-Free Guidance](./project/references/basics/classifier_free_guidance.md)
+    - [Autoguidance](./project/references/basics/autoguidance.md)
+    - [(WIP) Rectified Flow](./project/references/basics/rectified_flow.md)
       - Implementation : [minRF](https://github.com/cloneofsimo/minRF/tree/main)
     - Conditional Flow Matching
     - Stable Diffusion 3

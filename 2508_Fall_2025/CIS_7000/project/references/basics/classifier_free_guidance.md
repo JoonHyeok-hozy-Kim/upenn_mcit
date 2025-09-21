@@ -3,66 +3,6 @@
 <br>
 
 # Classifier-Free Diffusion Guidance
-Ho et al. 2022
-
-## 1. Introduction
-#### Concept) Temperature
-- Def.) $`T`$
-  - A scaling parameter that controls the "sharpness" of a probability distribution.
-  - In the softmax, $`p_i = \frac{\exp(z_i/T)}{\sum_j \exp(z_j/T)},`$
-    - where $z_i$ are the logits.
-- Properties
-  - $`T = 1`$: recovers the standard softmax.
-  - $`T < 1`$: distribution becomes **sharper** (high-confidence, deterministic; one class dominates).
-    - i.e.) The low temperature!
-  - $`T > 1`$: distribution becomes **flatter** (uncertain, closer to uniform).
-  - $`\lim_{T\to 0}`$: approaches an **argmax** (one-hot selection).
-  - $`\lim_{T\to \infty}`$: approaches a **uniform distribution**.
-- Usage
-  - In generation
-    - lower $`T\rightarrow`$ higher quality but lower diversity; 
-    - higher $`T\rightarrow`$ more diverse but lower quality.
-  - In knowledge distillation: temperature is used to smooth teacher predictions.
-
-<br>
-
-
-### Concept) Classifier Guidance
-Dhariwal & Nichol 2021
-- Desc.)
-  - A technique to boost the sample quality of a diffusion model using an extra trained classifier.
-  - Enabled generating low temperature samples from a diffusion model
-    - Concept) Low [Temperature](#concept-temperature)
-      - Desc.)
-        - A technique that makes a probability distribution sharper
-      - Prop.)
-        - Sharper distribution leads to more deterministic sampling.
-        - Thus, the output tends to be more stable and of higher quality, but the diversity decreases.
-    - cf.) Similar to BigGAN and low temperature Glow
-    - How?)
-      - Consider a labeled data set $`\mathcal{D} = (x,y)`$
-      - Mix a diffusion model's score estimate with the input gradient of the log probability of a classifier.
-        - i.e.) $`\hat{\epsilon_\theta}(x_t, y) = \epsilon_\theta(x_t, t) - s\cdot\sigma_t \underbrace{\nabla_{x_t} \log p(y\mid x_t)}_{\text{the gradient term!}}`$ : the reverse diffusion.
-          - where
-            - $`\epsilon_\theta`$ : the noise that the DM estimates
-            - $`\nabla_{x_t} \log p(y\mid x_t)`$ : the classifier gradient 
-              - i.e.) the direction that the probability of $`p(y\mid x)`$ increases.
-            - $`s`$ : the guidance strength
-      - By varying the strength $`(s)`$ of the classifier gradient, they could trade off Inception score and FID score.
-        - Bigger $`s`$ $`\Rightarrow`$ More samples like that classifier $`y`$
-          - Then
-            - Inception Score increases : more recognizable
-            - FID decreases : more realistic
-            - Less diversity
-- Drawback)
-  - Complicates the diffusion model training pipeline.
-    - Why?)
-      - Requires training an extra classifier in DM
-      - Classifier must be trained on noisy data so it is generally not possible to plug in a pre-trained classifier.
-  - Mixing $`\nabla_{x_t} \log p(y\mid x_t)`$ can be interpreted as a gradient-based adversarial attack!
-    - cf.) Just like in GAN models where the generator's adversarial attack improves the quality of the generation.
-
-<br><br>
 
 ## 2. Background
 ### Concept) Continuous Time Diffusion Model
@@ -158,8 +98,63 @@ Dhariwal & Nichol 2021
 
 <br>
 
+#### Concept) Temperature
+- Def.) $`T`$
+  - A scaling parameter that controls the "sharpness" of a probability distribution.
+  - In the softmax, $`p_i = \frac{\exp(z_i/T)}{\sum_j \exp(z_j/T)},`$
+    - where $z_i$ are the logits.
+- Properties
+  - $`T = 1`$: recovers the standard softmax.
+  - $`T < 1`$: distribution becomes **sharper** (high-confidence, deterministic; one class dominates).
+    - i.e.) The low temperature!
+  - $`T > 1`$: distribution becomes **flatter** (uncertain, closer to uniform).
+  - $`\lim_{T\to 0}`$: approaches an **argmax** (one-hot selection).
+  - $`\lim_{T\to \infty}`$: approaches a **uniform distribution**.
+- Usage
+  - In generation
+    - lower $`T\rightarrow`$ higher quality but lower diversity; 
+    - higher $`T\rightarrow`$ more diverse but lower quality.
+  - In knowledge distillation: temperature is used to smooth teacher predictions.
+
+<br>
+
+#### Concept) Trade-off between IS and FID
+- Inception Score (IS)
+  - Def.)
+    - $`\text{IS} = \exp\Big(\mathbb{E}_x\big[D_{KL}(p(y\mid x)\mid p(y))\big]\Big)`$
+  - Prop.)
+    - **Increases** when the generated images are more class-distinct and confident
+    - **Larger** IS $`\Leftrightarrow`$ More distinctive classes $`\Leftrightarrow`$ **Better**!
+- Fréchet Inception Distance (FID)
+  - Def.)
+    - Let
+      - $`p_{\text{data}} = \mathcal{N}(\mu_{\text{data}}, \Sigma_{\text{data}})`$
+      - $`p_{\text{gen}} = \mathcal{N}(\mu_{\text{gen}}, \Sigma_{\text{gen}})`$
+    - Then
+      - $`\text{FID} = \Vert \mu_{\text{data}} - \mu_{\text{gen}} \Vert^2 + \text{Tr} \left( \Sigma_{\text{data}} + \Sigma_{\text{gen}} - 2\sqrt{\Sigma_{\text{data}}\Sigma_{\text{gen}}} \right)`$
+  - Prop.)
+    - **Decreases** when the distribution of the generated data is similar to the original data's distribution.
+    - **Smaller** FID $`\Leftrightarrow`$ More similarity $`\Leftrightarrow`$ **Better**!
+- Trade-off between IS and FID
+  - If the generated data becomes more class distinct, then
+    - IS increases
+    - FID worsens (increases) because the diversity is reduced and the generated distribution deviates from the real one.
+
+<br>
+
 ## 3. Guidance
 ### 3.1 Classifier Guidance
+Dhariwal & Nichol 2021
+- Desc.)
+  - A technique to boost the sample quality of a diffusion model using an extra trained classifier.
+  - Enabled generating low temperature samples from a diffusion model
+    - Concept) Low [Temperature](#concept-temperature)
+      - Desc.)
+        - A technique that makes a probability distribution sharper
+      - Prop.)
+        - Sharper distribution leads to more deterministic sampling.
+        - Thus, the output tends to be more stable and of higher quality, but the diversity decreases.
+    - cf.) Similar to **BigGAN** and low temperature **Glow**
 - Problem Setting)
   - $`\mathbf{c}`$ : the classifier
   - $`\epsilon_\theta(\mathbf{z}_\lambda,\mathbf{c})`$ : the classifier guidance
@@ -171,8 +166,10 @@ Dhariwal & Nichol 2021
       - Meaning)
         - For a given class $`\mathbf{c}`$, higher $`\log p(\mathbf{z}\mid\mathbf{c})`$ indicates a higher probability of generating $`\mathbf{z}`$ that is recognized as belonging to $`\mathbf{c}`$
     - Practical Trick)
-      - Add an extra term $`\log p(\mathbf{c\mid z})`$ to steer the gradient towards increasing the probability that the classifier identifies $`\mathbf{z}`$ as class $`\mathbf{c}`$
-        - i.e.) $`\nabla_{\mathbf{z}_\lambda} \log \tilde{p}_\theta(\mathbf{z}_\lambda\mid\mathbf{c}) = \nabla_{\mathbf{z}_\lambda} \log p_\theta(\mathbf{z}_\lambda\mid\mathbf{c}) + w \cdot \underbrace{\nabla_{\mathbf{z}_\lambda} \log  p_\theta(\mathbf{c}\mid\mathbf{z}_\lambda)}_{\text{extra guidance term!}}`$
+      - Mix a diffusion model's score estimate with the input gradient of the log probability of a classifier
+        - $`\nabla_{\mathbf{z}_\lambda} \log \tilde{p}_\theta(\mathbf{z}_\lambda\mid\mathbf{c}) = \nabla_{\mathbf{z}_\lambda} \log p_\theta(\mathbf{z}_\lambda\mid\mathbf{c}) + w \cdot \underbrace{\nabla_{\mathbf{z}_\lambda} \log  p_\theta(\mathbf{c}\mid\mathbf{z}_\lambda)}_{\text{extra guidance term!}}`$
+        - Why?) 
+          - The extra term $`\log p(\mathbf{c\mid z})`$ may steer the gradient towards increasing the probability that the classifier identifies $`\mathbf{z}`$ as class $`\mathbf{c}`$
 - Model)   
   $`\begin{aligned}
     \tilde{\epsilon}_\theta(\mathbf{z}_\lambda, \mathbf{c}) 
@@ -188,12 +185,65 @@ Dhariwal & Nichol 2021
       - Desc.)
         - By setting $`w\gt0`$, we may up-weight the probability of data for which the classifier $`p_\theta(\mathbf{c\mid z}_\lambda)`$ assigns high likelihood to the correct label. 
 - Effect)
-  - Boost the Inception score
-  - Decrease in sample diversity
+  - By varying the strength $`w`$ of the classifier gradient, they could [trade off](#concept-trade-off-between-is-and-fid) Inception score and FID score.
+    - Bigger $`s`$ $`\Rightarrow`$ More samples like that classifier $`y`$
+      - Then
+        - Inception Score increases : more recognizable
+        - FID decreases : more realistic
+        - Less diversity
 - e.g.)  
   - Three mixture of Gaussian distributions being more separable.
     ![](./images/classifier_free_guidance_001.png)
+- Drawback)
+  - Complicates the diffusion model training pipeline.
+    - Why?)
+      - Requires training an extra classifier in DM
+      - Classifier must be trained on noisy data so it is generally not possible to plug in a pre-trained classifier.
+  - Mixing $`\nabla_{\mathbf{z}_{\lambda}} \log p(\mathbf{c}\mid \mathbf{z}_{\lambda})`$ can be interpreted as a gradient-based adversarial attack!
+    - cf.) Just like in GAN models where the generator's adversarial attack improves the quality of the generation.
 
+<br>
+
+### 3.2 Classifier-Free Guidance
+- Goal)
+  - Have the same effect as the [classifier guidance](#31-classifier-guidance), but without using the gradients.
+    - cf.) $`\nabla_{\mathbf{z}_{\lambda}} \log p(\mathbf{c}\mid \mathbf{z}_{\lambda})`$
+- Idea)
+  - Simultaneously train the **conditional** and the **unconditional** models in a single neural network!
+  - How?)
+    - Randomly set $`\mathbf{c} = \varnothing`$ with some probability $`p_{\text{uncond}}`$.
+      - If $`\mathbf{c} = \varnothing`$, we train the unconditional model
+      - Else, we train the conditional model
+- Model)
+  - Let
+    - $`p_\theta(\mathbf{z})`$ : an unconditional denoising diffusion model
+      - s.t. parameterized through the score estimator $`\epsilon_\theta(\mathbf{z}_\lambda)`$
+    - $`p_\theta(\mathbf{z}\vert\mathbf{c})`$ : an unconditional denoising diffusion model
+      - s.t. parameterized through the score estimator $`\epsilon_\theta(\mathbf{z}_\lambda,\mathbf{c})`$
+  - Then, we may set up the model as
+    - $`\tilde{\epsilon}_\theta(\mathbf{z}_\lambda,\mathbf{c}) = (1+w)\epsilon_\theta(\mathbf{z}_\lambda,\mathbf{c}) - w \epsilon_\theta(\mathbf{z}_\lambda)`$
+- Prop.)
+  - No classifier gradient in the model.
+    - Thus, taking a step in the $`\tilde{\epsilon}_\theta`$ direction cannot be interpreted as a gradient-based adversarial attack on an image classifier.
+  - Not even implicitly has the classifier gradient in the model.
+    - $`\tilde{\epsilon}_\theta`$ is constructed from score estimates that are non-conservative vector fields.
+      - Why?) An unconstrained neural network is used!
+      - cf.) A non-conservative vector fields has no mapped scalar function.
+      - Thus, no scalar potential function exists such as a classifier log likelihood.
+    - cf.) Implicit Classifier Gradient $`\epsilon^*`$
+      - Derivation)
+        - Start from the Bayes Rule s.t. $`p^i(\mathbf{c\mid z}_\lambda) \varpropto \displaystyle\frac{p(\mathbf{z}_\lambda\mid\mathbf{c})}{p(\mathbf{z}_\lambda)}`$.
+        - If we have access to exact scores $`\epsilon^*(\mathbf{z}_\lambda,\mathbf{c})`$ and $`\epsilon^*(\mathbf{z}_\lambda)`$ we may get the gradient of this classifier as 
+          - $`\nabla_{\mathbf{z}_\lambda} \log p^i(\mathbf{c}\mid \mathbf{z}_\lambda) = -\frac{1}{\sigma_\lambda} \left[\epsilon^*(\mathbf{z}_\lambda,\mathbf{c})-\epsilon^*(\mathbf{z}_\lambda)\right]`$
+- Algorithms)
+  - Training   
+    ![](./images/classifier_free_guidance_002.png)
+  - Sampling   
+    ![](./images/classifier_free_guidance_003.png)
+- Strength)
+  - Simplicity.
+    - One line change in the code enabled the trade-off between IS and FID.
+    - No need for an extra trained classifier like the [classifier guidance](#31-classifier-guidance) model.
 
 
 <br>
