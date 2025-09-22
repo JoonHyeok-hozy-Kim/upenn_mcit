@@ -28,8 +28,13 @@
 - Reference
   - Basics
     - [Improved DDPM](./project/references/basics/improved_ddpm.md)
-    - [Classifier-Free Guidance](./project/references/basics/classifier_free_guidance.md)
+      - Interpolated reverse process variance
+      - Non-Linear noise schedule
+      - Non-Uniform step distribution during training
+    - [Classifier-Free Guidance](./project/references/basics/classifier_free_guidance.md) 
+      - Train conditional $`D_1`$ and unconditional $`D_0`$ simultaneously
     - [Autoguidance](./project/references/basics/autoguidance.md)
+      - Train original $`D_1`$ and penalized $`D_0`$ simultaneously under CFG setting.
     - [(WIP) Rectified Flow](./project/references/basics/rectified_flow.md)
       - Implementation : [minRF](https://github.com/cloneofsimo/minRF/tree/main)
     - Conditional Flow Matching
