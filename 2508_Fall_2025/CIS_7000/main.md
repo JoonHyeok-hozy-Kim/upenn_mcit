@@ -60,16 +60,10 @@
 ## Presentations in Course
 |Date|Subject|Papers|
 |:-:|:-:|:-|
-|2025-9-10|[AR1](./notes/250910.md)|- Conditional Image Generation with PixelCNN Decoders (van den Oord et al., 2016) <br>- (v) Mamba: Linear-Time Sequence Modeling with Selective State Spaces (Gu & Dao, 2023)  <br>- (v) Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation (Sun et al., 2024) <br>- (v) Learning to (Learn at Test Time): RNNs with Expressive Hidden States (Sun et al., 2024) <br> - (v) Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction (Tian et al., 2024)|
-| 2|[]()|- |
-| 3|[]()|- |
-| 4|[]()|- |
-| 5|[]()|- |
-| 6|[]()|- |
-| 7|[]()|- |
-| 8|[]()|- |
-| 9|[]()|- |
-|10|[]()|- |
+|9/10|[AutoRegressive Models](./notes/250910.md)|- Conditional Image Generation with PixelCNN Decoders (van den Oord et al., 2016) <br>- (v) Mamba: Linear-Time Sequence Modeling with Selective State Spaces (Gu & Dao, 2023)  <br>- (v) Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation (Sun et al., 2024) <br>- (v) Learning to (Learn at Test Time): RNNs with Expressive Hidden States (Sun et al., 2024) <br> - (v) Visual Autoregressive Modeling: Scalable Image Generation via Next-Scale Prediction (Tian et al., 2024)|
+|9/15|Tokenizers|- |
+|9/17|[Normalizing Flow](./notes/250917.md)|- |
+|9/22|[Variational Autoencoder](./notes/250922.md)|- |
 
 
 
