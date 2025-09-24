@@ -123,16 +123,26 @@ cf.) Later improved to $L_{\text{hybrid}} = L_{\text{simple}} + \lambda L_{\text
   </div>
 </div>
 
+---
+
+#### Weakness 3 : Slow Sampling
+
+
+#### **Reverse** Process 
+![](./images/ddpm/004_rev_improved_ddpm.png)
+
+- $p_\theta(\mathbf{x}_{t}\mid\mathbf{x}_{t-1})$ : $\underbrace{\underbrace{\mathbf{x}_{T}}_{\text{pure noise}} \rightarrow \mathbf{x}_1 \rightarrow \cdots \rightarrow \mathbf{x}_{T-1} \rightarrow \underbrace{\mathbf{x}_0'}_{\text{synthetic image!}}}_{T\text{ steps!}}$
+
 
 ---
 
 ## Suggestion : **Latent** Diffusion
 
-#### 1. Encode image to the Latent Space (VAE)
+#### 1. **Encode** image to the Latent Space (**VAE**)
 
 #### 2. Do diffusion in the Latent Space (Diffusion Model)
 
-#### 3. Decode image to the Pixel Space (VAE)
+#### 3. **Decode** image back to the Pixel Space (**VAE**)
 
 ---
 

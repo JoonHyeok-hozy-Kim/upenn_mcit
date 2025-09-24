@@ -35,9 +35,9 @@
       - Train conditional $`D_1`$ and unconditional $`D_0`$ simultaneously
     - [Autoguidance](./project/references/basics/autoguidance.md)
       - Train original $`D_1`$ and penalized $`D_0`$ simultaneously under CFG setting.
-    - [(WIP) Rectified Flow](./project/references/basics/rectified_flow.md)
+    - [Rectified Flow](./project/references/basics/rectified_flow.md)
       - Implementation : [minRF](https://github.com/cloneofsimo/minRF/tree/main)
-    - Conditional Flow Matching
+    - [(WIP) Conditional Flow Matching]()
     - Stable Diffusion 3
   - Project Related
     - Self-Rectifying Diffusion Sampling with Perturbed-Attention Guidance
