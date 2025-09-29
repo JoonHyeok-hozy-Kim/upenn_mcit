@@ -7,9 +7,9 @@
 - (Stolen) Auto-Encoder Variational Bayes
   - [VAE Paper Summary](./paper_presentation/250917_vae/paper_note.md)
 - High-Resolution Image Synthesis with Latent Diffusion Models (250929)
-  - [DDPM](./paper_presentation/250924_latent_diffusion/paper_summary/ddpm.md)
-  - [Score-Based Model](./paper_presentation/250924_latent_diffusion/paper_summary/score_based_model.md)
-  - [Latent Diffusion](./paper_presentation/250924_latent_diffusion/paper_summary/latent_diffusion.md)
+  - [DDPM](./paper_presentation/250931_latent_diffusion/paper_summary/ddpm.md)
+  - [Score-Based Model](./paper_presentation/250931_latent_diffusion/paper_summary/score_based_model.md)
+  - [Latent Diffusion](./paper_presentation/250931_latent_diffusion/paper_summary/latent_diffusion.md)
 
 <br>
 

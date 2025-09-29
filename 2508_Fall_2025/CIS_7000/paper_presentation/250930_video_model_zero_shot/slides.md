@@ -39,8 +39,8 @@ Google Deepmind 2025
 ---
 
 # Contents
-### 1. Key Idea 1 : Analogy with **LLMs** as a Generalist Model
-### 2. Key Idea 2 : **Hierarchical Categorizations** of Visual Capabilities
+### 1. Central Thesis : **Video Model**'s Analogy with **LLMs** as a Generalist Model
+### 2. Framework : **Hierarchical Categorizations** of Visual Capabilities
 ### 3. Methods, Evaluations, & Experiments
 ### 4. Limits & Future Outlook
 
@@ -197,16 +197,16 @@ Maybe yes with...
 #### Compare...
 <div class="flex-container">
   <div> 
-  <img class="right-img" src="./images/014.png" height="150px">
+  <img class="right-img" src="./images/014.png" height="170px">
   </div>
   <div> 
-  <img class="right-img" src="./images/009.webp" height="150px">
+  <img class="right-img" src="./images/009.webp" height="170px">
   </div>
   <div> 
-  <img class="right-img" src="./images/014.webp" height="150px">
+  <img class="right-img" src="./images/014.webp" height="170px">
   </div>
   <div> 
-  <img class="right-img" src="./images/014_2.webp" height="150px">
+  <img class="right-img" src="./images/014_2.webp" height="170px">
   </div>
 </div>
 
@@ -249,6 +249,9 @@ Maybe yes with...
 # Result
 
 <div class="flex-container">
+  <div> 
+  <img class="right-img" src="./images/018.png" width="1000px">
+  </div>
   <div>
 
 - Veo2 vs Veo3
@@ -258,9 +261,6 @@ Maybe yes with...
 - Simple, Irregular 
   - Beats Image
 
-  </div>
-  <div> 
-  <img class="right-img" src="./images/018.png" width="1000px">
   </div>
 </div>
 

@@ -65,7 +65,7 @@ cf.) Later improved to $L_{\text{hybrid}} = L_{\text{simple}} + \lambda L_{\text
 
 ---
 
-### Implementing DDPM : UNet
+### Implementing DDPM : **UNet** Architecture
 
 ![w:800px](./images/ddpm/003.png)
 
@@ -133,7 +133,7 @@ cf.) Later improved to $L_{\text{hybrid}} = L_{\text{simple}} + \lambda L_{\text
 ![h:240px](./images/latent_diffusion/013.png)
 
 ---
-## Model Structure
+## Model Structure : Perceptual Compression $\times$ Latent Diffusion
 #### **VAE** : Perceptual Compression Model
 #### **Diffusion** : Latent Diffusion Model
 ![h:420px](./images/presentation/4_1.png)
@@ -181,7 +181,7 @@ cf.) Later improved to $L_{\text{hybrid}} = L_{\text{simple}} + \lambda L_{\text
 
 ---
 
-#### Phenomenal Shift : **Expressive** Conditional Image Generation
+## Phenomenal Shift : **Expressive** Conditional Image Generation
 ![](./images/presentation/002_0.png)
 
 ---
@@ -225,7 +225,7 @@ $\text{Attention}^{(i)}\left(Q^{(i)},K^{(i)},V^{(i)}\right) =  \text{Softmax}\le
 #### Questionable when high precision is required
 - Why?
   - Some information compressed by the VAE may not be recovered.
-  - Stochastic nature of the Diffusion Models (Then, deterministic Flow?)
+  - Stochastic nature of the Diffusion Models (Then, deterministic? Flow?)
 #### High training cost
 - Inference is relatively cheaper though...
 
