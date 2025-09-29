@@ -71,6 +71,7 @@
 |9/15|Tokenizers|- |
 |9/17|[Normalizing Flow](./notes/250917.md)|- |
 |9/22|[Variational Autoencoder](./notes/250922.md)|- |
+|9/29|[Energy Based Models](./notes/250929.md)|- |
 
 
 
