@@ -31,6 +31,25 @@ Chen et al. 2018
     - $`p_t = [\phi_t]_* p_0`$
       - where the push-forward (change of variable) operator $`*`$ is defined by
         - $`[\phi_t]_* p_0 = \displaystyle p_0\left( \phi_t^{-1}(x) \right) \det\left[\frac{\partial \phi_t^{-1}}{\partial x}(x)\right]`$
+- Drawbacks)
+  - ODE simulations for the forward and backward propagation are computationally expensive.
+    - cf.) ODE simulation refers to simulating $`x_t, \forall t\in[0,1]`$ 
+    - Later works that tried to mitigate this by
+      - regularizing the ODE to be easier to solve
+        - Dupont et al. 2018
+        - Yang et al. 2019
+        - Finlay et al. 2020
+        - Onken et al 2021
+        - Tong et al 2020
+        - Kelly et al 2020
+        - Du et al 2022
+      - developing simulation free CNF training
+        - Rozen et al 2021
+        - Ben-Hamu et all 2022
+    - Diffusion models utilized simulation-free trainings.
+      - The target probability path is indirectly defined.
+      - Training is done by the denoising process, a **conditional objective** that provides unbiased gradients w.r.t. the score matching object.
+      - [CFM](#32-conditional-flow-matching) is inspired by this idea.
 
 <br><br>
 
@@ -170,44 +189,51 @@ Chen et al. 2018
       - $`p_1(x\mid x_1)`$ is a concentrated Gaussian distribution centered at $`x_1`$
         - $`\mu_1(x_1) = x_1`$
         - $`\sigma_1(X_1) = \sigma_{\min}`$
-- Simplest Form)
-  - Why simplest?)
-    - There are infinitely many vector fields in the Gaussian family.
-    - However, the vast majority are made by the components that leave the underlying distribution invariant.
-      - e.g.) Rotational components
-        - Since the Gaussian distribution has the perfect sphere shape, rotational components cannot affect the underlying distribution.
-    - They only result in unnecessary extra computations.
-    - Thus, we may consider the simplest form only.
-  - Flow $`\psi_t(x)`$
-    - For
-      - $`x\sim\mathcal{N}`$
-      - $`p_t(x\mid x_1) = \mathcal{N}(x ;\; \mu_t(x_1), \sigma_t(x_1)^2 I)`$ : the conditional probability path
-    - Consider the **flow** that satisfies the [CMF](#32-conditional-flow-matching) as
-      - $`\psi_t(x) = \sigma_t(x_1) x + \mu_t(x_1)`$ s.t.
-          - $`\displaystyle\frac{\text{d}}{\text{d}t} \psi_t(x) = u_t(\psi_t(x)\mid x_1)`$ 
-            - i.e.) The target vector field is the conditional vector field for the [CMF](#32-conditional-flow-matching)
-          - $`[\psi_t]_* p(x) = p_t(x\mid x_1)`$
-            - i.e.) The target probability path is the [conditional probability path](#concept-conditional-probability-path)
-    - Props.)
-      - If $`x\sim\mathcal{N}(0,I)`$, then $`\psi_t(x)\sim\mathcal{N}(\mu_t(x_1), \sigma_t(x_1)^2 I)`$
-        - Why?)
-          - Since $`x\sim\mathcal{N}`$, the affine transformation of $`x`$ is also Gaussian.
-          - Considering that $`\sigma_t(x_1)`$ and $`\mu_t(x_1)`$ are given,
-            - $`\psi_t(x) = \sigma_t(x_1) x + \mu_t(x_1)`$ is also a affine transformation of $`x`$.
-          - Thus, $`\psi_t(x)\sim\mathcal{N}`$
-            - cf.) $`\psi_t(\cdot)`$ itself is just a deterministic vector field.
-  - CFM Loss)
-    - $`\displaystyle\mathcal{L}_{\text{CFM}}(\theta) = \mathbb{E}_{t,q(x_1),p(x_0)}\left[ \Big\Vert v_t(\psi_t(x_0)) - \underbrace{\frac{\text{d}}{\text{d}t} \psi_t(x_0)}_{u_t(\psi_t(x_0)\mid x_1)} \Big\Vert^2 \right]`$
-      - where
-        - $`x_0\sim p(x_0) = \mathcal{N}(0,I)`$
-          - cf.) Recall that we want $`x\sim\mathcal{N}\Rightarrow\psi_t(x)\sim\mathcal{N}`$
+
+### Concept) Simplest Gaussian Probability Path
+- Why simplest?)
+  - There are infinitely many vector fields in the Gaussian family.
+  - However, the vast majority are made by the components that leave the underlying distribution invariant.
+    - e.g.) Rotational components
+      - Since the Gaussian distribution has the perfect sphere shape, rotational components cannot affect the underlying distribution.
+  - They only result in unnecessary extra computations.
+  - Thus, we may consider the simplest form only.
+- Model)
+  - For
+    - $`x\sim\mathcal{N}`$
+    - $`p_t(x\mid x_1) = \mathcal{N}(x ;\; \mu_t(x_1), \sigma_t(x_1)^2 I)`$ : the conditional probability path
+      - where $`\mu_t`$ and $`\sigma_t`$ are differentiable by $`t`$
+  - Consider the **flow** that satisfies the [CFM](#32-conditional-flow-matching) as
+    - $`\psi_t(x) = \sigma_t(x_1) x + \mu_t(x_1)`$ s.t.
+        - $`\displaystyle\frac{\text{d}}{\text{d}t} \psi_t(x) = u_t(\psi_t(x)\mid x_1)`$ 
+          - i.e.) The target vector field is the conditional vector field for the [CFM](#32-conditional-flow-matching)
+        - $`[\psi_t]_* p(x) = p_t(x\mid x_1)`$
+          - i.e.) The target probability path is the [conditional probability path](#concept-conditional-probability-path)
+  - Props.)
+    - If $`x\sim\mathcal{N}(0,I)`$, then $`\psi_t(x)\sim\mathcal{N}(\mu_t(x_1), \sigma_t(x_1)^2 I)`$
+      - Why?)
+        - Since $`x\sim\mathcal{N}`$, the affine transformation of $`x`$ is also Gaussian.
+        - Considering that $`\sigma_t(x_1)`$ and $`\mu_t(x_1)`$ are given,
+          - $`\psi_t(x) = \sigma_t(x_1) x + \mu_t(x_1)`$ is also a affine transformation of $`x`$.
+        - Thus, $`\psi_t(x)\sim\mathcal{N}`$
+          - cf.) $`\psi_t(\cdot)`$ itself is just a deterministic vector field.
+    - Various models are available depending on how $`\mu_t`$ and $`\sigma_t`$ are defined
+      - e.g.)
+        - [Diffusion Conditional VFs](#eg-diffusion-conditional-vfs)
+        - [Optimal Transport Conditional VFs](#eg-optimal-transport-conditional-vfs)
+      - Comparison : [Diffusion vs OT]()
+- CFM Loss)
+  - $`\displaystyle\mathcal{L}_{\text{CFM}}(\theta) = \mathbb{E}_{t,q(x_1),p(x_0)}\left[ \Big\Vert v_t(\psi_t(x_0)) - \underbrace{\frac{\text{d}}{\text{d}t} \psi_t(x_0)}_{u_t(\psi_t(x_0)\mid x_1)} \Big\Vert^2 \right]`$
+    - where
+      - $`x_0\sim p(x_0) = \mathcal{N}(0,I)`$
+        - cf.) Recall that we want $`x\sim\mathcal{N}\Rightarrow\psi_t(x)\sim\mathcal{N}`$
 
 <br>
 
 ### Theorem 3.)
 - Thm.)
   - Let
-    - $`p_t(x \mid x_1)`$ : a Gaussian probability path
+    - $`p_t(x \mid x_1)`$ : a [Gaussian conditional probability path](#concept-gaussian-conditional-probability-path-family)
       - i.e.) $`p_t(x\mid x_1) = \mathcal{N}(x ;\; \mu_t(x_1), \sigma_t(x_1)^2 I)`$
     - $`\psi_t`$ : the corresponding flow map of $`p_t(x\mid x_1)`$ and $`u_t(\psi_t(x)\mid x_1)`$
   - Then the unique vector field that defines $`\psi_t`$ has the form:
@@ -230,6 +256,136 @@ Chen et al. 2018
       &= \sigma_t'(x_1) \cdot \left(\frac{y-\mu_t(x_1)}{\sigma_t(x_1)}\right) + \mu_t'(x_1) & \because (E)
       &= \frac{\sigma_t'(x_1)}{\sigma_t(x_1)} (x-\mu_t(x_1)) + \mu_t'(x_1) & \text{QED}
     \end{aligned}`$
+
+<br>
+
+#### e.g.) Diffusion Conditional VFs
+- Reversed [Variance Exploding (VE)](../../../paper_presentation/250924_latent_diffusion/paper_summary/score_based_model.md#model-ve-sde) path
+  - $`p_t(x) = \mathcal{N}(x;\; x_1, \sigma_{1-t}^2 I)`$
+    - where $`\sigma_t`$ is an increasing function and
+        - $`\sigma_0 = 0`$
+        - $`\sigma_1 \gg 1`$
+    - i.e.)
+      - $`\mu_t(x_1) = x_1`$
+      - $`\sigma_t(x_1) = \sigma_{1-t}`$
+  - Then by [Thm.3](#theorem-3), we may get the **conditional vector field** as   
+    $`\begin{aligned}
+      u_t(x\mid x_1) &= \frac{\sigma_t'(x_1)}{\sigma_t(x_1)} (x-\mu_t(x_1)) + \mu_t'(x_1) \\
+      &= -\frac{\sigma_{1-t}'}{\sigma_{1-t}} (x-x_1) & \because \frac{\text{d}}{\text{d}t}\mu_t(x_1)=0,\; \frac{\text{d}}{\text{d}t}\sigma_t(x_1)= -\sigma_{1-t}' \\
+    \end{aligned}`$
+- Reversed [Variance Preserving (VP)](../../../paper_presentation/250924_latent_diffusion/paper_summary/score_based_model.md#model-vp-sde) path
+  - $`p_t(x) = \mathcal{N}(x;\; \alpha_{1-t} x_1, (1-\alpha_{1-t}^2) I)`$
+    - where
+      - $`\alpha_{t} = e^{-\frac{1}{2}T(t)}`$
+      - $`T(t) = \displaystyle\int_0^t \beta(s)\text{d}s`$
+      - $`\beta`$ is the noise scale function.
+    - i.e.)
+      - $`\mu_t(x_1) = \alpha_{1-t} x_1`$
+      - $`\sigma_t(x_1) = \sqrt{1-\alpha_{1-t}^2}`$
+  - Then by [Thm.3](#theorem-3), we may get the **conditional vector field** as   
+    $`\begin{aligned}
+      u_t(x\mid x_1) &= \frac{\sigma_t'(x_1)}{\sigma_t(x_1)} (x-\mu_t(x_1)) + \mu_t'(x_1) \\
+      &= \frac{-\frac{-2 \alpha_{1-t} \alpha_{1-t}'}{2\sqrt{1-\alpha_{1-t}^2}}}{\sqrt{1-\alpha_{1-t}^2}} (x-\alpha_{1-t} x_1) - \alpha_{1-t}' x_1 \\
+      &= \frac{\alpha_{1-t}\alpha_{1-t}'}{1-\alpha_{1-t}^2} (x - \alpha_{1-t} x_1) - \alpha_{1-t}' x_1 \\
+      &= \alpha_{1-t}' x_1 \left(\frac{\alpha_{1-t}^2}{1-\alpha_{1-t}^2} - 1\right) + \frac{\alpha_{1-t}\alpha_{1-t}'x}{1-\alpha_{1-t}^2} \\
+      &=  -\frac{\alpha_{1-t}' x_1}{1-\alpha_{1-t}^2} + \frac{\alpha_{1-t}\alpha_{1-t}'x}{1-\alpha_{1-t}^2} \\
+      &= \frac{\alpha_{1-t}'}{1-\alpha_{1-t}^2} (\alpha_{1-t} x - x_1) \\
+      &  \vdots \\
+      &= -\frac{T'(1-t)}{2} \left[\frac{e^{-T(1-t)}x - e^{-\frac{1}{2}T(1-t)}x_1}{1-e^{-T(1-t)}}\right]
+    \end{aligned}`$
+- Prop.)
+  - Coincides with the vector field in the [deterministic probability flow](../../../paper_presentation/250924_latent_diffusion/paper_summary/score_based_model.md#43-probability-flow-and-neural-odes) from the Score-Based Models
+  - Combining the **diffusion conditional VF** with the [FM](#3-flow-matching) objective offers more stable and robust results.
+  - Diffusion processes cannot reach a true noise distribution in finite time
+    - i.e.) $`x_T`$ is not pure noise but the approximation.
+    - However, in [CFM](#32-conditional-flow-matching), since $`p_0(x)`$ is deterministically set to be pure Gaussian noise, this problem never happens.
+
+<br>
+
+#### e.g.) Optimal Transport Conditional VFs
+- Idea)
+  - Define the mean and the std to simply change linearly in time $`t`$
+    - Why?)
+      - Recall that the [Optimal Transport (OT)](rectified_flow.md#concept-transport-map) attempts to minimize the cost function.
+      - The McCann's Theorem proved that the affine transformation is the optimal transportation map between two Gaussian distributions.
+        - cf.) McCann's Displacement Interpolation   
+          $`\begin{aligned}
+            \psi_t(x_0) &= (1-t)x_0 + t\psi_1(x_1) \\
+            &= (1-t)x_0 + t(\sigma_{\min}x_0 + x_1) \\
+            &= \underbrace{[1-(1-\sigma_{\min})t]}_{\sigma_t} x_0 + \underbrace{t x_1}_{\mu_t}
+          \end{aligned}`$
+          - where $`x_0`$ is the pure noise.
+        - i.e.) $`\mu_t`$ and $`\sigma_t`$ are linear to $`t`$
+- Model)
+  - Following the OT above, we may set the flow $`\psi_t(x_0)`$ as
+    - $`\psi_t(x_0) = \underbrace{[1-(1-\sigma_{\min})t]}_{\sigma_t(x_1)} x_0 + \underbrace{t x_1}_{\mu_t(x_1)}`$
+  - Conditional Probability Path
+    - $`p_t(x\mid x_1) = \mathcal{N}\left(x;\; tx_1, (1-(1-\sigma_{\min})t)^2 I\right)`$
+    - i.e.)
+      - $`\mu_t(x) = tx_1`$
+      - $`\sigma_t(x) = 1-(1-\sigma_{\min})t`$
+  - Then by [Thm.3](#theorem-3), we may get the **conditional vector field** as   
+    $`\begin{aligned}
+      u_t(x\mid x_1) &= \frac{\sigma_t'(x_1)}{\sigma_t(x_1)} (x-\mu_t(x_1)) + \mu_t'(x_1) \\
+      &= \frac{\sigma_{\min}-1}{1-(1-\sigma_{\min})t} (x-tx_1) + x_1 \\
+      &= \frac{(\sigma_{\min}-1)x + x_1}{1-(1-\sigma_{\min})t} \\
+    \end{aligned}`$
+    - Pf.)
+      - The value $`x`$ at time $`t`$ is $`\psi_t(x_0)`$
+      - Thus, $`x = \psi_t(x_0) = [1-(1-\sigma_{\min})t] x_0 + t x_1`$
+      - We may rewrite it as
+        - $`x_0 = \displaystyle\frac{x-tx_1}{1-(1-\sigma_{\min})t}`$
+      - Then, we may get   
+        $`\begin{aligned}
+          u_t(x\mid x_1) &= \frac{\text{d}}{\text{d}t} \psi_t(x_0) \\
+          &= -(1-\sigma_{\min})x_0 + x_1 &\cdots x_0 \text{ notation} \\
+          &= -(1-\sigma_{\min}) \left(\frac{x-tx_1}{1-(1-\sigma_{\min})t}\right) + x_1 \\
+          &= \frac{(\sigma_{\min}-1)x + x_1}{1-(1-\sigma_{\min})t}&\cdots x \text{ notation}  \\
+        \end{aligned}`$
+  - CFM Loss)
+    - $`\mathcal{L}_{\text{CFM}}(\theta) = \mathbb{E}_{t,q(X_1),p(x_0)}\left[ \Big\Vert v_t(\psi_t(x_0)) - \underbrace{\big( x_1 - (1-\sigma_{\min}) x_0 \big)}_{x_0 \text{ notation}} \Big\Vert^2 \right]`$
+- Prop.)
+  - The conditional flow $`\phi_t(x)`$ is the Optimal Transport (OT) displacement map between $`p_0(x\mid x_1)`$ and $`p_1(x\mid x_1)`$
+
+<br>
+
+#### Analysis) Diffusion vs OT Conditional VFs
+- Particles under the [OT displacement map](#eg-optimal-transport-conditional-vfs) always move in straight line trajectories with constant speed.   
+  ![](./images/conditional_flow_matching_001.png)
+- [OT paths](#eg-optimal-transport-conditional-vfs)'s conditional vector field has constant direction in time.   
+  ![](./images/conditional_flow_matching_002.png)
+  - The arrows are the score functions $`\nabla\log p_t(x\mid x_1)`$
+- Sampling trajectory from [diffusion paths](#eg-diffusion-conditional-vfs) can “overshoot” the final sample, resulting in unnecessary backtracking
+  - Whilst the [OT paths](#eg-optimal-transport-conditional-vfs) are guaranteed to stay straight.
+
+<br><br>
+
+## 6. Experiments
+### 6.1 Density Modeling and Sample Quality on ImageNet
+- Experiment
+  - Data) 
+    - CIFAR 10, ImageNet $`32^2, 64^2, 128^2`$
+  - Model Architecture)
+    - UNet
+  - Compared Algorithms
+    - DDPM
+    - Score Matching
+    - Score Flow
+    - [Flow Matching with Diffusion](#eg-diffusion-conditional-vfs)
+    - [Flow Matching with OT](#eg-optimal-transport-conditional-vfs)
+  - Result)
+    - [Flow Matching with OT](#eg-optimal-transport-conditional-vfs) was the best.   
+      ![](./images/conditional_flow_matching_003.png)
+      - lowest negative log-likelihood (NLL)
+      - lowest FID
+      - lowest number of function evaluation (NFE)
+      - converged much faster than diffusion models.   
+        ![](./images/conditional_flow_matching_004.png)
+
+### 6.2 Sampling Efficiency
+
+### 6.3 Conditional Sampling from Low-Resolution Images
+
 
 
 <br><br>

@@ -37,9 +37,14 @@
       - Train original $`D_1`$ and penalized $`D_0`$ simultaneously under CFG setting.
     - [Rectified Flow](./project/references/basics/rectified_flow.md)
       - Implementation : [minRF](https://github.com/cloneofsimo/minRF/tree/main)
-    - [(WIP) Conditional Flow Matching]()
-    - Stable Diffusion 3
+    - [Conditional Flow Matching](./project/references/basics/conditional_flow_matching.md)
+    - [Stable Diffusion 3](./project/references/basics/sd3.md)
+    - [(WIP) Mean Flow](./project/references/basics/mean_flow.md)
   - Project Related
+    - [Video models are zero-shot learners and reasoners]()
+      - References)
+        - [GPT]()
+        - [CoT]()
     - Self-Rectifying Diffusion Sampling with Perturbed-Attention Guidance
       - Implementation
     - Smoothed Energy Guidance: Guiding Diffusion Models with Reduced Energy Curvature of Attention
@@ -47,6 +52,8 @@
     - [Yan](https://greatx3.github.io/Yan/)
     - [Matrix-Game 2.0](https://matrix-game-v2.github.io/)
     - Feedback Guidance of Diffusion Models
+    - Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion
+      - [Self Forcing](https://self-forcing.github.io/)
     - Tweeter
       - Rosinality
       - minRF

@@ -1,19 +1,20 @@
 ### Seminar Type
-- e.g.) ISSS
+- EAS Webinar
 
 <br>
 
 ### Date of the Seminar
-- 2025-09-14
+- 2025-09-28
 
 <br>
 
 ### Name of the Speaker
-
+Emily Parry
 
 <br>
 
 ### Affiliation of Seminar Speaker (If unknown, list the company name or office the speaker represents)
+Penn Engineering
 
 
 <br>
