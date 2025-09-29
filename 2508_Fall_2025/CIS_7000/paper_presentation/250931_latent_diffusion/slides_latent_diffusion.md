@@ -29,25 +29,10 @@ Rombach et al. 2022
 
 ---
 
-## Text Image aligned sample
-
-<div class="flex-container">
-  <div>
-
-- Blabla
-
-  </div>
-  <div> 
-  <img class="right-img" src="./images/ddpm/001.png" width="400px">
-  </div>
-</div>
-
----
-
 # Contents
 ### 1. Recap & Weaknesses of **DDPM**
-### 2. Suggestion : **Latent** Diffusion Model (**L**DM) $=$ DDPM $\times$ **VAE** 
-### 3. Upgrade : **Conditional** LDM $=$ DDPM $\times$ VAE $\times$ **Cross-Attention**
+### 2. Suggestion : **Latent** Diffusion Model (**L**DM) $=$ Diffusion $\times$ **VAE** 
+### 3. Upgrade : **Conditional** LDM $=$ Diffusion $\times$ VAE $\times$ **Cross-Attention**
 ### 4. Pros, Cons, and **Updates** of LDM : **Stable Diffusion** v1 $\rightarrow$ v2 $\rightarrow$ v3
 
 ---
@@ -98,7 +83,7 @@ cf.) Later improved to $L_{\text{hybrid}} = L_{\text{simple}} + \lambda L_{\text
   </div>
   <div> 
 
-  $512 \times 512 \times 3 = 786,432$ for a single image!
+  $D=512^2 \times 3 = 786,432$ for a single image!
 
   </div>
 </div>
@@ -125,7 +110,7 @@ cf.) Later improved to $L_{\text{hybrid}} = L_{\text{simple}} + \lambda L_{\text
 
 ---
 
-#### Weakness 3 : Slow Sampling
+## Weakness 3 : Slow Sampling due to Markov Chain Structure
 
 
 #### **Reverse** Process 
@@ -137,49 +122,129 @@ cf.) Later improved to $L_{\text{hybrid}} = L_{\text{simple}} + \lambda L_{\text
 
 ---
 
-## Idea: What if we lower the dimensionality with **VAE** and perform diffusion?
-
+## Idea 1: What if we **lower the dimension** and perform **Diffusion**?
 #### 1. **Encode** image to the Latent Space (**VAE**)
-
 #### 2. Perform diffusion in the Latent Space (Diffusion Model)
-
 #### 3. **Decode** image back to the Pixel Space (**VAE**)
 
+<br>
+
+## Idea 2: Skip some sampling steps using **DDIM**
+![h:240px](./images/latent_diffusion/013.png)
+
+---
+## Model Structure
+#### **VAE** : Perceptual Compression Model
+#### **Diffusion** : Latent Diffusion Model
+![h:420px](./images/presentation/4_1.png)
 
 ---
 
-## Advantage 1 : Cheaper Diffusion
+### Result on Unconditional Image Generation
+
+|DDPM (2020)|LDM (2022)|
+|:-:|:-:|
+|![w:500px](./images/latent_diffusion/014_01.png)|![w:500px](./images/latent_diffusion/014_02.png)|
+
+---
+
+#### Advantage 1 : Improved Image Quality & Faster Sampling 
+
+||LDM-$f$s with different downsampling factors $f\in\{1,2,4,8,16,32\}$|
+|:-:|:-:|
+|Improved<br>Quality|![h:250px](./images/latent_diffusion/003.png)|
+|Faster<br>Sampling|![h:250px](./images/latent_diffusion/003.png)|
 
 
 ---
 
-## Advantage 2 : Teamwork 
+# How? **Teamwork** maybe? 🧑🏽‍🤝‍🧑🏻
+
+
+<div class="flex-container">
+  <div>
+  <img class="right-img" src="./images/latent_diffusion/001.png" width="600px">
+  </div>
+  <div> 
+  <img class="right-img" src="./images/presentation/001_dog_002.png" width="600px">
+  </div>
+</div>
 
 ---
 
-## Result
+## Is that it? Not even close.
+### **Conditional** generation in previous diffusion models...
 
-### 1. Improved Image Quality
-![](../250924_latent_diffusion/images/latent_diffusion/003.png)
-
+|"**Cat**" in DDPM|"**Cat**" in CFG||
+|:-:|:-:|-:|
+|![w:300px](./images/presentation/003_1.png)|![w:300px](./images/presentation/003_2.png)| Pre-defined **labels** on the dataset|
 
 ---
 
-## Result
-
-### 2. Faster image sampling (DDIM)
-![](../250924_latent_diffusion/images/latent_diffusion/004.png)
+#### Phenomenal Shift : **Expressive** Conditional Image Generation
+![](./images/presentation/002_0.png)
 
 ---
 
 ## Upgrade : **Conditional** LDM $=$ DDPM $\times$ VAE $\times$ **(Cross) Attention**
 
+![h:500px](./images/latent_diffusion/002.png)
+
 ---
 
-## Pros & Cons of LDM
+#### Cross Attention 
+$\text{Attention}^{(i)}\left(Q^{(i)},K^{(i)},V^{(i)}\right) =  \text{Softmax}\left(\frac{Q^{(i)}{K^{(i)}}^\top}{\sqrt{d}}\right)\cdot V^{(i)}$
+![h:500px](./images/presentation/4_2.png)
 
-### Strength 1) Resolution upscaling and Inpainting Capabilities
+---
 
+### Other capabilities...
+|Semantic Synthesis|Upscaling|In-painting|
+|:-:|:-:|:-:|
+|![w:400px](./images/presentation/002_2.png)|![w:400px](./images/presentation/002_4.png)|![w:300px](./images/presentation/002_3.png)|
+
+
+---
+
+# **Pros** & Cons of LDM
+
+## **Strengths**
+#### **Improvement in image quality** compared to previous Diffusion Models.
+#### **Faster sampling speed** compared to previous Diffusion Models.
+- Key bottleneck of the Diffusion Models
+#### **Expressive conditional** image generation
+- Thanks to the Cross-Attention Mechanism
+#### **Versatile** capabilities 
+- Expressive T2I, Semantic Synthesis, Upscaling, In-painting
+
+---
+# Pros & **Cons** of LDM
+## **Weaknesses**
+#### Still, **slow** sampling speed compared to **other models**
+- **GANs** are way faster. (But Diffusion Models are more stable!)
+#### Questionable when high precision is required
+- Why?
+  - Some information compressed by the VAE may not be recovered.
+  - Stochastic nature of the Diffusion Models (Then, deterministic Flow?)
+#### High training cost
+- Inference is relatively cheaper though...
+
+---
+
+# Updates: LDM $\rightarrow$ Stable Diffusion (SD) $\rightarrow$ SD2 $\rightarrow$**SD3**
+### **Spoiler** : $\underbrace{\text{LDM}}_{\text{Now!}} + \underbrace{\text{DiT}}_{\text{Next}} + \underbrace{\text{Rectified Flow}}_{\text{Next week}} = \underbrace{\text{Stable Diffusion 3}}_{\text{3 weeks later}}$
+
+<div class="flex-container">
+  <div> 
+  <img class="right-img" src="./images/presentation/5_2.png" width="300px">
+  </div>
+  <div>
+  <img class="right-img" src="./images/presentation/5_1.png" width="400px">
+  </div>
+  <div> 
+  <img class="right-img" src="./images/presentation/5_3.png" width="400px">
+  </div>
+</div>
 
 ---
 
