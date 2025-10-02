@@ -74,17 +74,19 @@ cf.) Later improved to $L_{\text{hybrid}} = L_{\text{simple}} + \lambda L_{\text
 
 ## Weakness 1 : Computationally costly
 
-#### Pixel Space Dimension $D = H\times W\times \underbrace{3}_{\text{RGB}}$
-
-
 <div class="flex-container">
-  <div>
-    <img class="right-img" src="./images/presentation/001_dog.png" width="500px">
-  </div>
   <div> 
 
-  $D=512^2 \times 3 = 786,432$ for a single image!
+### Pixel Space Dimension 
+#### $D = H\times W\times \underbrace{3}_{\text{RGB}}$
 
+  <br><br>
+
+  $512^2 \times 3 = 786,432$ <br> for a single $512\times512$ image!
+
+  </div>
+  <div>
+    <img class="right-img" src="./images/ddpm/003.png" width="600px">
   </div>
 </div>
 
@@ -110,6 +112,15 @@ cf.) Later improved to $L_{\text{hybrid}} = L_{\text{simple}} + \lambda L_{\text
 
 ---
 
+## Idea 1: What if we **lower the dimension** and perform **Diffusion**?
+#### 1. **Encode** image to the Latent Space (**VAE**)
+#### 2. Perform diffusion in the Latent Space (Diffusion Model)
+#### 3. **Decode** image back to the Pixel Space (**VAE**)
+
+![h:300px](./images/presentation/6.png)
+
+---
+
 ## Weakness 3 : Slow Sampling due to Markov Chain Structure
 
 
@@ -118,19 +129,13 @@ cf.) Later improved to $L_{\text{hybrid}} = L_{\text{simple}} + \lambda L_{\text
 
 - $p_\theta(\mathbf{x}_{t}\mid\mathbf{x}_{t-1})$ : $\underbrace{\underbrace{\mathbf{x}_{T}}_{\text{pure noise}} \rightarrow \mathbf{x}_1 \rightarrow \cdots \rightarrow \mathbf{x}_{T-1} \rightarrow \underbrace{\mathbf{x}_0'}_{\text{synthetic image!}}}_{T\text{ steps!}}$
   - At each step, we sample $\mathbf{x}_{t-1}\sim\mathcal{N}(\mathbf{x}_{t-1};\;\mu_\theta(\mathbf{x}_t, t), \Sigma_\theta(\mathbf{x}_t, t))$
+    - Even stochastic!
 
 
 ---
 
-## Idea 1: What if we **lower the dimension** and perform **Diffusion**?
-#### 1. **Encode** image to the Latent Space (**VAE**)
-#### 2. Perform diffusion in the Latent Space (Diffusion Model)
-#### 3. **Decode** image back to the Pixel Space (**VAE**)
-
-<br>
-
 ## Idea 2: Skip some sampling steps using **DDIM**
-![h:240px](./images/latent_diffusion/013.png)
+![h:300px](./images/latent_diffusion/013.png)
 
 ---
 ## Model Structure : Perceptual Compression $\times$ Latent Diffusion
@@ -153,12 +158,12 @@ cf.) Later improved to $L_{\text{hybrid}} = L_{\text{simple}} + \lambda L_{\text
 ||LDM-$f$s with different downsampling factors $f\in\{1,2,4,8,16,32\}$|
 |:-:|:-:|
 |Improved<br>Quality|![h:250px](./images/latent_diffusion/003.png)|
-|Faster<br>Sampling|![h:250px](./images/latent_diffusion/003.png)|
+|Faster<br>Sampling|![h:250px](./images/latent_diffusion/004.png)|
 
 
 ---
 
-# How? **Teamwork** maybe? 🧑🏽‍🤝‍🧑🏻
+# How? **Teamwork** maybe? 👩🏻‍🤝‍👨🏾
 
 
 <div class="flex-container">
@@ -186,7 +191,7 @@ cf.) Later improved to $L_{\text{hybrid}} = L_{\text{simple}} + \lambda L_{\text
 
 ---
 
-## Upgrade : **Conditional** LDM $=$ DDPM $\times$ VAE $\times$ **(Cross) Attention**
+### Upgrade : **Conditional** LDM $=$ Diffusion $\times$ VAE $\times$ **(Cross) Attention**
 
 ![h:500px](./images/latent_diffusion/002.png)
 

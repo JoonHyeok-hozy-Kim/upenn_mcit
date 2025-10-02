@@ -1,5 +1,6 @@
 # Generative Adversarial Nets
 Goodfellow et al.
+[@goodfellowGenerativeAdversarialNetworks2014]
 
 ## 1. Introduction
 ### Concept) Adversarial Nets Framework

@@ -65,6 +65,26 @@ Google Deepmind 2025
 
 
 ---
+## Paradigm Shift : **Chain-of-Thoughts (CoT)** + Computing Power
+
+<div class="flex-container">
+  <div> 
+  <img class="right-img" src="./images/004.png" width="800px">
+  <br>Chain-of-Thought Prompting Elicits Reasoning in Large Language Models
+  <br>Google Research, Brain Team 2022
+  </div>
+  
+  <div>
+    <img class="right-img" src="./images/003.webp" width="240px">
+    <br>
+    <div class="flex-container">
+      <img class="right-img" src="./images/22_1.jpg" width="150px">
+      <img class="right-img" src="./images/22_2.jpg" width="150px">
+    </div>
+  </div>
+</div>
+
+---
 ## **LLM** unified and started to work as a Generalist
 
 <div class="flex-container">
@@ -86,20 +106,6 @@ Google Deepmind 2025
   </div>
 </div>
 
-
----
-## Paradigm Shift : **Chain-of-Thoughts (CoT)** + Computing Power
-
-<div class="flex-container">
-  <div> 
-  <img class="right-img" src="./images/004.png" width="800px">
-  <br>Chain-of-Thought Prompting Elicits Reasoning in Large Language Models
-  <br>Google Research, Brain Team 2022
-  </div>
-  <div> 
-  <img class="right-img" src="./images/003.webp" width="200px">
-  </div>
-</div>
 
 ---
 # Analogy in Video Models

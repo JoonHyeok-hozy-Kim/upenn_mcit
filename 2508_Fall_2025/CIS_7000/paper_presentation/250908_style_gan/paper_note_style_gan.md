@@ -1,5 +1,6 @@
 # A Style-Based Generator Architecture for Generative Adversarial Networks
-Karras et al.
+Karras et al.   
+@karrasStyleBasedGeneratorArchitecture2019
 
 ### History
 - GAN
