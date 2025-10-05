@@ -40,23 +40,46 @@
     - [Conditional Flow Matching](./project/references/basics/conditional_flow_matching.md)
     - [Stable Diffusion 3](./project/references/basics/sd3.md)
     - [(WIP) Mean Flow](./project/references/basics/mean_flow.md)
-  - Project Related
+  - Methodologies
     - [Video models are zero-shot learners and reasoners]()
       - References)
         - [GPT]()
         - [CoT]()
-    - Self-Rectifying Diffusion Sampling with Perturbed-Attention Guidance
+    - [PAG](./project/references/methodologies/perturbed_attention_guidance.md)
       - Implementation
-    - Smoothed Energy Guidance: Guiding Diffusion Models with Reduced Energy Curvature of Attention
-    - Fine-Grained Perturbation Guidance via Attention Head Selection
-    - [Yan](https://greatx3.github.io/Yan/)
-    - [Matrix-Game 2.0](https://matrix-game-v2.github.io/)
-    - Feedback Guidance of Diffusion Models
-    - Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion
+    - [SEG](./project/references/methodologies/smoothed_energy_guidance.md)
+    - [PAG Attention Head Selection](./project/references/methodologies/attention_head_selection.md)
+    - [(WIP) Phyworld](./project/references/evaluation_methods/how_far_video_world.md)
+      - Main Physics Simulator
+    - [ICML 2024: Physics of Language Models](./project/references/methodologies/physics_of_lm.md)
+      - Implementing controlled experiments on LMs for
+        - Knowledge augmentation
+        - Knowledge manipulation
+        - Scaling Laws
+    - (Yet to be covered) IOI
+    - (Yet to be covered) Physics of Language Models
+    - (Yet to be covered) Thread: Circuits
+    - (Yet to be covered) Sparse Autoencoders
+    - (Yet to be covered) [Yan](https://greatx3.github.io/Yan/)
+    - (Yet to be covered) [Matrix-Game 2.0](https://matrix-game-v2.github.io/)
+    - (Yet to be covered) Feedback Guidance of Diffusion Models
+    - (Yet to be covered) Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion
       - [Self Forcing](https://self-forcing.github.io/)
     - Tweeter
       - Rosinality
       - minRF
+  - Evaluation Methods
+    - [WM-ABench](./project/references/evaluation_methods/wm-abench.md)
+      - 2 Stage : Perception, Prediction
+      - Human evaluation (X)
+    - [PhysBench](./project/references/evaluation_methods/physbench.md)
+      - Solving predetermined 4 options questionnaires
+      - Applicable only to the VLMs
+    - [Physics-IQ](./project/references/evaluation_methods/physicsIQ.md)
+      - Given the initial 3 sec., generate the rest 5sec, and compare with the original
+      - Quantitative Stats : MSE, IOU
+      - Needs original video to compare
+      - Generation model must be capable of getting 3 sec video as an input
 
 #### Exploration
 - Distill
