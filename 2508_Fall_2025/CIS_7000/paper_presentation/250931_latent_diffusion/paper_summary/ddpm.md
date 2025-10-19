@@ -79,7 +79,7 @@ Ho et al. 2020
   - However, this is intractable due to the integral : $`p_\theta(\mathbf{x}_0) := \displaystyle\int p_\theta(\mathbf{x}_{0:T}) \text{d} \mathbf{x}_{1:T}`$
   - Instead, just like the [VAE](../../250917_vae/paper_note.md), we may get the lower bound using the variational distribution as   
     $`\begin{aligned}
-        \log p_\theta(\mathbf{x}{0})
+        \log p_\theta(\mathbf{x}_{0})
         &= \log \int q(\mathbf{x}_{1:T}\mid \mathbf{x}_0) \frac{p_\theta(\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T}\mid \mathbf{x}_0)} \text{d}\mathbf{x}_{1:T} \\
         &\ge \mathbb{E}_{q(\mathbf{x}_{1:T}\mid \mathbf{x}_0)} \left[ \log\frac{p_\theta(\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T}\mid \mathbf{x}_0)} \right] & \because (\text{Jensen Inequality})
     \end{aligned}`$
@@ -110,9 +110,9 @@ Ho et al. 2020
   - Plugging in the value we derived from the Bayes Rule, we have      
     $`\begin{array}{lll}
         \mathcal{L} 
-        &= \displaystyle\mathbb{E}_q \left[ -\log p(\mathbf{x}_T) -\sum_{t=2}^T \log\frac{p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t)}{q(\mathbf{x}_t\mid \mathbf{x}_{t-1})} \cdot\frac{\frac{q(\mathbf{x}_t\mid\mathbf{x}_{t-1},\mathbf{x}_0) q(\mathbf{x}_{t-1}\mid\mathbf{x}_0)}{q(\mathbf{x}_t\mid\mathbf{x}_0)}}{q(\mathbf{x}_{t-1}\mid\mathbf{x}_t,\mathbf{x}_0)} - \log\frac{p_\theta(\mathbf{x}_0\mid\mathbf{x}_1)}{q(\mathbf{x}_1\mid\mathbf{x}_0)} \right] & \because \text{Bayes Rule}  \\
-        &= \displaystyle\mathbb{E}_q \left[ -\log p(\mathbf{x}_T) -\sum_{t=2}^T \log\frac{p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t)}{q(\mathbf{x}_t\mid \mathbf{x}_{t-1})} \cdot\frac{\frac{q(\mathbf{x}_t\mid\mathbf{x}_{t-1},\mathbf{x}_0) q(\mathbf{x}_{t-1}\mid\mathbf{x}_0)}{q(\mathbf{x}_t\mid\mathbf{x}_0)}}{q(\mathbf{x}_{t-1}\mid\mathbf{x}_t,\mathbf{x}_0)} - \log\frac{p_\theta(\mathbf{x}_0\mid\mathbf{x}_1)}{q(\mathbf{x}_1\mid\mathbf{x}_0)} \right] & \because q(\mathbf{x}_t\mid \mathbf{x}_{t-1}) = q(\mathbf{x}_t\mid\mathbf{x}_{t-1},\mathbf{x}_0) \\
-        &= \displaystyle\mathbb{E}_q \left[ -\log p(\mathbf{x}_T) -\sum_{t=2}^T \log\frac{p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t)}{q(\mathbf{x}_{t-1}\mid\mathbf{x}_t,\mathbf{x}_0)} \cdot\frac{q(\mathbf{x}_{t-1}\mid\mathbf{x}_0)}{q(\mathbf{x}_t\mid\mathbf{x}_0)} - \log\frac{p_\theta(\mathbf{x}_0\mid\mathbf{x}_1)}{q(\mathbf{x}_1\mid\mathbf{x}_0)} \right]  \\
+        &= \displaystyle\mathbb{E}_q \left[ -\log p(\mathbf{x}_T) -\sum_{t=2}^T \left(\log\frac{p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t)}{q(\mathbf{x}_t\mid \mathbf{x}_{t-1})} \cdot\frac{\frac{q(\mathbf{x}_t\mid\mathbf{x}_{t-1},\mathbf{x}_0) q(\mathbf{x}_{t-1}\mid\mathbf{x}_0)}{q(\mathbf{x}_t\mid\mathbf{x}_0)}}{q(\mathbf{x}_{t-1}\mid\mathbf{x}_t,\mathbf{x}_0)}\right) - \log\frac{p_\theta(\mathbf{x}_0\mid\mathbf{x}_1)}{q(\mathbf{x}_1\mid\mathbf{x}_0)} \right] & \because \text{Bayes Rule}  \\
+        &= \displaystyle\mathbb{E}_q \left[ -\log p(\mathbf{x}_T) -\sum_{t=2}^T \left(\log\frac{p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t)}{q(\mathbf{x}_{t-1}\mid\mathbf{x}_t,\mathbf{x}_0)} \cdot\frac{q(\mathbf{x}_t\mid\mathbf{x}_{t-1},\mathbf{x}_0) q(\mathbf{x}_{t-1}\mid\mathbf{x}_0)}{q(\mathbf{x}_t\mid \mathbf{x}_{t-1}) q(\mathbf{x}_t\mid\mathbf{x}_0)}\right) - \log\frac{p_\theta(\mathbf{x}_0\mid\mathbf{x}_1)}{q(\mathbf{x}_1\mid\mathbf{x}_0)} \right]  \\
+        &= \displaystyle\mathbb{E}_q \left[ -\log p(\mathbf{x}_T) -\sum_{t=2}^T \left(\log\frac{p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t)}{q(\mathbf{x}_{t-1}\mid\mathbf{x}_t,\mathbf{x}_0)} \cdot\frac{q(\mathbf{x}_{t-1}\mid\mathbf{x}_0)}{q(\mathbf{x}_t\mid\mathbf{x}_0)}\right) - \log\frac{p_\theta(\mathbf{x}_0\mid\mathbf{x}_1)}{q(\mathbf{x}_1\mid\mathbf{x}_0)} \right] & \because q(\mathbf{x}_t\mid \mathbf{x}_{t-1}) = q(\mathbf{x}_t\mid\mathbf{x}_{t-1},\mathbf{x}_0)  \\
         &= \displaystyle\mathbb{E}_q \left[ -\log p(\mathbf{x}_T) -\sum_{t=2}^T \log\frac{p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t)}{q(\mathbf{x}_{t-1}\mid\mathbf{x}_t,\mathbf{x}_0)} -\log\frac{q(\mathbf{x}_{1}\mid\mathbf{x}_0)}{q(\mathbf{x}_T\mid\mathbf{x}_0)} - \log\frac{p_\theta(\mathbf{x}_0\mid\mathbf{x}_1)}{q(\mathbf{x}_1\mid\mathbf{x}_0)} \right] & \displaystyle\because -\sum_{t=2}^T \log \frac{q(\mathbf{x}_{t-1}\mid\mathbf{x}_0)}{q(\mathbf{x}_t\mid\mathbf{x}_0)} = -\log\frac{q(\mathbf{x}_{1}\mid\mathbf{x}_0)}{q(\mathbf{x}_T\mid\mathbf{x}_0)} \\
         &= \displaystyle\mathbb{E}_q \left[ -\log\frac{p(\mathbf{x}_T)}{q(\mathbf{x}_T\mid\mathbf{x}_0)} -\sum_{t=2}^T \log\frac{p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t)}{q(\mathbf{x}_{t-1}\mid\mathbf{x}_t,\mathbf{x}_0)} - \log p_\theta(\mathbf{x}_0\mid\mathbf{x}_1) \right] \\
         &= \displaystyle\mathbb{E}_q \left[ \underbrace{D_{KL}({q(\mathbf{x}_T\mid\mathbf{x}_0)}\Vert{p(\mathbf{x}_T)})}_{L_T} + \sum_{t=2}^T \underbrace{D_{KL}({q(\mathbf{x}_{t-1}\mid\mathbf{x}_t,\mathbf{x}_0)}\Vert{p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_t)})}_{L_{t-1}} - \underbrace{\log p_\theta(\mathbf{x}_0\mid\mathbf{x}_1)}_{L_0} \right] \\
@@ -175,7 +175,7 @@ Ho et al. 2020
           &= \mathbb{E}_{\mathbf{x}_0, \boldsymbol{\epsilon}} \left[ \frac{1}{2\sigma_t^2} \left\Vert \tilde{\boldsymbol{\mu}}_t \left( \mathbf{x}_t(\mathbf{x}_0, \boldsymbol{\epsilon}), \frac{1}{\sqrt{\bar{\alpha}}_t}(\mathbf{x}_t(\mathbf{x}_0, \boldsymbol{\epsilon}) - \sqrt{1-\bar{\alpha}} \boldsymbol{\epsilon}) \right) - \boldsymbol{\mu}_\theta(\mathbf{x}_t, t) \right\Vert^2 \right] \\
         \end{aligned}`$
 - Loss Function)   
-  - Again from the above derivation, we have
+  - Again from the above derivation, we have   
     $`\begin{aligned}
       L_{t-1} - C 
       &= \mathbb{E}_{\mathbf{x}_0, \boldsymbol{\epsilon}} \left[ \frac{1}{2\sigma_t^2} \left\Vert \underbrace{\frac{1}{\sqrt{\bar{\alpha}_t}} \left( \mathbf{x}_t - \frac{\beta_t}{\sqrt{1-\bar{\alpha}_t}} \boldsymbol{\epsilon} \right)}_{\text{Target posterior mean}} - \underbrace{\boldsymbol{\mu}_\theta(\mathbf{x}_t(\mathbf{x}_0, \boldsymbol{\epsilon}), t)}_{\text{Model mean}} \right\Vert^2 \right] \\

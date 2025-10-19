@@ -40,6 +40,7 @@
     - [Conditional Flow Matching](./project/references/basics/conditional_flow_matching.md)
     - [Stable Diffusion 3](./project/references/basics/sd3.md)
     - [(WIP) Mean Flow](./project/references/basics/mean_flow.md)
+    - [(WIP) Video Diffusion Models](./project/references/basics/video_diffusion_model.md)
   - Methodologies
     - [Video models are zero-shot learners and reasoners]()
       - References)
@@ -63,7 +64,7 @@
     - (Yet to be covered) [Yan](https://greatx3.github.io/Yan/)
     - (Yet to be covered) [Matrix-Game 2.0](https://matrix-game-v2.github.io/)
     - (Yet to be covered) Feedback Guidance of Diffusion Models
-    - (Yet to be covered) Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion
+    - [(WIP) Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion]() 
       - [Self Forcing](https://self-forcing.github.io/)
     - Tweeter
       - Rosinality

@@ -1,0 +1,3 @@
+# Diffusion Forcing: Next-token Prediction Meets Full-Sequence Diffusion
+[@chenDiffusionForcingNexttoken2024]
+
