@@ -1,7 +1,7 @@
 [Back to Main](../main.md)
 
 # AR1
-20250-09-10
+2025-10-
 
 ### Papers
 - Autoregressive Model Beats Diffusion: Llama for Scalable Image Generation
@@ -18,28 +18,28 @@
 <br>
 
 
-## Paper 1
+## Paper 1) 
 
 
 
 <br>
 
 
-## Paper 2
+## Paper 2) 
 
 
 
 <br>
 
 
-## Paper 3
+## Paper 3) 
 
 
 
 <br>
 
 
-## Paper 4
+## Paper 4) 
 
 
 

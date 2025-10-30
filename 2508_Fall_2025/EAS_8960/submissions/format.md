@@ -4,7 +4,7 @@
 <br>
 
 ### Date of the Seminar
-- 2025-09-28
+- 2025-10-
 
 <br>
 

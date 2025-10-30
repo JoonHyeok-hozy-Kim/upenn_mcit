@@ -6,6 +6,8 @@
   - [Style-GAN Paper Summary](./paper_presentation/250908_style_gan/paper_note_style_gan.md)
 - (Stolen) Auto-Encoder Variational Bayes
   - [VAE Paper Summary](./paper_presentation/250917_vae/paper_note.md)
+- Video Models as Zero-Shot Learners
+  - [Video Models are Zero-shot Learners and Reasoners](./paper_presentation/250930_video_model_zero_shot/paper_summary.md)
 - High-Resolution Image Synthesis with Latent Diffusion Models (250929)
   - [DDPM](./paper_presentation/250931_latent_diffusion/paper_summary/ddpm.md)
   - [Score-Based Model](./paper_presentation/250931_latent_diffusion/paper_summary/score_based_model.md)

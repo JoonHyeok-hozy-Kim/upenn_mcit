@@ -39,18 +39,18 @@ Rombach et al. 2022
 
 ## Recap : **D**enoising **D**iffusion **P**robabilistic **M**odel (**DDPM**)
 
-#### **Forward** Process $q(\mathbf{x}_{t-1}\mid\mathbf{x}_t)$ : $\underbrace{\mathbf{x}_0}_{\text{original image}} \rightarrow \mathbf{x}_1 \rightarrow \cdots \rightarrow \mathbf{x}_{T-1} \rightarrow \underbrace{\mathbf{x}_{T}}_{\text{pure noise!}}$
+#### **Forward** Process $q(\mathbf{x}_t\mid\mathbf{x}_{t-1})$ : $\underbrace{\mathbf{x}_0}_{\text{original image}} \rightarrow \mathbf{x}_1 \rightarrow \cdots \rightarrow \mathbf{x}_{T-1} \rightarrow \underbrace{\mathbf{x}_{T}}_{\text{pure noise!}}$
 ![](./images/ddpm/004_improved_ddpm.png)
 - What we choose by scheduling $\beta_t$
 
-#### **Reverse** Process $p_\theta(\mathbf{x}_{t}\mid\mathbf{x}_{t-1})$ : $\underbrace{\mathbf{x}_{T}}_{\text{pure noise}} \rightarrow \mathbf{x}_1 \rightarrow \cdots \rightarrow \mathbf{x}_{T-1} \rightarrow \underbrace{\mathbf{x}_0'}_{\text{synthetic image!}}$
+#### **Reverse** Process $p_\theta(\mathbf{x}_{t-1}\mid\mathbf{x}_{t})$ : $\underbrace{\mathbf{x}_{T}}_{\text{pure noise}} \rightarrow \mathbf{x}_{T-1} \rightarrow \cdots \rightarrow \mathbf{x}_1 \rightarrow \underbrace{\mathbf{x}_0'}_{\text{synthetic image!}}$
 ![](./images/ddpm/004_rev_improved_ddpm.png)
 - A neural network with parameters $\theta$ that we want to learn!
 
 ---
 
 # Optimizing DDPM
-#### 1. Use Bayes Rule to get **posterior** $\quad q(\mathbf{x}_{t}\mid\mathbf{x}_{t-1},\mathbf{x}_0) = \displaystyle\frac{q(\mathbf{x}_t\mid\mathbf{x}_{t-1}) q(\mathbf{x}_{t-1}\mid\mathbf{x}_0)}{q(\mathbf{x}_t\mid\mathbf{x}_0)}$
+#### 1. Use Bayes Rule to get **posterior** $\quad q(\mathbf{x}_{t-1}\mid\mathbf{x}_{t},\mathbf{x}_0) = \displaystyle\frac{q(\mathbf{x}_t\mid\mathbf{x}_{t-1}) q(\mathbf{x}_{t-1}\mid\mathbf{x}_0)}{q(\mathbf{x}_t\mid\mathbf{x}_0)}$
 
 #### 2. Maximize **ELBO** :  $\log p_\theta(\mathbf{x}{0}) \ge \displaystyle\mathbb{E}_{q(\mathbf{x}_{1:T}\mid \mathbf{x}_0)} \left[ \log\frac{p_\theta(\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T}\mid \mathbf{x}_0)} \right]$
 - Equivalent to minimizing KL-Divergence $(L_{\text{vlb}})$
