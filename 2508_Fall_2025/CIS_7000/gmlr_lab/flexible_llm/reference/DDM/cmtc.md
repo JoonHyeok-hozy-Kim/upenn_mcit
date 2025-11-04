@@ -18,7 +18,7 @@
       - $`q_{k+1\mid k}(x_{k+1}\mid x_k) = \delta_{x_{k+1},x_k}(1-\beta) + (1-\delta_{x_{k+1},x_k})\beta/(S-1)`$
         - where
           - $`\delta_{i,j}=\begin{cases} 1&\text{if }i=j\\0&\text{if }i\ne j\\ \end{cases}`$ : a Kronecker delta
-          - $`(1-\beta)`$ : the probability that the state is unchanged i.e. $`P(x_{k+1}=x_k)`$
+          - $`(1-\beta)`$ : the probability that the state is unchanged i.e. $`\mathbb{P}(x_{k+1}=x_k)`$
         - Desc.)
           - The corresponding $`p_{\text{ref}}`$ is Uniform over all states with $`\frac{\beta}{S-1}`$
   - Forward Joint Decomposition   
@@ -142,7 +142,7 @@
           - Therefore, $`\frac{1}{\nu(x)}=-R(x,x)`$
       - $`r(\tilde{x}\mid x) = \displaystyle(1-\delta_{\tilde{x},x})\frac{R(x,\tilde{x})}{-R(x,x)}`$ : jumping probability from $`x`$ to $`\tilde{x}`$
         - Why?)
-          - $`(1-\delta_{\tilde{x},x})`$ is used to fix the case $`x=\tilde{x}`$
+          - $`(1-\delta_{\tilde{x},x})`$ is used to fix the case $`x\ne\tilde{x}`$
             - i.e.) We only consider the case we jump!
             - Thus, we consider all possible states we can jump from $`x`$, and get the conditional probability of jumping specifically to $`\tilde{x}`$
           - Recall that $`R(x,x) = -\displaystyle\sum_{x'\ne x}R(x,x')`$
@@ -317,3 +317,34 @@
        - $`\hat{R}_{T-t}(x,\tilde{x}) = \displaystyle R_{t}(\tilde{x},x) \frac{q_{t}(\tilde{x})}{q_{t} (x)}`$
 
 </details>
+<br><br>
+
+### 3.2 Continuous Time ELBO
+- Def.) Continuous Time (CT) negative ELBO $`\mathcal{L}_{\text{CT}}`$
+  - For the reverse in time CTMC
+    - with
+      - $`p_{\text{ref}}(x_T)`$ : the initial distribution
+      - $`p_0^\theta(x_0)`$ : the terminal distribution
+      - $`\hat{R}_t\theta`$ : the reverse rate
+  - $`\mathbb{E}_{p_{\text{data}}(x_0)}\big[ -\log p_0^\theta(x_0) \big]`$ (upper bound on the negative model log-likelihood) is given by
+    - $`\displaystyle\mathcal{L}_{\text{CT}}(\theta) = T\cdot\mathbb{E}_{t\sim\mathcal{U}(0,T)q_t(x)r_t(\tilde{x}\mid x)} \left[\left\{ \sum_{x'\ne x}\hat{R}_t^\theta(x,x') \right\} - \mathcal{Z}^t(x)\log\left(\hat{R}_t^\theta(\tilde{x},x)\right) \right] + C`$
+      - where
+        - $`C`$ : a constant independent of $`\theta`$
+        - $`\mathcal{Z}^t(x) = \displaystyle\sum_{x'\ne x} R_t(x,x')`$
+        - $`r_t(\tilde{x}\mid x) = (1-\delta_{\tilde{x},x}) R_t(x,\tilde{x}) / \mathcal{Z}^t(x)`$
+          - cf.) Jumping probability in Time homogenous case from [transition rate matrix](#concept-transition-rate-matrix)
+          - i.e.) the probability of transitioning from $`x`$ to $`\tilde{x}`$, given that we know a transition occurs at time $`t`$
+
+#### Optimization Process)
+1. Sample... 
+   - a batch of data points from $`p_{\text{data}}(x_0)`$
+   - a random time $`t\sim\mathcal{U}(0,T)`$
+2. Noise each datapoint by $`x\sim q_{t\mid0}(x\mid x_0)`$
+3. Sample an auxiliary $`\tilde{x}\sim r_t(\tilde{x}\mid x)`$
+   - Here, $`(x,\tilde{x})`$ is the pair of states following the **forward** in time noising process
+4. Minimize $`\mathcal{L}_{\text{CT}}`$
+   - Prop.)
+     - $`\mathcal{Z}^t(x)\log\left(\hat{R}_t^\theta(\tilde{x},x)\right)`$ is the reverse process from $`\tilde{x}`$ to $`x`$
+   - Approximation)
+     - $`\displaystyle\mathcal{L}_{\text{CT}}(\theta) = T\cdot\mathbb{E}_{t\sim\mathcal{U}(0,T)q_t(x)r_t(\tilde{x}\mid x)} \left[\left\{ \sum_{x'\ne x}\hat{R}_t^\theta(\underbrace{\tilde{x}}_{\text{replace!}},x') \right\} - \mathcal{Z}^t(x)\log\left(\hat{R}_t^\theta(\tilde{x},x)\right) \right] + C`$
+       - Why?) To avoid calling $`p_{0|t}^\theta(\cdot \mid \mathbf{x})`$ twice
