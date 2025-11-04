@@ -9,13 +9,13 @@
   - [(WIP) CTMC](./reference/DDM/cmtc.md), Campbell et al
   - Discrete Flow Model (DFM), Campbell et al
   - Discrete Flow Matching, Gat et al
-  - [(WIP) Edit Flows](./reference/DDM/edit_flow.md), Havasi et al
+  - [(Postponed) Edit Flows](./reference/DDM/edit_flow.md), Havasi et al
   - SEDD, Lou et al
   - FlexMDM
   - [(Postponed) Di4C](./reference/DDM/di4c.md), Hayakawa et al
 - Non Auto Regressive
   - [Levenshtein Transformer](./reference/NAR/levt.md), Gu et al
-  - [(WIP) InDIGO](./reference/NAR/indigo.md), Gu et al
+  - [InDIGO](./reference/NAR/indigo.md), Gu et al
   - MaskGIT
   - DiffusER
   - Diffusion-LM Improves Controllable Text Generation
