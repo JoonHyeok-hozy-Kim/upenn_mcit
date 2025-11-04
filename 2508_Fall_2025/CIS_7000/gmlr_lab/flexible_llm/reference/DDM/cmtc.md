@@ -7,7 +7,7 @@
     - where 
       - $`S=\vert\mathcal{X}\vert`$
         - i.e.) the state space has the finite cardinality $`S`$
-  - $`\exist p_{\text{data}}`$ : a discrete data distribution 
+  - $`\exists p_{\text{data}}`$ : a discrete data distribution 
     - s.t. $`x_0\sim p_{\text{data}}(x_0)`$
 - Forward Noising Process
   - Desc.)
