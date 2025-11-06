@@ -153,7 +153,7 @@
         - $`\nu(x)`$ and $`r(\tilde{x}\mid x)`$ does not depend on $`t`$.
         - Thus, simple relations like the homogeneous case don't hold.
         - Still, the properties of $`R(x,\tilde{x})`$ still hold!
-  - Kolmogorov Equations ($`0\le s\lt t \le 1`$) : Discrete version of Fokker-Planck in Continuous
+  - [Kolmogorov Equation](#concept-kolmogorov-equation)s ($`0\le s\lt t \le 1`$) : Discrete version of Fokker-Planck in Continuous
     - Forward ($`s\rightarrow t`$) : $`\underbrace{\partial_t}_{\text{at }t} q_{t\mid s}(x\mid\tilde{x}) = \displaystyle\sum_y q_{t\mid s}(y\mid\tilde{x})R_t(y,x)`$
       - Desc.)
         - On the perspective of the destination $`x`$ at the time step $`t`$
@@ -168,6 +168,55 @@
           - Inflows : $`x\ne y`$
           - Outflows : $`x = y`$
 
+<br>
+
+#### Concept) Kolmogorov Equation
+- Settings)
+  - $`\mathcal{X} = \{x_i\mid i=1,2,\cdots, S\}`$ : a set of states with $`\vert\mathcal{X}\vert = S`$
+    - $`x,\tilde{x}, y \in\mathcal{X}`$ : some states.
+  - $`Q_{t\mid s}\in\mathbb{R}^{S\times S}`$ : the transition probability matrix from time step $`s`$ to $`t`$
+    - $`\left[Q_{t\mid s}\right]_{(x,y)} = q_{t\mid s}(y\mid x)`$ : the probability of jumping from $`x`$ to $`y`$
+      - i.e.) The total probability that start with $`x`$ at $`s`$ and end with $`y`$ at $`t`$
+  - $`R_t\in\mathbb{R}^{S\times S}`$ : the [transition rate matrix](#concept-transition-rate-matrix)
+    - $`R_t(x,y)=\left[R_t\right]_{(x,y)}`$ : the rate of jumping from $`x`$ to $`y`$ at $`t`$
+- Goal)
+  - We want to define the dynamics of $`\tilde{x}\rightarrow y\rightarrow x`$ during time step $`s\rightarrow t`$
+    - i.e.) the transition from $`\tilde{x}`$ to $`x`$ through $`y`$
+- Forward Equation 
+  - Desc.) 
+    - $`\tilde{x}\rightarrow y \rightarrow x`$ during $`s\rightarrow t`$ 
+      - i.e.) Inflow to $`x`$ at $`t`$
+    - Dynamics at $`t`$ is denoted as $`\partial_t q_{t\mid s}`$ using
+      - $`R_t(y, x)`$ : the transition rate at $`t`$
+      - $`q_{t\mid s}(y\mid\tilde{x})`$ : the probability during $`s\rightarrow t`$
+  - Def.)   
+    $`\begin{aligned}
+      \partial_t q_{t\mid s}(x\mid\tilde{x}) &= \sum_{y\in\mathcal{X}} \underbrace{q_{t\mid s}(y\mid\tilde{x})}_{\text{prob. of } \tilde{x}\rightarrow y} \cdot \underbrace{R_t(y, x)}_{\text{rate of } y\rightarrow x \text{ at } t} \\
+      &= \underbrace{\begin{bmatrix} q_{t\mid s}(x_0\mid\tilde{x}) & \cdots& q_{t\mid s}(x_S\mid\tilde{x}) \end{bmatrix}}_{\tilde{x}\text{-th row of }Q_{t\mid s}} \cdot {\underbrace{\begin{bmatrix} R_t(x_0,x) & \cdots& R_t(x_S,x) \end{bmatrix}}_{x\text{-th column of }R_t}}^\top \\
+      &= \left[ Q_{t\mid s} R_t \right]_{(\tilde{x}, x)}
+    \end{aligned}`$
+- Backward Equation 
+  - Desc.) 
+    - $`x\leftarrow y\leftarrow\tilde{x}`$ during $`s\leftarrow t`$
+      - i.e.) Outflow from $`\tilde{x}`$ at $`s`$
+    - Dynamics at $`s`$ is denoted as $`\partial_s q_{t\mid s}`$ using
+      - $`R_s(\tilde{x}, y)`$ : the transition rate at $`s`$
+      - $`q_{t\mid s}(x\mid y)`$ : the probability during $`s\rightarrow t`$
+        - Equivalent to the one during $`s\leftarrow t`$
+  - Def.)   
+    $`\begin{aligned}
+      \partial_s q_{t\mid s}(x\mid\tilde{x}) &= \underbrace{-}_{\text{outflow!}} \left( \sum_{y\in\mathcal{X}} \underbrace{R_s(\tilde{x},y)}_{\text{rate of } \tilde{x}\rightarrow y \text{ at } s} \cdot \underbrace{q_{t\mid s}(x\mid y)}_{\text{prob. of } y\rightarrow x} \right) \\
+      &= - \underbrace{\begin{bmatrix} R_s(\tilde{x},x_0) & \cdots& R_s(\tilde{x},x_S) \end{bmatrix}}_{\tilde{x}\text{-th row of }R_s} \cdot {\underbrace{\begin{bmatrix} q_{t\mid s}(x_0\mid x) & \cdots& q_{t\mid s}(x_S\mid x) \end{bmatrix}}_{x\text{-th column of }Q_{t\mid s}}}^\top \\
+      &= - \left[ R_s Q_{t\mid s} \right]_{(\tilde{x},x)}
+    \end{aligned}`$
+- Differential Equation)
+  - Desc.) 
+    - $`\displaystyle\lim_{s\rightarrow t} \partial_t q_{t\mid s}(x\mid\tilde{x}) \triangleq \partial_t q_t(x)`$
+  - Def.)
+    - $`\partial_t q_t(x) = \displaystyle\sum_{y\in\mathcal{X}} q_t(y) \cdot R_t(y, x)`$
+  - Prop.)
+    - Inflow : $`x\ne y`$
+    - Outflow : $`x=y`$
 
 <br>
 
@@ -348,3 +397,141 @@
    - Approximation)
      - $`\displaystyle\mathcal{L}_{\text{CT}}(\theta) = T\cdot\mathbb{E}_{t\sim\mathcal{U}(0,T)q_t(x)r_t(\tilde{x}\mid x)} \left[\left\{ \sum_{x'\ne x}\hat{R}_t^\theta(\underbrace{\tilde{x}}_{\text{replace!}},x') \right\} - \mathcal{Z}^t(x)\log\left(\hat{R}_t^\theta(\tilde{x},x)\right) \right] + C`$
        - Why?) To avoid calling $`p_{0|t}^\theta(\cdot \mid \mathbf{x})`$ twice
+
+<br><br>
+
+## 4 Efficient Forward and Backward Sampling
+### 4.1 Choice of Forward Process
+- Goal)
+  - Choose $`R_t`$ s.t. mixes quickly towards $`p_{\text{ref}}`$
+  - The $`q_{t\mid0}(x\mid x_0)`$ distribution can be analytically obtained
+    - where [Kolmogorov differential equation](#concept-kolmogorov-equation) should be integrated while obtaining $`q_{t\mid0}(x\mid x_0)`$
+      - i.e.) $`\partial_t q_t(x) = \displaystyle\sum_{y\in\mathcal{X}} q_t(y) \cdot R_t(y, x)`$
+- Model)
+  - Set $`R_t = \beta(t) R_b`$
+    - where
+      - $`\beta(t)`$ : a time dependent scalar
+        - e.g.) $`\beta(t) = ab^t\log(b)`$
+          - where $`a,b`$ are chosen s.t.
+            - $`q_T(x)\approx p_{\text{ref}}(x)`$ at $`t=T`$
+            - having steady speed of information corruption which ensures that $`\hat{R}_t`$ does not vary quickly in a short span of time.
+      - $`R_b \in\mathbb{R}^{S\times S}`$ : a user-specified time independent base rate matrix
+        - s.t. $`\displaystyle\frac{R_b(\tilde{x},x)}{R_b(x,\tilde{x})} = \frac{p_{\text{ref}}(x)}{p_{\text{ref}}(\tilde{x})} = \exp\left[ \frac{(\tilde{x}-\mu_0)^2}{2\sigma_0^2} - \frac{(x-\mu_0)^2}{2\sigma_0^2} \right]`$
+        - Desc.) $`8\times 8`$   
+          ![](./images/ctmc_002.png)
+        - e.g.) Uniform rate 
+          - $`R_b = \mathbf{1}\mathbf{1}^\top - S\text{Id}`$ where
+            - $`\mathbf{1}`$ is a matrix of ones
+            - $`\text{Id}`$ is the identity matrix
+  - Then we may derive the forward process as
+    - $`\displaystyle q_{t\mid0}(x=j\mid x_0=i) = \left( Q \exp\left[ \Lambda\int_0^t\beta(s)\text{d}s \right] Q^{-1} \right)_{ij}`$
+      - where
+        - Eigenvalue decomposition $`R_b = Q\Lambda Q^{-1}`$
+        - $`\exp(\cdot)`$ is the element-wise exponential
+
+<br>
+
+### 4.2 Factorizing Over Dimensions
+- Goal)
+  - Modeling a sequence of tokens is intractable.
+    - The length of sequence is the dimension of the data
+      - $`\boldsymbol{x}^{1:D}\in\mathcal{X}^D`$
+    - And the cardinality of $`\mathcal{X}`$ is $`\vert\mathcal{X}\vert = S`$
+    - Thus, at each time step, $`S^D`$ number of rate values are required!
+  - Factorize the forward process that each dimension propagates independently.
+- Idea)
+  - The probability that multiple dimensions transition at exactly the same time is zero.
+    - Why?) We assumed the **continuous** time process!
+  - Thus, overall in the full dimensional forward CTMC, each transition only ever involves a change in exactly **one** dimension!
+  - This applies to the time reversal CTMC as well.
+  - Now, the computation is tractable : $`D\times(S-1)+1`$
+    - How?)
+      - Recall that we had the $`S^D`$ number of rates.
+      - Since only one token will change at a timestep, the possible scenarios will be
+        - No token transitions.
+          - e.g.) $`(A, A, A) \rightarrow (A,A,A)`$
+        - Only one token transitions.
+          - e.g.) $`(A, A, A) \rightarrow (A,B,A)`$
+      - Now, among them, only $`\underbrace{D\times\underbrace{(S-1)}_{\vert\mathcal{X}\backslash x\vert}}_{\text{transition!}} +\underbrace{1}_{\text{no transition}}`$ rates are non-zero.
+        - Why?)
+          - There is only **one** case that no token shifts.
+          - The number of cases that only one token shifts is $`D\times(S-1)`$
+- Settings)
+  - $`\boldsymbol{x}^{1:D}\in\mathcal{X}^D`$ : $`D`$-dimensional sequence which forward process propagates independently.
+    - $`\boldsymbol{x}^{1:D} = \{x^d\mid d=1,2,\cdots,D\}`$
+  - Factorization
+    - $`q_{t\mid s}(\boldsymbol{x}_t^{1:D}\mid\boldsymbol{x}_s^{1:D}) = \displaystyle\prod_{d=1}^D q_{t\mid s}(x_t^d \mid x_s^d)\quad (s\lt t)`$
+  - $`R_t^d\in\mathbb{R}^{S\times S}`$ : the transition rate matrix of an individual dimension $`d`$
+  - Kronecker-Delta
+    - $`\delta_{\boldsymbol{x}^{1:D\backslash d}, \tilde{\boldsymbol{x}}^{1:D\backslash d}} = \begin{cases} 1 & \text{if all dimensions except for } d \text{ are equal} \\ 0 &\text{otherwise} \end{cases}`$
+      - i.e.)
+        - Consider only the case that $`\tilde{x}^{d'}=x^{d'},\quad \forall d' \in D\backslash d`$
+        - All dimensions except $`d`$ do not transition.
+      - To exclude the cases that multiple dimensions shift.
+      - Only two cases left.
+        - $`\tilde{x}^d = x^d`$ : No dimension transitions
+        - $`\tilde{x}^d \ne x^d`$ : Only $`d`$ transitions
+- Results)
+  - Forward Rates
+    - $`R_t^{1:D}(\tilde{\boldsymbol{x}}^{1:D},\boldsymbol{x}^{1:D})= \displaystyle\sum_{d=1}^D R_t^d(\tilde{x}^d, x^d) \cdot \delta_{\boldsymbol{x}^{1:D\backslash d}, \tilde{\boldsymbol{x}}^{1:D\backslash d}}`$
+  - Reverse Rates
+    - $`\hat{R}_t^{1:D}(\boldsymbol{x}^{1:D}, \tilde{\boldsymbol{x}}^{1:D})= \displaystyle\sum_{d=1}^D \left( R_t^d(\tilde{x}^d, x^d) \cdot \delta_{\boldsymbol{x}^{1:D\backslash d}, \tilde{\boldsymbol{x}}^{1:D\backslash d}} \cdot \sum_{x_0^d} q_{0\mid t}(x_0^d\mid\boldsymbol{x}^{1:D}) \frac{q_{t\mid0}(\tilde{x}^d\mid x_0^d)}{q_{t\mid0}(x^d\mid x_0^d)} \right)`$
+  - Parameterized Reverse Rates
+    - $`\hat{R}_t^{\theta\;1:D}(\boldsymbol{x}^{1:D}, \tilde{\boldsymbol{x}}^{1:D})= \displaystyle\sum_{d=1}^D \left( R_t^d(\tilde{x}^d, x^d) \cdot \delta_{\boldsymbol{x}^{1:D\backslash d}, \tilde{\boldsymbol{x}}^{1:D\backslash d}} \cdot \sum_{x_0^d} p_{0\mid t}^\theta(x_0^d\mid\boldsymbol{x}^{1:D}) \frac{q_{t\mid0}(\tilde{x}^d\mid x_0^d)}{q_{t\mid0}(x^d\mid x_0^d)} \right)`$
+
+<br>
+
+### 4.3 Simulating the Generative Reverse Process with Tau-Leaping
+- Goal)
+  - Utilize the faster sampling process with [Tau-Leaping](#concept-tau-leaping-algorithm)
+- Idea)
+  - Gillepspies's Algorithm may sample step by step as...
+    - sampling a holding time to reamin in the current state
+    - sampling a new state according to $`\hat{R}_t^{\theta\;1:D}`$.
+  - What if we apply all transitions that occurred in $`[t-\tau,t]`$ simultaneously.
+    - [Tau-Leaping](#concept-tau-leaping-algorithm)
+
+#### Concept) Tau-Leaping Algorithm
+- Assumptions)
+  - Consider the time steps $`[t-\tau, t]`$
+  - $`\hat{R}_{t'}^{\theta\;1:D}`$ and $`\boldsymbol{x}_{t'}^{1:D}`$ remains constant $`\forall t'\in[t-\tau, t]`$
+- General Tau-Leaping in chemistry
+  - $`\displaystyle\boldsymbol{x}_{t-\tau}^{1:D} = \boldsymbol{x}_t^{1:D} + \sum_i P_i \cdot \left(\tilde{\boldsymbol{x}}_i^{1:D} - \boldsymbol{x}_t^{1:D}\right)`$
+    - where 
+      - $`i = (d,s) \in D\times \mathcal{X}`$ : an index for all possible transitions in dimension $`d`$ to state $`s`$.
+        - Jump vector $`\left(\tilde{\boldsymbol{x}}_i^{1:D} - \boldsymbol{x}_t^{1:D}\right) = [0\;0\;\cdots\;(s-x_t^d)\;\cdots\;0]`$ below characterizes $`i=(d,s)`$
+      - $`P_i`$ : the number of jumps Poisson distributed with mean $`\tau \hat{R}_t^{\theta\;1:D}(\boldsymbol{x}_t^{1:D}, \tilde{\boldsymbol{x}}_t^{1:D})`$
+        - i.e.) 
+          - the number of times a transition $`\left(\boldsymbol{x}_t^{1:D}\rightarrow\tilde{\boldsymbol{x}}_t^{1:D}\right)`$ occurs is Poisson distributed with the mean of $`\tau \hat{R}_t^{\theta\;1:D}(\boldsymbol{x}_t^{1:D}, \tilde{\boldsymbol{x}}_t^{1:D})`$
+      - $`\left(\tilde{\boldsymbol{x}}_i^{1:D} - \boldsymbol{x}_t^{1:D}\right)`$ : the jump vector to $`i=(d,s)`$
+        - Desc.)
+          - Suppose the original state is $`\boldsymbol{x}_t^{1:D}`$ at $`t`$
+            - where $`\boldsymbol{x}_t^{1:D} = [x_t^1\;x_t^2\;\cdots\;x_t^d\;\cdots\;x_t^D\;]`$
+          - We want to quantify the direction and magintue of the jump to $`\tilde{\boldsymbol{x}}_t^{1:D}`$
+            - where $`\tilde{\boldsymbol{x}}_t^{1:D} = [x_t^1\;x_t^2\;\cdots\;s\;\cdots\;x_t^D\;]`$
+          - Only the dimension $`d`$ changes from $`x_t^d`$ to $`s`$, because we assumed CTMC.  
+            - Refer to the [factorization](#42-factorizing-over-dimensions) for more details.
+          - Then the subtraction $`\left(\tilde{\boldsymbol{x}}_i^{1:D} - \boldsymbol{x}_t^{1:D}\right)`$ denotes the direction and the magintude of that transition.
+            - i.e.) $`\left(\tilde{\boldsymbol{x}}_i^{1:D} - \boldsymbol{x}_t^{1:D}\right) = [0\;0\;\cdots\;(s-x_t^d)\;\cdots\;0]`$
+              - cf.) Here, $`s,x_t^d \in\mathcal{X}`$ are categorical values, but we defined the **subtraction** having a mapping of $`\mathcal{X}\times\mathcal{X}\rightarrow\mathbb{Z}`$   
+- We may rewrite as
+  - $`\displaystyle\boldsymbol{x}_{t-\tau}^{1:D} = \boldsymbol{x}_t^{1:D} + \sum_{d=1}^D\sum_{s=1}^S P_{ds} \cdot (s-x_t^d) \cdot \boldsymbol{e}^d`$
+    - where 
+      - $`P_{ds}`$ : the number of jumps at dimension $`d`$ to state $`s`$
+        - Poisson distributed with mean $`\tau \hat{R}_t^{\theta\;1:D}(\boldsymbol{x}_t^{1:D}, \tilde{\boldsymbol{x}}_t^{1:D})`$
+      - $`\boldsymbol{e}^d`$ : the one hot vector with a $`1`$ at dimension $`d`$
+        - i.e.) $`\boldsymbol{e}^d = [0\;0\;\cdots\underbrace{1}_{d\text{-th dim.}}\cdots\;0]`$
+- Props.)
+  - Multiple jumps in the same dimension
+    - Case 1) $`\mathcal{X}`$ is ordinal
+      - Makes sense. So add them up.
+    - Case 2) $`\mathcal{X}`$ is categorical (Our case!)
+      - Block this.
+        - i.e.) Reject changes to $`x_t^d`$ for any $`d`$ s.t. $`\displaystyle\sum_{s\in \mathcal{X}\backslash x_t^d} P_{ds}\gt1`$
+      - cf.) The author says the rejection rate was small when $`R_t^{1:D}`$ is suitable for categorical data
+        - e.g.) Uniform
+  - Trade-off between precision and performance
+
+|Desc.|Image|
+|:-|:-:|
+|$`\displaystyle\sum_i \underbrace{P_i}_{\text{\# of jumps}} \cdot \underbrace{\left(\tilde{\boldsymbol{x}}_i^{1:D}- \boldsymbol{x}_t^{1:D}\right)}_{\text{dir \& mag of jump}} = \sum_{d=1}^D\sum_{s=1}^S P_{ds} \cdot (s-x_t^d) \cdot \boldsymbol{e}^d`$ <br><br><br> - The above metric counts all the jumps that each dimension of $`\boldsymbol{x}_t^{1:D}`$ transitioning into every state $`s\in\mathcal{X}`$|![](./images/ctmc_003.png)|

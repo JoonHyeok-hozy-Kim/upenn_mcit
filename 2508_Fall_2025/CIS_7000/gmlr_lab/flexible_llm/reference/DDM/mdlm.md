@@ -87,7 +87,7 @@
     - Def.)
       - $`q(\mathbf{z}_t\mid\mathbf{x}) = \text{Cat}(\mathbf{z}_t \;;\;\alpha_t\mathbf{x} + (1-\alpha_t)\boldsymbol{\pi})`$ : 
         - where
-          - $`\alpha_t = e^{-\sigma(t)}\in[0,1]`$ 
+          - $`\alpha_t = e^{\sigma(t)}\in[0,1]`$ 
             - s.t. $`\sigma: [0,1]\rightarrow\mathbb{R}_+`$
     - Props.)
       - $`\alpha_t\in[0,1]`$ strictly decrease in $`t`$
@@ -296,3 +296,8 @@
           - Calcualte the cross entropy loss between $`p_\theta^\ell(\mathbf{x}^{\ell})`$ and $`\mathbf{x}^\ell`$
             - Both are probability terms
             - $`\mathbf{x}^\ell`$ is the one-hot encoding (i.e. derminisitic probability)
+
+<br>
+
+## 4 Inference and Sampling in Masked Diffusion Language Models
+### 4.1 Efficient Anscestral Sampling
