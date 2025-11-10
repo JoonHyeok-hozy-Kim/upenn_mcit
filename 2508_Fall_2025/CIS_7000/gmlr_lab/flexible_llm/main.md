@@ -13,6 +13,7 @@
   - [(Postponed) Edit Flows](./reference/DDM/edit_flow.md), Havasi et al
   - SEDD, Lou et al
   - FlexMDM
+  - Insertion Language Models, Patel et al.
   - [(Postponed) Di4C](./reference/DDM/di4c.md), Hayakawa et al
 - Non Auto Regressive
   - [Levenshtein Transformer](./reference/NAR/levt.md), Gu et al
