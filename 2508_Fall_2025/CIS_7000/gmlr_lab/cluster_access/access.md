@@ -12,5 +12,5 @@
 
 ### GPU Request
 ```bash
-srun -p gu-compute -A gu-account --qos=gu-med --gres=gpu:1 --mem=32G --time=1:00:00 --pty bash
+srun -p gu-compute -A gu-account --qos=gu-med --gres=gpu:1 --mem=32G --time=4:00:00 --pty bash
 ```

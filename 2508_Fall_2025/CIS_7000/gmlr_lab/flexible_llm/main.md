@@ -6,9 +6,9 @@
   - [MDLM](./reference/DDM/mdlm.md), Sahoo et al
   - [PGM](./reference/DDM/pgm.md), Deschenaux et al
     - [Presentation Slides : D3PM > MDLM > PGM](./reference/DDM/presentation/pgm.md)
-  - [(WIP) CTMC](./reference/DDM/cmtc.md), Campbell et al
+  - [CTMC](./reference/DDM/cmtc.md), Campbell et al
     - [Kolmogorov Equation](./reference/DDM/cmtc.md#concept-kolmogorov-equation) 
-  - Discrete Flow Model (DFM), Campbell et al
+  - [(WIP) Discrete Flow Model (DFM)](./reference/DDM/dfm.md), Campbell et al
   - Discrete Flow Matching, Gat et al
   - [(Postponed) Edit Flows](./reference/DDM/edit_flow.md), Havasi et al
   - SEDD, Lou et al

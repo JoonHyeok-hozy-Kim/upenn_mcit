@@ -80,7 +80,7 @@ Liu et al. 2022
       - $`X_1\sim\pi_1`$ : empirical observation 2
       - $`(X_0, X_1)`$ : the data pair
         - Arbitrary!
-    - The **rectified flow** induced from the data pair $`(X_o,X_1)`$ is an ordinary differentiable model (ODE) on time $`t\in[0,1]`$
+    - The **rectified flow** induced from the data pair $`(X_0,X_1)`$ is an ordinary differentiable model (ODE) on time $`t\in[0,1]`$
       - $`\text{d} Z_t = v_\theta(Z_t, t) \text{d}t`$
         - where
           - $`Z_0\sim\pi_0`$

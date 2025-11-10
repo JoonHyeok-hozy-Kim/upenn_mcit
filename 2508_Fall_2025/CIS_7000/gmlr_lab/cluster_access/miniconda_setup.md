@@ -1,4 +1,17 @@
 # Miniconda3 setup
+- Connect to the GPU unit. (Every job should be done here)
+  ```bash
+  srun -p gu-compute -A gu-account --qos=gu-med --gres=gpu:1 --mem=32G --time=4:00:00 --pty bash
+  ```
+- Create your directory in `/scratch/tmp/`
+  ```bash
+  # /scratch has faster io. If /scratch/tmp is allowed
+  cd /scratch/tmp
+  mkdir hozy
+  cd hozy
+  mkdir torch_setup
+  cd torch_setup
+  ```
 - Download Miniconda
   ```bash
   wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -13,49 +26,47 @@
   ```
   - e.g.)
     ```bash
-    conda create -n min_mdlm python=3.12
+    conda create -n pytorch_blackwell_default python=3.12
     ```
 
 
 ### Torch setup
-- Activate the virtual environment
+- Initial
+  - Activate the virtual environment
+    ```bash
+    conda activate <env_name>
+    ```
+  - Install following packages
+    ```bash
+    pip install cmake six
+    ```
+    ```bash
+    conda install -c nvidia cuda-toolkit pyyaml make c-compiler cxx-compiler
+    ```
+  - Clone the official PyTorch github repo
+    ```bash
+    git clone https://github.com/pytorch/pytorch.git
+    ```
+  - Three Options
+    - [Install in CLI](#install-in-cli)
+    - [Run script](#run-script)
+    - [Copy existing build...](#copy-existing-build)
+- Copying the existing build
   ```bash
-  conda activate <env_name>
+  conda create --name [new_env_name] --clone [existing_env_name]
   ```
-- Install following packages
-  ```bash
-  pip install cmake 
-  ```
-  ```bash
-  conda install pyyaml
-  ```
-  ```bash
-  conda install cuda-toolkit -c nvidia
-  ```
-  ```bash
-  conda install make c-compiler cxx-compiler
-  ```
-  ```bash
-  pip install six
-  ```
-- Clone the official PyTorch github repo
-  ```bash
-  git clone https://github.com/pytorch/pytorch.git
-  ```
-- Two Options
-  - [Install in CLI](#install-in-cli)
-  - [Run script](#run-script)
 
 <br>
 
 #### Install in CLI
 - Connect the GPU
   ```bash
-  srun -p gu-compute -A gu-account --qos=gu-med --gres=gpu:1 --mem=64G --time=4:00:00 --pty bash
+  srun -p gu-compute -A gu-account --qos=gu-med --gres=gpu:1 --mem=32G --time=4:00:00 --pty bash
   ```
   - Set 4hrs. Installation takes more than an hour.
 - Go to the cloned PyTorch repository and run `setup.py`
   ```bash
+  cd pytorch # If properly installed.
   pip install . -v
   ```
   - If you failed, clean the repo with below and run the above again.
@@ -65,103 +76,12 @@
 
 
 #### Run script
-- Create environment check script : 
-```bash
-#!/bin/bash
-
-# Slurm setup
-#SBATCH -p gu-compute
-#SBATCH -A gu-account
-#SBATCH --qos=gu-med
-#SBATCH --gres=gpu:1
-#SBATCH --mem=32G
-#SBATCH --time=1:00:00
-#SBATCH --output=/home/hozy/torch_setup/logs/pytorch_build_%j.log
-
-echo "==================================="
-echo "Environment Check for Build PyTorch"
-date
-echo "Job running on node: $(hostname)"
-echo "==================================="
-
-
-echo "Attempting to activate Conda env: min_mdlm"
-source ~/miniconda3/bin/activate min_mdlm
-
-echo "[DEBUG] Conda env check:"
-echo "CONDA_DEFAULT_ENV: $CONDA_DEFAULT_ENV"
-echo "[DEBUG] Python path check:"
-which python
-echo "==================================="
-
-PYTORCH_DIR="/home/hozy/torch_setup/pytorch"
-echo "Attempting to change directory to: $PYTORCH_DIR"
-cd $PYTORCH_DIR || { echo "ERROR: Could not find $PYTORCH_DIR. Exiting."; exit 1; }
-
-echo "[DEBUG] Current directory check:"
-pwd
-
-echo "[DEBUG] Directory contents check :"
-ls -l setup.py
-
-echo "==================================="
-echo "Fin."
-date
-```
+- Create environment check script : [env_check_sbatch_script.sh](./scripts/env_check_sbatch_script.sh)
 - Run script and check log
   ```bash
   sbatch [script_file]
   ```
-- Create actual build script
-```bash
-#!/bin/bash
-
-# Slurm setup
-#SBATCH -p gu-compute
-#SBATCH -A gu-account
-#SBATCH --qos=gu-med
-#SBATCH --gres=gpu:1
-#SBATCH --mem=64G
-#SBATCH --time=4:00:00
-#SBATCH --output=/home/hozy/torch_setup/logs/pytorch_build_%j.log
-
-echo "==================================="
-echo "Job name : Build PyTorch"
-date
-echo "Job running on node: $(hostname)"
-echo "==================================="
-
-
-echo "Attempting to activate Conda env: min_mdlm"
-source ~/miniconda3/bin/activate min_mdlm
-
-echo "[DEBUG] Conda env check:"
-echo "CONDA_DEFAULT_ENV: $CONDA_DEFAULT_ENV"
-echo "[DEBUG] Python path check:"
-which python
-echo "==================================="
-
-PYTORCH_DIR="/home/hozy/torch_setup/pytorch"
-echo "Attempting to change directory to: $PYTORCH_DIR"
-cd $PYTORCH_DIR || { echo "FATAL ERROR: Could not find $PYTORCH_DIR. Exiting."; exit 1; }
-
-echo "[DEBUG] Current directory check:"
-pwd
-
-echo "[DEBUG] Directory contents check :"
-ls -l setup.py
-
-echo "==================================="
-
-echo "Clean PyTorch repo."
-git clean -xdf
-
-echo "Start building"
-pip install . -v
-
-echo "Fin."
-date
-```
+- Create actual build script : [torch_install_sbatch_script.sh](./scripts/torch_install_sbatch_script.sh)
 - Run script
   ```bash
   sbatch [script_file]
@@ -169,4 +89,32 @@ date
 - Check status
   ```bash
   squeue -u [user_name]
+  ```
+
+### Copy existing build
+- Admin'or shared below   
+  ```
+  Hi Joon,
+  I think it took about 2 or 3 hours to build for me.  If you run into any more issues, feel free to copy my build, which is in /scratch/tmp/svitale:
+
+  It should be faster to build in /scratch..  also, if you'd like us to add some directories with user-specific permissions in /scratch, just let us know.  Right now /scratch/tmp is world writable so you can at least create files there.
+  ```
+- Copy env to my minconda3 envs
+  ```bash
+  cp -r /scratch/tmp/svitale/myenv ~/miniconda3/envs
+  ```
+- Activate conda and check if cuda recognition
+  ```bash
+  conda activate myenv
+  python -c "import torch; print(torch.cuda.is_available())"
+  ```
+  ![](./images/test_001.png)
+- Keeping activation of `myenv`, export package list
+  ```bash
+  conda env export > env_spec.yml
+  conda deactivate
+  ```
+- Create new environments using `conda create --clone`
+  ```bash
+  conda env create -f env_spec.yml --name [new_env_name]
   ```

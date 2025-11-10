@@ -1,6 +1,21 @@
 # A Continuous Time Framework for Discrete Denoising Models
 [@campbellContinuousTimeFramework2022]
 
+## Summary
+- Goal)
+  - Adopt continuous time to Discrete Diffusion Model.
+- How?)
+  - By introducing the [transition rate matrix](#concept-transition-rate-matrix) $`(R_t)`$ and the [Kolmogorov equation](#concept-kolmogorov-equation), this paper defines the forward and backward process of the discrete diffusion model.
+  - The backward transition rate $`(\hat{R}_t)`$ is approximated with the neural network with $`(\hat{R}_t^\theta)`$
+  - With [Proposition 1](#proposition-1), the relation between the forward rate $`(R_t)`$ and the backward rate $`(\hat{R}_t)`$ is defined.
+    - Using the this equation, forward posterior is calculated with using $`R_t`$ and we may optimize $`\hat{R}_t^\theta`$
+    - ELBO is used as loss.
+  - [Tau-leaping](#concept-tau-leaping-algorithm) enables faster sampling sacrificing some accuracy.
+  - [Predictor-Corrector](#44-predictor-corrector) algorithm enhances the sampling accuracy by utilizing the marginal $`q_t(x_t)`$ 
+    - the rate $`R_t^c = R_t+\hat{R}_t`$ has $`q_t(x_t)`$ as its stationary distribution
+
+<br>
+
 ## 2 Background on Discrete Denoising Models
 - Settings)
   - $`x_0\in\mathcal{X}`$ : a discrete data
@@ -162,11 +177,15 @@
       - Desc.)
         - On the perspective of the starting point $`\tilde{x}`$ at the time step $`s`$
         - Sum of all possible **outflows** from $`\tilde{x}`$ by passing through $`\tilde{x}\rightarrow y\rightarrow x`$
-    - Differential Equation at $`t`$ : $`\partial_t q_{t}(x) = \displaystyle\sum_y q_{t}(y)R_t(y,x)`$
-      - Desc.)
-        - Considers both inflows and outflows of $`x`$ at time step $`t`$.
-          - Inflows : $`x\ne y`$
-          - Outflows : $`x = y`$
+    - Differential Equation at $`t`$ :   
+      $`\begin{aligned}
+        \partial_t q_{t}(x) &= \underbrace{\partial_t}_{\text{at }t} q_{t\mid s}(x\mid\tilde{x}) + \underbrace{\partial_s}_{\text{at }s} q_{t\mid s}(x\mid\tilde{x}) \\
+        &= \displaystyle\sum_y q_{t}(y)R_t(y,x)
+      \end{aligned}`$
+        - Desc.)
+          - Considers both inflows and outflows of $`x`$ at time step $`t`$.
+            - Inflows : $`x\ne y`$
+            - Outflows : $`x = y`$
 
 <br>
 
@@ -364,6 +383,9 @@
      \end{array}`$
      - Or, equivalently 
        - $`\hat{R}_{T-t}(x,\tilde{x}) = \displaystyle R_{t}(\tilde{x},x) \frac{q_{t}(\tilde{x})}{q_{t} (x)}`$
+     - But the authors argue that
+       - $`\hat{R}_{t}(x,\tilde{x}) = \displaystyle R_{t}(\tilde{x},x) \frac{q_{t}(\tilde{x})}{q_{t} (x)}`$
+         - Just by starting with $`\hat{R}_{T-t}`$ instead of $`\hat{R}_{t}`$.
 
 </details>
 <br><br>
@@ -535,3 +557,33 @@
 |Desc.|Image|
 |:-|:-:|
 |$`\displaystyle\sum_i \underbrace{P_i}_{\text{\# of jumps}} \cdot \underbrace{\left(\tilde{\boldsymbol{x}}_i^{1:D}- \boldsymbol{x}_t^{1:D}\right)}_{\text{dir \& mag of jump}} = \sum_{d=1}^D\sum_{s=1}^S P_{ds} \cdot (s-x_t^d) \cdot \boldsymbol{e}^d`$ <br><br><br> - The above metric counts all the jumps that each dimension of $`\boldsymbol{x}_t^{1:D}`$ transitioning into every state $`s\in\mathcal{X}`$|![](./images/ctmc_003.png)|
+
+<br>
+
+### 4.4 Predictor-Corrector
+- Goal)
+  - Recall that $`q_t(x_t)`$ (the marginal distribution of samples at $`t`$) was intractable.
+  - Thus, we parameterized $`q_{0\mid t}(x_0\mid x) = \displaystyle\frac{q_{t\mid0}(x\mid x_0)}{q_t(x)}`$ with $`p_{0\mid t}^\theta (x_0\mid x)`$.
+  - We may guide our model to better approximate the path buy exploiting additional information of $`\left\{q_t(x_t)\right\}_{t\in[T,0]}`$ (the reverse progression of marginals).
+- How?)
+  - Use [Tau-leaping](#concept-tau-leaping-algorithm) with the rate $`\hat{R}_t^\theta`$ as the **predictor**.
+  - Apply **corrector** steps by using $`R_t^c = R_t+\hat{R}_t^\theta`$
+- Why does this work?)
+  - Proposition 4)
+    - For a forward CTMC with
+      - $`\left\{q_t(x_t)\right\}_{t\in[0,T]}`$ : the forward marginals
+      - $`R_t`$ : the forward rate
+      - $`\hat{R}_t`$ : the corresponding reverse CTMC rate
+    - the rate $`R_t^c = R_t+\hat{R}_t`$ has $`q_t(x_t)`$ as its stationary distribution
+      - Here, the stationary distribution means that the distribution is time-indifferent.
+      - Since $`R_t^c = R_t + \hat{R}_t`$, the forward and backward time flows are canceled out
+  - We approximate as $`\hat{R}_t \approx \hat{R}_t^\theta`$
+- Prop.)
+  - This works similar to the [Score Based Model](../../../../paper_presentation/250931_latent_diffusion/paper_summary/score_based_model.md) s.t.
+    - predict by integrating reverse SDE
+    - correct with score-based MCMC steps.
+      - refer to [Predictor–Corrector (PC) Samplers](../../../../paper_presentation/250931_latent_diffusion/paper_summary/score_based_model.md#42-predictorcorrector-pc-samplers)
+
+<br>
+
+### 4.5 Error Bound
