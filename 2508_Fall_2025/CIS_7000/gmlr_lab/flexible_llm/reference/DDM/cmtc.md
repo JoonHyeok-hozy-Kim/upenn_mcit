@@ -439,6 +439,8 @@
             - having steady speed of information corruption which ensures that $`\hat{R}_t`$ does not vary quickly in a short span of time.
       - $`R_b \in\mathbb{R}^{S\times S}`$ : a user-specified time independent base rate matrix
         - s.t. $`\displaystyle\frac{R_b(\tilde{x},x)}{R_b(x,\tilde{x})} = \frac{p_{\text{ref}}(x)}{p_{\text{ref}}(\tilde{x})} = \exp\left[ \frac{(\tilde{x}-\mu_0)^2}{2\sigma_0^2} - \frac{(x-\mu_0)^2}{2\sigma_0^2} \right]`$
+          - which was derived from the **detailed balance** condition of
+            - $`p_{\text{ref}}(\tilde{x}) R_b(\tilde{x},x) = p_{\text{ref}}(x) R_b(x,\tilde{x})`$
         - Desc.) $`8\times 8`$   
           ![](./images/ctmc_002.png)
         - e.g.) Uniform rate 
