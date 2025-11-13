@@ -301,3 +301,63 @@
 
 ## 4 Inference and Sampling in Masked Diffusion Language Models
 ### 4.1 Efficient Anscestral Sampling
+
+
+<br><br>
+
+## 5. Code Implementation Review
+
+## Training Step
+- LightningTrainer.fit() calls following methods from the `Diffusion` object sequentially
+- `configure_optimizers()`
+    - `return` AdamW optimizer, scheduler (learning rate)
+- `on_load_checkpoint()`
+- `on_save_checkpoint()`
+- `on_train_start()`
+- `on_train_epoch_start()`
+    - `self.backbone.train()` : DiT, AR, etc
+    - `self.noise.train()`    : LogLinear by default (Cosine implemented but not used?)
+        - train called but has no parameter.
+- `training_step()`
+    - `loss = self._compute_loss()`
+        - `self._compute_loss()`
+            - If attention mask is not provided, call `self._loss`
+                - If `'ar'`
+                    - `loss = self.backbone.forward()` : logit!
+                - Else
+                    - `loss = self._forward_pass_diffusion`
+                        - `self._forward_pass_diffusion`
+                            - `t = self._sample_t()` : time step sampling
+                                - `self._sample_t()` stabilizies and spreads out time steps (refer to [code below](#tech-_sample_t))
+                            - `xt = self.q_xt(x0, move_chance)` : mask tokens following the Poisson distribution.
+                            - `model_output = self.forward(xt, unet_conditioning)` : forward the masked `xt` to the backbone (e.g. DiT)
+                            - Following performs CE LOSS calculation
+                              ```
+                              log_p_theta = torch.gather(
+                                input=model_output,
+                                dim=-1,
+                                index=x0[:, :, None]).squeeze  (-1)
+                              ```
+                              - Desc.) From `model_output` that has logits for each batch-token-vocab, index only the vocab that is in the `x0` which is the answer. This is equivalent to CE loss calcualtion.
+            - `return Loss(loss, nll, token_mask)`
+                - where
+                    - `loss` is the scalar average of nll
+                    - `nll` is the attention masked logit loss
+                    - `token_mask` is the attention mask
+- `on_validation_epoch_start()`
+- `validation_step()`
+- `on_validation_epoch_end()`
+
+
+#### Tech.) _sample_t
+```python
+def _sample_t(self, n, device):
+    _eps_t = torch.rand(n, device=device)
+    if self.antithetic_sampling:
+      offset = torch.arange(n, device=device) / n
+      _eps_t = (_eps_t / n + offset) % 1
+    t = (1 - self.sampling_eps) * _eps_t + self.sampling_eps
+    if self.importance_sampling:
+      return self.noise.importance_sampling_transformation(t)
+    return t
+```
