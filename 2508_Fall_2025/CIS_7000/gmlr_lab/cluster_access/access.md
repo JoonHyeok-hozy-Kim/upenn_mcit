@@ -14,12 +14,14 @@ Joon Hyeok Kim
 - In that Linux environment access the server.
   - login1
     ```bash
-    ssh hozy@grasp-login1.seas.upenn.edu
+    ssh [user_id]@grasp-login1.seas.upenn.edu
     ```
   - login2
     ```bash
-    ssh hozy@grasp-login2.seas.upenn.edu
+    ssh [user_id]@grasp-login2.seas.upenn.edu
     ```
+  - e.g.)   
+    ![](./images/tutorial_010.png)
 - This is the server that manages the overall system, not the GPU cluster.   
   ![](./images/tutorial_002.png)
 - If you're using the school wifi, you can `ssh` directly.
