@@ -69,6 +69,7 @@
 <br><br>
 
 ### 2.3 Probability paths
+#### Concept) Marginal Probability Path
 - Def.)
   - $`p_t`$ : the probability path in $`t\in[0,1]`$
     - where
@@ -152,8 +153,136 @@
   - We want to define Flow Matching in the discrete setting.
   - Thus, we need a velocity concept that corresponds to the velocity field $`u_t`$ in the [continuous flow matching](#concept-continuous-flow-matching).
 - Def.)
-  - 
+  - $`u_t^i`$ : the probability velocity 
+    - s.t.
+      - $`X_{t+h}^i \sim \delta_{X_t^i}(\cdot) + h u_t^i(\cdot, X_t)`$
+        - where
+          - $`X_t\in[d]^N`$
+          - $`X_t^i\in[d]`$
+      - $`u_t^i(x^i, z) \ge 0, \quad z\in[d]^N, x^i\ne z^i, \forall i\in[N]`$
+        - i.e.) Outflow from $`z`$ on the direction of $`x^i`$
+          - Off-diagonal cases of the [transition rate matrix in CTMC](./cmtc.md#concept-transition-rate-matrix)
+      - $`\displaystyle\sum_{x^i\in[d]} u_t^i(x^i, z) = 0`$ where $`z\in[d]^N`$
+        - cf.) 
+          - Since the above off-diagonals are positive, diagonals should be **negative**. 
+          - This corresponds with $`R_t(x,x)`$ of the [transition rate matrix in CTMC](./cmtc.md#concept-transition-rate-matrix)
+  - $`u_t`$ **generates** the probability path $`p_t`$
+    - if $`X_{t+h}\sim p_{t+h} + o(h), \quad \forall t\in[0,1)`$
+      - where $`X_{t+h}^i \sim \delta_{X_t^i}(\cdot) + h u_t^i(\cdot, X_t)`$
 
 <br>
 
-#### Concept) Discrete Flow Matching
+#### Concept) Divergence Operator
+- Def.)
+  - For 
+    - $`x\in\mathbb{R}^N`$ : an $`N`$ length sequence in the **continuous** space
+    - $`v:\mathbb{R}^N\rightarrow\mathbb{R}^N`$ : a vector field
+      - i.e.) $`v = [v^1,\cdots, v^N]`$ for $`v^i : \mathbb{R}^N\rightarrow\mathbb{R},\quad i=1,\cdots, N`$
+  - the divergence operator $`\text{div}`$ of the vector field $`v`$ on a point $`x`$ is defined as
+    - $`\text{div}_x(v) = \displaystyle\sum_{i=1}^N \partial_{x^i} v^i(x)`$
+- Meaning)
+  - Total flux (inflow + outflow) leaving $`x`$.
+    - Why?)
+      - Consider that $`v^i : \mathbb{R}^N\rightarrow\mathbb{R}`$.
+        - i.e.) The magnitude of change from a sequence state $`x\in\mathbb{R}^N`$ on the direction of $`x^i\in\mathbb{R}`$
+        - cf.)
+          - Recall that the velocity is composed of the direction and the magnitude.
+          - $`v`$ describes the $`N`$ directions by mapping to $`\mathbb{R}^N`$
+          - Each element $`v^i`$ fixes the direction and denotes the magnitude on it.
+      - Then $`\partial_{x^i}v^i(x)`$ is the rate of change on that direction $`x^i`$
+        - Desc.)
+          - Recall that $`v^i`$ was the magnitude of change on the direction of $`x_i`$.
+          - Thus, $`\partial_{x^i} v^i`$ captures the rate of change in that direction.
+          - If you add those from every direction, it denotes the net flux on the point $`x`$ in every direction $`\mathbb{R}^N`$
+        - Cases)
+          - $`\partial_{x^i}v^i(x) \gt 0`$ : outflow
+          - $`\partial_{x^i}v^i(x) \lt 0`$ : inflow
+      - Hence, $`\displaystyle\sum_{i=1}^N \partial_{x^i} v^i(x)`$ captures the net flux from $`x`$ on every direction.
+- Graphical Desc.)   
+  ![](./images/dfmatching_001.png)
+
+<br>
+
+#### Concept) Continuity Equation
+- Def.)
+  - $`\dot{p}_t(x) + \text{div}_x(p_t u_t) = 0`$
+    - where
+      - $`p_t\in\mathbb{R}^+`$ : the marginal probability **density** (continuous!)
+      - $`u_t:\mathbb{R}^N\rightarrow\mathbb{R}^N`$ : the [probability velocity](#concept-probability-velocity) field in the continuous space
+    - cf.)
+      - We may think $`p_t u_t`$ as amount of probability density flow
+- Meaning)
+  - The rate of the probability $`\dot{p}_t(x)`$ of a state $`x\in\mathbb{R}^N`$ equals the total **incoming** probability flux $`\text{div}_x(p_t u_t)`$.
+    - Why incoming?)
+      - Consider that $`\text{div}_x(p_t u_t) = - \dot{p}_t(x)`$
+      - Recall that in the [divergence operator](#concept-divergence-operator), inflow was negative.
+  - This corresponds to the differential derived from the [Kolomogorov equation](./cmtc.md#concept-kolmogorov-equation).
+    - $`\partial_t q_t(x) = \displaystyle\sum_{y\in\mathcal{X}} q_t(y) \cdot R_t(y, x)`$
+
+<br>
+
+#### Concept) Discrete Divergence
+- Def.)
+  - Let
+    - $`p_t`$ : the marginal probability **mass** (discrete!)
+    - $`u_t : \mathcal{D}\rightarrow\mathcal{D}`$ : the [probability velocity](#concept-probability-velocity) field in the discrete space
+    - $`\text{div}_x(v) = \displaystyle\sum_{z\in\mathcal{D}}\left[\underbrace{v(z,x)}_{\text{outflow}} - \underbrace{v(x,z)}_{\text{inflow}}\right]`$ : the [divergence operator](#concept-divergence-operator) on the discrete space
+      - where 
+        - $`v(z,x)`$ denotes the outflow from $`x`$ to $`z`$
+        - $`-v(x,z)`$ denotes the inflow from $`z`$ to $`x`$
+  - The discrete divergence of the flux $`p_tu_t`$ at a state $`x`$ is defined as
+    - $`\text{div}_x(p_t u_t) = -\displaystyle\sum_{z\in\mathcal{D}} p_t(z) \left[ \sum_{i=1}^N \delta_z(x^{\bar{i}}) u_t^i(x^i, z) \right]`$
+      - where
+        - $`\delta_z(x^{\bar{i}}) = \begin{cases} 1 & \text{if } z^{\bar{i}} = x^{\bar{i}} \; (\text{i.e. } z=x \;\vee\; z^i\ne x^i \text{ only at } i ) \\ 0 & \text{otherwise}  \end{cases}`$
+- Derivation)
+  - We may rewrite the [divergence operator](#concept-divergence-operator) definition $`\text{div}_x(v) = \displaystyle\sum_{z\in\mathcal{D}}\left[\underbrace{v(z,x)}_{\text{outflow}} - \underbrace{v(x,z)}_{\text{inflow}}\right]`$ with
+    - $`v(z,x) = p_t(x) u_t^i(z^i, x)`$
+      - i.e.) the probability mass outflow from $`x`$
+    - $`-v(x,z) = -\underbrace{p_t(z) u_t^i(x^i, z)}_{\text{outflow from }z}`$
+      - i.e.) the probability mass inflow to $`x`$
+  - Also, consider that the $`z=x`$ case cancels out.
+    - Why?)
+      - $`v(x,x)-v(x,x) = p_t(x) u_t^i(x^i, x) - \underbrace{p_t(x) u_t^i(x^i, x)}_{\text{outflow from }x} = 0`$
+    - We say $`z = x`$ iff. $`z^i = x^i,\quad\forall i=1,\cdots,N`$
+    - We may denote this using the [direct delta](#21-setup-and-notations) notation as
+      - $`z=x \;\Leftrightarrow\; \delta_x(z^{\bar{i}}) = 1`$
+        - where
+          - $`\delta_x(z^{\bar{i}}) = \delta_{x^{\bar{i}}}(z^{\bar{i}}) = \displaystyle\prod_{j\ne i}\delta_{x^{j}}(z^{j}) = \displaystyle\prod_{j\in\{1,\cdots,N\}\backslash i}\delta_{x^{j}}(z^{j})`$
+  - Hence, we may rewrite as   
+    $`\begin{aligned}
+      \text{div}_x(v) 
+      &= \sum_{z\in\mathcal{D}}\left[\underbrace{v(z,x)}_{\text{outflow}} - \underbrace{v(x,z)}_{\text{inflow}}\right] \\
+      &= \sum_{z\in\mathcal{D}}\left[ \left(\sum_{i=1}^N p_t(x) u_t^i(z^i, x)\right) - \left( \sum_{i=1}^N p_t(z) u_t^i(x^i, z) \right) \right] \\
+      &= \sum_{z\in\mathcal{D}}\left[ \sum_{j\in\{1,\cdots,N\}\backslash i}  \bigg( p_t(x) u_t^i(z^i, x) - p_t(z) u_t^i(x^i, z) \bigg) \right] & \because\text{Cancel out } z= x \\
+      &= \sum_{z\in\mathcal{D}}\sum_{i=1}^N \left[ \delta_{x^{\bar{i}}}(z^{\bar{i}}) \bigg( p_t(x) u_t^i(z^i, x) - p_t(z) u_t^i(x^i, z) \bigg) \right] & \because\text{Dirac-delta Notation} \\
+      &= \sum_{z\in\mathcal{D}}\sum_{i=1}^N \left[ \delta_{x^{\bar{i}}}(z^{\bar{i}}) p_t(x) u_t^i(z^i, x) \right] -  \sum_{z\in\mathcal{D}}\sum_{i=1}^N \left[ \delta_{x^{\bar{i}}}(z^{\bar{i}}) p_t(z) u_t^i(x^i, z) \right]  \\
+      &= p_t(x) \sum_{z\in\mathcal{D}}\sum_{i=1}^N \left[ \delta_{x^{\bar{i}}}(z^{\bar{i}}) u_t^i(z^i, x) \right] -  \sum_{z\in\mathcal{D}}\sum_{i=1}^N \left[ \delta_{x^{\bar{i}}}(z^{\bar{i}}) p_t(z) u_t^i(x^i, z) \right]  \\
+      &= p_t(x) \sum_{i=1}^N \underbrace{\sum_{z^i} \sum_{z^{\bar{i}}}}_{\mathcal{D}=z^i\cup z^{\bar{i}}} \left[ \delta_{x^{\bar{i}}}(z^{\bar{i}}) u_t^i(z^i, x) \right] -  \sum_{z\in\mathcal{D}}\sum_{i=1}^N \left[ \delta_{x^{\bar{i}}}(z^{\bar{i}}) p_t(z) u_t^i(x^i, z) \right]  \\
+      &= p_t(x) \sum_{i=1}^N \sum_{z^i} \bigg(\underbrace{ \sum_{z^{\bar{i}}} \delta_{x^{\bar{i}}}(z^{\bar{i}}) }_{=1} \bigg) u_t^i(z^i, x)  -  \sum_{z\in\mathcal{D}}\sum_{i=1}^N \left[ \delta_{x^{\bar{i}}}(z^{\bar{i}}) p_t(z) u_t^i(x^i, z) \right]  \\
+      &= p_t(x) \sum_{i=1}^N \bigg( \underbrace{\sum_{z^i} u_t^i(z^i, x)}_{=0} \bigg)  -  \sum_{z\in\mathcal{D}}\sum_{i=1}^N \left[ \delta_{x^{\bar{i}}}(z^{\bar{i}}) p_t(z) u_t^i(x^i, z) \right] & \because\text{Refer to Probability Velocity} \\
+      &= -  \sum_{z\in\mathcal{D}}\sum_{i=1}^N \left[ \delta_{x^{\bar{i}}}(z^{\bar{i}}) p_t(z) u_t^i(x^i, z) \right] \\
+      &= -  \sum_{z\in\mathcal{D}}\sum_{i=1}^N \left[ \delta_{z}(x^{\bar{i}}) p_t(z) u_t^i(x^i, z) \right] & \because \delta_{x}(z^{\bar{i}}) = \delta_{z}(x^{\bar{i}}) \\
+    \end{aligned}`$
+
+
+<br>
+
+#### Theorem 2) 
+- Thm.)
+  - Given
+    - $`u_t^i(x^i,z\mid x_0, x_1)`$ : a conditional [probability velocity](#concept-probability-velocity) field
+    - $`p_t(x\mid x_0, x_1)`$ : a conditional [probability path](#23-probability-paths)
+  - The marginal velocity $`u_t^i(x^i,z)`$ generates the marginal [marginal probability velocity](#concept-marginal-probability-path) $`p_t(x)`$
+    - where
+      - $`u_t^i(x^i,z) = \displaystyle\sum_{x_0,x_1\in\mathcal{D}} u_t^i(x^i,z\mid x_0, x_1)p_t(x_0, x_1\mid z)`$
+      - $`\displaystyle p_t(x_0, x_1\mid z) = \frac{p_t(z\mid x_0, x_1)\pi(x_0, x_1)}{p_t(z)}`$
+- Pf.)
+  - Recall that the [marginal probability path](#concept-marginal-probability-path) goes
+    - $`p_t(x) = \displaystyle\sum_{x_0, x_1} p_t(x^i\mid x_0, x_1) \pi(x_0, x_1)`$
+  - Taking the time derivative of $`p_t(x)`$, we get   
+    $`\begin{aligned}
+      \dot{p_t}(x) 
+      &= \sum_{x_0, x_1} \dot{p_t}(x^i\mid x_0, x_1) \pi(x_0, x_1) \\
+      &= 
+    \end{aligned}`$
+
