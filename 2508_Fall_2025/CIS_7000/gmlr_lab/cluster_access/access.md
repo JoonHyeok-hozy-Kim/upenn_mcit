@@ -1,13 +1,16 @@
 # A brief guide to use GPU cluster 
 Joon Hyeok Kim
 
-## 0. Use Linux environment to connect to the Server
+## 0. System Structure
+![](./images/tutorial_009.png)
+
+## 1. Use Linux environment to connect to the Server
 - For Apple devices, you may just use your cmd.
 - For Windows devices, I recommend you to use [wsl](https://learn.microsoft.com/en-us/windows/wsl/setup/environment) which allows you to use Linux in Windows seamlessly.
 
 <br>
 
-## 1. Logging into the server (Not GPU cluster)
+## 2. Logging into the server (Not GPU cluster)
 - In that Linux environment access the server.
   - login1
     ```bash
@@ -25,7 +28,7 @@ Joon Hyeok Kim
 
 <br>
 
-## 2. How to use GPU Cluster
+## 3. Access the GPU Cluster
 - Option 1. [Request temporary access](#21-request-temporary-access) (must keep your connection!)
 - Option 2. [(Recommended!) Run a script]() (and go do sth else ;))
 
