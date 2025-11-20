@@ -9,9 +9,9 @@
   - [CTMC](./reference/DDM/cmtc.md), Campbell et al
     - [Kolmogorov Equation](./reference/DDM/cmtc.md#concept-kolmogorov-equation) 
   - [Discrete Flow (DF)](./reference/DDM/df.md), Campbell et al
-  - [(WIP) Discrete Flow Matching](./reference/DDM/dfm.md), Gat et al
-  - [(Postponed) Edit Flows](./reference/DDM/edit_flow.md), Havasi et al
-  - SEDD, Lou et al
+  - [Discrete Flow Matching](./reference/DDM/dfm.md), Gat et al
+  - [Edit Flows](./reference/DDM/edit_flow.md), Havasi et al
+  - [(WIP) Score Entropy Discrete Diffusion (SEDD), Lou et al](./reference/DDM/sedd.md)
   - FlexMDM
   - Insertion Language Models, Patel et al.
 - Distillation
@@ -22,3 +22,8 @@
   - MaskGIT
   - DiffusER
   - Diffusion-LM Improves Controllable Text Generation
+
+<br>
+
+### Ideas
+- [Levenshtein Distillation on Edit Flow](./idea/lev_dis_edit_flow.md)

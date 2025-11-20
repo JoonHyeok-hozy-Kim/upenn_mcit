@@ -1,6 +1,33 @@
 # Discrete Flow Matching
 [@gatDiscreteFlowMatching2024]
 
+## 1 Hozy Summary
+- Suppose we have a **conditional** [probability velocity](#concept-probability-velocity) $`u_t(x \mid x_0, x_1)`$ that generates the **conditional** [probability path](#concept-marginal-probability-path) $`p_t(x \mid x_0, x_1)`$
+  - Why **conditional**)
+    - We have the data distribution $`p(x_1)`$ and the source (noise) distribution $`x_0`$
+  - Definition)
+    - We may utilize the [flow matching framework](#concept-flow-matching-framework) to describe the **conditional** [probability path](#concept-marginal-probability-path) $`p_t(x \mid x_0, x_1)`$
+      - cf.) Linear interpolation used in the previous flow matching frameworks is one example.
+    - Also, the generation mechanism can be defined by the [Continuity Equation](#concept-continuity-equation) with the [Divergence Operation](#concept-divergence-operator)
+- By [Theorem 2](#theorem-2), we may derive the **marginal** [probability velocity](#concept-probability-velocity) $`u_t(x)`$ that generates the **marginal** [probability path](#concept-marginal-probability-path) $`p_t(x)`$ using the **conditionals** above.
+- By [Theorem 3](#theorem-3), we can parameterize the marginals using the [flow matching framework](#concept-flow-matching-framework).
+  - Here, we may define the both directions of the flow of
+    - Denoising : $`x_0 \rightarrow x_1`$ (Noise → Data)
+      - Probability Denoiser : $`p_{1\mid t}`$
+    - Backward Sampling (Adding Noise) : $`x_1 \rightarrow x_0`$ (Data → Noise)
+      - Probability Noise Prediction : $`p_{0\mid t}`$
+  - In the linear interpolation case, we can get the closed form solution.
+    - Probability Denoiser
+      - $`u_t^i(x^i, z) = \displaystyle\frac{\dot{\kappa}_t}{1-\kappa_t}\left[ p_{1\mid t}(x^i\mid z) - \delta_z(x^i) \right]`$
+    - Probability Noise Prediction
+      - $`u_t^i(x^i, z) = \displaystyle\frac{\dot{\kappa}_t}{\kappa_t}\left[ \delta_z(x^i) - p_{0\mid t}(x^i\mid z) \right]`$
+  - We can utilize the neural network to train the flow using this parameterization.
+    - [Training](#concept-training)
+      - Optimizing the loss of the model is equivalent to optimizing posterior base probabilities $`\hat{w}_t^j`$s.
+- We may further enhance the sampling accuracy by using the [corrector sampling](#concept-corrector-sampling) method.
+
+<br><br>
+
 ## 2 Discrete Flow Matching
 ### 2.1 Setup and notations
 - $`x = \left( x^1, x^2, \cdots, x^N \right)`$ : a sequence as an array of $`N`$ elements
@@ -375,3 +402,4 @@
 
 #### Concept) Training
 ![](./images/dfmatching_004.png)
+
