@@ -2,7 +2,42 @@
 [@havasiEditFlowsFlow2025]
 
 ## 1 Hozy Summary
-
+- Based on the [CTMC](./cmtc.md) and [Discrete Flow Matching](./dfm.md), introduce the following [edit operations](#concept-edit-operators): insertion, deletion, substitution.
+- However, [Discrete Flow Matching](./dfm.md)'s cross-entropy ELBO loss does not work in this framework.
+  - Why?) 
+    - Due to insertion and deletion, our space is $`\mathcal{X} = \displaystyle\bigcup_{n=1}^n \mathcal{T}`$
+    - Directly applying the CE-loss gets intractable.
+- This paper introduces two concepts to solve this problem. 
+  - [Bregman Divergence](#concept-bregman-divergence) $`D_\phi`$
+    - cf.) Cross-Entropy loss, KL-Divergence, and MSE are examples of the Bregman divergence with specific convex function $`\phi`$s
+    - For this problem, the authors utilize $`\phi(u) = u\log (u)`$ where $`u`$ is the probability velocity.
+      - $`\phi`$ is identical to KL-Divergence, but takes the velocity field $`u`$ as input.
+  - [Auxiliary Markov Process](#concept-training-with-an-auxiliary-alignment-process)   
+    $`\begin{array}{}
+      \;\\
+      && \text{source} & & \text{target}\\
+      \mathcal{Z} (\text{auxiliary space}) : && z_0 & \rightarrow & z_1 \\
+      &\text{Add }\varepsilon& \uparrow & & \downarrow & (f_{\text{rm-blanks}}) \\
+      \mathcal{X} (\text{original space}) : && x_0 & & x_1 \\
+      \;
+    \end{array}{}`$
+    - Desc.)
+      - Generate an auxiliary space $`\mathcal{Z}`$ by augmenting $`\mathcal{X}`$ with the mask token $`\varepsilon`$.
+        - This enables the shift in dimension when insertion/deletion operation takes place.
+- Now, just as the [Discrete Flow-Matching](#22-discrete-flow-matching) did... 
+  - we will fine the probability velocity $`u_t`$ that generates the probability path $`p_t`$
+  - let our model $`u_t^\theta`$ to approximate $`u_t`$.
+- How?)
+  - Get $`u_t`$ on the auxiliary space $`\mathcal{Z}`$ and then recover by removing $`\varepsilon`$ using $`f_{\text{rm-blanks}}`$.
+    - [Theorem 3.1](#theorem-31) supports the idea of performing DFM on $`u_t`$ that utilizes the auxiliary space $`\mathcal{Z}`$ by showing that
+      - $`u_t(x\mid x_t)\triangleq\sum_z\mathbb{E}_{p_t(z_t\mid x_t)} u_t(x,z\mid x_t, z_t)`$ generates $`p_t(x)\triangleq\sum_z p_t(x,z)`$
+  - $`u_t(x_t)`$ remains in $`\mathcal{X}`$
+  - Get the loss as the Bregman divergence of 
+    - $`\mathcal{L}(\theta) = D_\phi(u_t, u_t^\theta)`$
+  - Further applying the [linear interpolation concept from DFM](./dfm.md#theorem-3), we may simplify as
+    - $`\mathcal{L}(\theta) = \mathbb{E}_{\pi(z_0,z_1), t, p_t(x_t,z_t\mid z_0,z_1)} \left[ \displaystyle\sum_{x\ne x_t} u_t^\theta(x\mid x_t) - \sum_{i=1}^N \mathbf{1}_{[z^i_1\ne z^i_t]} \frac{\dot{\kappa}_t}{1-\kappa_t} \log u_t^\theta\left( \underbrace{x(z_t, i, z^i_1)}_{\text{one edit opr}} \mid x_t \right) \right]`$
+      - where 
+        - $`x(z_t, i, z^i_1) = f_{\text{rm-blanks}}(z_t^1,\cdots,z_t^{i-1},z_1^i,z_t^{i+1},z_t^N)`$
 
 <br><br>
 

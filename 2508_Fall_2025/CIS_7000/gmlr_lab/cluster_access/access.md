@@ -37,9 +37,17 @@ Joon Hyeok Kim
 
 ### 2.1 Request Temporary access 
 - Command
-  ```bash
-  srun -p gu-compute -A gu-account --qos=gu-med --gres=gpu:1 --mem=32G --time=4:00:00 --pty bash
-  ```
+  - srun
+    ```bash
+    srun -p gu-compute -A gu-account --qos=gu-med --gres=gpu:1 --mem=32G --time=4:00:00 --pty bash
+    ```
+  - salloc & srun
+    ```
+    salloc -p gu-compute -A gu-account --qos=gu-med --gres=gpu:1 --mem=32G --time=4:00:00
+    ```
+    ```
+    srun --jobid=$JOBID$ --pty bash
+    ```
 - This means that you request access to GPU cluster with the following options like
   - `--mem=32G` : 32 GB RAM memory for CPU, not the GPU VRAM!
   - `--time=4:00:00` : access for 4 hours

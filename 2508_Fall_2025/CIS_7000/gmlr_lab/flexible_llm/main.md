@@ -11,8 +11,9 @@
   - [Discrete Flow (DF)](./reference/DDM/df.md), Campbell et al
   - [Discrete Flow Matching](./reference/DDM/dfm.md), Gat et al
   - [Edit Flows](./reference/DDM/edit_flow.md), Havasi et al
-  - [(WIP) Score Entropy Discrete Diffusion (SEDD), Lou et al](./reference/DDM/sedd.md)
-  - FlexMDM
+  - [Score Entropy Discrete Diffusion (SEDD), Lou et al](./reference/DDM/sedd.md)
+  - [(WIP) FlexMDM]()
+  - LLaDDA
   - Insertion Language Models, Patel et al.
 - Distillation
   - [(Postponed) Di4C](./reference/DDM/di4c.md), Hayakawa et al

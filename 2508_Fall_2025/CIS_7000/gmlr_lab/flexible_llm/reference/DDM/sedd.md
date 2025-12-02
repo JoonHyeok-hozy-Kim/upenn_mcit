@@ -1,6 +1,22 @@
 # Discrete Diffusion Modeling by Estimating the Ratios of the Data Distribution
 [@louDiscreteDiffusionModeling2024]
 
+## 1 Hozy Summary
+- We want to learn the discrete model by approximating the ratio of $`\frac{p_t(y)}{p_t(x)}`$.
+- Following the Meng et al.'s [concrete score matching](#concept-concrete-score-matching), we may approximate our model by
+  - $`s_\theta(x,t)\approx\left[ \frac{p_t(y)}{p_t(x)} \right]_{y\ne x}`$
+  - However, the [concrete score matching](#concept-concrete-score-matching) utilizes the L2 loss, which may lead to the negative ratio.
+    - Ratio between probability paths cannot be negative!
+- This paper suggests the [score entropy](#concept-score-entropy) that utilizes the Bregman Divergence with $`\phi(x) = x\log x - x`$.
+  - This score can yield ELBO like loss of [DWDSE](#theorem-36-likelihood-training-and-evaluation) of 
+    - $`-\log p_0^\theta(x_0) \le \mathcal{L}_{\text{DWDSE}}(x_0) + D_{KL}(p_{T\mid0}(\cdot\mid x_0) \;\Vert\; p_{\text{base}})`$
+- This learned score can be used to generate the reverse matrix and do the reverse sampling.
+- This model can be [extended to the sequence level](#33-practical-implementation).
+- Reverse sampling can be accelerated using the [Tau-leaping](#41-time-reversal-strategies).
+- Further, it can be used to the [infilling problem](#42-arbitrary-prompting-and-infilling).
+
+<br><br>
+
 ## 2 Preliminaries
 ### 2.1 Discrete Diffusion Processes
 - Settings)
